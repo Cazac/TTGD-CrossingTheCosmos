@@ -107,16 +107,60 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
             case 2:
 
+                if (RARC_DatabaseController.Instance.saveDataSet2_List.Count == 0)
+                {
+                    //Create New Data
+                    RARC_ShipSaveData shipData = new RARC_ShipSaveData();
+                    shipData.CreateNewSave();
+
+                    //Set Transmission Data to Database
+                    RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
+                    RARC_DatabaseController.Instance.ship_SaveData = shipData;
+
+                    //Load Scene
+                    SceneManager.LoadScene("RARC_Game");
+                }
+                else
+                {
+                    //Load Data 
+                    RARC_ShipSaveData shipData = RARC_DatabaseController.Instance.saveDataSet2_List[RARC_DatabaseController.Instance.saveDataSet2_List.Count - 1];
+
+                    //Set Transmission Data to Database
+                    RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
+                    RARC_DatabaseController.Instance.ship_SaveData = shipData;
+
+                    //Load Scene
+                    SceneManager.LoadScene("RARC_Game");
+                }
                 break;
 
             case 3:
 
-                //Set Transmission Data
+                if (RARC_DatabaseController.Instance.saveDataSet3_List.Count == 0)
+                {
+                    //Create New Data
+                    RARC_ShipSaveData shipData = new RARC_ShipSaveData();
+                    shipData.CreateNewSave();
 
+                    //Set Transmission Data to Database
+                    RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
+                    RARC_DatabaseController.Instance.ship_SaveData = shipData;
 
-                //Load Scene
-                SceneManager.LoadScene("RARC_Game");
+                    //Load Scene
+                    SceneManager.LoadScene("RARC_Game");
+                }
+                else
+                {
+                    //Load Data 
+                    RARC_ShipSaveData shipData = RARC_DatabaseController.Instance.saveDataSet3_List[RARC_DatabaseController.Instance.saveDataSet3_List.Count - 1];
 
+                    //Set Transmission Data to Database
+                    RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
+                    RARC_DatabaseController.Instance.ship_SaveData = shipData;
+
+                    //Load Scene
+                    SceneManager.LoadScene("RARC_Game");
+                }
                 break;
         }
 

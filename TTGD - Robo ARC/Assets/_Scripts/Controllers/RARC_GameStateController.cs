@@ -20,6 +20,9 @@ public class RARC_GameStateController : MonoBehaviour
     public bool isReady_Storage;
 
 
+    public List<RARC_Planet> navigationPossiblePlanets_List;
+
+
     /////////////////////////////////////////////////////////////////
 
     private void Awake()
@@ -41,9 +44,26 @@ public class RARC_GameStateController : MonoBehaviour
 
     public void System_GenerateNewWeek()
     {
+        //Progress Time
+        RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
+        RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
+
         //Generate Events
 
-        //Progress Time
+
+
+
+        //Reset Navigation Planets
+        navigationPossiblePlanets_List.Clear();
+        //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
+        //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
+        //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
+
+
+
+
+
+
 
 
 

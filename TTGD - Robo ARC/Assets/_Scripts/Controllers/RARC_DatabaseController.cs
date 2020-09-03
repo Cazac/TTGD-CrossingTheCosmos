@@ -11,8 +11,12 @@ public class RARC_DatabaseController : MonoBehaviour
 
     ////////////////////////////////
 
-    [Header("Crew Database")]
+    [Header("Access To Data With Scriptables")]
     public RARC_CrewData crew_DB;
+
+
+    [Header("Access Directly to Scriptable")]
+    public RARC_Planet_SO planet_SO;
 
 
     ////////////////////////////////

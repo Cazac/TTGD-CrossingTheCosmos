@@ -26,8 +26,6 @@ public class RARC_ShipSaveData
     public string[] shipData_Rooms_Arr;
 
 
-
-
     public string shipData_NavigationDestination;
     public string shipData_NavigationTripTime;
     public string shipData_NavigationTripProgress;
@@ -39,6 +37,8 @@ public class RARC_ShipSaveData
     public void CreateNewSave()
     {
         shipInfo_WeeksSurvived = 0;
+
+
 
 
         //Create a new crew

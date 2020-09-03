@@ -11,9 +11,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     ////////////////////////////////
 
-
-
-
     [Header("Menu Panels Icons")]
     public GameObject NavigationPanel_Main;
 
@@ -44,13 +41,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void Button_GameLaunch()
     {
-        //Add a new week
-        RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
-        RefreshUI_WeeksInSpace();
+        if (RARC_GameStateController.Instance.isReady_Launch)
+        {
+            //Finish Week and Animation
+            RARC_GameStateController.Instance.Player_FinishWeek();
 
-        RARC_DatabaseController.Instance.SaveShipData();
+            //Create a New Week
+            RARC_GameStateController.Instance.System_GenerateNewWeek();
 
-
+            //Save Next Weeks Data
+            RARC_DatabaseController.Instance.SaveShipData();
+        }
+        else
+        {
+            print("Test Code: Oh No! Not Ready!");
+        }
     }
 
     public void Button_GameNavigate()
@@ -65,14 +70,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     }
 
-    public void Button_MainSettings()
+    public void Button_GameNavigate_Back()
     {
-
-    }
-
-    public void Button_MainCredits()
-    {
-
+        //Open Navigation Menu
+        NavigationPanel_Main.SetActive(false);
     }
 
     /////////////////////////////////////////////////////////////////
@@ -81,7 +82,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
     {
        
     }
-
 
     /////////////////////////////////////////////////////////////////
 
