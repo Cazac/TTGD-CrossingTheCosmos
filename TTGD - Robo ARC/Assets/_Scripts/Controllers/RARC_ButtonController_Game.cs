@@ -16,6 +16,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     [Header("Menu Panels Icons")]
     public GameObject NavigationPanel_Main;
+    public GameObject ConstructionMenu_Main;
 
     public TextMeshProUGUI navigationDesination_Text;
     public TextMeshProUGUI navigationTravelTime_Text;
@@ -62,6 +63,26 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
 
 
+
+    }
+
+    public void Button_GameBuild()
+    {
+        //Open Build Menu
+        ConstructionMenu_Main.SetActive(true);
+
+    }
+
+    public void Button_GameBuild_Close()
+    {
+        //Close Build Menu
+        ConstructionMenu_Main.SetActive(false);
+
+    }
+
+    public void Button_GameBuild_Medbay()
+    {
+        //Set cursorState to buildMedbay
 
     }
 
