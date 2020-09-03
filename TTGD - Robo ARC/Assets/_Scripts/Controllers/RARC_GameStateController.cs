@@ -19,6 +19,8 @@ public class RARC_GameStateController : MonoBehaviour
     public bool isReady_Contruction;
     public bool isReady_Storage;
 
+    public string cursorState;
+
 
     public List<RARC_Planet> navigationPossiblePlanets_List;
 
@@ -33,11 +35,15 @@ public class RARC_GameStateController : MonoBehaviour
 
     private void Start()
     {
+
         //Load Week UI from data
 
 
         //Set UI For Week
         RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
+
+        //set cursor state
+        cursorState = "free";
     }
 
     /////////////////////////////////////////////////////////////////
