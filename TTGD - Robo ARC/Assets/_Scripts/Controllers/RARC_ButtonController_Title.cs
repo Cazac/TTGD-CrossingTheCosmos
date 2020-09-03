@@ -73,6 +73,52 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     public void Button_PlaySelectSlot(int saveSlot)
     {
+        //CHeck Save Slot
+        switch (saveSlot)
+        {
+            case 1:
+
+                if (RARC_DatabaseController.Instance.saveDataSet1_List.Count == 0)
+                {
+                    //Create New Data
+                    RARC_ShipSaveData shipData = new RARC_ShipSaveData();
+                    shipData.CreateNewSave();
+
+                    //Set Transmission Data to Database
+                    RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
+                    RARC_DatabaseController.Instance.ship_SaveData = shipData;
+
+                    //Load Scene
+                    SceneManager.LoadScene("RARC_Game");
+                }
+                else
+                {
+                    //Load Data 
+                    RARC_ShipSaveData shipData = RARC_DatabaseController.Instance.saveDataSet1_List[RARC_DatabaseController.Instance.saveDataSet1_List.Count - 1];
+
+                    //Set Transmission Data to Database
+                    RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
+                    RARC_DatabaseController.Instance.ship_SaveData = shipData;
+
+                    //Load Scene
+                    SceneManager.LoadScene("RARC_Game");
+                }
+                break;
+
+            case 2:
+
+                break;
+
+            case 3:
+
+                //Set Transmission Data
+
+
+                //Load Scene
+                SceneManager.LoadScene("RARC_Game");
+
+                break;
+        }
 
     }
 
@@ -80,52 +126,49 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     public void RefreshPlayUI()
     {
+        //Set New Save file Lists
+        RARC_DatabaseController.Instance.saveDataSet1_List = RARC_DatabaseController.Instance.FindGameData(1);
+        RARC_DatabaseController.Instance.saveDataSet2_List = RARC_DatabaseController.Instance.FindGameData(2);
+        RARC_DatabaseController.Instance.saveDataSet3_List = RARC_DatabaseController.Instance.FindGameData(3);
+
+
+
         //Check with Loaded Data
-        if (RARC_DatabaseController.Instance.ship_SaveData != null)
-        {
-            print("Test Code: Data Found");
-        }
-        else
-        {
-            print("Test Code: No Data");
-        }
-
-        if (true)
-        {
-            saveSlot1_New.SetActive(true);
-            saveSlot1_Load.SetActive(false);
-        }
-        else
+        if (RARC_DatabaseController.Instance.saveDataSet1_List.Count != 0)
         {
             saveSlot1_New.SetActive(false);
             saveSlot1_Load.SetActive(true);
         }
-
-        if (true)
+        else
         {
             saveSlot1_New.SetActive(true);
             saveSlot1_Load.SetActive(false);
         }
+
+        //Check with Loaded Data
+        if (RARC_DatabaseController.Instance.saveDataSet2_List.Count != 0)
+        {
+            saveSlot2_New.SetActive(false);
+            saveSlot2_Load.SetActive(true);
+        }
         else
         {
-            saveSlot1_New.SetActive(false);
-            saveSlot1_Load.SetActive(true);
+            saveSlot2_New.SetActive(true);
+            saveSlot2_Load.SetActive(false);
         }
 
-        if (true)
+        //Check with Loaded Data
+        if (RARC_DatabaseController.Instance.saveDataSet3_List.Count != 0)
         {
-            saveSlot1_New.SetActive(true);
-            saveSlot1_Load.SetActive(false);
+            saveSlot3_New.SetActive(false);
+            saveSlot3_Load.SetActive(true);
         }
         else
         {
-            saveSlot1_New.SetActive(false);
-            saveSlot1_Load.SetActive(true);
+            saveSlot3_New.SetActive(true);
+            saveSlot3_Load.SetActive(false);
         }
     }
-
-
-
 
     /////////////////////////////////////////////////////////////////
 }

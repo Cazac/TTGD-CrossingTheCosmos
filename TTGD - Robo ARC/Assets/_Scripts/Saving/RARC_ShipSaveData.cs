@@ -25,6 +25,14 @@ public class RARC_ShipSaveData
 
     public string[] shipData_Rooms_Arr;
 
+
+
+
+    public string shipData_NavigationDestination;
+    public string shipData_NavigationTripTime;
+    public string shipData_NavigationTripProgress;
+
+
     /////////////////////////////////////////////////////////////////
 
 
