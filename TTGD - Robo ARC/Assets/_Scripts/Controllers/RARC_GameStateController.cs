@@ -6,6 +6,16 @@ public class RARC_GameStateController : MonoBehaviour
 {
     ////////////////////////////////
 
+    public enum CursorState
+    {
+        NORMAL,
+        BUILD_RESEARCH, BUILD_MEDICAL, BUILD_FOOD, BUILD_RECREATION, BUILD_FACTORY, BUILD_STORAGE
+    }
+
+    public CursorState currentCursorState;
+
+    ////////////////////////////////
+
     public static RARC_GameStateController Instance;
 
     ////////////////////////////////
@@ -18,9 +28,6 @@ public class RARC_GameStateController : MonoBehaviour
     public bool isReady_Research;
     public bool isReady_Contruction;
     public bool isReady_Storage;
-
-    public string cursorState;
-
 
     public List<RARC_Planet> navigationPossiblePlanets_List;
 
@@ -43,7 +50,15 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
 
         //set cursor state
-        cursorState = "free";
+        currentCursorState = CursorState.NORMAL;
+    }
+
+    private void OnMouseDown()
+    {
+        if (Input.GetMouseButton(1) && currentCursorState != CursorState.NORMAL)
+        {
+            currentCursorState = CursorState.NORMAL;
+        }
     }
 
     /////////////////////////////////////////////////////////////////
@@ -65,11 +80,7 @@ public class RARC_GameStateController : MonoBehaviour
         //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
         //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
 
-
-
-
-
-
+        
 
 
 

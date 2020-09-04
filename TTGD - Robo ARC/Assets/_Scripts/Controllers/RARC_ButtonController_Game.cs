@@ -11,6 +11,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     ////////////////////////////////
 
+    public GameObject currentSelectedRoom;
+
     [Header("Menu Panels Icons")]
     public GameObject NavigationPanel_Main;
     public GameObject ConstructionMenu_Main;
@@ -26,7 +28,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject urgentIcon_Storage;
 
 
-
     public TextMeshProUGUI weeksAtSpace_Text;
 
 
@@ -36,6 +37,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
     {
         //Set Static Singleton Self Refference
         Instance = this;
+
+        currentSelectedRoom = null;
     }
 
     /////////////////////////////////////////////////////////////////
@@ -71,26 +74,121 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     }
 
+    /////////////////////////////////////////////////////////////////
 
-    public void Button_GameBuild()
+    public void Button_Game_Build()
     {
         //Open Build Menu
         ConstructionMenu_Main.SetActive(true);
 
     }
 
-    public void Button_GameBuild_Close()
+    public void Button_Game_Build_Close()
     {
         //Close Build Menu
         ConstructionMenu_Main.SetActive(false);
 
+        //current selected room is none
+        currentSelectedRoom = null;
+
     }
 
-    public void Button_GameBuild_Medbay()
+    public void Button_Game_Build_Research()
     {
-        //Set cursorState to buildMedbay
+        //Close Build Menu
+        ConstructionMenu_Main.SetActive(false);
+
+        if (currentSelectedRoom != null)
+        {
+            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.RESEARCH;
+        }
+        else
+        {
+            //set cursor state
+            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_RESEARCH;
+        }
 
     }
+
+    public void Button_Game_Build_Medbay()
+    {
+        //Close Build Menu
+        ConstructionMenu_Main.SetActive(false);
+
+        //set cursor state
+        RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_MEDICAL;
+
+    }
+
+    public void Button_Game_Build_Food()
+    {
+        //Close Build Menu
+        ConstructionMenu_Main.SetActive(false);
+
+        if (currentSelectedRoom != null)
+        {
+            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.FOOD;
+        }
+        else
+        {
+            //set cursor state
+            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_FOOD;
+        }
+
+    }
+
+    public void Button_Game_Build_Recreation()
+    {
+        //Close Build Menu
+        ConstructionMenu_Main.SetActive(false);
+
+        if (currentSelectedRoom != null)
+        {
+            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.RECREATION;
+        }
+        else
+        {
+            //set cursor state
+            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_RECREATION;
+        }
+
+    }
+
+    public void Button_Game_Build_Factory()
+    {
+        //Close Build Menu
+        ConstructionMenu_Main.SetActive(false);
+
+        if (currentSelectedRoom != null)
+        {
+            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.FACTORY;
+        }
+        else
+        {
+            //set cursor state
+            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_FACTORY;
+        }
+
+    }
+
+    public void Button_Game_Build_Storage()
+    {
+        //Close Build Menu
+        ConstructionMenu_Main.SetActive(false);
+
+        if (currentSelectedRoom != null)
+        {
+            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.STORAGE;
+        }
+        else
+        {
+            //set cursor state
+            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_STORAGE;
+        }
+
+    }
+
+    /////////////////////////////////////////////////////////////////
 
     public void Button_MainSettings()
     {
