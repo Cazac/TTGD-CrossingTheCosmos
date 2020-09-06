@@ -1,27 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RARC_GameStateController : MonoBehaviour
 {
-    ////////////////////////////////
-
-    public enum CursorState
-    {
-        NORMAL,
-        BUILD_RESEARCH, BUILD_MEDICAL, BUILD_FOOD, BUILD_RECREATION, BUILD_FACTORY, BUILD_STORAGE
-    }
-
-    public CursorState currentCursorState;
-
     ////////////////////////////////
 
     public static RARC_GameStateController Instance;
 
     ////////////////////////////////
 
-    public bool isReady_Launch;
+    [Header("Cursor State")]
+    public CursorState currentCursorState;
+    public enum CursorState
+    {
+        NORMAL,
+        BUILD_RESEARCH, BUILD_MEDICAL, BUILD_FOOD, BUILD_RECREATION, BUILD_FACTORY, BUILD_STORAGE
+    }
 
+    ////////////////////////////////
+
+    [Header("System Ready States")]
+    public bool isReady_Launch;
 
     public bool isReady_Navigation;
     public bool isReady_EventLog;
@@ -29,8 +30,15 @@ public class RARC_GameStateController : MonoBehaviour
     public bool isReady_Contruction;
     public bool isReady_Storage;
 
-    public List<RARC_Planet> navigationPossiblePlanets_List;
+    [Header("Interatablity Cover")]
+    public Image blackoutCurtain_Image;
 
+    [Header("Animators")]
+    public Animator blacokoutCurtain_Animator;
+    public Animator ship_Animator;
+
+    [Header("Navigation Options")]
+    public List<RARC_Planet> navigationPossiblePlanets_List;
 
     /////////////////////////////////////////////////////////////////
 
@@ -42,12 +50,17 @@ public class RARC_GameStateController : MonoBehaviour
 
     private void Start()
     {
+        //Check if its the first week On load
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived == 0)
+        {
+            System_GenerateNewWeek(true);
+        }
+        else
+        {
+            System_GenerateNewWeek(false);
+        }
 
-        //Load Week UI from data
-
-
-        //Set UI For Week
-        RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
+        //Load System Data
 
         //set cursor state
         currentCursorState = CursorState.NORMAL;
@@ -63,52 +76,127 @@ public class RARC_GameStateController : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void System_GenerateNewWeek()
+    public void System_GenerateNewWeek(bool isFirstWeek)
     {
-        //Progress Time
-        RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
-        RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
 
         //Generate Events
+
+        //Progress Time
+
+        if (isFirstWeek)
+        {
+            print("Test Code: Welcome New Player!");
+
+
+            //Play Cutscene
+
+
+
+
+        }
+        else
+        {
+            //Progress Time
+            RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
+            RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress++;
+
+
+
+            //Generate Events
+
+
+        }
+
+
+
+
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination != null)
+        {
+            if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress >= RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination.planetTravelTime)
+            {
+                //Set BG
+
+                //Reset Counter
+
+                //Remove Planet Dersintation
+
+
+
+
+                isReady_Navigation = false;
+            }
+            else
+            {
+                isReady_Navigation = true;
+            }
+        }
+        else
+        {
+            isReady_Navigation = false;
+        }
+
+
+
+
+
+
+
 
 
 
 
         //Reset Navigation Planets
-        navigationPossiblePlanets_List.Clear();
-        //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
-        //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
-        //navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
+        navigationPossiblePlanets_List = new List<RARC_Planet>();
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
 
-        
-
-
-
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination == null)
-        {
-
-        }
-        else
-        {
-
-        }
+        //Refresh All UI
+        RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
+        RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
+        RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
+        RARC_ButtonController_Game.Instance.RefreshUI_Resources();
     }
 
     /////////////////////////////////////////////////////////////////
 
-    public void Player_StartWeek()
+    public IEnumerator Player_StartWeek()
     {
+        print("Test Code: Waiting");
+
+        yield return new WaitForSeconds(4f);
+
+        print("Test Code: Ready");
+
         //Add Interatablity
+        blackoutCurtain_Image.raycastTarget = false;
 
-
-
+        yield break;
     }
 
     public void Player_FinishWeek()
     {
         //Remove Interatablity
+        blackoutCurtain_Image.raycastTarget = true;
 
         //Play ANimaitons
+        ship_Animator.Play("Travel");
+
+        blacokoutCurtain_Animator.Play("Fade In");
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void LoadBackground()
+    {
+
+        //if ()
+        {
+
+        }
+
+
     }
 
     /////////////////////////////////////////////////////////////////

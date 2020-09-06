@@ -9,36 +9,63 @@ public class RARC_ShipSaveData
 
     public int shipInfo_WeeksSurvived;
 
-    public int shipStat_Iron;
-    public int shipStat_Water;
-    public int shipStat_Fuel;
-    public int shipStat_Food;
-
     ////////////////////////////////
 
-    public List<string> shipData_Crew_List;
+    public List<RARC_Crew> shipData_Crew_List;
+
+    ////////////////////////////////
 
     public List<string> shipData_ResearchComplete_List;
     public List<string> shipData_ResearchAvalible_List;
     public List<string> shipData_ResearchUnavalible_List;
 
+    ////////////////////////////////
 
     public string[] shipData_Rooms_Arr;
 
+    ////////////////////////////////
 
-    public string shipData_NavigationDestination;
-    public string shipData_NavigationTripTime;
-    public string shipData_NavigationTripProgress;
+    public RARC_Planet shipData_NavigationDestination;
+    public int shipData_NavigationTripProgress;
 
+    ////////////////////////////////
+
+    public RARC_Resource shipResource_Scrap;
+    public RARC_Resource shipResource_Fuel;
+    public RARC_Resource shipResource_Food;
+    public List<RARC_Resource> shipStorage_List;
 
     /////////////////////////////////////////////////////////////////
 
 
+    /////////////////////////////////////////////////////////////////
+
     public void CreateNewSave()
     {
+        //Set Weeks
         shipInfo_WeeksSurvived = 0;
 
+        //Set New Resource Bases
+        shipResource_Scrap = new RARC_Resource
+        {
+            resourceName = "Scrap",
+            resourceCount = 0,
+            resourceType = RARC_Resource.ResourceType.Scrap,
+        };
 
+        shipResource_Fuel = new RARC_Resource
+        {
+            resourceName = "Fuel",
+            resourceCount = 0,
+            resourceType = RARC_Resource.ResourceType.Fuel,
+        };
+
+        shipResource_Food = new RARC_Resource
+        {
+            resourceName = "Food",
+            resourceCount = 0,
+            resourceType = RARC_Resource.ResourceType.Food,
+        };
 
 
         //Create a new crew
@@ -47,4 +74,6 @@ public class RARC_ShipSaveData
 
 
     }
+
+    /////////////////////////////////////////////////////////////////
 }

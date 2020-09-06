@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RARC_Planet : MonoBehaviour
+[System.Serializable]
+public class RARC_Planet
 {
     ////////////////////////////////
 
@@ -11,15 +12,16 @@ public class RARC_Planet : MonoBehaviour
     public string planetName;
 
     [Header("Sprites")]
-    public Sprite planetSprite;
-    public List<RARC_Planet> planetMoonSprite_List;
+    public int planetSprite_Main;
+    public int planetSprite_Secondary;
+    public List<RARC_Planet> planetMoonPlanet_List;
 
     [Header("Rotation")]
     public int planetRotation;
 
     [Header("Colors")]
-    public Color primaryColor;
-    public Color secondaryColor;
+    public Color32 primaryColor;
+    public Color32 secondaryColor;
 
     [Header("Traveling")]
     public int planetTravelTime;
@@ -27,6 +29,16 @@ public class RARC_Planet : MonoBehaviour
     [Header("Lists")]
     public List<string> planetEvents_List;
     public Tuple<float, string> planetResources_List;
+
+    public PlanetType planetType;
+
+    public enum PlanetType
+    {
+        Moon,
+        Rocky,
+        Gassy,
+
+    }
 
     /////////////////////////////////////////////////////////////////
 }

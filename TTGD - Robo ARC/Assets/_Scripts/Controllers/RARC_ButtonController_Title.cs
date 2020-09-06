@@ -166,6 +166,12 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     }
 
+    public void Button_PlayDeleteSlot(int saveSlot)
+    {
+        RARC_DatabaseController.Instance.DeleteShipData(saveSlot);
+        RefreshPlayUI();
+    }
+
     /////////////////////////////////////////////////////////////////
 
     public void RefreshPlayUI()
