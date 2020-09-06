@@ -3496,12 +3496,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbc63452d4a9ce54cb7b642b018b6ba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentCursorState: 0
   isReady_Launch: 0
   isReady_Navigation: 0
   isReady_EventLog: 0
   isReady_Research: 0
   isReady_Contruction: 0
   isReady_Storage: 0
+  navigationPossiblePlanets_List: []
 --- !u!1 &681648606
 GameObject:
   m_ObjectHideFlags: 0
@@ -4528,7 +4530,7 @@ SpriteRenderer:
   m_Size: {x: 9.6, y: 6.4}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &851796169
@@ -7135,12 +7137,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5de10c0b22260094691dfa8450bd039c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1df370f869bfe9a459992be9ab449514, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.6, y: 6.4}
+  m_Size: {x: 51.2, y: 32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7343,7 +7345,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09b7f9760670fc74aa3c3a591209a636, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentSelectedRoom: {fileID: 0}
   NavigationPanel_Main: {fileID: 384513675}
+  ConstructionMenu_Main: {fileID: 0}
   navigationDesination_Text: {fileID: 554658808}
   navigationTravelTime_Text: {fileID: 815048771}
   urgentIcon_Navigation: {fileID: 362118903}
