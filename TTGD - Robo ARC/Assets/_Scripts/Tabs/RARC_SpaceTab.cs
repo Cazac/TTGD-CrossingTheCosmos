@@ -24,7 +24,7 @@ public class RARC_SpaceTab : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void PlayRandomSpace()
+    public void PlayTravelingSpace()
     {
         int randomNo = Random.Range(0,5);
 
@@ -52,11 +52,37 @@ public class RARC_SpaceTab : MonoBehaviour
         }
     }
 
-    public void PlaySpecificSpace()
+    public void PlayPlanetSpace()
     {
-        //int random = Random.Range(0,);
-    }
+        int randomNo = Random.Range(0, 5);
 
+        switch (randomNo)
+        {
+            case 0:
+                SetSpace_Black();
+                break;
+
+            case 1:
+                SetSpace_Red();
+                break;
+
+            case 2:
+                SetSpace_Green();
+                break;
+
+            case 3:
+                SetSpace_Purple();
+                break;
+
+            case 4:
+                SetSpace_Blue();
+                break;
+        }
+
+        print("Test Code: Make This Work Later");
+
+        spaceTop_Animator.Play("Idle");
+    }
 
     /////////////////////////////////////////////////////////////////
 
@@ -69,6 +95,7 @@ public class RARC_SpaceTab : MonoBehaviour
     {
         TurnOffSpaceOverlay();
         spaceTypeRed_Container.SetActive(true);
+        //spaceBottom_Animator.Play("Space Fade in");
         spaceTop_Animator.Play("Space Fade in");
     }
 

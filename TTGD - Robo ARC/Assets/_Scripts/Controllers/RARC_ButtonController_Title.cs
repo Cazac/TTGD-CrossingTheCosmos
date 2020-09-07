@@ -33,7 +33,7 @@ public class RARC_ButtonController_Title : MonoBehaviour
         //Set Static Singleton Self Refference
         Instance = this;
 
-        titleSpace.PlayRandomSpace();
+        titleSpace.PlayTravelingSpace();
     }
 
     /////////////////////////////////////////////////////////////////
