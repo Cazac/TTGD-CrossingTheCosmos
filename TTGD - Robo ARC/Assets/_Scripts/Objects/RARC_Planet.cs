@@ -8,25 +8,25 @@ public class RARC_Planet
 {
     ////////////////////////////////
 
-    [Header("Name")]
+    //Name
     public string planetName;
 
-    [Header("Sprites")]
+    //Sprites
     public int planetSprite_Main;
     public int planetSprite_Secondary;
     public List<RARC_Planet> planetMoonPlanet_List;
 
-    [Header("Rotation")]
+    //Rotation
     public int planetRotation;
 
-    [Header("Colors")]
+    //Colors
     public Color32 primaryColor;
     public Color32 secondaryColor;
 
-    [Header("Traveling")]
+    //Traveling
     public int planetTravelTime;
 
-    [Header("Lists")]
+    //Lists
     public List<string> planetEvents_List;
     public Tuple<float, string> planetResources_List;
 
