@@ -20,7 +20,7 @@ public class RARC_SpaceTab : MonoBehaviour
     public Animator spaceBottom_Animator;
 
     [Header("BLANKVAR")]
-    public RARC_PlanetTab planet;
+    public RARC_PlanetTabUI planet;
 
     /////////////////////////////////////////////////////////////////
 

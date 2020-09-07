@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class RARC_ButtonController_Game : MonoBehaviour
 {
@@ -12,10 +13,23 @@ public class RARC_ButtonController_Game : MonoBehaviour
     ////////////////////////////////
 
 
+    [Header("Menu Buttons")]
+    public Button LaunchButton_Main;
+    public Button NavigationButton_Main;
+    public Button ConstructionButton_Main;
+    public Button CrewButton_Main;
+    public Button EventButton_Main;
+    public Button ExploreButton_Main;
+    public Button ResearchButton_Main;
 
-    [Header("Menu Panels Icons")]
+
+    [Header("Menu Panels")]
     public GameObject NavigationMenu_Main;
     public GameObject ConstructionMenu_Main;
+    public GameObject CrewMenu_Main;
+    public GameObject EventMenu_Main;
+    public GameObject ExploreMenu_Main;
+    public GameObject ResearchMenu_Main;
 
     [Header("Navigation Desination")]
     public TextMeshProUGUI navigationDesination_Text;
@@ -29,9 +43,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject urgentIcon_Storage;
 
     [Header("Planet Tabs")]
-    public RARC_PlanetTab navigationPlanet1_Tab;
-    public RARC_PlanetTab navigationPlanet2_Tab;
-    public RARC_PlanetTab navigationPlanet3_Tab;
+    public RARC_PlanetTabUI navigationPlanet1_Tab;
+    public RARC_PlanetTabUI navigationPlanet2_Tab;
+    public RARC_PlanetTabUI navigationPlanet3_Tab;
 
 
     [Header("Resources")]
@@ -40,12 +54,27 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public TextMeshProUGUI resourcesScrap_Text;
 
 
-    [Header("Building Info")]
-    public GameObject currentSelectedRoom;
+    [Header("Event UI")]
+    public TextMeshProUGUI eventTitle_Text;
+    public TextMeshProUGUI eventDesc_Text;
+    public Image eventIcon_Image;
+
+    [Header("Event Buttons")]
+    public GameObject eventOption1_GO;
+    public GameObject eventOption2_GO;
+    public GameObject eventOption3_GO;
+    public TextMeshProUGUI eventOption1_Text;
+    public TextMeshProUGUI eventOption2_Text;
+    public TextMeshProUGUI eventOption3_Text;
+
+
 
     [Header("Weeks In Space")]
     public TextMeshProUGUI weeksAtSpace_Text;
 
+
+    [HideInInspector]
+    public GameObject currentSelectedRoom;
 
     /////////////////////////////////////////////////////////////////
 
@@ -234,6 +263,86 @@ public class RARC_ButtonController_Game : MonoBehaviour
             //set cursor state
             RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_STORAGE;
         }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_Event()
+    {
+        //Open Event Menu
+        EventMenu_Main.SetActive(true);
+
+        //Load Event
+
+    }
+
+    public void Button_Event_Close()
+    {
+        //Open Event Menu
+        EventMenu_Main.SetActive(false);
+
+        //Load Event
+
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_Crew()
+    {
+        //Open Event Menu
+        CrewMenu_Main.SetActive(true);
+
+        //Load Event
+
+    }
+
+    public void Button_Crew_Close()
+    {
+        //Open Event Menu
+        CrewMenu_Main.SetActive(false);
+
+        //Load Event
+
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_Explore()
+    {
+        //Open Event Menu
+        ExploreMenu_Main.SetActive(true);
+
+        //Load Event
+
+    }
+
+    public void Button_Explore_Close()
+    {
+        //Open Event Menu
+        ExploreMenu_Main.SetActive(false);
+
+        //Load Event
+
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_Research()
+    {
+        //Open Event Menu
+        ResearchMenu_Main.SetActive(true);
+
+        //Load Event
+
+    }
+
+    public void Button_Research_Close()
+    {
+        //Open Event Menu
+        ResearchMenu_Main.SetActive(false);
+
+        //Load Event
+
     }
 
     /////////////////////////////////////////////////////////////////

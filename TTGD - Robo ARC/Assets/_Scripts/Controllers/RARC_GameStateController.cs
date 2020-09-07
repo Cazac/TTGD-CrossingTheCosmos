@@ -93,6 +93,9 @@ public class RARC_GameStateController : MonoBehaviour
 
 
 
+            //Give First Backstory Event
+
+
         }
         else
         {
