@@ -23,12 +23,17 @@ public class RARC_ButtonController_Title : MonoBehaviour
     public GameObject saveSlot3_New;
     public GameObject saveSlot3_Load;
 
+    [Header("Space")]
+    public RARC_SpaceTab titleSpace;
+
     ////////////////////////////////
 
     private void Awake()
     {
         //Set Static Singleton Self Refference
         Instance = this;
+
+        titleSpace.PlayRandomSpace();
     }
 
     /////////////////////////////////////////////////////////////////
