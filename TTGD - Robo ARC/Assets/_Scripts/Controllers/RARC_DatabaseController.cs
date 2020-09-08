@@ -11,12 +11,14 @@ public class RARC_DatabaseController : MonoBehaviour
 
     ////////////////////////////////
 
-    [Header("Access To Data With Scriptables")]
+    [Header("Access Directly to Scriptable")]
     public RARC_Crew_SO crew_DB;
-
 
     [Header("Access Directly to Scriptable")]
     public RARC_Planet_SO planet_SO;
+
+    [Header("Access Container of Event Scriptables")]
+    public RARC_EventData events_DB;
 
     ////////////////////////////////
 
@@ -27,6 +29,8 @@ public class RARC_DatabaseController : MonoBehaviour
     public List<RARC_ShipSaveData> saveDataSet1_List = new List<RARC_ShipSaveData>();
     public List<RARC_ShipSaveData> saveDataSet2_List = new List<RARC_ShipSaveData>();
     public List<RARC_ShipSaveData> saveDataSet3_List = new List<RARC_ShipSaveData>();
+
+
 
     /////////////////////////////////////////////////////////////////
 

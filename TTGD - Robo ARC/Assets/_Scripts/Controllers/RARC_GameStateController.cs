@@ -24,11 +24,13 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("System Ready States")]
     public bool isReady_Launch;
 
+    
     public bool isReady_Navigation;
-    public bool isReady_EventLog;
+    public bool isReady_Explore;
+    public bool isReady_Event;
     public bool isReady_Research;
     public bool isReady_Contruction;
-    public bool isReady_Storage;
+    public bool isReady_Crew;
 
     [Header("Interatablity Cover")]
     public Image blackoutCurtain_Image;
@@ -36,6 +38,7 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("Animators")]
     public Animator blacokoutCurtain_Animator;
     public Animator ship_Animator;
+    public Animator cutScene_Animator;
 
     [Header("Navigation Options")]
     public List<RARC_Planet> navigationPossiblePlanets_List;
@@ -78,35 +81,46 @@ public class RARC_GameStateController : MonoBehaviour
 
     public void System_GenerateNewWeek(bool isFirstWeek)
     {
+        //Temp Bypass Bools
+        isReady_Navigation = true;
+        isReady_Event = true;
+        isReady_Crew = true;
+        isReady_Explore = true;
+        isReady_Research = true;
+        isReady_Contruction = true;
 
-        //Generate Events
+        isReady_Launch = false;
 
-        //Progress Time
 
+
+        //Check For New Save File
         if (isFirstWeek)
         {
             print("Test Code: Welcome New Player!");
 
 
             //Play Cutscene
-
-
+            cutScene_Animator.Play("");
+            ship_Animator.Play("Travel");
+            blacokoutCurtain_Animator.Play("Fade In");
 
 
             //Give First Backstory Event
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(RARC_DatabaseController.Instance.events_DB.event_ANewHope);
 
-
+            //Add All Starting List Events to Play Save File
+            //RARC_DatabaseController.Instance.ship_SaveData.shipPossibleEvents_Travel_List.Add();
         }
         else
         {
+            print("Test Code: Welcome Old Player!");
+
             //Progress Time
             RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
             RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress++;
 
 
-
             //Generate Events
-
 
         }
 
@@ -127,18 +141,9 @@ public class RARC_GameStateController : MonoBehaviour
 
 
 
-                isReady_Navigation = false;
-            }
-            else
-            {
-                isReady_Navigation = true;
+               
             }
         }
-        else
-        {
-            isReady_Navigation = false;
-        }
-
 
 
 

@@ -40,7 +40,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject urgentIcon_Contruction;
     public GameObject urgentIcon_EventLog;
     public GameObject urgentIcon_Research;
-    public GameObject urgentIcon_Storage;
+    public GameObject urgentIcon_Crew;
+    public GameObject urgentIcon_Explore;
 
     [Header("Planet Tabs")]
     public RARC_PlanetTabUI navigationPlanet1_Tab;
@@ -368,6 +369,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void RefreshUI_UrgentIcons()
     {
+        
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination == null)
         {
             RARC_GameStateController.Instance.isReady_Navigation = false;
@@ -377,13 +379,48 @@ public class RARC_ButtonController_Game : MonoBehaviour
             RARC_GameStateController.Instance.isReady_Navigation = true;
         }
 
+        
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipEvents_List.Count != 0)
+        {
+            RARC_GameStateController.Instance.isReady_Event = false;
+        }
+        else
+        {
+            RARC_GameStateController.Instance.isReady_Event = true; 
+        }
+      
+
+
+
 
         //Set Urgent Icons as Opposites of the current Ready State
         urgentIcon_Navigation.SetActive(!RARC_GameStateController.Instance.isReady_Navigation);
-        urgentIcon_EventLog.SetActive(!RARC_GameStateController.Instance.isReady_EventLog);
+        urgentIcon_EventLog.SetActive(!RARC_GameStateController.Instance.isReady_Event);
         urgentIcon_Research.SetActive(!RARC_GameStateController.Instance.isReady_Research);
         urgentIcon_Contruction.SetActive(!RARC_GameStateController.Instance.isReady_Contruction);
-        urgentIcon_Storage.SetActive(!RARC_GameStateController.Instance.isReady_Storage);
+        urgentIcon_Crew.SetActive(!RARC_GameStateController.Instance.isReady_Crew);
+        urgentIcon_Explore.SetActive(!RARC_GameStateController.Instance.isReady_Explore);
+
+
+        //Check If launchable
+        if (RARC_GameStateController.Instance.isReady_Navigation 
+            && RARC_GameStateController.Instance.isReady_Event 
+            && RARC_GameStateController.Instance.isReady_Crew
+            && RARC_GameStateController.Instance.isReady_Research 
+            && RARC_GameStateController.Instance.isReady_Contruction
+            && RARC_GameStateController.Instance.isReady_Explore)
+        {
+            RARC_GameStateController.Instance.isReady_Launch = true;
+        }
+
+        if (RARC_GameStateController.Instance.isReady_Launch)
+        {
+            LaunchButton_Main.interactable = true;
+        }
+        else
+        {
+            LaunchButton_Main.interactable = false;
+        }
     }
 
     public void RefreshUI_Resources()

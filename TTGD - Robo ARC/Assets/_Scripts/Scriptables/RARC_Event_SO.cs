@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "Event", menuName = "Scriptables/New Event")]
 public class RARC_Event_SO : ScriptableObject
 {
@@ -12,7 +13,6 @@ public class RARC_Event_SO : ScriptableObject
     [TextArea()]
     public string eventDescription;
 
-    [SerializeField]
     public string eventSpriteName;
 
     //Null is skip

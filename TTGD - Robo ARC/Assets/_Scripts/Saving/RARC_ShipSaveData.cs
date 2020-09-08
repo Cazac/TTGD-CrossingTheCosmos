@@ -28,6 +28,11 @@ public class RARC_ShipSaveData
     public RARC_Planet shipData_NavigationDestination;
     public int shipData_NavigationTripProgress;
 
+    public List<RARC_Event_SO> shipCurrentEvents_List;
+    public List<RARC_Event_SO> shipPossibleEvents_Planets_List;
+    public List<RARC_Event_SO> shipPossibleEvents_Travel_List;
+    public List<RARC_Event_SO> shipPossibleEvents_Crew_List;
+
     ////////////////////////////////
 
     public RARC_Resource shipResource_Scrap;
@@ -67,6 +72,8 @@ public class RARC_ShipSaveData
             resourceType = RARC_Resource.ResourceType.Food,
         };
 
+
+        shipEvents_List = new List<RARC_Event_SO>();
 
         //Create a new crew
 
