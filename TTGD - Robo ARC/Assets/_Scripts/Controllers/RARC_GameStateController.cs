@@ -100,10 +100,8 @@ public class RARC_GameStateController : MonoBehaviour
 
 
             //Play Cutscene
-            //cutScene_Animator.Play("");
-            //ship_Animator.Play("Travel");
-            //blacokoutCurtain_Animator.Play("Fade In");
-
+            StartCoroutine(Player_StartCutscene()); 
+ 
 
             //Give First Backstory Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(RARC_DatabaseController.Instance.events_DB.event_ANewHope);
@@ -168,6 +166,17 @@ public class RARC_GameStateController : MonoBehaviour
     }
 
     /////////////////////////////////////////////////////////////////
+
+    public IEnumerator Player_StartCutscene()
+    {
+        cutScene_Animator.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(18.5f);
+
+        cutScene_Animator.gameObject.SetActive(false);
+
+        blacokoutCurtain_Animator.Play("Fade Out");
+    }
 
     public IEnumerator Player_StartWeek()
     {
