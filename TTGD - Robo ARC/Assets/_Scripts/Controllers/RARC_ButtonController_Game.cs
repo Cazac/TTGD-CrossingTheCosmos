@@ -70,6 +70,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
 
 
+
     [Header("Weeks In Space")]
     public TextMeshProUGUI weeksAtSpace_Text;
 
@@ -270,11 +271,14 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void Button_Event()
     {
-        //Open Event Menu
-        EventMenu_Main.SetActive(true);
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        {
+            //Open Event Menu
+            EventMenu_Main.SetActive(true);
 
-        //Load Event
-
+            //Load Event 0
+            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0]);
+        }
     }
 
     public void Button_Event_Close()
@@ -283,6 +287,72 @@ public class RARC_ButtonController_Game : MonoBehaviour
         EventMenu_Main.SetActive(false);
 
         //Load Event
+
+    }
+
+    public void Button_Event_Option(int optionNo)
+    {
+        //Close Event Menu
+        EventMenu_Main.SetActive(false);
+
+        //Remove Event 0
+        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.RemoveAt(0);
+
+        RefreshUI_UrgentIcons();
+    }
+
+    public void Event_LoadEvent(RARC_Event_SO eventSO)
+    {
+        eventTitle_Text.text = eventSO.eventTitle;
+        eventDesc_Text.text = eventSO.eventDescription;
+
+
+        if (eventSO.eventOption1_Choice != "")
+        {
+            eventOption1_GO.SetActive(true);
+            eventOption1_Text.text = eventSO.eventOption1_Choice;
+        }
+        else
+        {
+            eventOption1_GO.SetActive(false);
+        }
+
+
+        if (eventSO.eventOption2_Choice != "")
+        {
+            eventOption2_GO.SetActive(true);
+            eventOption2_Text.text = eventSO.eventOption2_Choice;
+        }
+        else
+        {
+            eventOption2_GO.SetActive(false);
+        }
+
+
+        if (eventSO.eventOption3_Choice != "")
+        {
+            eventOption3_GO.SetActive(true);
+            eventOption3_Text.text = eventSO.eventOption3_Choice;
+        }
+        else
+        {
+            eventOption3_GO.SetActive(false);
+        }
+
+
+ 
+
+
+            // eventIcon_Image
+
+
+            
+            
+            
+
+
+            
+      
 
     }
 
@@ -369,7 +439,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void RefreshUI_UrgentIcons()
     {
-        
+        //Navigation
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination == null)
         {
             RARC_GameStateController.Instance.isReady_Navigation = false;
@@ -379,8 +449,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
             RARC_GameStateController.Instance.isReady_Navigation = true;
         }
 
-        
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipEvents_List.Count != 0)
+        //Events
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
         {
             RARC_GameStateController.Instance.isReady_Event = false;
         }
@@ -388,7 +458,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
         {
             RARC_GameStateController.Instance.isReady_Event = true; 
         }
-      
+
+
 
 
 

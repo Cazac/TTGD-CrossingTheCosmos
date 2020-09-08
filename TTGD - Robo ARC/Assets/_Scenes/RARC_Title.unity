@@ -1481,6 +1481,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304267366}
   m_CullTransparentMesh: 0
+--- !u!1 &343272180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 343272182}
+  - component: {fileID: 343272181}
+  m_Layer: 0
+  m_Name: Event Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &343272181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343272180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7251c56f174850f4e96ab2412181ed1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  event_ANewHope: {fileID: 11400000, guid: 1647c49374f0f93428533a5ae3a27744, type: 2}
+--- !u!4 &343272182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 343272180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1800703682}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &415791792
 GameObject:
   m_ObjectHideFlags: 0
@@ -5568,7 +5612,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 343272182}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5586,6 +5631,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crew_DB: {fileID: 0}
   planet_SO: {fileID: 11400000, guid: 4ac53ff6e8c9c954bb1da8e135e1dacc, type: 2}
+  events_DB: {fileID: 343272181}
   ship_SaveSlot: 0
   ship_SaveData:
     shipInfo_WeeksSurvived: 0
@@ -5610,6 +5656,11 @@ MonoBehaviour:
       planetEvents_List: []
       planetType: 0
     shipData_NavigationTripProgress: 0
+    shipCurrentEvents_List: []
+    buildCurrentEvents_List: []
+    shipPossibleEvents_Planets_List: []
+    shipPossibleEvents_Travel_List: []
+    shipPossibleEvents_Crew_List: []
     shipResource_Scrap:
       resourceName: 
       resourceCount: 0

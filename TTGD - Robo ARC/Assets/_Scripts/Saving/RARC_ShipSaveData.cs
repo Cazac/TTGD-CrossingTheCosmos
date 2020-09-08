@@ -28,7 +28,14 @@ public class RARC_ShipSaveData
     public RARC_Planet shipData_NavigationDestination;
     public int shipData_NavigationTripProgress;
 
+    ////////////////////////////////
+
+
     public List<RARC_Event_SO> shipCurrentEvents_List;
+    public List<RARC_Event_SO> buildCurrentEvents_List;
+
+    ////////////////////////////////
+
     public List<RARC_Event_SO> shipPossibleEvents_Planets_List;
     public List<RARC_Event_SO> shipPossibleEvents_Travel_List;
     public List<RARC_Event_SO> shipPossibleEvents_Crew_List;
@@ -73,7 +80,7 @@ public class RARC_ShipSaveData
         };
 
 
-        shipEvents_List = new List<RARC_Event_SO>();
+        shipCurrentEvents_List = new List<RARC_Event_SO>();
 
         //Create a new crew
 

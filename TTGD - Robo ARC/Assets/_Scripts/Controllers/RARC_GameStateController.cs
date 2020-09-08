@@ -100,9 +100,9 @@ public class RARC_GameStateController : MonoBehaviour
 
 
             //Play Cutscene
-            cutScene_Animator.Play("");
-            ship_Animator.Play("Travel");
-            blacokoutCurtain_Animator.Play("Fade In");
+            //cutScene_Animator.Play("");
+            //ship_Animator.Play("Travel");
+            //blacokoutCurtain_Animator.Play("Fade In");
 
 
             //Give First Backstory Event
