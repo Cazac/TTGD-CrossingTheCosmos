@@ -19,8 +19,8 @@ public class RARC_SpaceTab : MonoBehaviour
     public Animator spaceTop_Animator;
     public Animator spaceBottom_Animator;
 
-    [Header("BLANKVAR")]
-    public RARC_PlanetTabUI planet;
+    [Header("Space Plane")]
+    public RARC_PlanetTabGame spacePlanet_Tab;
 
     /////////////////////////////////////////////////////////////////
 
@@ -79,7 +79,7 @@ public class RARC_SpaceTab : MonoBehaviour
                 break;
         }
 
-        print("Test Code: Make This Work Later");
+        //print("Test Code: Make This Work Later");
 
         spaceTop_Animator.Play("Idle");
     }

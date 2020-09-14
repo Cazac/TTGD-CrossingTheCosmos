@@ -20,8 +20,8 @@ public class RARC_Planet
     public int planetRotation;
 
     //Colors
-    public Color32 primaryColor;
-    public Color32 secondaryColor;
+    public string primaryColor;
+    public string secondaryColor;
 
     //Traveling
     public int planetTravelTime;

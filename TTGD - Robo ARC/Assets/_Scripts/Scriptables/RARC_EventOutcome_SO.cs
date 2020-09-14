@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "Event Outcome", menuName = "Scriptables/New Event Outcome")]
 public class RARC_EventOutcome_SO : ScriptableObject
 {

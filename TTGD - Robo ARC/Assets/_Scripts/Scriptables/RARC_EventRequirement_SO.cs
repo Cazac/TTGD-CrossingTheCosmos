@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 [CreateAssetMenu(fileName = "Event Requirement", menuName = "Scriptables/New Event Requirement")]
 public class RARC_EventRequirement_SO : ScriptableObject
 {

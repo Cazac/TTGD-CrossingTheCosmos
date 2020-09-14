@@ -42,8 +42,8 @@ public class RARC_PlanetTabUI : MonoBehaviour
         planetSprite_Secondary.sprite = GetPlanetSprite_Secondary(planet.planetSprite_Secondary, planet.planetType);
 
         //Color
-        planetSprite_Main.color = planet.primaryColor;
-        planetSprite_Secondary.color = planet.secondaryColor;
+        planetSprite_Main.color = GetPlanetColor(planet.primaryColor);
+        planetSprite_Secondary.color = GetPlanetColor(planet.secondaryColor);
 
         //Name
         if (name_Text != null)
@@ -76,8 +76,8 @@ public class RARC_PlanetTabUI : MonoBehaviour
                 moonSprite1_Main.sprite = GetPlanetSprite_Main(moon1.planetSprite_Main, moon1.planetType);
                 moonSprite1_Secondary.sprite = GetPlanetSprite_Secondary(moon1.planetSprite_Secondary, moon1.planetType);
 
-                moonSprite1_Main.color = moon1.primaryColor;
-                moonSprite1_Secondary.color = moon1.secondaryColor;
+                moonSprite1_Main.color = GetPlanetColor(moon1.primaryColor);
+                moonSprite1_Secondary.color = GetPlanetColor(moon1.secondaryColor);
             }
             else
             {
@@ -100,8 +100,8 @@ public class RARC_PlanetTabUI : MonoBehaviour
                 moonSprite2_Main.sprite = GetPlanetSprite_Main(moon2.planetSprite_Main, moon2.planetType);
                 moonSprite2_Secondary.sprite = GetPlanetSprite_Secondary(moon2.planetSprite_Secondary, moon2.planetType);
 
-                moonSprite2_Main.color = moon2.primaryColor;
-                moonSprite2_Secondary.color = moon2.secondaryColor;
+                moonSprite2_Main.color = GetPlanetColor(moon2.primaryColor);
+                moonSprite2_Secondary.color = GetPlanetColor(moon2.secondaryColor);
             }
             else
             {
@@ -167,6 +167,18 @@ public class RARC_PlanetTabUI : MonoBehaviour
         }
 
         return planetSprite;
+    }
+
+    private Color GetPlanetColor(string planetStringColor)
+    {
+        //Parse String Color
+        Color planetColor;
+        if (!ColorUtility.TryParseHtmlString("#" + planetStringColor, out planetColor))
+        {
+            planetColor = Color.white;
+        }
+
+        return planetColor;
     }
 
     /////////////////////////////////////////////////////////////////

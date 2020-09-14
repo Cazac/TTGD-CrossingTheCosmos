@@ -69,7 +69,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public TextMeshProUGUI eventOption3_Text;
 
 
-
+    [Header("Space / Planet BG")]
+    public RARC_SpaceTab space_Tab;
 
     [Header("Weeks In Space")]
     public TextMeshProUGUI weeksAtSpace_Text;
@@ -92,28 +93,19 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void Button_GameLaunch()
     {
-        //Debug 
-        RARC_GameStateController.Instance.isReady_Launch = true;
+      
 
-        //Check If Launchable
-        if (RARC_GameStateController.Instance.isReady_Launch)
-        {
-            //Finish Week and Animation
-            RARC_GameStateController.Instance.Player_FinishWeek();
+        //Finish Week and Animation
+        RARC_GameStateController.Instance.Player_FinishWeek();
 
-            //Create a New Week
-            RARC_GameStateController.Instance.System_GenerateNewWeek(false);
+        //Create a New Week
+        RARC_GameStateController.Instance.System_GenerateNewWeek(false);
 
-            //Start new Week
-            StartCoroutine(RARC_GameStateController.Instance.Player_StartWeek());
+        //Start new Week
+        StartCoroutine(RARC_GameStateController.Instance.Player_StartWeek());
 
-            //Save Next Weeks Data
-            RARC_DatabaseController.Instance.SaveShipData();
-        }
-        //else
-        {
-            print("Test Code: Oh No! Not Ready!");
-        }
+        //Save Next Weeks Data
+        RARC_DatabaseController.Instance.SaveShipData();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -156,7 +148,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 break;
         }
 
+        //Close Menu
+        Button_GameNavigate_Close();
 
+        //Refresh UI
         RefreshUI_NavigationDestination();
         RefreshUI_UrgentIcons();
     }
@@ -301,16 +296,16 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RefreshUI_UrgentIcons();
     }
 
-    public void Event_LoadEvent(RARC_Event_SO eventSO)
+    public void Event_LoadEvent(RARC_Event eventInfo)
     {
-        eventTitle_Text.text = eventSO.eventTitle;
-        eventDesc_Text.text = eventSO.eventDescription;
+        eventTitle_Text.text = eventInfo.eventTitle;
+        eventDesc_Text.text = eventInfo.eventDescription;
 
 
-        if (eventSO.eventOption1_Choice != "")
+        if (eventInfo.eventOption1_Choice != "")
         {
             eventOption1_GO.SetActive(true);
-            eventOption1_Text.text = eventSO.eventOption1_Choice;
+            eventOption1_Text.text = eventInfo.eventOption1_Choice;
         }
         else
         {
@@ -318,10 +313,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
 
 
-        if (eventSO.eventOption2_Choice != "")
+        if (eventInfo.eventOption2_Choice != "")
         {
             eventOption2_GO.SetActive(true);
-            eventOption2_Text.text = eventSO.eventOption2_Choice;
+            eventOption2_Text.text = eventInfo.eventOption2_Choice;
         }
         else
         {
@@ -329,10 +324,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
 
 
-        if (eventSO.eventOption3_Choice != "")
+        if (eventInfo.eventOption3_Choice != "")
         {
             eventOption3_GO.SetActive(true);
-            eventOption3_Text.text = eventSO.eventOption3_Choice;
+            eventOption3_Text.text = eventInfo.eventOption3_Choice;
         }
         else
         {
@@ -427,8 +422,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
     {
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination == null)
         {
-            navigationDesination_Text.text = "<color=black>No Planet</color>";
-            navigationTravelTime_Text.text = "<color=black>0</color>";
+            navigationDesination_Text.text = "<color=red>No Planet</color>";
+            navigationTravelTime_Text.text = "<color=red>0</color>";
         }
         else
         {

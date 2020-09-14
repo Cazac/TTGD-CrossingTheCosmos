@@ -43,8 +43,8 @@ public class RARC_Planet_SO : ScriptableObject
         newPlanet.planetSprite_Secondary = Random.Range(0, planetSpritesSecondary_Rocky.Count);
 
         //Colors
-        newPlanet.primaryColor = colorPaletteMain_Rocky[Random.Range(0, colorPaletteMain_Rocky.Count)];
-        newPlanet.secondaryColor = colorPaletteSecondary_Rocky[Random.Range(0, colorPaletteSecondary_Rocky.Count)];
+        newPlanet.primaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteMain_Rocky[Random.Range(0, colorPaletteMain_Rocky.Count)]);
+        newPlanet.secondaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteSecondary_Rocky[Random.Range(0, colorPaletteSecondary_Rocky.Count)]);
 
         //Moon Generation
         newPlanet.planetMoonPlanet_List = new List<RARC_Planet>();
@@ -89,8 +89,8 @@ public class RARC_Planet_SO : ScriptableObject
         newMoon.planetSprite_Secondary = Random.Range(0, planetSpritesSecondary_Moon.Count);
 
         //Colors
-        newMoon.primaryColor = colorPaletteMain_Moon[Random.Range(0, colorPaletteMain_Moon.Count)];
-        newMoon.secondaryColor = colorPaletteSecondary_Moon[Random.Range(0, colorPaletteSecondary_Moon.Count)];
+        newMoon.primaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteMain_Moon[Random.Range(0, colorPaletteMain_Moon.Count)]);
+        newMoon.secondaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteSecondary_Moon[Random.Range(0, colorPaletteSecondary_Moon.Count)]);
 
         //Visual Rotation
         //newMoon.planetRotation = Random.Range(0, 360);

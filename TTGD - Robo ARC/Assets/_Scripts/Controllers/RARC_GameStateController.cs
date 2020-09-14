@@ -40,6 +40,8 @@ public class RARC_GameStateController : MonoBehaviour
     public Animator ship_Animator;
     public Animator cutScene_Animator;
 
+    public IEnumerator currentCutscene_IEnum;
+
     [Header("Navigation Options")]
     public List<RARC_Planet> navigationPossiblePlanets_List;
 
@@ -96,22 +98,27 @@ public class RARC_GameStateController : MonoBehaviour
         //Check For New Save File
         if (isFirstWeek)
         {
-            print("Test Code: Welcome New Player!");
+            //print("Test Code: Welcome New Player!");
 
 
-            //Play Cutscene
+            //Play Cutscene As Enum
+            currentCutscene_IEnum = Player_StartCutscene();
             StartCoroutine(Player_StartCutscene()); 
  
 
             //Give First Backstory Event
-            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(RARC_DatabaseController.Instance.events_DB.event_ANewHope);
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_ANewHope));
 
             //Add All Starting List Events to Play Save File
             //RARC_DatabaseController.Instance.ship_SaveData.shipPossibleEvents_Travel_List.Add();
+
+            //Set Planet BG / Space BG
+            RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
+            RARC_ButtonController_Game.Instance.space_Tab.SetSpace_Black();
         }
         else
         {
-            print("Test Code: Welcome Old Player!");
+            //print("Test Code: Welcome Old Player!");
 
             //Progress Time
             RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
@@ -125,23 +132,24 @@ public class RARC_GameStateController : MonoBehaviour
 
 
 
+        RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation = null;
+
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination != null)
         {
             if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress >= RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination.planetTravelTime)
             {
-                //Set BG
+                //Set Location
+                RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation = RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination;
 
                 //Reset Counter
+                RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress = 0;
 
-                //Remove Planet Dersintation
-
-
-
-
-               
+                //Remove Planet Destination
+                RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination = null;
             }
         }
+
 
 
 
@@ -173,18 +181,51 @@ public class RARC_GameStateController : MonoBehaviour
 
         yield return new WaitForSeconds(18.5f);
 
+        if (currentCutscene_IEnum == null)
+        {
+            yield break;
+        }
+
+        print("Test Code: Ending Cutscene");
+
         cutScene_Animator.gameObject.SetActive(false);
 
         blacokoutCurtain_Animator.Play("Fade Out");
+
+        currentCutscene_IEnum = null;
     }
 
     public IEnumerator Player_StartWeek()
     {
-        print("Test Code: Waiting");
+        //Do Visuals Here
 
-        yield return new WaitForSeconds(4f);
 
-        print("Test Code: Ready");
+        yield return new WaitForSeconds(2f);
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation != null)
+        {
+            //Set Planet BG / Space BG
+            RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.SetPlanet(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation);
+            RARC_ButtonController_Game.Instance.space_Tab.PlayPlanetSpace();
+
+
+            //Set Text
+
+
+     
+        }
+        else
+        {
+            //Set Planet BG / Space BG
+            RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
+            RARC_ButtonController_Game.Instance.space_Tab.SetSpace_Black();
+        }
+
+
+
+        yield return new WaitForSeconds(2f);
+
+        //print("Test Code: Ready");
 
         //Add Interatablity
         blackoutCurtain_Image.raycastTarget = false;
@@ -195,11 +236,11 @@ public class RARC_GameStateController : MonoBehaviour
     public void Player_FinishWeek()
     {
         //Remove Interatablity
+        RARC_ButtonController_Game.Instance.LaunchButton_Main.interactable = false;
         blackoutCurtain_Image.raycastTarget = true;
 
         //Play ANimaitons
         ship_Animator.Play("Travel");
-
         blacokoutCurtain_Animator.Play("Fade In");
     }
 
