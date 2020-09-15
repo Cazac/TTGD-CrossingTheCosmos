@@ -54,6 +54,22 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public TextMeshProUGUI resourcesFood_Text;
     public TextMeshProUGUI resourcesScrap_Text;
 
+    /////////////////////////////////////////////////////////////////
+
+    [Header("Explore")]
+    public RARC_PlanetTabUI explorePlanet_Tab;
+    public TextMeshProUGUI explorePlanetName_Text;
+    public TextMeshProUGUI explorationRate_Text;
+    public TextMeshProUGUI explorationRiskFactor_Text;
+    public Image explorationRiskFactor_FillImage;
+
+    public TextMeshProUGUI exploringHumans_Text;
+    public TextMeshProUGUI exploringBots_Text;
+    public Slider exploringHumans_Slider;
+    public Slider exploringBots_Slider;
+
+
+    /////////////////////////////////////////////////////////////////
 
     [Header("Event UI")]
     public TextMeshProUGUI eventTitle_Text;
@@ -154,6 +170,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Refresh UI
         RefreshUI_NavigationDestination();
         RefreshUI_UrgentIcons();
+        RefreshUI_ButtonInteractablity();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -294,6 +311,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.RemoveAt(0);
 
         RefreshUI_UrgentIcons();
+        RefreshUI_ButtonInteractablity();
     }
 
     public void Event_LoadEvent(RARC_Event eventInfo)
@@ -379,28 +397,76 @@ public class RARC_ButtonController_Game : MonoBehaviour
         ExploreMenu_Main.SetActive(true);
 
         //Load Event
+        explorePlanet_Tab.SetPlanet(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation);
+        explorePlanetName_Text.text = RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetName;
 
+        //Risk Factor
+        //explorationRiskFactor_Text
+        //explorationRiskFactor_FillImage
+
+
+        explorationRate_Text.text = "Exploration Rate (0%)";
+        exploringHumans_Slider.maxValue = Mathf.Floor(RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count);
+        exploringBots_Slider.maxValue = Mathf.Floor(RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count);
+
+        exploringHumans_Text.text = "Exploring Crew 0/" + exploringHumans_Slider.maxValue;
+        exploringBots_Text.text = "Exploring Bots 0/" + exploringBots_Slider.maxValue;
+
+        exploringHumans_Slider.value = 0;
+        exploringBots_Slider.value = 0;
+    }
+
+    public void Slider_Event_PeopleBotsChange()
+    {
+        //exploringHumans_Slider;
+        //exploringBots_Slider;
     }
 
     public void Button_Explore_Close()
     {
-        //Open Event Menu
+        //Close Event Menu
         ExploreMenu_Main.SetActive(false);
+    }
 
-        //Load Event
+    public void Button_Explore_StartExploring()
+    {
+        print("Test Code: Explore!");
+        //Get Slider Values
 
+        //Calculate Rate
+
+
+        //Calculate Resources
+
+        //Add Resources
+
+        //Calculate Event
+
+        //Remove Tag
+    }
+
+    public void Button_Explore_AbandonExploring()
+    {
+        //Remove Tag
+        RARC_GameStateController.Instance.isReady_Explore = true;
+
+        RefreshUI_UrgentIcons();
+        RefreshUI_ButtonInteractablity();
+
+        //Close Event Menu
+        ExploreMenu_Main.SetActive(false);
     }
 
     /////////////////////////////////////////////////////////////////
 
     public void Button_Research()
-    {
-        //Open Event Menu
-        ResearchMenu_Main.SetActive(true);
+        {
+            //Open Event Menu
+            ResearchMenu_Main.SetActive(true);
 
-        //Load Event
+            //Load Event
 
-    }
+        }
 
     public void Button_Research_Close()
     {
@@ -494,6 +560,57 @@ public class RARC_ButtonController_Game : MonoBehaviour
         resourcesFuel_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount;
         resourcesFood_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount;
         resourcesScrap_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount;
+    }
+
+    public void RefreshUI_ButtonInteractablity()
+    {
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        {
+            //Interactable
+            EventButton_Main.interactable = true;
+        }
+        else
+        {
+            //Not
+            EventButton_Main.interactable = false;
+        }
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation == null)
+        {
+            //Interactable
+            //NavigationButton_Main.interactable = true;
+        }
+
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress == 0)
+        {
+            //Interactable
+            NavigationButton_Main.interactable = true;
+        }
+        else
+        {
+            //Not
+            NavigationButton_Main.interactable = false;
+        }
+
+
+        if (RARC_GameStateController.Instance.isReady_Explore == false)
+        {
+            //Interactable
+            ExploreButton_Main.interactable = true;
+        }
+        else
+        {
+            //Not
+            ExploreButton_Main.interactable = false;
+        }
+
+
+
+
+        //DEBUG
+        CrewButton_Main.interactable = false;
+        ResearchButton_Main.interactable = false;
     }
 
     /////////////////////////////////////////////////////////////////

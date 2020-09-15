@@ -65,6 +65,14 @@ public class RARC_GameStateController : MonoBehaviour
             System_GenerateNewWeek(false);
         }
 
+        //Refresh All UI On Startup As Well
+        RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
+        RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
+        RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
+        RARC_ButtonController_Game.Instance.RefreshUI_Resources();
+        RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
+
+
         //Load System Data
 
         //set cursor state
@@ -98,19 +106,12 @@ public class RARC_GameStateController : MonoBehaviour
         //Check For New Save File
         if (isFirstWeek)
         {
-            //print("Test Code: Welcome New Player!");
-
-
             //Play Cutscene As Enum
             currentCutscene_IEnum = Player_StartCutscene();
             StartCoroutine(Player_StartCutscene()); 
  
-
             //Give First Backstory Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_ANewHope));
-
-            //Add All Starting List Events to Play Save File
-            //RARC_DatabaseController.Instance.ship_SaveData.shipPossibleEvents_Travel_List.Add();
 
             //Set Planet BG / Space BG
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
@@ -118,20 +119,18 @@ public class RARC_GameStateController : MonoBehaviour
         }
         else
         {
-            //print("Test Code: Welcome Old Player!");
-
             //Progress Time
             RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
             RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress++;
 
 
-            //Generate Events
+            //Generate Possible Events
 
         }
 
 
 
-
+        //Remove Old Current Location
         RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation = null;
 
 
@@ -141,6 +140,9 @@ public class RARC_GameStateController : MonoBehaviour
             {
                 //Set Location
                 RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation = RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination;
+
+                //Set Explore Requirement
+                isReady_Explore = false;
 
                 //Reset Counter
                 RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress = 0;
@@ -156,21 +158,11 @@ public class RARC_GameStateController : MonoBehaviour
 
 
 
-
-
-
-
         //Reset Navigation Planets
         navigationPossiblePlanets_List = new List<RARC_Planet>();
         navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
         navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
         navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
-
-        //Refresh All UI
-        RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
-        RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
-        RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
-        RARC_ButtonController_Game.Instance.RefreshUI_Resources();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -222,6 +214,12 @@ public class RARC_GameStateController : MonoBehaviour
         }
 
 
+        //Refresh All UI
+        RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
+        RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
+        RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
+        RARC_ButtonController_Game.Instance.RefreshUI_Resources();
+        RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
 
         yield return new WaitForSeconds(2f);
 

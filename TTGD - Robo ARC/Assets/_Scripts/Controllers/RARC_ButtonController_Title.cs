@@ -23,6 +23,9 @@ public class RARC_ButtonController_Title : MonoBehaviour
     public GameObject saveSlot3_New;
     public GameObject saveSlot3_Load;
 
+    [Header("Load Slot Stats 1")]
+
+
     [Header("Space")]
     public RARC_SpaceTab titleSpace;
 

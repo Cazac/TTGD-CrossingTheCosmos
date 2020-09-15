@@ -12,6 +12,7 @@ public class RARC_ShipSaveData
     ////////////////////////////////
 
     public List<RARC_Crew> shipData_Crew_List;
+    public List<RARC_Crew> shipData_Bots_List;
 
     ////////////////////////////////
 
@@ -81,8 +82,9 @@ public class RARC_ShipSaveData
         shipCurrentEvents_List = new List<RARC_Event>();
 
         //Create a new crew
-
-
+        shipData_Crew_List = new List<RARC_Crew>();
+        shipData_Bots_List = new List<RARC_Crew>();
+        
 
 
     }
