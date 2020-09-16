@@ -2749,6 +2749,101 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &568729037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 568729039}
+  - component: {fileID: 568729038}
+  m_Layer: 0
+  m_Name: Resource Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &568729038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568729037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2408e787f50674bb43ce609d2189bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrap_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  fuel_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  food_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  medkit_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  repairkit_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  copper_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  platinum_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  silicon_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  carbon_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  sulfur_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  hydrogen_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  nitrogen_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+  helium_Resource:
+    resourceName: 
+    resourceCount: 0
+    resourceType: 0
+--- !u!4 &568729039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 568729037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1800703682}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &596194376
 GameObject:
   m_ObjectHideFlags: 0
@@ -6513,6 +6608,62 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1617815801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1617815802}
+  - component: {fileID: 1617815803}
+  m_Layer: 0
+  m_Name: Icon Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1617815802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617815801}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1800703682}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617815803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617815801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2f8a4d42022a7749ab640d7a6b5502a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScrapIcon: {fileID: 21300000, guid: a7dfbf36eddbe574389c41d71deae339, type: 3}
+  FuelIcon: {fileID: 21300000, guid: 0a4fc3262624cc9418937e7f2ea9e376, type: 3}
+  FoodIcon: {fileID: 21300000, guid: 0a4fc3262624cc9418937e7f2ea9e376, type: 3}
+  MedkitIcon: {fileID: 21300000, guid: 0a4fc3262624cc9418937e7f2ea9e376, type: 3}
+  RepairkitIcon: {fileID: 21300000, guid: 0a4fc3262624cc9418937e7f2ea9e376, type: 3}
+  CopperIcon: {fileID: 21300000, guid: eea189fe4c15a134985cfcfce299138e, type: 3}
+  PlatinumIcon: {fileID: 21300000, guid: c903db51467a06748a215ab313685077, type: 3}
+  SiliconIcon: {fileID: 21300000, guid: d032b7a174a65044d8e01396522cdefe, type: 3}
+  CarbonIcon: {fileID: 21300000, guid: 7d54142c98ba57d45a478543c6c805bd, type: 3}
+  SulfurIcon: {fileID: 21300000, guid: 43b07cdd130b01248a71d87d3024496d, type: 3}
+  HydrogenIcon: {fileID: 21300000, guid: 0a4fc3262624cc9418937e7f2ea9e376, type: 3}
+  NitrogenIcon: {fileID: 21300000, guid: 0a4fc3262624cc9418937e7f2ea9e376, type: 3}
+  HeliumIcon: {fileID: 21300000, guid: 0a4fc3262624cc9418937e7f2ea9e376, type: 3}
 --- !u!1 &1622848122
 GameObject:
   m_ObjectHideFlags: 0
@@ -7353,6 +7504,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 343272182}
+  - {fileID: 568729039}
+  - {fileID: 1617815802}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7371,6 +7524,8 @@ MonoBehaviour:
   crew_DB: {fileID: 0}
   planet_SO: {fileID: 11400000, guid: 4ac53ff6e8c9c954bb1da8e135e1dacc, type: 2}
   events_DB: {fileID: 343272181}
+  resources_DB: {fileID: 568729038}
+  icons_DB: {fileID: 1617815803}
   ship_SaveSlot: 0
   ship_SaveData:
     shipInfo_WeeksSurvived: 0
@@ -7389,7 +7544,14 @@ MonoBehaviour:
       primaryColor: 
       secondaryColor: 
       planetTravelTime: 0
-      planetEvents_List: []
+      planetRiskFactor: 0
+      planetEvent:
+        eventTitle: 
+        eventDescription: 
+        eventSpriteName: 
+        eventOption1_Choice: 
+        eventOption2_Choice: 
+        eventOption3_Choice: 
       planetType: 0
     shipData_NavigationDestination:
       planetName: 
@@ -7400,10 +7562,18 @@ MonoBehaviour:
       primaryColor: 
       secondaryColor: 
       planetTravelTime: 0
-      planetEvents_List: []
+      planetRiskFactor: 0
+      planetEvent:
+        eventTitle: 
+        eventDescription: 
+        eventSpriteName: 
+        eventOption1_Choice: 
+        eventOption2_Choice: 
+        eventOption3_Choice: 
       planetType: 0
     shipData_NavigationTripProgress: 0
     shipCurrentEvents_List: []
+    shipAvaliblePlanetEvents_List: []
     shipResource_Scrap:
       resourceName: 
       resourceCount: 0

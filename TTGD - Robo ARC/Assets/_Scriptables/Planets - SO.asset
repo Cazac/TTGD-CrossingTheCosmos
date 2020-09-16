@@ -35,6 +35,14 @@ MonoBehaviour:
   - {r: 0.9056604, g: 0.49982202, b: 0.49982202, a: 1}
   - {r: 0.9339623, g: 0.65105134, b: 0.5594963, a: 1}
   - {r: 0.9245283, g: 0.78061587, b: 0.78061587, a: 1}
+  minAmountOf_Scrap_Rocky: 0
+  maxAmountOf_Scrap_Rocky: 0
+  chanceOf_Copper_Rocky: 70
+  minAmountOf_Copper_Rocky: 10
+  maxAmountOf_Copper_Rocky: 50
+  chanceOf_Silicon_Rocky: 30
+  minAmountOf_Silicon_Rocky: 10
+  maxAmountOf_Silicon_Rocky: 50
   planetSpritesMain_Moon:
   - {fileID: 21300000, guid: b5adbf4f72de1c648a38b23e6cc0c346, type: 3}
   - {fileID: 21300000, guid: 76853d6a0e7ea774397d6b36fddcf42a, type: 3}

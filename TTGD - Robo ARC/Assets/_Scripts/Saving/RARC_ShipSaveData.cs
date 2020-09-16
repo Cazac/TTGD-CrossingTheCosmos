@@ -34,6 +34,7 @@ public class RARC_ShipSaveData
 
 
     public List<RARC_Event> shipCurrentEvents_List;
+    public List<RARC_Event> shipAvaliblePlanetEvents_List;
     //public List<RARC_Event_SO> buildCurrentEvents_List;
 
     ////////////////////////////////
@@ -79,7 +80,14 @@ public class RARC_ShipSaveData
         };
 
 
+        shipStorage_List = new List<RARC_Resource>();
+
+        //Events
         shipCurrentEvents_List = new List<RARC_Event>();
+        shipAvaliblePlanetEvents_List = new List<RARC_Event>();
+
+
+        //shipAvaliblePlanetEvents_List.Add();
 
         //Create a new crew
         shipData_Crew_List = new List<RARC_Crew>();

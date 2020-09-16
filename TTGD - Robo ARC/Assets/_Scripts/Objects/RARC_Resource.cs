@@ -16,6 +16,19 @@ public class RARC_Resource
         Scrap,
         Fuel,
         Food,
+
+        Medkit,
+        Repairkit,
+
+        Copper,
+        Platinum,
+        Silicon,
+        Carbon,
+        Sulfur,
+
+        Hydrogen,
+        Nitrogen,
+        Helium
     }
 
     /////////////////////////////////////////////////////////////////

@@ -26,10 +26,12 @@ public class RARC_Planet
     //Traveling
     public int planetTravelTime;
 
-    //Lists
-    public List<string> planetEvents_List;
-    public Tuple<float, string> planetResources_List;
+    //Info
+    public int planetRiskFactor;
+    public RARC_Event planetEvent;
+    public List<Tuple<int, int, RARC_Resource>> planetResources_List;
 
+    //Enum
     public PlanetType planetType;
 
     public enum PlanetType

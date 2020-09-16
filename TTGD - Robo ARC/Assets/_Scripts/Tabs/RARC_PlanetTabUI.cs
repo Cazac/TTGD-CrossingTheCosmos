@@ -25,9 +25,9 @@ public class RARC_PlanetTabUI : MonoBehaviour
     [Header("Resources")]
     public TextMeshProUGUI name_Text;
     public TextMeshProUGUI travelTime_Text;
-    public TextMeshProUGUI resources1_Text;
-    public TextMeshProUGUI resources2_Text;
-    public TextMeshProUGUI resources3_Text;
+    public RARC_ResourceTab resources1_Tab;
+    public RARC_ResourceTab resources2_Tab;
+    public RARC_ResourceTab resources3_Tab;
 
     /////////////////////////////////////////////////////////////////
 
@@ -55,12 +55,46 @@ public class RARC_PlanetTabUI : MonoBehaviour
         if (travelTime_Text != null)
         {
             travelTime_Text.text = "Travel Time " + planet.planetTravelTime + " Weeks.";
-
-            resources1_Text.text = "- Iron (0% - 20%)";
-            resources2_Text.text = "- Silicone (50% - 100%)";
-            resources3_Text.text = "- Gems (0% - 20%)";
         }
 
+        //Resources
+        if (resources1_Tab != null)
+        {
+            if (planet.planetResources_List.Count >= 3)
+            {
+                resources1_Tab.gameObject.SetActive(true);
+                resources2_Tab.gameObject.SetActive(true);
+                resources3_Tab.gameObject.SetActive(true);
+
+                resources1_Tab.SetResource_Navigating(planet.planetResources_List[0]);
+                resources2_Tab.SetResource_Navigating(planet.planetResources_List[1]);
+                resources3_Tab.SetResource_Navigating(planet.planetResources_List[2]);
+            }
+            else if (planet.planetResources_List.Count >= 2)
+            {
+                resources1_Tab.gameObject.SetActive(true);
+                resources2_Tab.gameObject.SetActive(true);
+                resources3_Tab.gameObject.SetActive(false);
+
+                resources1_Tab.SetResource_Navigating(planet.planetResources_List[0]);
+                resources2_Tab.SetResource_Navigating(planet.planetResources_List[1]);
+            }
+            else if (planet.planetResources_List.Count >= 1)
+            {
+                resources1_Tab.gameObject.SetActive(true);
+                resources2_Tab.gameObject.SetActive(false);
+                resources3_Tab.gameObject.SetActive(false);
+
+                resources1_Tab.SetResource_Navigating(planet.planetResources_List[0]);
+            }
+            else
+            {
+                resources1_Tab.gameObject.SetActive(false);
+                resources2_Tab.gameObject.SetActive(false);
+                resources3_Tab.gameObject.SetActive(false);
+            }
+        }
+  
         //Moon
         if (moonContainer1_GO != null)
         {

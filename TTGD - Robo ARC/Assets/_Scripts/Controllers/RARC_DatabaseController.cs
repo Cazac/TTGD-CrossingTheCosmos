@@ -20,6 +20,12 @@ public class RARC_DatabaseController : MonoBehaviour
     [Header("Access Container of Event Scriptables")]
     public RARC_EventData events_DB;
 
+    [Header("Access Container of Resources")]
+    public RARC_ResourceData resources_DB;
+
+    [Header("Access Container of Icons")]
+    public RARC_IconData icons_DB;
+
     ////////////////////////////////
 
     [Header("Current Ship Save Data")]
@@ -29,8 +35,6 @@ public class RARC_DatabaseController : MonoBehaviour
     public List<RARC_ShipSaveData> saveDataSet1_List = new List<RARC_ShipSaveData>();
     public List<RARC_ShipSaveData> saveDataSet2_List = new List<RARC_ShipSaveData>();
     public List<RARC_ShipSaveData> saveDataSet3_List = new List<RARC_ShipSaveData>();
-
-
 
     /////////////////////////////////////////////////////////////////
 
@@ -120,6 +124,7 @@ public class RARC_DatabaseController : MonoBehaviour
         //Build Databases
         //item_DB.BuildDatabase();
 
+        resources_DB.BuildDatabase();
 
         //Save Player Data
         //SaveShipData();

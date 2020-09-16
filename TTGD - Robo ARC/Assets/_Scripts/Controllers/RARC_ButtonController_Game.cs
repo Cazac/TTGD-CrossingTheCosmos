@@ -62,11 +62,17 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public TextMeshProUGUI explorationRate_Text;
     public TextMeshProUGUI explorationRiskFactor_Text;
     public Image explorationRiskFactor_FillImage;
+    public Image explorationRate_FillImage;
 
     public TextMeshProUGUI exploringHumans_Text;
     public TextMeshProUGUI exploringBots_Text;
     public Slider exploringHumans_Slider;
     public Slider exploringBots_Slider;
+
+
+    public RARC_ResourceTab exploringResource1_Tab;
+    public RARC_ResourceTab exploringResource2_Tab;
+    public RARC_ResourceTab exploringResource3_Tab;
 
 
     /////////////////////////////////////////////////////////////////
@@ -401,25 +407,78 @@ public class RARC_ButtonController_Game : MonoBehaviour
         explorePlanetName_Text.text = RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetName;
 
         //Risk Factor
-        //explorationRiskFactor_Text
-        //explorationRiskFactor_FillImage
+        explorationRiskFactor_Text.text = "Expedition Risk: " + RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetRiskFactor;
+        explorationRiskFactor_FillImage.fillAmount = (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetRiskFactor * 0.1f);
 
+        
+       
 
         explorationRate_Text.text = "Exploration Rate (0%)";
-        exploringHumans_Slider.maxValue = Mathf.Floor(RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count);
-        exploringBots_Slider.maxValue = Mathf.Floor(RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count);
+        exploringHumans_Slider.maxValue = Mathf.Clamp(RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count, 0, 5);
+        exploringBots_Slider.maxValue = Mathf.Clamp(RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count, 0, 5);
 
-        exploringHumans_Text.text = "Exploring Crew 0/" + exploringHumans_Slider.maxValue;
-        exploringBots_Text.text = "Exploring Bots 0/" + exploringBots_Slider.maxValue;
+
+        exploringHumans_Slider.maxValue = 5;
+        exploringBots_Slider.maxValue = 5;
 
         exploringHumans_Slider.value = 0;
         exploringBots_Slider.value = 0;
+
+        Slider_Event_PeopleBotsChange();
     }
 
     public void Slider_Event_PeopleBotsChange()
     {
         //exploringHumans_Slider;
         //exploringBots_Slider;
+
+
+        exploringHumans_Text.text = "Exploring Crew " + exploringHumans_Slider.value  + "/" + exploringHumans_Slider.maxValue;
+        exploringBots_Text.text = "Exploring Bots " + exploringBots_Slider.value + "/" + exploringBots_Slider.maxValue;
+
+        float humanEffectivness = 0.50f;
+        float botEffectivness = 0.25f;
+        float effectiveTotal = Mathf.Clamp((exploringHumans_Slider.value * humanEffectivness) + (exploringBots_Slider.value * botEffectivness), 0, 1);
+
+
+        explorationRate_Text.text = "Exploration Rate (" + (effectiveTotal * 100) + " %)";
+        explorationRate_FillImage.fillAmount = effectiveTotal;
+
+
+        //Resources
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List.Count >= 3)
+        {
+            exploringResource1_Tab.gameObject.SetActive(true);
+            exploringResource2_Tab.gameObject.SetActive(true);
+            exploringResource3_Tab.gameObject.SetActive(true);
+
+            exploringResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal);
+            exploringResource2_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal);
+            exploringResource3_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[2], effectiveTotal);
+        }
+        else if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List.Count >= 2)
+        {
+            exploringResource1_Tab.gameObject.SetActive(true);
+            exploringResource2_Tab.gameObject.SetActive(true);
+            exploringResource3_Tab.gameObject.SetActive(false);
+
+            exploringResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal);
+            exploringResource2_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal);
+        }
+        else if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List.Count >= 1)
+        {
+            exploringResource1_Tab.gameObject.SetActive(true);
+            exploringResource2_Tab.gameObject.SetActive(false);
+            exploringResource3_Tab.gameObject.SetActive(false);
+
+            exploringResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal);
+        }
+        else
+        {
+            exploringResource1_Tab.gameObject.SetActive(false);
+            exploringResource2_Tab.gameObject.SetActive(false);
+            exploringResource3_Tab.gameObject.SetActive(false);
+        }
     }
 
     public void Button_Explore_Close()

@@ -12,17 +12,32 @@ public class RARC_Planet_SO : ScriptableObject
 
     ////////////////////////////////
 
-    [Header("Rocky Planets")]
+    [Header("Rocky Planets - Sprites")]
     public List<Sprite> planetSpritesMain_Rocky;
     public List<Sprite> planetSpritesSecondary_Rocky;
     public List<Color> colorPaletteMain_Rocky;
     public List<Color> colorPaletteSecondary_Rocky;
+
+    [Header("Rocky Planets - Resources")]
+    public int minAmountOf_Scrap_Rocky;
+    public int maxAmountOf_Scrap_Rocky;
+
+    [Range(0, 100)]
+    public int chanceOf_Copper_Rocky;
+    public int minAmountOf_Copper_Rocky;
+    public int maxAmountOf_Copper_Rocky;
+    [Range(0, 100)]
+    public int chanceOf_Silicon_Rocky;
+    public int minAmountOf_Silicon_Rocky;
+    public int maxAmountOf_Silicon_Rocky;
 
     [Header("Moons")]
     public List<Sprite> planetSpritesMain_Moon;
     public List<Sprite> planetSpritesSecondary_Moon;
     public List<Color> colorPaletteMain_Moon;
     public List<Color> colorPaletteSecondary_Moon;
+
+
 
 
 
@@ -54,24 +69,18 @@ public class RARC_Planet_SO : ScriptableObject
             newPlanet.planetMoonPlanet_List.Add(GenerateMoon());
         }
 
-
         //Visual Rotation
         newPlanet.planetRotation = Random.Range(-90, 90);
 
         //Time to reach planet
         newPlanet.planetTravelTime = Random.Range(1, 4);
 
+        //Events / Resources
+        newPlanet.planetEvent = GenerateAvalibleEvent_Rocky();
+        newPlanet.planetResources_List = GenerateResources_Rocky();
 
-        //newPlanet.planetEvents_List = new List<string>();
-        //newPlanet.planetResources_List;
-
-        RARC_Resource newResource = new RARC_Resource
-        {
-            resourceName = "Scrap",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Food
-        };
-
+        //Risk
+        newPlanet.planetRiskFactor = Random.Range(0, 10);
 
         //Return New Planet
         return newPlanet;
@@ -100,18 +109,71 @@ public class RARC_Planet_SO : ScriptableObject
 
     /////////////////////////////////////////////////////////////////
 
-    public List<RARC_Resource> GenerateResources_Rocky()
+    public List<System.Tuple<int, int, RARC_Resource>> GenerateResources_Rocky()
     {
+        //List of Resources For the Planet
+        List<System.Tuple<int, int, RARC_Resource>> resources_List = new List<System.Tuple<int, int, RARC_Resource>>();
 
-        List<RARC_Resource> liwt = new List<RARC_Resource>();
+        //Implement later - ???
+        List<int> Chance_List = new List<int>();
+        Chance_List.Add(30);
+        Chance_List.Add(40);
+        Chance_List.Add(50);
+        Chance_List.Add(60);
+        Chance_List.Add(70);
+        Chance_List.Add(80);
 
-        int chanceOfScrap = Random.Range(0, 100);
 
+        //Scrap
+        int amountOfScrap = Random.Range(0, 100);
+        System.Tuple<int, int, RARC_Resource> scrap_Resource = new System.Tuple<int, int, RARC_Resource>(100, amountOfScrap, RARC_DatabaseController.Instance.resources_DB.scrap_Resource);
+        resources_List.Add(scrap_Resource);
 
-        //int chanceOfScrap = Random.RandomRange();
+        //Copper
+        int chanceOfCopper = Random.Range(0, 100);
+        if (chanceOfCopper <= chanceOf_Copper_Rocky)
+        {
+            //Get Copper
+            int possiblityOfCopper = Chance_List[Random.Range(0, Chance_List.Count)];
+            int amountOfCopper = Random.Range(0, 100);
+            System.Tuple<int, int, RARC_Resource> copper_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfCopper, amountOfCopper, RARC_DatabaseController.Instance.resources_DB.copper_Resource);
+            resources_List.Add(copper_Resource);
+        }
 
+        //Silicon
+        int chanceOfSilicon = Random.Range(0, 100);
+        if (chanceOfSilicon <= chanceOf_Silicon_Rocky)
+        {
+            //Get Silicon
+            int possiblityOfSilicon = Chance_List[Random.Range(0, Chance_List.Count)];
+            int amountOfSilicon = Random.Range(0, 100);
+            System.Tuple<int, int, RARC_Resource> silicon_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfSilicon, amountOfSilicon, RARC_DatabaseController.Instance.resources_DB.silicon_Resource);
+            resources_List.Add(silicon_Resource);
+        }
 
-        return liwt;
+        //Return
+        return resources_List;
+    }
+
+    public RARC_Event GenerateAvalibleEvent_Rocky()
+    {
+        //New Event
+        RARC_Event newEvent = null;
+
+        //Check only if Event is Avaliable
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count != 0)
+        {
+            //Get Chance Of Event
+            int chanceOfEvent = Random.Range(0, 100);
+            if (chanceOfEvent <= 30)
+            {
+                //Random Event
+                newEvent = RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List[Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count)];
+            }
+        }
+
+        //Return
+        return newEvent;
     }
 
     /////////////////////////////////////////////////////////////////
