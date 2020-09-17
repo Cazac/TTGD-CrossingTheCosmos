@@ -69,7 +69,7 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
         RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
         RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
-        RARC_ButtonController_Game.Instance.RefreshUI_Resources();
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
 
 
@@ -218,7 +218,7 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
         RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
         RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
-        RARC_ButtonController_Game.Instance.RefreshUI_Resources();
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
 
         yield return new WaitForSeconds(2f);
@@ -252,6 +252,56 @@ public class RARC_GameStateController : MonoBehaviour
 
         }
 
+
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void AquireResources(RARC_Resource resource)
+    {
+        switch (resource.resourceType)
+        {
+            case RARC_Resource.ResourceType.Scrap:
+                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount += resource.resourceCount;
+                break;
+
+            case RARC_Resource.ResourceType.Fuel:
+                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount += resource.resourceCount;
+                break;
+
+            case RARC_Resource.ResourceType.Food:
+                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount += resource.resourceCount;
+                break;
+
+            default:
+                int resourceSlot = 99;
+                int i = 0;
+
+                foreach (RARC_Resource resourceInShip in RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List)
+                {
+                    if (resourceInShip.resourceType == resource.resourceType)
+                    {
+                        resourceSlot = i;
+                    }
+                    i++;
+                }
+
+                if (resourceSlot != 99)
+                {
+                    RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount += resource.resourceCount;
+                }
+                else
+                {
+                    RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Add(resource);
+                }
+                break;
+        }
+
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
+    }
+
+    public void LoseResources(RARC_Resource resource)
+    {
 
     }
 

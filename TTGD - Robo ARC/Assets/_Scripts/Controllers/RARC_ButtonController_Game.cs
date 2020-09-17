@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class RARC_ButtonController_Game : MonoBehaviour
 {
@@ -69,11 +70,18 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public Slider exploringHumans_Slider;
     public Slider exploringBots_Slider;
 
+    public Button explorePlanet_Button;
+
 
     public RARC_ResourceTab exploringResource1_Tab;
     public RARC_ResourceTab exploringResource2_Tab;
     public RARC_ResourceTab exploringResource3_Tab;
 
+
+
+
+
+    public List<RARC_ResourceTab> storageResourceTabs_List;
 
     /////////////////////////////////////////////////////////////////
 
@@ -444,6 +452,14 @@ public class RARC_ButtonController_Game : MonoBehaviour
         explorationRate_Text.text = "Exploration Rate (" + (effectiveTotal * 100) + " %)";
         explorationRate_FillImage.fillAmount = effectiveTotal;
 
+        if (effectiveTotal == 0)
+        {
+            explorePlanet_Button.interactable = false;
+        }
+        else
+        {
+            explorePlanet_Button.interactable = true;
+        }
 
         //Resources
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List.Count >= 3)
@@ -489,19 +505,44 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void Button_Explore_StartExploring()
     {
-        print("Test Code: Explore!");
         //Get Slider Values
+        float humanEffectivness = 0.50f;
+        float botEffectivness = 0.25f;
 
         //Calculate Rate
-
-
-        //Calculate Resources
+        float effectiveTotal = Mathf.Clamp((exploringHumans_Slider.value * humanEffectivness) + (exploringBots_Slider.value * botEffectivness), 0, 1);
+        float effectivenessRate = (effectiveTotal - 1);
 
         //Add Resources
+        foreach (Tuple<int, int, RARC_Resource> tuple in RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List)
+        {
+            //Calculate Bonus 
+            int bonusValue = (int)(tuple.Item2 * effectivenessRate);
+            int value = tuple.Item2 + bonusValue;
+
+            //Set Value
+            tuple.Item3.resourceCount = value;
+            RARC_GameStateController.Instance.AquireResources(tuple.Item3);
+        }
+
+
+
+
 
         //Calculate Event
 
+
+
         //Remove Tag
+        RARC_GameStateController.Instance.isReady_Explore = true;
+
+        //Refresh UI
+        RefreshUI_UrgentIcons();
+        RefreshUI_ResourcesAndStorage();
+        RefreshUI_ButtonInteractablity();
+
+        //Close Event Menu
+        ExploreMenu_Main.SetActive(false);
     }
 
     public void Button_Explore_AbandonExploring()
@@ -509,6 +550,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Remove Tag
         RARC_GameStateController.Instance.isReady_Explore = true;
 
+        //Refresh UI
         RefreshUI_UrgentIcons();
         RefreshUI_ButtonInteractablity();
 
@@ -614,11 +656,22 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
     }
 
-    public void RefreshUI_Resources()
+    public void RefreshUI_ResourcesAndStorage()
     {
         resourcesFuel_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount;
         resourcesFood_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount;
         resourcesScrap_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount;
+
+        foreach (RARC_ResourceTab tab in storageResourceTabs_List)
+        {
+            tab.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count; i++)
+        {
+            storageResourceTabs_List[i].gameObject.SetActive(true);
+            storageResourceTabs_List[i].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[i]);
+        }
     }
 
     public void RefreshUI_ButtonInteractablity()

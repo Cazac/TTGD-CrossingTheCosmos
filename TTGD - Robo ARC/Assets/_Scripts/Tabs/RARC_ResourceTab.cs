@@ -17,6 +17,14 @@ public class RARC_ResourceTab : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
+    public void SetResource_Storage(RARC_Resource resource)
+    {
+        //currentResource = resource;
+
+        name_Text.text = resource.resourceName + " x" + resource.resourceCount;
+        icon_Image.sprite = GetIcon(resource.resourceType);
+    }
+
     public void SetResource_Navigating(Tuple<int, int, RARC_Resource> resourceTup)
     {
         currentResource = resourceTup;
