@@ -39,6 +39,7 @@ public class RARC_GameStateController : MonoBehaviour
     public Animator blacokoutCurtain_Animator;
     public Animator ship_Animator;
     public Animator cutScene_Animator;
+    public Animator gameover_Animator;
 
     public IEnumerator currentCutscene_IEnum;
 
@@ -58,11 +59,11 @@ public class RARC_GameStateController : MonoBehaviour
         //Check if its the first week On load
         if (RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived == 0)
         {
-            System_GenerateNewWeek(true);
+            System_GenerateNewWeek(true, true);
         }
         else
         {
-            System_GenerateNewWeek(false);
+            System_GenerateNewWeek(false, true);
         }
 
         //Refresh All UI On Startup As Well
@@ -89,9 +90,9 @@ public class RARC_GameStateController : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void System_GenerateNewWeek(bool isFirstWeek)
+    public void System_GenerateNewWeek(bool isFirstWeek, bool isFirstLoad)
     {
-        //Temp Bypass Bools
+        //All Bools default to Ready
         isReady_Navigation = true;
         isReady_Event = true;
         isReady_Crew = true;
@@ -99,6 +100,7 @@ public class RARC_GameStateController : MonoBehaviour
         isReady_Research = true;
         isReady_Contruction = true;
 
+        //Execpt Launch
         isReady_Launch = false;
 
 
@@ -117,6 +119,13 @@ public class RARC_GameStateController : MonoBehaviour
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
             RARC_ButtonController_Game.Instance.space_Tab.SetSpace_Black();
         }
+        else if (isFirstLoad)
+        {
+
+            print("Test Code: Load Stuff Here");
+
+
+        }
         else
         {
             //Progress Time
@@ -127,6 +136,7 @@ public class RARC_GameStateController : MonoBehaviour
             //Generate Possible Events
 
         }
+       
 
 
 
@@ -303,6 +313,63 @@ public class RARC_GameStateController : MonoBehaviour
     public void LoseResources(RARC_Resource resource)
     {
 
+    }
+
+    public void System_Gameover(string reason)
+    {
+
+
+        RARC_ButtonController_Game.Instance.gameoverContainer_GO.SetActive(true);
+
+
+        switch (reason)
+        {
+            case "Crew":
+                RARC_ButtonController_Game.Instance.gameoverImage_Crew.SetActive(true);
+                RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(false);
+
+                break;
+
+            case "Hull":
+                RARC_ButtonController_Game.Instance.gameoverImage_Crew.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(true);
+                RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(false);
+
+                break;
+
+            case "Food":
+                RARC_ButtonController_Game.Instance.gameoverImage_Crew.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(true);
+                RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(false);
+
+                break;
+
+            case "Fuel":
+                RARC_ButtonController_Game.Instance.gameoverImage_Crew.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(true);
+
+                break;
+        }
+
+        //Debug
+        RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(true);
+
+
+
+        gameover_Animator.Play("Fade In Gameover");
+ 
+
+
+
+
+
+        print("Test Code: Gameover!");
     }
 
     /////////////////////////////////////////////////////////////////

@@ -10,11 +10,10 @@ public class RARC_Event_SO : ScriptableObject
 
     [Header("Event Info")]
     public string eventTitle;
+    public Sprite eventIcon;
+
     [TextArea()]
     public string eventDescription;
-
-    [Header("Image")]
-    public string eventSpriteName;
 
     //Null is skip
     [Header("Option 1 (Null = No Choice)")]
@@ -35,6 +34,8 @@ public class RARC_Event_SO : ScriptableObject
     public RARC_EventOutcome_SO eventOption3_Outcome;
     public RARC_EventRequirement_SO eventOption3_Requirement;
 
+    [Header("Allow the player to come back")]
+    public bool eventCanComeBackLater;
 
     /////////////////////////////////////////////////////////////////
 }

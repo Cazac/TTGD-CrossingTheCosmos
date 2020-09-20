@@ -1,9 +1,9 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System;
 
 public class RARC_ButtonController_Game : MonoBehaviour
 {
@@ -98,12 +98,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public TextMeshProUGUI eventOption2_Text;
     public TextMeshProUGUI eventOption3_Text;
 
-
     [Header("Space / Planet BG")]
     public RARC_SpaceTab space_Tab;
 
     [Header("Weeks In Space")]
     public TextMeshProUGUI weeksAtSpace_Text;
+
+
+
+    [Header("BLANKVAR")]
+    public GameObject gameoverContainer_GO;
+    public GameObject gameoverImage_Crew;
+    public GameObject gameoverImage_Fuel;
+    public GameObject gameoverImage_Food;
+    public GameObject gameoverImage_Hull;
+
 
 
     [HideInInspector]
@@ -123,13 +132,71 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void Button_GameLaunch()
     {
-      
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount <= 0)
+        {
+            //Create Event
+
+
+    
+
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank));
+            Button_Event();
+
+            return;
+        }
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount <= 0)
+        {
+            //Create Event
+
+        
+
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation));
+            Button_Event();
+
+            return;
+        }
+
+
+
+
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count <= 0)
+        {
+            //Create Event
+
+
+
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone));
+            
+
+            Button_Event();
+
+
+            return;
+        }
+
+
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth <= 0)
+        {
+            //Create Event
+
+
+
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown));
+            Button_Event();
+
+            return;
+        }
+
+
 
         //Finish Week and Animation
         RARC_GameStateController.Instance.Player_FinishWeek();
 
         //Create a New Week
-        RARC_GameStateController.Instance.System_GenerateNewWeek(false);
+        RARC_GameStateController.Instance.System_GenerateNewWeek(false, false);
 
         //Start new Week
         StartCoroutine(RARC_GameStateController.Instance.Player_StartWeek());
@@ -321,9 +388,63 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Close Event Menu
         EventMenu_Main.SetActive(false);
 
+        //Convert to non savable data
+        RARC_Event_SO eventSO = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0].GetEventSO();
+
+        //Find Option Choice
+        switch (optionNo)
+        {
+            case 1:
+
+
+                //Add Next Event If Avalible
+                if (eventSO.eventOption1_Outcome.outcomeNextEvent != null)
+                {
+                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
+                }
+
+                //Apply Event Changes
+                Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType1, eventSO.eventOption1_Outcome.outcomeValue1);
+                Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType2, eventSO.eventOption1_Outcome.outcomeValue2);
+                Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType3, eventSO.eventOption1_Outcome.outcomeValue3);
+
+                break;
+
+            case 2:
+
+                //Add Next Event If Avalible
+                if (eventSO.eventOption2_Outcome.outcomeNextEvent != null)
+                {
+                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
+                }
+
+                //Apply Event Changes
+                Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType1, eventSO.eventOption2_Outcome.outcomeValue1);
+                Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType2, eventSO.eventOption2_Outcome.outcomeValue2);
+                Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType3, eventSO.eventOption2_Outcome.outcomeValue3);
+
+                break;
+
+            case 3:
+
+                //Add Next Event If Avalible
+                if (eventSO.eventOption3_Outcome.outcomeNextEvent != null)
+                {
+                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
+                }
+
+                //Apply Event Changes
+                Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType1, eventSO.eventOption3_Outcome.outcomeValue1);
+                Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType2, eventSO.eventOption3_Outcome.outcomeValue2);
+                Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType3, eventSO.eventOption3_Outcome.outcomeValue3);
+
+                break;
+        }
+
         //Remove Event 0
         RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.RemoveAt(0);
 
+        //Refresh UI
         RefreshUI_UrgentIcons();
         RefreshUI_ButtonInteractablity();
     }
@@ -367,20 +488,36 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
 
 
- 
 
 
-            // eventIcon_Image
+
+        eventIcon_Image.sprite = eventInfo.GetEventSO().eventIcon;
 
 
-            
-            
-            
 
 
-            
-      
 
+
+
+
+
+
+
+    }
+
+    public void Event_ApplyOutcomeReal(RARC_EventOutcome_SO.OutcomeType eventOutcomeType, int optionNo)
+    {
+        //Find Type
+        switch (eventOutcomeType)
+        {
+            case RARC_EventOutcome_SO.OutcomeType.NULL:
+
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.GAMEOVER:
+                RARC_GameStateController.Instance.System_Gameover("death");
+                break;
+        }
     }
 
     /////////////////////////////////////////////////////////////////
@@ -576,6 +713,17 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
         //Load Event
 
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_Gameover_ReturnToTitle()
+    {
+        //Delete Save File
+        RARC_DatabaseController.Instance.DeleteShipData(RARC_DatabaseController.Instance.ship_SaveSlot);
+
+        //Load Scene
+        SceneManager.LoadScene("RARC_Title");
     }
 
     /////////////////////////////////////////////////////////////////

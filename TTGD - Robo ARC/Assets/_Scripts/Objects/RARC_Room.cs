@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RARC_Room : MonoBehaviour
 {
+    ////////////////////////////////
+
     public enum RoomType
     {
         NONE,
@@ -11,6 +13,8 @@ public class RARC_Room : MonoBehaviour
     }
 
     public RoomType currentRoomType;
+
+    public GameObject spawnPoint_CrewBot_GO;
 
     /////////////////////////////////////////////////////////////////
 

@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: A New Hope - E
   m_EditorClassIdentifier: 
   eventTitle: A New Hope
+  eventIcon: {fileID: 21300000, guid: 927670a16e2dd5b4c94c828a0a251115, type: 3}
   eventDescription: Earth is no more... You are the last of the species. You must
     take the SS Prometheus and make it to New Terra for colonization. The journey
     will take 52 weeks though harsh new lands. Good luck captain.
-  eventSpriteName: 
   eventOption1_Choice: No time to waste, boot up the hyper drive bays.
-  eventOption1_Outcome: {fileID: 0}
+  eventOption1_Outcome: {fileID: 11400000, guid: 90d57eb05b13bf148bfdb1b5d63bf84e,
+    type: 2}
   eventOption1_Requirement: {fileID: 0}
   eventOption2_Choice: 
   eventOption2_Outcome: {fileID: 0}
@@ -26,3 +27,4 @@ MonoBehaviour:
   eventOption3_Choice: 
   eventOption3_Outcome: {fileID: 0}
   eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0

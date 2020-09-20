@@ -8,18 +8,18 @@ public class RARC_EventOutcome_SO : ScriptableObject
 {
     ////////////////////////////////
 
-    [Header("Event Outcome 1")]
-    public RARC_Event_SO outcomeNextEvent1;
+    [Header("Additional Event")]
+    public RARC_Event_SO outcomeNextEvent;
+
+    [Header("Value Change - 1")]
     public OutcomeType outcomeType1;
     public int outcomeValue1;
 
-    [Header("Event Outcome 2")]
-    public RARC_Event_SO outcomeNextEvent2;
+    [Header("Value Change - 2")]
     public OutcomeType outcomeType2;
     public int outcomeValue2;
 
-    [Header("Event Outcome 3")]
-    public RARC_Event_SO outcomeNextEvent3;
+    [Header("Value Change - 3")]
     public OutcomeType outcomeType3;
     public int outcomeValue3;
 
@@ -35,6 +35,8 @@ public class RARC_EventOutcome_SO : ScriptableObject
         SCRAP_CHANGE,
         FUEL_CHANGE,
         FOOD_CHANGE,
+
+        GAMEOVER
     }
 
     /////////////////////////////////////////////////////////////////

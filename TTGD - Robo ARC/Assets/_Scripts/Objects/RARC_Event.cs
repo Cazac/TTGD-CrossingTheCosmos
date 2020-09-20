@@ -7,7 +7,6 @@ public class RARC_Event
 {
     public string eventTitle;
     public string eventDescription;
-    public string eventSpriteName;
 
     //Null is skip
     public string eventOption1_Choice;
@@ -28,18 +27,47 @@ public class RARC_Event
 
     public RARC_Event(RARC_Event_SO eventSO)
     {
+        //Basic Info
         eventTitle = eventSO.eventTitle;
         eventDescription = eventSO.eventDescription;
-        eventSpriteName = eventSO.eventSpriteName;
+
+        //Basic Displayed Data
         eventOption1_Choice = eventSO.eventOption1_Choice;
-       // eventOption1_Outcome = eventSO.eventOption1_Outcome;
-        //eventOption1_Requirement = eventSO.eventOption1_Requirement;
         eventOption2_Choice = eventSO.eventOption2_Choice;
-       // eventOption2_Outcome = eventSO.eventOption2_Outcome;
-        //eventOption2_Requirement = eventSO.eventOption2_Requirement;
         eventOption3_Choice = eventSO.eventOption3_Choice;
-        //eventOption3_Outcome = eventSO.eventOption3_Outcome;
-        //eventOption3_Requirement = eventSO.eventOption3_Requirement;
+    }
+
+    public RARC_Event_SO GetEventSO()
+    {
+        RARC_Event_SO eventSO = null;
+
+        switch (eventTitle)
+        {
+            case "The End is Near (Catastrophic Breakdown))":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown;
+                break;
+
+            case "The End is Near (Empty Tank)":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank;
+                break;
+
+            case "The End is Near (Everyone is Gone)":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone;
+                break;
+
+            case "The End is Near (Starvation)":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation;
+                break;
+
+            default:
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_ANewHope;
+                break;
+
+        }
+
+
+
+        return eventSO;
     }
 
     /////////////////////////////////////////////////////////////////

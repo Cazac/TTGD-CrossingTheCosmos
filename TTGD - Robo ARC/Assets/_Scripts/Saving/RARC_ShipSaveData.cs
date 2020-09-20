@@ -33,6 +33,8 @@ public class RARC_ShipSaveData
     ////////////////////////////////
 
 
+    public int shipHullHealth;
+
     public List<RARC_Event> shipCurrentEvents_List;
     public List<RARC_Event> shipAvaliblePlanetEvents_List;
     //public List<RARC_Event_SO> buildCurrentEvents_List;
@@ -61,23 +63,27 @@ public class RARC_ShipSaveData
         shipResource_Scrap = new RARC_Resource
         {
             resourceName = "Scrap",
-            resourceCount = 0,
+            resourceCount = 10,
             resourceType = RARC_Resource.ResourceType.Scrap,
         };
 
         shipResource_Fuel = new RARC_Resource
         {
             resourceName = "Fuel",
-            resourceCount = 0,
+            resourceCount = 5,
             resourceType = RARC_Resource.ResourceType.Fuel,
         };
 
         shipResource_Food = new RARC_Resource
         {
             resourceName = "Food",
-            resourceCount = 0,
+            resourceCount = 50,
             resourceType = RARC_Resource.ResourceType.Food,
         };
+
+
+
+        shipHullHealth = 100;
 
 
         shipStorage_List = new List<RARC_Resource>();
@@ -87,14 +93,16 @@ public class RARC_ShipSaveData
         shipAvaliblePlanetEvents_List = new List<RARC_Event>();
 
 
+
         //shipAvaliblePlanetEvents_List.Add();
 
         //Create a new crew
         shipData_Crew_List = new List<RARC_Crew>();
         shipData_Bots_List = new List<RARC_Crew>();
-        
 
+        RARC_Crew debugCrew = new RARC_Crew();
 
+        shipData_Crew_List.Add(debugCrew);
     }
 
     /////////////////////////////////////////////////////////////////
