@@ -31,15 +31,87 @@ public class RARC_Planet_SO : ScriptableObject
     public int minAmountOf_Silicon_Rocky;
     public int maxAmountOf_Silicon_Rocky;
 
+    ////////////////////////////////
+
+    [Header("Rocky Planets - Sprites")]
+    public List<Sprite> planetSpritesMain_Lava;
+    public List<Sprite> planetSpritesSecondary_Lava;
+    public List<Color> colorPaletteMain_Lava;
+    public List<Color> colorPaletteSecondary_Lava;
+
+
+
+
+    ////////////////////////////////
+
+
+    [Header("Rocky Planets - Sprites")]
+    public List<Sprite> planetSpritesMain_Living;
+    public List<Sprite> planetSpritesSecondary_Living;
+    public List<Color> colorPaletteMain_Living;
+    public List<Color> colorPaletteSecondary_Living;
+
+
+
+    ////////////////////////////////
+
+
+    [Header("Rocky Planets - Sprites")]
+    public List<Sprite> planetSpritesMain_Icy;
+    public List<Sprite> planetSpritesSecondary_Icy;
+    public List<Color> colorPaletteMain_Icy;
+    public List<Color> colorPaletteSecondary_Icy;
+
+
+
+
+    ////////////////////////////////
+
+    [Header("Rocky Planets - Sprites")]
+    public List<Sprite> planetSpritesMain_Gassy;
+    public List<Sprite> planetSpritesSecondary_Gassy;
+    public List<Color> colorPaletteMain_Gassy;
+    public List<Color> colorPaletteSecondary_Gassy;
+
+
+
+    ////////////////////////////////
+
     [Header("Moons")]
     public List<Sprite> planetSpritesMain_Moon;
     public List<Sprite> planetSpritesSecondary_Moon;
     public List<Color> colorPaletteMain_Moon;
     public List<Color> colorPaletteSecondary_Moon;
 
+    /////////////////////////////////////////////////////////////////
+
+    public RARC_Planet GenerateAnyPlanet()
+    {
+        RARC_Planet newPlanet = null;
+        int planetTypeChoice = Random.Range(0,3);
 
 
+        switch (planetTypeChoice)
+        {
+            case 0:
+                newPlanet = GeneratePlanet_Rocky();
+                break;
 
+            case 1:
+                newPlanet = GeneratePlanet_Rocky();
+                break;
+
+            case 2:
+                newPlanet = GeneratePlanet_Rocky();
+                break;
+
+            case 3:
+                newPlanet = GeneratePlanet_Rocky();
+                break;
+        }
+
+        return newPlanet;
+    }
 
     /////////////////////////////////////////////////////////////////
 
@@ -47,7 +119,6 @@ public class RARC_Planet_SO : ScriptableObject
     {
         //Create New Planet
         RARC_Planet newPlanet = new RARC_Planet();
-
         newPlanet.planetType = RARC_Planet.PlanetType.Rocky;
 
         //Name

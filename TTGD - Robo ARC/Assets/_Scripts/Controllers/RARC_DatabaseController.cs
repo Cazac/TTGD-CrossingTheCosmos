@@ -26,12 +26,17 @@ public class RARC_DatabaseController : MonoBehaviour
     [Header("Access Container of Icons")]
     public RARC_IconData icons_DB;
 
+    [Header("Access Container of Music")]
+    public RARC_MusicData music_DB;
+
     ////////////////////////////////
 
     [Header("Current Ship Save Data")]
     public int ship_SaveSlot;
     public RARC_ShipSaveData ship_SaveData;
+    public RARC_PlayerSaveData player_SaveData;
 
+    [Header("All Weeks Save Data Files")]
     public List<RARC_ShipSaveData> saveDataSet1_List = new List<RARC_ShipSaveData>();
     public List<RARC_ShipSaveData> saveDataSet2_List = new List<RARC_ShipSaveData>();
     public List<RARC_ShipSaveData> saveDataSet3_List = new List<RARC_ShipSaveData>();
@@ -50,6 +55,9 @@ public class RARC_DatabaseController : MonoBehaviour
 
             //Call all Build Database Methods
             BuildDatabase();
+
+            //Load Player Settings
+            LoadPlayerData();
         }
         else
         {
@@ -60,7 +68,7 @@ public class RARC_DatabaseController : MonoBehaviour
 
     private void OnDestroy()
     {
-
+        SavePlayerData();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -119,15 +127,43 @@ public class RARC_DatabaseController : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
+    public void SavePlayerData()
+    {
+        string fileName = "Saves/GameSettingsData.ctc";
+
+        //Save the Data into a file
+        RARC_Serializer.Save(fileName, ship_SaveData);
+    }
+
+    public void LoadPlayerData()
+    {
+        try
+        {
+            //Get File 
+            string fileName = "Saves/GameSettingsData.ctc";
+            player_SaveData = RARC_Serializer.Load<RARC_PlayerSaveData>(fileName);
+
+            //Check If Created Yet
+            if (player_SaveData == null)
+            {
+                player_SaveData = new RARC_PlayerSaveData();
+                player_SaveData.CreateNewSave();
+            }
+        }
+        catch (Exception error)
+        {
+            //Error Message
+            Debug.Log("Save System is Broken, Wrong Version? " + error);
+            Application.Quit();
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
     private void BuildDatabase()
     {
         //Build Databases
-        //item_DB.BuildDatabase();
-
         resources_DB.BuildDatabase();
-
-        //Save Player Data
-        //SaveShipData();
     }
 
     /////////////////////////////////////////////////////////////////

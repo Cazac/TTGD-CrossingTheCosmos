@@ -23,8 +23,6 @@ public class RARC_GameStateController : MonoBehaviour
 
     [Header("System Ready States")]
     public bool isReady_Launch;
-
-    
     public bool isReady_Navigation;
     public bool isReady_Explore;
     public bool isReady_Event;

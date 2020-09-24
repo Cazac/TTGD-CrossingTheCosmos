@@ -36,10 +36,13 @@ public class RARC_Planet
 
     public enum PlanetType
     {
-        Moon,
         Rocky,
+        Lava,
+        Living,
+        Icy,
         Gassy,
 
+        Moon,
     }
 
     /////////////////////////////////////////////////////////////////

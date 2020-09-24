@@ -14,6 +14,7 @@ public class RARC_ButtonController_Title : MonoBehaviour
     [Header("Containers")]
     public GameObject mainMenuPanel_GO;
     public GameObject playMenuPanel_GO;
+    public GameObject settingsMenuPanel_GO;
 
     [Header("Save Slots")]
     public GameObject saveSlot1_New;
@@ -51,12 +52,15 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     public void Button_MainSettings()
     {
+        mainMenuPanel_GO.SetActive(false);
+        settingsMenuPanel_GO.SetActive(true);
 
+        RefreshSettingsUI();
     }
 
     public void Button_MainCredits()
     {
-        //Load Credits Scene
+        //Load Scene
         SceneManager.LoadScene("RARC_Credits");
     }
 
@@ -182,6 +186,14 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
+    public void Button_SettingsCancel()
+    {
+        mainMenuPanel_GO.SetActive(true);
+        settingsMenuPanel_GO.SetActive(false);
+    }
+
+    /////////////////////////////////////////////////////////////////
+
     public void RefreshPlayUI()
     {
         //Set New Save file Lists
@@ -226,6 +238,11 @@ public class RARC_ButtonController_Title : MonoBehaviour
             saveSlot3_New.SetActive(true);
             saveSlot3_Load.SetActive(false);
         }
+    }
+
+    public void RefreshSettingsUI()
+    {
+
     }
 
     /////////////////////////////////////////////////////////////////

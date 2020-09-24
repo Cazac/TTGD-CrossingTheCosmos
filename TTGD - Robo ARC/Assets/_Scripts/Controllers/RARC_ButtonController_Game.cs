@@ -135,10 +135,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount <= 0)
         {
             //Create Event
-
-
-    
-
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank));
             Button_Event();
 
@@ -148,9 +144,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount <= 0)
         {
             //Create Event
-
-        
-
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation));
             Button_Event();
 
@@ -158,37 +151,30 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
 
 
-
-
-
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count <= 0)
         {
             //Create Event
-
-
-
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone));
-            
-
             Button_Event();
 
 
             return;
         }
-
 
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth <= 0)
         {
             //Create Event
-
-
-
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown));
             Button_Event();
 
             return;
         }
+
+
+        RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount--;
+        RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount--;
+ 
 
 
 
@@ -252,6 +238,27 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RefreshUI_NavigationDestination();
         RefreshUI_UrgentIcons();
         RefreshUI_ButtonInteractablity();
+    }
+
+    public void Button_Navigate_RefreshOption(int planetNo)
+    {
+        switch (planetNo)
+        {
+            case 1:
+                RARC_GameStateController.Instance.navigationPossiblePlanets_List[0] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
+                navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0]);
+                break;
+
+            case 2:
+                RARC_GameStateController.Instance.navigationPossiblePlanets_List[1] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
+                navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1]);
+                break;
+
+             case 3:
+                RARC_GameStateController.Instance.navigationPossiblePlanets_List[2] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
+                navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2]);
+                break;
+        }
     }
 
     /////////////////////////////////////////////////////////////////
