@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class RARC_ButtonController_Title : MonoBehaviour
 {
@@ -27,6 +29,13 @@ public class RARC_ButtonController_Title : MonoBehaviour
     [Header("Load Slot Stats 1")]
 
 
+    [Header("BLANKVAR")]
+    public Slider settingsMusic_Slider;
+    public Slider settingsSFX_Slider;
+
+    public TextMeshProUGUI settingsMusic_Text;
+    public TextMeshProUGUI settingsSFX_Text;
+
     [Header("Space")]
     public RARC_SpaceTab titleSpace;
 
@@ -36,8 +45,11 @@ public class RARC_ButtonController_Title : MonoBehaviour
     {
         //Set Static Singleton Self Refference
         Instance = this;
+    }
 
-        titleSpace.PlayTravelingSpace();
+    private void Start()
+    {
+        titleSpace.PlayTitleSpace();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -190,6 +202,23 @@ public class RARC_ButtonController_Title : MonoBehaviour
     {
         mainMenuPanel_GO.SetActive(true);
         settingsMenuPanel_GO.SetActive(false);
+
+        //Save Player Data
+        RARC_DatabaseController.Instance.SavePlayerData();
+    }
+
+    public void Slider_Settings_MusicVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume = settingsMusic_Slider.value / 100;
+        settingsMusic_Text.text = settingsMusic_Slider.value + "%";
+        RARC_MusicController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
+    }
+
+    public void Slider_Settings_SFXVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume = settingsSFX_Slider.value / 100;
+        settingsSFX_Text.text = settingsSFX_Slider.value + "%";
+        RARC_SFXController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isSFXMuted);
     }
 
     /////////////////////////////////////////////////////////////////
@@ -242,7 +271,15 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     public void RefreshSettingsUI()
     {
+        //Music
+        settingsMusic_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume * 100;
+        settingsMusic_Text.text = settingsMusic_Slider.value + "%";
+        //muteMusic_Toggle.isOn = RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted;
 
+        //SFX
+        settingsSFX_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume * 100;
+        settingsSFX_Text.text = settingsSFX_Slider.value + "%";
+        //muteSFX_Toggle.isOn = RARC_DatabaseController.Instance.player_SaveData.settings_isSFXMuted;
     }
 
     /////////////////////////////////////////////////////////////////

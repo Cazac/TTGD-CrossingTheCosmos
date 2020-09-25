@@ -182,8 +182,9 @@ public class RARC_SFXController : MonoBehaviour
                 else
                 {
                     //Update Volume By Creating a non-linear exponental increae for the voule as audio drop on a logarithmic Rate (Not using the ideal soultion but a close match)
-                    float logarithmicFalloffAudio = Mathf.Pow((audioTypeSettingsVolume / 100), 2);
-                    audioTab.audioSource.volume = ((audioTab.currentAudio_SO.volume + logarithmicFalloffAudio) / 2);
+                    //float logarithmicFalloffAudio = Mathf.Pow((audioTypeSettingsVolume / 100), 2);
+                    //audioTab.audioSource.volume = ((audioTab.currentAudio_SO.volume + logarithmicFalloffAudio) / 2);
+                    audioTab.audioSource.volume = (audioTab.currentAudio_SO.volume * audioTypeSettingsVolume);
                 }
             }
         }

@@ -23,7 +23,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public Button ExploreButton_Main;
     public Button ResearchButton_Main;
 
-
     [Header("Menu Panels")]
     public GameObject NavigationMenu_Main;
     public GameObject ConstructionMenu_Main;
@@ -31,6 +30,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject EventMenu_Main;
     public GameObject ExploreMenu_Main;
     public GameObject ResearchMenu_Main;
+    public GameObject PauseMenu_Main;
+
+    /////////////////////////////////////////////////////////////////
 
     [Header("Navigation Desination")]
     public TextMeshProUGUI navigationDesination_Text;
@@ -112,6 +114,20 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject gameoverImage_Fuel;
     public GameObject gameoverImage_Food;
     public GameObject gameoverImage_Hull;
+
+
+
+
+    [Header("Pause")]
+    public Slider volumeMusic_Slider;
+    public Slider volumeSFX_Slider;
+
+    public TextMeshProUGUI volumeMusic_Text;
+    public TextMeshProUGUI volumeSFX_Text;
+
+    //public Toggle muteMusic_Toggle;
+    //public Toggle muteSFX_Toggle;
+
 
 
 
@@ -365,6 +381,53 @@ public class RARC_ButtonController_Game : MonoBehaviour
             //set cursor state
             RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_STORAGE;
         }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_Pause()
+    {
+        PauseMenu_Main.SetActive(true);
+
+        //Total
+        //volumeTotal_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_TotalVolume;
+
+        //Music
+        volumeMusic_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume * 100;
+        volumeMusic_Text.text = volumeMusic_Slider.value + "%";
+
+        //SFX
+        volumeSFX_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume * 100;
+        volumeSFX_Text.text = volumeSFX_Slider.value + "%";
+    }
+
+    public void Button_Pause_Resume()
+    {
+        PauseMenu_Main.SetActive(false);
+    }
+
+    public void Button_Pause_Close()
+    {
+        PauseMenu_Main.SetActive(false);
+    }
+
+    public void Button_Pause_Quit()
+    {
+        SceneManager.LoadScene("RARC_Title");  
+    }
+
+    public void Slider_Pause_MusicVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume = volumeMusic_Slider.value / 100;
+        volumeMusic_Text.text = volumeMusic_Slider.value + "%";
+        RARC_MusicController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
+    }
+
+    public void Slider_Pause_SFXVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume = volumeSFX_Slider.value / 100;
+        volumeSFX_Text.text = volumeSFX_Slider.value + "%";
+        RARC_SFXController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isSFXMuted);
     }
 
     /////////////////////////////////////////////////////////////////

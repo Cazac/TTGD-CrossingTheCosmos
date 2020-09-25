@@ -43,8 +43,9 @@ public class RARC_AudioTab : MonoBehaviour
         audioSource.spatialBlend = audioSO.spatialAudioRange;
 
         //Create a non-linear exponental increae for the voule as audio drop on a logarithmic Rate (Not using the ideal soultion but a close match)
-        float logarithmicFalloffAudio = Mathf.Pow((audioTypeSettingsVolume / 100), 2);
-        audioSource.volume = ((currentAudio_SO.volume + logarithmicFalloffAudio) / 2);
+        //float logarithmicFalloffAudio = Mathf.Pow((audioTypeSettingsVolume / 100), 2);
+        //audioSource.volume = ((currentAudio_SO.volume + logarithmicFalloffAudio) / 2);
+        audioSource.volume = (currentAudio_SO.volume * audioTypeSettingsVolume);
 
         //Muted Volume
         if (isMuted)

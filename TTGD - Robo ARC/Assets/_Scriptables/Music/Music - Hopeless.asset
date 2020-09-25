@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music - Hopeless
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 54c047c57736cd54faff74a40a347d00, type: 3}
-  volume: 1
+  volume: 2
   pitch: 1
   pitchRange: 0
   spatialAudioRange: 0
@@ -21,6 +21,6 @@ MonoBehaviour:
   isMusic: 1
   isSFX: 0
   canFadeIn: 1
-  fadeInSpeed: 0.15
+  fadeInSpeed: 0.05
   canFadeOut: 1
-  fadeOutSpeed: 0.15
+  fadeOutSpeed: 0.05

@@ -78,6 +78,21 @@ public class RARC_GameStateController : MonoBehaviour
         currentCursorState = CursorState.NORMAL;
     }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (RARC_ButtonController_Game.Instance.PauseMenu_Main.activeSelf != true)
+            {
+                RARC_ButtonController_Game.Instance.Button_Pause();
+            }
+            else
+            {
+                RARC_ButtonController_Game.Instance.Button_Pause_Close();
+            }
+        }
+    }
+
     private void OnMouseDown()
     {
         if (Input.GetMouseButton(1) && currentCursorState != CursorState.NORMAL)

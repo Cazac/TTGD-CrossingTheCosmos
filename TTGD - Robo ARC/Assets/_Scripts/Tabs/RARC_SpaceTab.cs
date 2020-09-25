@@ -24,8 +24,13 @@ public class RARC_SpaceTab : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void PlayTravelingSpace()
+    public void PlayTitleSpace()
     {
+        SetSpace_Purple();
+
+        return;
+
+
         int randomNo = Random.Range(0,5);
 
         switch (randomNo)
@@ -129,7 +134,6 @@ public class RARC_SpaceTab : MonoBehaviour
         spaceTypePurple_Container.SetActive(false);
         spaceTypeBlue_Container.SetActive(false);
     }
-
 
     /////////////////////////////////////////////////////////////////
 }

@@ -129,14 +129,18 @@ public class RARC_DatabaseController : MonoBehaviour
 
     public void SavePlayerData()
     {
+        print("Test Code: Saving Player");
+
         string fileName = "Saves/GameSettingsData.ctc";
 
         //Save the Data into a file
-        RARC_Serializer.Save(fileName, ship_SaveData);
+        RARC_Serializer.Save(fileName, player_SaveData);
     }
 
     public void LoadPlayerData()
     {
+        print("Test Code: Loading Player");
+
         try
         {
             //Get File 
