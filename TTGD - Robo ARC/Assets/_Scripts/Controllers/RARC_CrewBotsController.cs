@@ -83,7 +83,6 @@ public class RARC_CrewBotsController : MonoBehaviour
 
     }
 
-
     public void SpawnCrewInRoom(RARC_RoomTab roomTab, RARC_Crew newCrewMember)
     {
         Vector3 spawnPoint = roomTab.GetRandomNode(new Vector3(0,0,0)).transform.position;
@@ -96,15 +95,34 @@ public class RARC_CrewBotsController : MonoBehaviour
         newCrewMember_GO.GetComponent<RARC_CrewAgent>().crewCurrentShipFloor = roomTab.currentFloorLevel;
     }
 
+    /////////////////////////////////////////////////////////////////
+
     public GameObject GetWanderingNodePosition(int shipFloorLevel, Vector3 currentMemberPosition)
     {
-
+        //Filter Rooms On Level Then Grab a Room Then Grab a Node In Room
         List<RARC_RoomTab> roomsOnFloorLevel_List = RARC_RoomsController.Instance.GetRoomsOnFloorLevel(shipFloorLevel);
-
         RARC_RoomTab selectedRoom = roomsOnFloorLevel_List[Random.Range(0, roomsOnFloorLevel_List.Count)];
-
         return selectedRoom.GetRandomNode(currentMemberPosition);
     }
+
+    public GameObject GetTravelingPosition(RARC_RoomTab workstationRoomTab, Vector3 currentMemberPosition)
+    {
+        //Filter Rooms On Level Then Grab a Room Then Grab a Node In Room
+        return workstationRoomTab.GetRandomNode(currentMemberPosition);
+    }
+
+    public GameObject GetClosestElevatorPosition(int currentFloor)
+    {
+        //Get Closest Elevator Then Return The Elevator Node
+        return RARC_RoomsController.Instance.GetElevatorCurrentFloorLevel(currentFloor).elevatorNode_GO;
+    }
+
+    public GameObject GetNextElevatorPosition(int currentFloor, int goalFloor)
+    {
+        //Get Closest Elevator Then Return The Elevator Node
+        return RARC_RoomsController.Instance.GetNextElevatorFloorLevel(currentFloor, goalFloor).elevatorNode_GO;
+    }
+
 
     /////////////////////////////////////////////////////////////////
 }

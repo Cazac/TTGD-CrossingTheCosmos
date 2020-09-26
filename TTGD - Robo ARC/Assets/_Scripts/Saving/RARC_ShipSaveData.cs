@@ -105,13 +105,25 @@ public class RARC_ShipSaveData
         RARC_Crew debugCrew3 = new RARC_Crew();
         RARC_Crew debugCrew4 = new RARC_Crew();
         RARC_Crew debugCrew5 = new RARC_Crew();
+        RARC_Crew debugCrew6 = new RARC_Crew();
+        RARC_Crew debugCrew7 = new RARC_Crew();
+        RARC_Crew debugCrew8 = new RARC_Crew();
+        RARC_Crew debugCrew9 = new RARC_Crew();
+        RARC_Crew debugCrew10 = new RARC_Crew();
 
+        //*
         shipData_Crew_List.Add(debugCrew1);
         shipData_Crew_List.Add(debugCrew2);
         shipData_Crew_List.Add(debugCrew3);
         shipData_Crew_List.Add(debugCrew4);
         shipData_Crew_List.Add(debugCrew5);
+        shipData_Crew_List.Add(debugCrew6);
+        shipData_Crew_List.Add(debugCrew7);
+        shipData_Crew_List.Add(debugCrew8);
+        shipData_Crew_List.Add(debugCrew9);
+        //*/
 
+        shipData_Crew_List.Add(debugCrew10);
     }
 
     /////////////////////////////////////////////////////////////////
