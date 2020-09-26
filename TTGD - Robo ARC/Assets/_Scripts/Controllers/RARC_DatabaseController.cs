@@ -129,7 +129,7 @@ public class RARC_DatabaseController : MonoBehaviour
 
     public void SavePlayerData()
     {
-        print("Test Code: Saving Player");
+
 
         string fileName = "Saves/GameSettingsData.ctc";
 
@@ -139,7 +139,7 @@ public class RARC_DatabaseController : MonoBehaviour
 
     public void LoadPlayerData()
     {
-        print("Test Code: Loading Player");
+
 
         try
         {
