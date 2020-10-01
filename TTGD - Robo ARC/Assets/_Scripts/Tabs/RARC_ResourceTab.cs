@@ -75,8 +75,8 @@ public class RARC_ResourceTab : MonoBehaviour
 
         switch (resourceType)
         {
-            case RARC_Resource.ResourceType.Scrap:
-                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapIcon;
+            case RARC_Resource.ResourceType.ScrapMetal:
+                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapMetalIcon;
                 break;
 
             case RARC_Resource.ResourceType.Fuel:
@@ -87,20 +87,9 @@ public class RARC_ResourceTab : MonoBehaviour
                 sprite = RARC_DatabaseController.Instance.icons_DB.FoodIcon;
                 break;
 
-            case RARC_Resource.ResourceType.Medkit:
-                sprite = RARC_DatabaseController.Instance.icons_DB.MedkitIcon;
-                break;
 
-            case RARC_Resource.ResourceType.Repairkit:
-                sprite = RARC_DatabaseController.Instance.icons_DB.RepairkitIcon;
-                break;
-
-            case RARC_Resource.ResourceType.Copper:
-                sprite = RARC_DatabaseController.Instance.icons_DB.CopperIcon;
-                break;
-
-            case RARC_Resource.ResourceType.Platinum:
-                sprite = RARC_DatabaseController.Instance.icons_DB.PlatinumIcon;
+            case RARC_Resource.ResourceType.Titanium:
+                sprite = RARC_DatabaseController.Instance.icons_DB.TitaniumIcon;
                 break;
 
             case RARC_Resource.ResourceType.Silicon:
@@ -111,10 +100,9 @@ public class RARC_ResourceTab : MonoBehaviour
                 sprite = RARC_DatabaseController.Instance.icons_DB.CarbonIcon;
                 break;
 
-            case RARC_Resource.ResourceType.Sulfur:
-                sprite = RARC_DatabaseController.Instance.icons_DB.SulfurIcon;
+            case RARC_Resource.ResourceType.Organics:
+                sprite = RARC_DatabaseController.Instance.icons_DB.OrganicsIcon;
                 break;
-
 
             case RARC_Resource.ResourceType.Hydrogen:
                 sprite = RARC_DatabaseController.Instance.icons_DB.HydrogenIcon;
@@ -124,12 +112,8 @@ public class RARC_ResourceTab : MonoBehaviour
                 sprite = RARC_DatabaseController.Instance.icons_DB.NitrogenIcon;
                 break;
 
-            case RARC_Resource.ResourceType.Helium:
-                sprite = RARC_DatabaseController.Instance.icons_DB.HeliumIcon;
-                break;
-
             default:
-                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapIcon;
+                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapMetalIcon;
                 break;
         }
 

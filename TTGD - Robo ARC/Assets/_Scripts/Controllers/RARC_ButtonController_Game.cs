@@ -13,23 +13,19 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     ////////////////////////////////
 
-
     [Header("Menu Buttons")]
     public Button LaunchButton_Main;
-    public Button NavigationButton_Main;
-    public Button ConstructionButton_Main;
-    public Button CrewButton_Main;
     public Button EventButton_Main;
+    public Button FabricationButton_Main;
+    public Button NavigationButton_Main;
     public Button ExploreButton_Main;
-    public Button ResearchButton_Main;
 
     [Header("Menu Panels")]
-    public GameObject NavigationMenu_Main;
-    public GameObject ConstructionMenu_Main;
-    public GameObject CrewMenu_Main;
     public GameObject EventMenu_Main;
+    public GameObject FabricationMenu_Main;
+    public GameObject NavigationMenu_Main;
     public GameObject ExploreMenu_Main;
-    public GameObject ResearchMenu_Main;
+    public GameObject ConstructionMenu_Main;
     public GameObject PauseMenu_Main;
 
     /////////////////////////////////////////////////////////////////
@@ -117,6 +113,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
 
 
+    [Header("BLANKVAR")]
+    public TextMeshProUGUI launchFuelNeeded_Text;
+    public TextMeshProUGUI launchFoodNeeded_Text;
 
     [Header("Pause")]
     public Slider volumeMusic_Slider;
@@ -134,6 +133,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
     [HideInInspector]
     public GameObject currentSelectedRoom;
 
+
+    public RARC_RoomTab currentConstructionRoom;
+
     /////////////////////////////////////////////////////////////////
 
     private void Awake()
@@ -148,12 +150,15 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void Button_GameLaunch()
     {
+        //Remove Resources
+        RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount -= RARC_GameStateController.Instance.fuelRequired;
+        RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount -= RARC_GameStateController.Instance.foodRequired;
+
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount <= 0)
         {
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank));
             Button_Event();
-
             return;
         }
 
@@ -162,37 +167,24 @@ public class RARC_ButtonController_Game : MonoBehaviour
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation));
             Button_Event();
-
             return;
         }
-
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count <= 0)
         {
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone));
             Button_Event();
-
-
             return;
         }
-
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth <= 0)
         {
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown));
             Button_Event();
-
             return;
         }
-
-
-        RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount--;
-        RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount--;
- 
-
-
 
         //Finish Week and Animation
         RARC_GameStateController.Instance.Player_FinishWeek();
@@ -279,10 +271,119 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void Button_Game_Build()
+    /*
+public void Button_Game_Build()
+{
+    //Open Build Menu
+    ConstructionMenu_Main.SetActive(true);
+}
+
+public void Button_Game_Build_Close()
+{
+    //Close Build Menu
+    ConstructionMenu_Main.SetActive(false);
+
+    //current selected room is none
+    currentSelectedRoom = null;
+}
+
+public void Button_Game_Build_Research()
+{
+    //Close Build Menu
+    ConstructionMenu_Main.SetActive(false);
+
+    if (currentSelectedRoom != null)
+    {
+        currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.RESEARCH;
+    }
+    else
+    {
+        //set cursor state
+        RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_RESEARCH;
+    }
+}
+
+public void Button_Game_Build_Medbay()
+{
+    //Close Build Menu
+    ConstructionMenu_Main.SetActive(false);
+
+    //set cursor state
+    RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_MEDICAL;
+}
+
+public void Button_Game_Build_Food()
+{
+    //Close Build Menu
+    ConstructionMenu_Main.SetActive(false);
+
+    if (currentSelectedRoom != null)
+    {
+        currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.FOOD;
+    }
+    else
+    {
+        //set cursor state
+        RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_FOOD;
+    }
+}
+
+public void Button_Game_Build_Recreation()
+{
+    //Close Build Menu
+    ConstructionMenu_Main.SetActive(false);
+
+    if (currentSelectedRoom != null)
+    {
+        currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.RECREATION;
+    }
+    else
+    {
+        //set cursor state
+        RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_RECREATION;
+    }
+}
+
+public void Button_Game_Build_Factory()
+{
+    //Close Build Menu
+    ConstructionMenu_Main.SetActive(false);
+
+    if (currentSelectedRoom != null)
+    {
+        currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.FACTORY;
+    }
+    else
+    {
+        //set cursor state
+        RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_FACTORY;
+    }
+}
+
+public void Button_Game_Build_Storage()
+{
+    //Close Build Menu
+    ConstructionMenu_Main.SetActive(false);
+
+    if (currentSelectedRoom != null)
+    {
+        currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.STORAGE;
+    }
+    else
+    {
+        //set cursor state
+        RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_STORAGE;
+    }
+}
+*/
+
+    public void Button_Game_Build(RARC_RoomTab roomToBeBuilt)
     {
         //Open Build Menu
         ConstructionMenu_Main.SetActive(true);
+
+        //Current selected room is passed
+        currentConstructionRoom = roomToBeBuilt;
     }
 
     public void Button_Game_Build_Close()
@@ -290,8 +391,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Close Build Menu
         ConstructionMenu_Main.SetActive(false);
 
-        //current selected room is none
-        currentSelectedRoom = null;
+        //Current selected room is none
+        currentConstructionRoom = null;
     }
 
     public void Button_Game_Build_Research()
@@ -299,15 +400,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Close Build Menu
         ConstructionMenu_Main.SetActive(false);
 
-        if (currentSelectedRoom != null)
-        {
-            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.RESEARCH;
-        }
-        else
-        {
-            //set cursor state
-            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_RESEARCH;
-        }
+        //currentConstructionRoom.SetRoom(RARC_DatabaseController.Instance.room_DB.re);
     }
 
     public void Button_Game_Build_Medbay()
@@ -315,8 +408,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Close Build Menu
         ConstructionMenu_Main.SetActive(false);
 
-        //set cursor state
-        RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_MEDICAL;
+        //Build Room
+        currentConstructionRoom.BuildRoom(RARC_DatabaseController.Instance.room_DB.MedbayRoom_SO);
     }
 
     public void Button_Game_Build_Food()
@@ -382,6 +475,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
             RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_STORAGE;
         }
     }
+
 
     /////////////////////////////////////////////////////////////////
 
@@ -592,23 +686,24 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void Button_Crew()
+    public void Button_Fabrication()
     {
         //Open Event Menu
-        CrewMenu_Main.SetActive(true);
+        FabricationMenu_Main.SetActive(true);
 
         //Load Event
 
     }
 
-    public void Button_Crew_Close()
+    public void Button_Fabrication_Close()
     {
         //Open Event Menu
-        CrewMenu_Main.SetActive(false);
+        FabricationMenu_Main.SetActive(false);
 
         //Load Event
 
     }
+
 
     /////////////////////////////////////////////////////////////////
 
@@ -633,8 +728,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
         exploringBots_Slider.maxValue = Mathf.Clamp(RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count, 0, 5);
 
 
-        exploringHumans_Slider.maxValue = 5;
-        exploringBots_Slider.maxValue = 5;
+        //exploringHumans_Slider.maxValue = 5;
+        //exploringBots_Slider.maxValue = 5;
 
         exploringHumans_Slider.value = 0;
         exploringBots_Slider.value = 0;
@@ -767,26 +862,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void Button_Research()
-        {
-            //Open Event Menu
-            ResearchMenu_Main.SetActive(true);
-
-            //Load Event
-
-        }
-
-    public void Button_Research_Close()
-    {
-        //Open Event Menu
-        ResearchMenu_Main.SetActive(false);
-
-        //Load Event
-
-    }
-
-    /////////////////////////////////////////////////////////////////
-
     public void Button_Gameover_ReturnToTitle()
     {
         //Delete Save File
@@ -885,63 +960,102 @@ public class RARC_ButtonController_Game : MonoBehaviour
             tab.gameObject.SetActive(false);
         }
 
-        for (int i = 0; i < RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count; i++)
+        storageResourceTabs_List[0].gameObject.SetActive(true);
+        storageResourceTabs_List[0].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel);
+        storageResourceTabs_List[1].gameObject.SetActive(true);
+        storageResourceTabs_List[1].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food);
+        storageResourceTabs_List[2].gameObject.SetActive(true);
+        storageResourceTabs_List[2].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap);
+
+
+        for (int i = 3; i < RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count + 3; i++)
         {
             storageResourceTabs_List[i].gameObject.SetActive(true);
-            storageResourceTabs_List[i].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[i]);
+            storageResourceTabs_List[i].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[i - 3]);
         }
     }
 
     public void RefreshUI_ButtonInteractablity()
     {
+        //Event
         if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
         {
             //Interactable
+            EventButton_Main.gameObject.SetActive(true);
             EventButton_Main.interactable = true;
         }
         else
         {
             //Not
+            EventButton_Main.gameObject.SetActive(false);
             EventButton_Main.interactable = false;
         }
 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation == null)
-        {
-            //Interactable
-            //NavigationButton_Main.interactable = true;
-        }
-
-
+        //Navigation
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress == 0)
         {
             //Interactable
+            NavigationButton_Main.gameObject.SetActive(true);
             NavigationButton_Main.interactable = true;
         }
         else
         {
             //Not
+            NavigationButton_Main.gameObject.SetActive(false);
             NavigationButton_Main.interactable = false;
         }
 
-
+        //Explore
         if (RARC_GameStateController.Instance.isReady_Explore == false)
         {
             //Interactable
+            ExploreButton_Main.gameObject.SetActive(true);
             ExploreButton_Main.interactable = true;
         }
         else
         {
             //Not
+            ExploreButton_Main.gameObject.SetActive(false);
             ExploreButton_Main.interactable = false;
         }
 
-
+        //if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation == null)
+        //{
+            //Interactable
+            //NavigationButton_Main.interactable = true;
+        //}
 
 
         //DEBUG
-        CrewButton_Main.interactable = false;
-        ResearchButton_Main.interactable = false;
+        //CrewButton_Main.interactable = false;
+        //ResearchButton_Main.interactable = false;
     }
+
+    public void RefreshUI_LaunchResources()
+    {
+        int requiredFuel = RARC_GameStateController.Instance.fuelRequired;
+        int requiredFood = RARC_GameStateController.Instance.foodRequired;
+
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount < requiredFuel)
+        {
+            launchFuelNeeded_Text.text = "<#FF8000>x" + requiredFuel + "</color>";
+        }
+        else
+        {
+            launchFuelNeeded_Text.text = "<#000000>x" + requiredFuel + "</color>";
+        }
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount < requiredFood)
+        {
+            launchFoodNeeded_Text.text = "<#FF8000>x" + requiredFood + "</color>";
+        }
+        else
+        {
+            launchFoodNeeded_Text.text = "<#000000>x" + requiredFood + "</color>";
+        }
+    }
+
 
     /////////////////////////////////////////////////////////////////
 }

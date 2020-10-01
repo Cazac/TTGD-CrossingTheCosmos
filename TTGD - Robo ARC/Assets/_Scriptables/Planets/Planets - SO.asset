@@ -1,0 +1,216 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 740ceb584900c90458a9caeaa9f7200f, type: 3}
+  m_Name: Planets - SO
+  m_EditorClassIdentifier: 
+  allPlanetNames_List:
+  - Aadarlet
+  - Ablons
+  - Acresmoom
+  - Aephrove
+  - Aevenyosse
+  - Afaseek
+  - Aibrestort
+  - Aishuntess
+  - Aronna
+  - Athrettle
+  - Ayeisus
+  - Azedtiper
+  - Azosie
+  - Bruheet
+  - Cary
+  - Chenpedil
+  - Chitamire
+  - Crukkard
+  - Dleet
+  - Drusnola
+  - Dusk Vine
+  - Eagliphrus
+  - Eaplelpirin
+  - Ecuclender
+  - Eimic
+  - Ekungequin
+  - Ekutax
+  - Enoffuin
+  - Eoclettle
+  - Eofralgosse
+  - Eprenfum
+  - Esaflettle
+  - Eshine
+  - Espeppow
+  - Esrotoom
+  - Eveross
+  - Exeltonna
+  - Frislet
+  - Frurgard
+  - Glallamire
+  - Gruhax
+  - Iaknufmuin
+  - Ichrulgite
+  - Idary
+  - Idradgon
+  - Ifons
+  - Imehettle
+  - Iniacina
+  - Iocricheek
+  - Iofayax
+  - Iscoccove
+  - Isreamkegon
+  - Knorn
+  - Knus
+  - Kreek
+  - Kriknuin
+  - Mamire
+  - Mess
+  - Mettle
+  - Odralda
+  - Oducretta
+  - Ooruba
+  - Oosuhlie
+  - Oplard
+  - Osruhhium
+  - Ouknite
+  - Pequin
+  - Phatrerry
+  - Pilbequin
+  - Plamnosse
+  - Plegon
+  - Poscosse
+  - Pover
+  - Prinque
+  - Rochrine
+  - Scoclard
+  - Shrequin
+  - Snax
+  - Snirin
+  - Spamender
+  - Sreet
+  - Thureet
+  - Tower
+  - Uachetty
+  - Ubrac
+  - Ubraisherry
+  - Uclabbip
+  - Ugosyosse
+  - Ulobgow
+  - Uvlotus
+  - Vludsood
+  - Vovlerry
+  - Yichryme
+  - Yislon
+  - Zard
+  - Zempover
+  - Echonna
+  - EMPTY
+  - EMPTY
+  - EMPTY
+  planetSpritesMain_Rocky:
+  - {fileID: 21300000, guid: 3e15b1d711078da488487362898ad0f8, type: 3}
+  - {fileID: 21300000, guid: b5adbf4f72de1c648a38b23e6cc0c346, type: 3}
+  - {fileID: 21300000, guid: 4c6abff2421240845820e3aa15dc7aa9, type: 3}
+  - {fileID: 21300000, guid: 070c881b4b1b8f44b9611cdaffe12a54, type: 3}
+  planetSpritesSecondary_Rocky:
+  - {fileID: 21300000, guid: 8a1ac324cbbc9dd47bd35c17deb9e797, type: 3}
+  - {fileID: 21300000, guid: 8a1ac324cbbc9dd47bd35c17deb9e797, type: 3}
+  - {fileID: 21300000, guid: c9eca8217e2dbb2478fe478a92f7e0f5, type: 3}
+  colorPaletteMain_Rocky:
+  - {r: 0.8018868, g: 0.71466774, b: 0.5257654, a: 1}
+  - {r: 0.7075472, g: 0.5039605, b: 0.5039605, a: 1}
+  - {r: 0.7830189, g: 0.5535949, b: 0.42475083, a: 1}
+  colorPaletteSecondary_Rocky:
+  - {r: 0.9056604, g: 0.49982202, b: 0.49982202, a: 1}
+  - {r: 0.9339623, g: 0.65105134, b: 0.5594963, a: 1}
+  - {r: 0.9245283, g: 0.78061587, b: 0.78061587, a: 1}
+  BasicResource_Rocky: 1
+  minAmountOf_BasicResource_Rocky: 5
+  maxAmountOf_BasicResource_Rocky: 10
+  CommonResource_Rocky: 5
+  chanceOf_CommonResource_Rocky: 70
+  minAmountOf_CommonResource_Rocky: 5
+  maxAmountOf_CommonResource_Rocky: 10
+  RareResource_Rocky: 4
+  chanceOf_RareResource_Rocky: 30
+  minAmountOf_RareResource_Rocky: 5
+  maxAmountOf_RareResource_Rocky: 10
+  planetSpritesMain_Lava: []
+  planetSpritesSecondary_Lava: []
+  colorPaletteMain_Lava: []
+  colorPaletteSecondary_Lava: []
+  BasicResource_Lava: 0
+  minAmountOf_BasicResource_Lava: 0
+  maxAmountOf_BasicResource_Lava: 0
+  CommonResource_Lava: 0
+  chanceOf_CommonResource_Lava: 0
+  minAmountOf_CommonResource_Lava: 0
+  maxAmountOf_CommonResource_Lava: 0
+  RareResource_Lava: 0
+  chanceOf_RareResource_Lava: 0
+  minAmountOf_RareResource_Lava: 0
+  maxAmountOf_RareResource_Lava: 0
+  planetSpritesMain_Icy: []
+  planetSpritesSecondary_Icy: []
+  colorPaletteMain_Icy: []
+  colorPaletteSecondary_Icy: []
+  BasicResource_Icy: 0
+  minAmountOf_BasicResource_Icy: 0
+  maxAmountOf_BasicResource_Icy: 0
+  CommonResource_Icy: 0
+  chanceOf_CommonResource_Icy: 0
+  minAmountOf_CommonResource_Icy: 0
+  maxAmountOf_CommonResource_Icy: 0
+  RareResource_Icy: 0
+  chanceOf_RareResource_Icy: 0
+  minAmountOf_RareResource_Icy: 0
+  maxAmountOf_RareResource_Icy: 0
+  planetSpritesMain_Gassy: []
+  planetSpritesSecondary_Gassy: []
+  colorPaletteMain_Gassy: []
+  colorPaletteSecondary_Gassy: []
+  BasicResource_Gassy: 0
+  minAmountOf_BasicResource_Gassy: 0
+  maxAmountOf_BasicResource_Gassy: 0
+  CommonResource_Gassy: 0
+  chanceOf_CommonResource_Gassy: 0
+  minAmountOf_CommonResource_Gassy: 0
+  maxAmountOf_CommonResource_Gassy: 0
+  RareResource_Gassy: 0
+  chanceOf_RareResource_Gassy: 0
+  minAmountOf_RareResource_Gassy: 0
+  maxAmountOf_RareResource_Gassy: 0
+  planetSpritesMain_Living: []
+  planetSpritesSecondary_Living: []
+  colorPaletteMain_Living: []
+  colorPaletteSecondary_Living: []
+  BasicResource_Living: 0
+  minAmountOf_BasicResource_Living: 0
+  maxAmountOf_BasicResource_Living: 0
+  CommonResource_Living: 0
+  chanceOf_CommonResource_Living: 0
+  minAmountOf_CommonResource_Living: 0
+  maxAmountOf_CommonResource_Living: 0
+  RareResource_Living: 0
+  chanceOf_RareResource_Living: 0
+  minAmountOf_RareResource_Living: 0
+  maxAmountOf_RareResource_Living: 0
+  planetSpritesMain_Moon:
+  - {fileID: 21300000, guid: b5adbf4f72de1c648a38b23e6cc0c346, type: 3}
+  - {fileID: 21300000, guid: 76853d6a0e7ea774397d6b36fddcf42a, type: 3}
+  - {fileID: 21300000, guid: a820e248ef2896f498b96d447afab5c9, type: 3}
+  - {fileID: 21300000, guid: 4c6abff2421240845820e3aa15dc7aa9, type: 3}
+  planetSpritesSecondary_Moon:
+  - {fileID: 21300000, guid: 8a1ac324cbbc9dd47bd35c17deb9e797, type: 3}
+  colorPaletteMain_Moon:
+  - {r: 0.6603774, g: 0.6603774, b: 0.6603774, a: 1}
+  - {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+  - {r: 0, g: 0, b: 0, a: 1}
+  colorPaletteSecondary_Moon:
+  - {r: 1, g: 1, b: 1, a: 1}

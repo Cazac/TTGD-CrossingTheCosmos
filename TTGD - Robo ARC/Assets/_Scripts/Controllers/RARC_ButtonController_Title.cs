@@ -19,15 +19,9 @@ public class RARC_ButtonController_Title : MonoBehaviour
     public GameObject settingsMenuPanel_GO;
 
     [Header("Save Slots")]
-    public GameObject saveSlot1_New;
-    public GameObject saveSlot1_Load;
-    public GameObject saveSlot2_New;
-    public GameObject saveSlot2_Load;
-    public GameObject saveSlot3_New;
-    public GameObject saveSlot3_Load;
-
-    [Header("Load Slot Stats 1")]
-
+    public RARC_PlayMenuUITab saveSlot1;
+    public RARC_PlayMenuUITab saveSlot2;
+    public RARC_PlayMenuUITab saveSlot3;
 
     [Header("BLANKVAR")]
     public Slider settingsMusic_Slider;
@@ -230,42 +224,34 @@ public class RARC_ButtonController_Title : MonoBehaviour
         RARC_DatabaseController.Instance.saveDataSet2_List = RARC_DatabaseController.Instance.FindGameData(2);
         RARC_DatabaseController.Instance.saveDataSet3_List = RARC_DatabaseController.Instance.FindGameData(3);
 
-
-
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet1_List.Count != 0)
         {
-            saveSlot1_New.SetActive(false);
-            saveSlot1_Load.SetActive(true);
+            saveSlot1.LoadPanel(RARC_DatabaseController.Instance.saveDataSet1_List[0]);
         }
         else
         {
-            saveSlot1_New.SetActive(true);
-            saveSlot1_Load.SetActive(false);
+            saveSlot1.NewPanel();
         }
 
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet2_List.Count != 0)
         {
-            saveSlot2_New.SetActive(false);
-            saveSlot2_Load.SetActive(true);
+            saveSlot2.LoadPanel(RARC_DatabaseController.Instance.saveDataSet2_List[0]);
         }
         else
         {
-            saveSlot2_New.SetActive(true);
-            saveSlot2_Load.SetActive(false);
+            saveSlot2.NewPanel();
         }
 
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet3_List.Count != 0)
         {
-            saveSlot3_New.SetActive(false);
-            saveSlot3_Load.SetActive(true);
+            saveSlot3.LoadPanel(RARC_DatabaseController.Instance.saveDataSet3_List[0]);
         }
         else
         {
-            saveSlot3_New.SetActive(true);
-            saveSlot3_Load.SetActive(false);
+            saveSlot3.NewPanel();
         }
     }
 

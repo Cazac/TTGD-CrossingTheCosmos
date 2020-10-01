@@ -26,11 +26,9 @@ public class RARC_CrewAgent : MonoBehaviour
     public GameObject crewPositionalGoal_GO;
     public RARC_RoomTab currentWorkingRoom;
     public int crewCurrentShipFloor;
-
-
-
+    
+    [Header("Elevator Info")]
     public bool isGoingInElevator;
-
     public bool isGoingUp;
     public bool isGoingDown;
 
@@ -38,11 +36,15 @@ public class RARC_CrewAgent : MonoBehaviour
 
     [Header("Speeds")]
     public readonly float crewSpeed_Wandering = 0.6f;
-    public readonly float crewSpeed_Traveling = 3f;
+    public readonly float crewSpeed_Traveling = 0.6f;
 
     [Header("Min Time In State")]
     public float currentTimeInState;
     public readonly float minTimeInState_Idle = 3f;
+    public readonly int RandomChanceToChangeState_Idle = 500;
+    public readonly float minTimeInState_Working = 4f;
+    public readonly int RandomChanceToChangeState_Working = 500;
+
 
     ////////////////////////////////
 
@@ -59,12 +61,7 @@ public class RARC_CrewAgent : MonoBehaviour
 
     private void Start()
     {
-        ChangeToState_Idling();
-
-
-
-
-        ChangeToState_Traveling(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)]);
+        ChangeToState_Wandering();
     }
 
     private void Update()
@@ -113,7 +110,7 @@ public class RARC_CrewAgent : MonoBehaviour
         if (currentTimeInState >= minTimeInState_Idle)
         {
             //Check For Random State Change
-            if (Random.Range(0, 600) == 0)
+            if (Random.Range(0, RandomChanceToChangeState_Idle) == 0)
             {
                 //Change To Wandering
                 ChangeToState_Wandering();
@@ -231,12 +228,16 @@ public class RARC_CrewAgent : MonoBehaviour
 
     private void PlayState_Working()
     {
-        //Check For Random State Change
-        if (Random.Range(0, 600) == 0)
+        //Wait For Min Time in State
+        if (currentTimeInState >= minTimeInState_Working)
         {
-            //Change To Wandering
-            ChangeToState_Traveling(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)]);
-            return;
+            //Check For Random State Change
+            if (Random.Range(0, RandomChanceToChangeState_Working) == 0)
+            {
+                //Change To Traveling
+                ChangeToState_Traveling(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)]);
+                return;
+            }
         }
     }
 

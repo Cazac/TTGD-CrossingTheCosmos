@@ -18,62 +18,132 @@ public class RARC_Planet_SO : ScriptableObject
     public List<Color> colorPaletteMain_Rocky;
     public List<Color> colorPaletteSecondary_Rocky;
 
-    [Header("Rocky Planets - Resources")]
-    public int minAmountOf_Scrap_Rocky;
-    public int maxAmountOf_Scrap_Rocky;
+    [Header("Rocky Planets - Basic Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType BasicResource_Rocky;
+    public int minAmountOf_BasicResource_Rocky;
+    public int maxAmountOf_BasicResource_Rocky;
 
+    [Header("Rocky Planets - Common Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType CommonResource_Rocky;
     [Range(0, 100)]
-    public int chanceOf_Copper_Rocky;
-    public int minAmountOf_Copper_Rocky;
-    public int maxAmountOf_Copper_Rocky;
+    public int chanceOf_CommonResource_Rocky;
+    public int minAmountOf_CommonResource_Rocky;
+    public int maxAmountOf_CommonResource_Rocky;
+
+    [Header("Rocky Planets - Rare Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType RareResource_Rocky;
     [Range(0, 100)]
-    public int chanceOf_Silicon_Rocky;
-    public int minAmountOf_Silicon_Rocky;
-    public int maxAmountOf_Silicon_Rocky;
+    public int chanceOf_RareResource_Rocky;
+    public int minAmountOf_RareResource_Rocky;
+    public int maxAmountOf_RareResource_Rocky;
 
     ////////////////////////////////
 
-    [Header("Rocky Planets - Sprites")]
+    [Header("Lava Planets - Sprites")]
     public List<Sprite> planetSpritesMain_Lava;
     public List<Sprite> planetSpritesSecondary_Lava;
     public List<Color> colorPaletteMain_Lava;
     public List<Color> colorPaletteSecondary_Lava;
 
+    [Header("Lava Planets - Basic Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType BasicResource_Lava;
+    public int minAmountOf_BasicResource_Lava;
+    public int maxAmountOf_BasicResource_Lava;
 
+    [Header("Lava Planets - Common Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType CommonResource_Lava;
+    [Range(0, 100)]
+    public int chanceOf_CommonResource_Lava;
+    public int minAmountOf_CommonResource_Lava;
+    public int maxAmountOf_CommonResource_Lava;
 
+    [Header("Lava Planets - Rare Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType RareResource_Lava;
+    [Range(0, 100)]
+    public int chanceOf_RareResource_Lava;
+    public int minAmountOf_RareResource_Lava;
+    public int maxAmountOf_RareResource_Lava;
 
     ////////////////////////////////
 
-
-    [Header("Rocky Planets - Sprites")]
-    public List<Sprite> planetSpritesMain_Living;
-    public List<Sprite> planetSpritesSecondary_Living;
-    public List<Color> colorPaletteMain_Living;
-    public List<Color> colorPaletteSecondary_Living;
-
-
-
-    ////////////////////////////////
-
-
-    [Header("Rocky Planets - Sprites")]
+    [Header("Icy Planets - Sprites")]
     public List<Sprite> planetSpritesMain_Icy;
     public List<Sprite> planetSpritesSecondary_Icy;
     public List<Color> colorPaletteMain_Icy;
     public List<Color> colorPaletteSecondary_Icy;
 
+    [Header("Icy Planets - Basic Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType BasicResource_Icy;
+    public int minAmountOf_BasicResource_Icy;
+    public int maxAmountOf_BasicResource_Icy;
 
+    [Header("Icy Planets - Common Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType CommonResource_Icy;
+    [Range(0, 100)]
+    public int chanceOf_CommonResource_Icy;
+    public int minAmountOf_CommonResource_Icy;
+    public int maxAmountOf_CommonResource_Icy;
 
+    [Header("Icy Planets - Rare Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType RareResource_Icy;
+    [Range(0, 100)]
+    public int chanceOf_RareResource_Icy;
+    public int minAmountOf_RareResource_Icy;
+    public int maxAmountOf_RareResource_Icy;
 
     ////////////////////////////////
 
-    [Header("Rocky Planets - Sprites")]
+    [Header("Gassy Planets - Sprites")]
     public List<Sprite> planetSpritesMain_Gassy;
     public List<Sprite> planetSpritesSecondary_Gassy;
     public List<Color> colorPaletteMain_Gassy;
     public List<Color> colorPaletteSecondary_Gassy;
 
+    [Header("Gassy Planets - Basic Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType BasicResource_Gassy;
+    public int minAmountOf_BasicResource_Gassy;
+    public int maxAmountOf_BasicResource_Gassy;
 
+    [Header("Gassy Planets - Common Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType CommonResource_Gassy;
+    [Range(0, 100)]
+    public int chanceOf_CommonResource_Gassy;
+    public int minAmountOf_CommonResource_Gassy;
+    public int maxAmountOf_CommonResource_Gassy;
+
+    [Header("Gassy Planets - Rare Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType RareResource_Gassy;
+    [Range(0, 100)]
+    public int chanceOf_RareResource_Gassy;
+    public int minAmountOf_RareResource_Gassy;
+    public int maxAmountOf_RareResource_Gassy;
+
+    ////////////////////////////////
+
+    [Header("Living Planets - Sprites")]
+    public List<Sprite> planetSpritesMain_Living;
+    public List<Sprite> planetSpritesSecondary_Living;
+    public List<Color> colorPaletteMain_Living;
+    public List<Color> colorPaletteSecondary_Living;
+
+    [Header("Living Planets - Basic Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType BasicResource_Living;
+    public int minAmountOf_BasicResource_Living;
+    public int maxAmountOf_BasicResource_Living;
+
+    [Header("Living Planets - Common Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType CommonResource_Living;
+    [Range(0, 100)]
+    public int chanceOf_CommonResource_Living;
+    public int minAmountOf_CommonResource_Living;
+    public int maxAmountOf_CommonResource_Living;
+
+    [Header("Living Planets - Rare Resources (NULL ALLOWED)")]
+    public RARC_Resource.ResourceType RareResource_Living;
+    [Range(0, 100)]
+    public int chanceOf_RareResource_Living;
+    public int minAmountOf_RareResource_Living;
+    public int maxAmountOf_RareResource_Living;
 
     ////////////////////////////////
 
@@ -157,6 +227,48 @@ public class RARC_Planet_SO : ScriptableObject
         return newPlanet;
     }
 
+    public RARC_Planet GeneratePlanet_Lava()
+    {
+        //Create New Planet
+        RARC_Planet newPlanet = new RARC_Planet();
+        newPlanet.planetType = RARC_Planet.PlanetType.Lava;
+
+        //Return New Planet
+        return newPlanet;
+    }
+
+    public RARC_Planet GeneratePlanet_Icy()
+    {
+        //Create New Planet
+        RARC_Planet newPlanet = new RARC_Planet();
+        newPlanet.planetType = RARC_Planet.PlanetType.Icy;
+
+        //Return New Planet
+        return newPlanet;
+    }
+
+    public RARC_Planet GeneratePlanet_Gassy()
+    {
+        //Create New Planet
+        RARC_Planet newPlanet = new RARC_Planet();
+        newPlanet.planetType = RARC_Planet.PlanetType.Gassy;
+
+        //Return New Planet
+        return newPlanet;
+    }
+
+    public RARC_Planet GeneratePlanet_Living()
+    {
+        //Create New Planet
+        RARC_Planet newPlanet = new RARC_Planet();
+        newPlanet.planetType = RARC_Planet.PlanetType.Living;
+
+        //Return New Planet
+        return newPlanet;
+    }
+
+    /////////////////////////////////////////////////////////////////
+
     public RARC_Planet GenerateMoon()
     {
         //Create New Planet
@@ -196,35 +308,43 @@ public class RARC_Planet_SO : ScriptableObject
 
 
         //Scrap
-        int amountOfScrap = Random.Range(0, 100);
-        System.Tuple<int, int, RARC_Resource> scrap_Resource = new System.Tuple<int, int, RARC_Resource>(100, amountOfScrap, RARC_DatabaseController.Instance.resources_DB.scrap_Resource);
+        int amountOfScrap = Random.Range(minAmountOf_BasicResource_Rocky, maxAmountOf_BasicResource_Rocky);
+        System.Tuple<int, int, RARC_Resource> scrap_Resource = new System.Tuple<int, int, RARC_Resource>(100, amountOfScrap, RARC_DatabaseController.Instance.resources_DB.GetResource(BasicResource_Rocky));
         resources_List.Add(scrap_Resource);
 
-        //Copper
-        int chanceOfCopper = Random.Range(0, 100);
-        if (chanceOfCopper <= chanceOf_Copper_Rocky)
+        //Common Resource 
+        if (CommonResource_Rocky != RARC_Resource.ResourceType.NULL)
         {
-            //Get Copper
-            int possiblityOfCopper = Chance_List[Random.Range(0, Chance_List.Count)];
-            int amountOfCopper = Random.Range(0, 100);
-            System.Tuple<int, int, RARC_Resource> copper_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfCopper, amountOfCopper, RARC_DatabaseController.Instance.resources_DB.copper_Resource);
-            resources_List.Add(copper_Resource);
+            int chanceOfCommonResource = Random.Range(0, 100);
+            if (chanceOfCommonResource <= chanceOf_CommonResource_Rocky)
+            {
+                //Get Carbon
+                int possiblityOfCommonResource = Chance_List[Random.Range(0, Chance_List.Count)];
+                int amountOfCommonResource = Random.Range(minAmountOf_CommonResource_Rocky, maxAmountOf_CommonResource_Rocky);
+                System.Tuple<int, int, RARC_Resource> Common_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfCommonResource, amountOfCommonResource, RARC_DatabaseController.Instance.resources_DB.GetResource(CommonResource_Rocky));
+                resources_List.Add(Common_Resource);
+            }
         }
 
-        //Silicon
-        int chanceOfSilicon = Random.Range(0, 100);
-        if (chanceOfSilicon <= chanceOf_Silicon_Rocky)
+        //Rare Resource 
+        if (RareResource_Rocky != RARC_Resource.ResourceType.NULL)
         {
-            //Get Silicon
-            int possiblityOfSilicon = Chance_List[Random.Range(0, Chance_List.Count)];
-            int amountOfSilicon = Random.Range(0, 100);
-            System.Tuple<int, int, RARC_Resource> silicon_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfSilicon, amountOfSilicon, RARC_DatabaseController.Instance.resources_DB.silicon_Resource);
-            resources_List.Add(silicon_Resource);
+            int chanceOfRareResource = Random.Range(0, 100);
+            if (chanceOfRareResource <= chanceOf_RareResource_Rocky)
+            {
+                //Get Titanium
+                int possiblityOfRareResource = Chance_List[Random.Range(0, Chance_List.Count)];
+                int amountOfRareResource = Random.Range(minAmountOf_RareResource_Rocky, maxAmountOf_RareResource_Rocky);
+                System.Tuple<int, int, RARC_Resource> Rare_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfRareResource, amountOfRareResource, RARC_DatabaseController.Instance.resources_DB.GetResource(RareResource_Rocky));
+                resources_List.Add(Rare_Resource);
+            }
         }
 
         //Return
         return resources_List;
     }
+
+    /////////////////////////////////////////////////////////////////
 
     public RARC_Event GenerateAvalibleEvent_Rocky()
     {

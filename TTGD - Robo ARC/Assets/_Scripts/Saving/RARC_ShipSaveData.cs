@@ -63,21 +63,21 @@ public class RARC_ShipSaveData
         shipResource_Scrap = new RARC_Resource
         {
             resourceName = "Scrap",
-            resourceCount = 10,
-            resourceType = RARC_Resource.ResourceType.Scrap,
+            resourceCount = 30,
+            resourceType = RARC_Resource.ResourceType.ScrapMetal,
         };
 
         shipResource_Fuel = new RARC_Resource
         {
             resourceName = "Fuel",
-            resourceCount = 5,
+            resourceCount = 50,
             resourceType = RARC_Resource.ResourceType.Fuel,
         };
 
         shipResource_Food = new RARC_Resource
         {
             resourceName = "Food",
-            resourceCount = 50,
+            resourceCount = 80,
             resourceType = RARC_Resource.ResourceType.Food,
         };
 
@@ -94,36 +94,29 @@ public class RARC_ShipSaveData
 
 
 
-        //shipAvaliblePlanetEvents_List.Add();
-
-        //Create a new crew
+        //Create new Lists
         shipData_Crew_List = new List<RARC_Crew>();
         shipData_Bots_List = new List<RARC_Crew>();
 
-        RARC_Crew debugCrew1 = new RARC_Crew();
-        RARC_Crew debugCrew2 = new RARC_Crew();
-        RARC_Crew debugCrew3 = new RARC_Crew();
-        RARC_Crew debugCrew4 = new RARC_Crew();
-        RARC_Crew debugCrew5 = new RARC_Crew();
-        RARC_Crew debugCrew6 = new RARC_Crew();
-        RARC_Crew debugCrew7 = new RARC_Crew();
-        RARC_Crew debugCrew8 = new RARC_Crew();
-        RARC_Crew debugCrew9 = new RARC_Crew();
-        RARC_Crew debugCrew10 = new RARC_Crew();
+        //Loop Spawning New Crew
+        int startingCrewCount = 12;
+        for (int i = 0; i < startingCrewCount; i++)
+        {
+            RARC_Crew newCrewMember = new RARC_Crew();
+            shipData_Crew_List.Add(newCrewMember);
+        }
 
-        //*
-        shipData_Crew_List.Add(debugCrew1);
-        shipData_Crew_List.Add(debugCrew2);
-        shipData_Crew_List.Add(debugCrew3);
-        shipData_Crew_List.Add(debugCrew4);
-        shipData_Crew_List.Add(debugCrew5);
-        shipData_Crew_List.Add(debugCrew6);
-        shipData_Crew_List.Add(debugCrew7);
-        shipData_Crew_List.Add(debugCrew8);
-        shipData_Crew_List.Add(debugCrew9);
-        //*/
+        //Loop Spawning New Bots
+        int startingBotCount = 1;
+        for (int i = 0; i < startingBotCount; i++)
+        {
+            //RARC_Crew newCrewMember = new RARC_Crew();
+            //shipData_Bots_List.Add(newCrewMember);
+        }
 
-        shipData_Crew_List.Add(debugCrew10);
+        //shipAvaliblePlanetEvents_List.Add();
+
+
     }
 
     /////////////////////////////////////////////////////////////////

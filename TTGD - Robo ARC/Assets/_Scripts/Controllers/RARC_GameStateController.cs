@@ -44,6 +44,10 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("Navigation Options")]
     public List<RARC_Planet> navigationPossiblePlanets_List;
 
+    [Header("BLANKVAR")]
+    public readonly int fuelRequired = 5;
+    public readonly int foodRequired = 10;
+
     /////////////////////////////////////////////////////////////////
 
     private void Awake()
@@ -70,6 +74,8 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
+        RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources();
+        
 
 
         //Load System Data
@@ -176,7 +182,15 @@ public class RARC_GameStateController : MonoBehaviour
         }
 
 
+        //Stop Space Animations if 
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation == null)
+        {
 
+        }
+        else
+        {
+
+        }
 
 
 
@@ -215,6 +229,7 @@ public class RARC_GameStateController : MonoBehaviour
         //Do Visuals Here
 
 
+
         yield return new WaitForSeconds(2f);
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation != null)
@@ -222,18 +237,16 @@ public class RARC_GameStateController : MonoBehaviour
             //Set Planet BG / Space BG
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.SetPlanet(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation);
             RARC_ButtonController_Game.Instance.space_Tab.PlayPlanetSpace();
-
-
-            //Set Text
-
-
-     
+            RARC_ButtonController_Game.Instance.space_Tab.PlanetAnimatorSpeeds();
         }
         else
         {
+            print("Test Code: NOPE NOTHING");
+
             //Set Planet BG / Space BG
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
             RARC_ButtonController_Game.Instance.space_Tab.SetSpace_Black();
+            RARC_ButtonController_Game.Instance.space_Tab.EmptySpaceAnimatorSpeeds();
         }
 
 
@@ -284,7 +297,7 @@ public class RARC_GameStateController : MonoBehaviour
     {
         switch (resource.resourceType)
         {
-            case RARC_Resource.ResourceType.Scrap:
+            case RARC_Resource.ResourceType.ScrapMetal:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount += resource.resourceCount;
                 break;
 

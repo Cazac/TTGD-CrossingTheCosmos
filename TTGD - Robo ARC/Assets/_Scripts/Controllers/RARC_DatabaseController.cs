@@ -29,6 +29,9 @@ public class RARC_DatabaseController : MonoBehaviour
     [Header("Access Container of Music")]
     public RARC_MusicData music_DB;
 
+    [Header("Access Container of Music")]
+    public RARC_RoomData room_DB;
+
     ////////////////////////////////
 
     [Header("Current Ship Save Data")]

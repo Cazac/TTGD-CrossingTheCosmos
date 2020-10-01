@@ -22,11 +22,16 @@ public class RARC_SpaceTab : MonoBehaviour
     [Header("Space Plane")]
     public RARC_PlanetTabGame spacePlanet_Tab;
 
+    public readonly float spaceTopAnimatorSpeed = 0.12f;
+    public readonly float spaceBottomAnimatorSpeed = 0.1f;
+
     /////////////////////////////////////////////////////////////////
 
     public void PlayTitleSpace()
     {
         SetSpace_Purple();
+
+ 
 
         return;
 
@@ -86,7 +91,7 @@ public class RARC_SpaceTab : MonoBehaviour
 
         //print("Test Code: Make This Work Later");
 
-        spaceTop_Animator.Play("Idle");
+   
     }
 
     /////////////////////////////////////////////////////////////////
@@ -133,6 +138,26 @@ public class RARC_SpaceTab : MonoBehaviour
         spaceTypeGreen_Container.SetActive(false);
         spaceTypePurple_Container.SetActive(false);
         spaceTypeBlue_Container.SetActive(false);
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void TitleAnimatorSpeeds()
+    {
+        spaceTop_Animator.speed = 1;
+        spaceBottom_Animator.speed = 1;
+    }
+
+    public void EmptySpaceAnimatorSpeeds()
+    {
+        spaceTop_Animator.speed = 1;
+        spaceBottom_Animator.speed = 1;
+    }
+
+    public void PlanetAnimatorSpeeds()
+    {
+        spaceTop_Animator.speed = 1;
+        spaceBottom_Animator.speed = 0;
     }
 
     /////////////////////////////////////////////////////////////////

@@ -5,35 +5,29 @@ using UnityEngine;
 public class RARC_ResourceData : MonoBehaviour
 {
     [Header("Basics")]
-    public RARC_Resource scrap_Resource;
+    public RARC_Resource scrapMetal_Resource;
     public RARC_Resource fuel_Resource;
     public RARC_Resource food_Resource;
 
-    [Header("Crafted")]
-    public RARC_Resource medkit_Resource;
-    public RARC_Resource repairkit_Resource;
-
-    [Header("Metals")]
-    public RARC_Resource copper_Resource;
-    public RARC_Resource platinum_Resource;
+    [Header("Others")]
+    public RARC_Resource titanium_Resource;
     public RARC_Resource silicon_Resource;
     public RARC_Resource carbon_Resource;
-    public RARC_Resource sulfur_Resource;
+    public RARC_Resource organics_Resource;
 
     [Header("Gases")]
     public RARC_Resource hydrogen_Resource;
     public RARC_Resource nitrogen_Resource;
-    public RARC_Resource helium_Resource;
 
     /////////////////////////////////////////////////////////////////
 
     public void BuildDatabase()
     {
-        scrap_Resource = new RARC_Resource
+        scrapMetal_Resource = new RARC_Resource
         {
-            resourceName = "Scrap",
+            resourceName = "Scrap Metal",
             resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Scrap,
+            resourceType = RARC_Resource.ResourceType.ScrapMetal,
         };
 
         fuel_Resource = new RARC_Resource
@@ -51,41 +45,11 @@ public class RARC_ResourceData : MonoBehaviour
         };
 
 
-
-
-
-        medkit_Resource = new RARC_Resource
+        titanium_Resource = new RARC_Resource
         {
-            resourceName = "Medkit",
+            resourceName = "Titanium",
             resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Medkit,
-        };
-
-        repairkit_Resource = new RARC_Resource
-        {
-            resourceName = "Repairkit",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Repairkit,
-        };
-
-
-
-
-
-
-
-        copper_Resource = new RARC_Resource
-        {
-            resourceName = "Copper",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Copper,
-        };
-
-        platinum_Resource = new RARC_Resource
-        {
-            resourceName = "Platinum",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Platinum,
+            resourceType = RARC_Resource.ResourceType.Titanium,
         };
 
         silicon_Resource = new RARC_Resource
@@ -102,14 +66,12 @@ public class RARC_ResourceData : MonoBehaviour
             resourceType = RARC_Resource.ResourceType.Carbon,
         };
 
-        sulfur_Resource = new RARC_Resource
+        organics_Resource = new RARC_Resource
         {
-            resourceName = "Sulfur",
+            resourceName = "Organics",
             resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Sulfur,
+            resourceType = RARC_Resource.ResourceType.Organics,
         };
-
-
 
 
         hydrogen_Resource = new RARC_Resource
@@ -125,14 +87,58 @@ public class RARC_ResourceData : MonoBehaviour
             resourceCount = 0,
             resourceType = RARC_Resource.ResourceType.Nitrogen,
         };
-
-        helium_Resource = new RARC_Resource
-        {
-            resourceName = "Helium",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Helium,
-        };
-        
     }
 
+    public RARC_Resource GetResource(RARC_Resource.ResourceType type)
+    {
+        RARC_Resource resource = null;
+
+        switch (type)
+        {
+            case RARC_Resource.ResourceType.ScrapMetal:
+                resource = scrapMetal_Resource;
+                break;
+
+            case RARC_Resource.ResourceType.Fuel:
+                resource = fuel_Resource;
+                break;
+
+            case RARC_Resource.ResourceType.Food:
+                resource = food_Resource;
+                break;
+
+
+            case RARC_Resource.ResourceType.Titanium:
+                resource = titanium_Resource;
+                break;
+
+            case RARC_Resource.ResourceType.Silicon:
+                resource = silicon_Resource;
+                break;
+
+            case RARC_Resource.ResourceType.Carbon:
+                resource = carbon_Resource;
+                break;
+
+            case RARC_Resource.ResourceType.Organics:
+                resource = organics_Resource;
+                break;
+
+            case RARC_Resource.ResourceType.Hydrogen:
+                resource = hydrogen_Resource;
+                break;
+
+            case RARC_Resource.ResourceType.Nitrogen:
+                resource = nitrogen_Resource;
+                break;
+
+            default:
+                resource = scrapMetal_Resource;
+                break;
+        }
+
+        return resource;
+    }
+
+    /////////////////////////////////////////////////////////////////
 }

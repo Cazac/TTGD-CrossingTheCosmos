@@ -8,13 +8,18 @@ public class RARC_Room : MonoBehaviour
 
     public enum RoomType
     {
+        EMPTY,
+        MEDBAY,
+
+
+
         NONE,
         RESEARCH, MEDICAL, FOOD, RECREATION, FACTORY, STORAGE
     }
 
     public RoomType currentRoomType;
 
-    public GameObject spawnPoint_CrewBot_GO;
+    
 
     /////////////////////////////////////////////////////////////////
 

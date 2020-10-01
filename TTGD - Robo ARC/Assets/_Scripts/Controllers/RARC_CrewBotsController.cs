@@ -36,32 +36,30 @@ public class RARC_CrewBotsController : MonoBehaviour
 
     public void RespawnAllCrewAndBots()
     {
+        //Delete Old Crew
         foreach (Transform child in crew_Container.transform)
         {
             Destroy(child.gameObject);
         }
 
+        //Delete Old Bots
         foreach (Transform child in bot_Container.transform)
         {
             Destroy(child.gameObject);
         }
 
-
-
         //Spawn Crew
         foreach (RARC_Crew child in RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List)
         {
-            SpawnCrewInRoom(RARC_RoomsController.Instance.roomsInShip_List[0], child);
+            SpawnCrewInRoom(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)], child);
         }
 
+        //Spawn Bots
         foreach (RARC_Crew child in RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List)
         {
             //GameObject botMember_GO = Instantiate(bot_Prefab);
         }
     }
-
-
-
 
     /////////////////////////////////////////////////////////////////
 

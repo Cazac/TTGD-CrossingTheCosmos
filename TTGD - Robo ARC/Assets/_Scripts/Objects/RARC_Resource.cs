@@ -13,22 +13,19 @@ public class RARC_Resource
 
     public enum ResourceType
     {
-        Scrap,
+        NULL,
+
+        ScrapMetal,
         Fuel,
         Food,
 
-        Medkit,
-        Repairkit,
-
-        Copper,
-        Platinum,
+        Titanium,
         Silicon,
         Carbon,
-        Sulfur,
+        Organics,
 
         Hydrogen,
-        Nitrogen,
-        Helium
+        Nitrogen
     }
 
     /////////////////////////////////////////////////////////////////
