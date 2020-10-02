@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc10d9e4425beb4194e654fe142636f, type: 3}
   m_Name: Abandoned Ship - Outcome 1
   m_EditorClassIdentifier: 
-  outcomeNextEvent1: {fileID: 0}
-  outcomeType1: 0
-  outcomeValue1: 0
-  outcomeNextEvent2: {fileID: 0}
-  outcomeType2: 4
-  outcomeValue2: 10
-  outcomeNextEvent3: {fileID: 0}
+  outcomeNextEvent: {fileID: 11400000, guid: f9336d2d581e835409b5065ad1c24cf9, type: 2}
+  outcomeType1: 1
+  outcomeValue1: -2
+  outcomeType2: 0
+  outcomeValue2: 0
   outcomeType3: 0
   outcomeValue3: 0

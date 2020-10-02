@@ -13,7 +13,14 @@ MonoBehaviour:
   m_Name: Abandoned Ship - Outcome Event 1
   m_EditorClassIdentifier: 
   eventTitle: 
-  eventDescription: 
+  eventIcon: {fileID: 0}
+  eventDescription: "You send a couple crew on board, maintaining visual contact
+    as they explore. The crew sees no evidence of any survivors but manage to find
+    some useful supplies. However, the ship wasn\u2019t as abandoned as you so believed.
+    This ship was filled with cannibalistic raiders who have lain a trap for unsuspecting
+    spacers. You are not a military ship. You have no weapons. Unfortunately, you
+    must make the difficult decision to cut your losses. You drive away before the
+    raiders have a chance to attack your ship."
   eventOption1_Choice: 
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}
@@ -23,3 +30,4 @@ MonoBehaviour:
   eventOption3_Choice: 
   eventOption3_Outcome: {fileID: 0}
   eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0
