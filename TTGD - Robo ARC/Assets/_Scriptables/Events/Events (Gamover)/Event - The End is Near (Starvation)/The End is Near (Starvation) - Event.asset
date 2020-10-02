@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
-  m_Name: The End is Near (Everyone is Gone) - E
+  m_Name: The End is Near (Starvation) - Event
   m_EditorClassIdentifier: 
-  eventTitle: The End is Near (Everyone is Gone)
-  eventIcon: {fileID: 21300000, guid: de9ca7aa9122682439d82924e3b1a101, type: 3}
-  eventDescription: "This may be the end\u2026 \nWith no crew member left to navigate
-    the ship we are left to drift in open space for eternity. Is there any possible
-    way out of this?"
+  eventTitle: The End is Near (Starvation)
+  eventID: The End is Near (Starvation) - Event
+  eventIcon: {fileID: 21300000, guid: c09b424f91d9974468d9ffbee25974d4, type: 3}
+  eventDescription: "This may be the end\u2026 there is not enough food here to go
+    around for everyone to make it to our destination. Is there any possible way
+    out of this?"
   eventOption1_Choice: Accept your fate.
-  eventOption1_Outcome: {fileID: 11400000, guid: a9f0767b44674434bb5592e7812e6964,
+  eventOption1_Outcome: {fileID: 11400000, guid: 962ad3f722337c94eac9a3e27340698b,
     type: 2}
   eventOption1_Requirement: {fileID: 0}
   eventOption2_Choice: Accept your fate.
-  eventOption2_Outcome: {fileID: 11400000, guid: a9f0767b44674434bb5592e7812e6964,
+  eventOption2_Outcome: {fileID: 11400000, guid: 962ad3f722337c94eac9a3e27340698b,
     type: 2}
   eventOption2_Requirement: {fileID: 0}
   eventOption3_Choice: Accept your fate.
-  eventOption3_Outcome: {fileID: 11400000, guid: a9f0767b44674434bb5592e7812e6964,
+  eventOption3_Outcome: {fileID: 11400000, guid: 962ad3f722337c94eac9a3e27340698b,
     type: 2}
   eventOption3_Requirement: {fileID: 0}
   eventCanComeBackLater: 0

@@ -550,71 +550,92 @@ public void Button_Game_Build_Storage()
     public void Button_Event_Option(int optionNo)
     {
         //Close Event Menu
-        EventMenu_Main.SetActive(false);
+        //EventMenu_Main.SetActive(false);
 
         //Convert to non savable data
-        RARC_Event_SO eventSO = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0].GetEventSO();
+        RARC_Event eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0];
+        RARC_Event_SO eventSO = eventScript.GetEventSO();
+
+        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.RemoveAt(0);
+
 
         //Find Option Choice
         switch (optionNo)
         {
             case 1:
 
-
-                //Add Next Event If Avalible
-                if (eventSO.eventOption1_Outcome.outcomeNextEvent != null)
+                if (eventSO.eventOption1_Outcome != null)
                 {
-                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
-                }
+                    //Add Next Event If Avalible
+                    if (eventSO.eventOption1_Outcome.outcomeNextEvent != null)
+                    {
+                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
+                    }
 
-                //Apply Event Changes
-                Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType1, eventSO.eventOption1_Outcome.outcomeValue1);
-                Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType2, eventSO.eventOption1_Outcome.outcomeValue2);
-                Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType3, eventSO.eventOption1_Outcome.outcomeValue3);
+                    //Apply Event Changes
+                    Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType1, eventSO.eventOption1_Outcome.outcomeValue1);
+                    Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType2, eventSO.eventOption1_Outcome.outcomeValue2);
+                    Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType3, eventSO.eventOption1_Outcome.outcomeValue3);
+                }
 
                 break;
 
             case 2:
 
-                //Add Next Event If Avalible
-                if (eventSO.eventOption2_Outcome.outcomeNextEvent != null)
+                if (eventSO.eventOption2_Outcome != null)
                 {
-                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
-                }
+                    //Add Next Event If Avalible
+                    if (eventSO.eventOption2_Outcome.outcomeNextEvent != null)
+                    {
+                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
+                    }
 
-                //Apply Event Changes
-                Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType1, eventSO.eventOption2_Outcome.outcomeValue1);
-                Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType2, eventSO.eventOption2_Outcome.outcomeValue2);
-                Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType3, eventSO.eventOption2_Outcome.outcomeValue3);
+                    //Apply Event Changes
+                    Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType1, eventSO.eventOption2_Outcome.outcomeValue1);
+                    Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType2, eventSO.eventOption2_Outcome.outcomeValue2);
+                    Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType3, eventSO.eventOption2_Outcome.outcomeValue3);
+                }
 
                 break;
 
             case 3:
 
-                //Add Next Event If Avalible
-                if (eventSO.eventOption3_Outcome.outcomeNextEvent != null)
+                if (eventSO.eventOption2_Outcome != null)
                 {
-                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
+                    //Add Next Event If Avalible
+                    if (eventSO.eventOption3_Outcome.outcomeNextEvent != null)
+                    {
+                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
+                    }
+
+                    //Apply Event Changes
+                    Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType1, eventSO.eventOption3_Outcome.outcomeValue1);
+                    Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType2, eventSO.eventOption3_Outcome.outcomeValue2);
+                    Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType3, eventSO.eventOption3_Outcome.outcomeValue3);
                 }
 
-                //Apply Event Changes
-                Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType1, eventSO.eventOption3_Outcome.outcomeValue1);
-                Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType2, eventSO.eventOption3_Outcome.outcomeValue2);
-                Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType3, eventSO.eventOption3_Outcome.outcomeValue3);
-
                 break;
-        }
+            }
 
-        //Remove Event 0
-        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.RemoveAt(0);
 
         //Refresh UI
         RefreshUI_UrgentIcons();
         RefreshUI_ButtonInteractablity();
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        {
+            //Start again
+            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0]);
+        }
+        else
+        {
+            Button_Event_Close();
+        }
     }
 
     public void Event_LoadEvent(RARC_Event eventInfo)
     {
+        //Basic Info
         eventTitle_Text.text = eventInfo.eventTitle;
         eventDesc_Text.text = eventInfo.eventDescription;
 
@@ -669,13 +690,76 @@ public void Button_Game_Build_Storage()
 
     }
 
-    public void Event_ApplyOutcomeReal(RARC_EventOutcome_SO.OutcomeType eventOutcomeType, int optionNo)
+    public void Event_ApplyOutcomeReal(RARC_EventOutcome_SO.OutcomeType eventOutcomeType, int value)
     {
         //Find Type
         switch (eventOutcomeType)
         {
             case RARC_EventOutcome_SO.OutcomeType.NULL:
+                break;
 
+            case RARC_EventOutcome_SO.OutcomeType.HULL_CHANGE:
+                RARC_GameStateController.Instance.ChangeHull(value);
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.CREW_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainCrew(value); }
+                else { RARC_GameStateController.Instance.LoseCrew(value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.ROBOT_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainBot(value); }
+                else { RARC_GameStateController.Instance.LoseBot(value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.SCRAPMETAL_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Scrap Metal", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.FUEL_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Fuel", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.FOOD_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Food", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.TITANIUM_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Titanium", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.SILICON_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Silicon", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.CARBON_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Carbon", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.ORGANICS_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Organics", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.HYDROGEN_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Hydrogen", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.NITROGEN_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Nitrogen", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                break;
+
+            case RARC_EventOutcome_SO.OutcomeType.MEDKITS_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Medkit", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.GAMEOVER:
@@ -824,10 +908,8 @@ public void Button_Game_Build_Storage()
 
             //Set Value
             tuple.Item3.resourceCount = value;
-            RARC_GameStateController.Instance.AquireResources(tuple.Item3);
+            RARC_GameStateController.Instance.GainResources(tuple.Item3.resourceName, tuple.Item3.resourceType, tuple.Item3.resourceCount);
         }
-
-
 
 
 
@@ -1055,7 +1137,6 @@ public void Button_Game_Build_Storage()
             launchFoodNeeded_Text.text = "<#000000>x" + requiredFood + "</color>";
         }
     }
-
 
     /////////////////////////////////////////////////////////////////
 }

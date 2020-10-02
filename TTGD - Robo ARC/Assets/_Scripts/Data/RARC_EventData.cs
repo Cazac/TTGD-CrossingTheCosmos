@@ -16,7 +16,8 @@ public class RARC_EventData : MonoBehaviour
     public RARC_Event_SO event_TheEndIsNear_CatastrophicBreakdown;
 
     [Header("Random (Starting)")]
-    public RARC_Event_SO event_3333333e;
+    public RARC_Event_SO event_AbandonedShip;
+
 
 
     [Header("Random (Aquired)")]

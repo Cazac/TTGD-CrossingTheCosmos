@@ -72,6 +72,27 @@ public class RARC_CrewBotsController : MonoBehaviour
     {
         RARC_Crew newCrewMember = new RARC_Crew();
         RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Add(newCrewMember);
+        SpawnCrewInRoom(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)], newCrewMember);
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void RemoveCrewMember()
+    {
+        RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.RemoveAt(0);
+        if (crew_Container.transform.childCount != 0)
+        {
+            Destroy(crew_Container.transform.GetChild(0).gameObject);
+        }
+    }
+
+    public void RemoveBotMember()
+    {
+        RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.RemoveAt(0);
+        if (bot_Container.transform.childCount != 0)
+        {
+            Destroy(bot_Container.transform.GetChild(0).gameObject);
+        }
     }
 
     /////////////////////////////////////////////////////////////////
@@ -84,7 +105,6 @@ public class RARC_CrewBotsController : MonoBehaviour
     public void SpawnCrewInRoom(RARC_RoomTab roomTab, RARC_Crew newCrewMember)
     {
         Vector3 spawnPoint = roomTab.GetRandomNode(new Vector3(0,0,0)).transform.position;
-
 
         GameObject newCrewMember_GO = Instantiate(crew_Prefab, crew_Container.transform);
         newCrewMember_GO.transform.position = spawnPoint;

@@ -1708,7 +1708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7251c56f174850f4e96ab2412181ed1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  event_ANewHope: {fileID: 11400000, guid: 1647c49374f0f93428533a5ae3a27744, type: 2}
+  event_ANewHope: {fileID: 11400000, guid: 6cfec27197bbc444bbc5db6e6885a29a, type: 2}
   event_TheEndIsNear_EmptyTank: {fileID: 11400000, guid: 8aac7a1212ee4ea4cabc4dfd0aec75b1,
     type: 2}
   event_TheEndIsNear_Starvation: {fileID: 11400000, guid: 5baf1aa2a5f6ff64fa13faa052e8883c,
@@ -1717,7 +1717,7 @@ MonoBehaviour:
     type: 2}
   event_TheEndIsNear_CatastrophicBreakdown: {fileID: 11400000, guid: 2ffc1045688ab3545b719e428772d4ff,
     type: 2}
-  event_3333333e: {fileID: 0}
+  event_AbandonedShip: {fileID: 0}
   event_333333aa3e: {fileID: 0}
   event_33333ff33e: {fileID: 0}
   event_33333fa33e: {fileID: 0}
@@ -10556,6 +10556,7 @@ MonoBehaviour:
       planetRiskFactor: 0
       planetEvent:
         eventTitle: 
+        eventID: 
         eventDescription: 
         eventOption1_Choice: 
         eventOption2_Choice: 
@@ -10573,6 +10574,7 @@ MonoBehaviour:
       planetRiskFactor: 0
       planetEvent:
         eventTitle: 
+        eventID: 
         eventDescription: 
         eventOption1_Choice: 
         eventOption2_Choice: 

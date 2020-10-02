@@ -11,6 +11,13 @@ public class RARC_Resource
     public int resourceCount;
     public ResourceType resourceType;
 
+    public RARC_Resource(string resourceName, int resourceCount, ResourceType resourceType)
+    {
+        this.resourceName = resourceName;
+        this.resourceType = resourceType;
+        this.resourceCount = resourceCount;
+    }
+
     public enum ResourceType
     {
         NULL,
@@ -19,6 +26,7 @@ public class RARC_Resource
         Fuel,
         Food,
 
+        Medkit,
         Titanium,
         Silicon,
         Carbon,

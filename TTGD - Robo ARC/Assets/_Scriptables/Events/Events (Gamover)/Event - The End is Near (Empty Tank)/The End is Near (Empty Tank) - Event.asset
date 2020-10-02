@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
-  m_Name: The End is Near (Empty Tank) - E
+  m_Name: The End is Near (Empty Tank) - Event
   m_EditorClassIdentifier: 
   eventTitle: The End is Near (Empty Tank)
+  eventID: The End is Near (Empty Tank) - Event
   eventIcon: {fileID: 21300000, guid: f4d74c6205b0fe74483ae8146c1fd8f8, type: 3}
   eventDescription: "This may be the end\u2026 \nThere is not enough fuel here to
     make it to the next destination. Is there any possible way out of this?"

@@ -28,13 +28,24 @@ public class RARC_EventOutcome_SO : ScriptableObject
     public enum OutcomeType
     {
         NULL,
-        CREW_CHANGE,
-        ROBOT_CHANGE,
+
         HULL_CHANGE,
 
-        SCRAP_CHANGE,
+        CREW_CHANGE,
+        ROBOT_CHANGE,
+
+        SCRAPMETAL_CHANGE,
         FUEL_CHANGE,
         FOOD_CHANGE,
+
+        TITANIUM_CHANGE,
+        SILICON_CHANGE,
+        CARBON_CHANGE,
+        ORGANICS_CHANGE,
+        MEDKITS_CHANGE,
+
+        HYDROGEN_CHANGE,
+        NITROGEN_CHANGE,
 
         GAMEOVER
     }

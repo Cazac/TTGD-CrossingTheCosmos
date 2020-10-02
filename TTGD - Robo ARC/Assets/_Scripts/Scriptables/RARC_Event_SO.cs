@@ -10,12 +10,12 @@ public class RARC_Event_SO : ScriptableObject
 
     [Header("Event Info")]
     public string eventTitle;
+    public string eventID;
     public Sprite eventIcon;
 
     [TextArea()]
     public string eventDescription;
 
-    //Null is skip
     [Header("Option 1 (Null = No Choice)")]
     [TextArea()]
     public string eventOption1_Choice;

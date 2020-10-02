@@ -6,22 +6,13 @@ using UnityEngine;
 public class RARC_Event
 {
     public string eventTitle;
+    public string eventID;
     public string eventDescription;
 
     //Null is skip
     public string eventOption1_Choice;
-    //public RARC_EventOutcome_SO eventOption1_Outcome;
-    //public RARC_EventRequirement_SO eventOption1_Requirement;
-
-
     public string eventOption2_Choice;
-   // public RARC_EventOutcome_SO eventOption2_Outcome;
-    //public RARC_EventRequirement_SO eventOption2_Requirement;
-
-
     public string eventOption3_Choice;
-    //public RARC_EventOutcome_SO eventOption3_Outcome;
-    //public RARC_EventRequirement_SO eventOption3_Requirement;
 
     /////////////////////////////////////////////////////////////////
 
@@ -29,6 +20,7 @@ public class RARC_Event
     {
         //Basic Info
         eventTitle = eventSO.eventTitle;
+        eventID = eventSO.eventID;
         eventDescription = eventSO.eventDescription;
 
         //Basic Displayed Data
@@ -39,10 +31,34 @@ public class RARC_Event
 
     public RARC_Event_SO GetEventSO()
     {
+        //
         RARC_Event_SO eventSO = null;
 
-        switch (eventTitle)
+
+        switch (eventID)
         {
+
+            case "Abandoned Ship - Event":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip;
+                break;
+
+            case "Abandoned Ship - Outcome Event 1":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip.eventOption1_Outcome.outcomeNextEvent;
+                break;
+
+            case "Abandoned Ship - Outcome Event 2":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip.eventOption2_Outcome.outcomeNextEvent;
+                break;
+
+            case "Abandoned Ship - Outcome Event 3":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip.eventOption3_Outcome.outcomeNextEvent;
+                break;
+
+
+
+
+
+
             case "The End is Near (Catastrophic Breakdown))":
                 eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown;
                 break;
@@ -60,13 +76,11 @@ public class RARC_Event
                 break;
 
             default:
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_ANewHope;
+                Debug.Log("Test Code: THIS IS AN ERROR, YOU DONE GOOFED");
                 break;
-
         }
 
-
-
+        //Return Event
         return eventSO;
     }
 

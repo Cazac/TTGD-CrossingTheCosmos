@@ -293,20 +293,66 @@ public class RARC_GameStateController : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void AquireResources(RARC_Resource resource)
+    public RARC_Resource.ResourceType ConvertTypes(RARC_EventOutcome_SO.OutcomeType outcomeType)
     {
-        switch (resource.resourceType)
+        //Resource Types
+        RARC_Resource.ResourceType resourceType;
+
+        switch (outcomeType)
+        {
+            case RARC_EventOutcome_SO.OutcomeType.SCRAPMETAL_CHANGE:
+                resourceType = RARC_Resource.ResourceType.ScrapMetal;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.FUEL_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Fuel;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.FOOD_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Food;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.TITANIUM_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Titanium;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.SILICON_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Silicon;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.CARBON_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Carbon;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ORGANICS_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Organics;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.MEDKITS_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Medkit;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.HYDROGEN_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Hydrogen;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.NITROGEN_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Nitrogen;
+                break;
+            default:
+                resourceType = RARC_Resource.ResourceType.NULL;
+                break;
+        }
+
+        //Return
+        return resourceType;
+    }
+
+    public void GainResources(string resourceName, RARC_Resource.ResourceType resourceType, int resourceCount)
+    {
+        switch (resourceType)
         {
             case RARC_Resource.ResourceType.ScrapMetal:
-                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount += resource.resourceCount;
+                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount += resourceCount;
                 break;
 
             case RARC_Resource.ResourceType.Fuel:
-                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount += resource.resourceCount;
+                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount += resourceCount;
                 break;
 
             case RARC_Resource.ResourceType.Food:
-                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount += resource.resourceCount;
+                RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount += resourceCount;
                 break;
 
             default:
@@ -315,7 +361,7 @@ public class RARC_GameStateController : MonoBehaviour
 
                 foreach (RARC_Resource resourceInShip in RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List)
                 {
-                    if (resourceInShip.resourceType == resource.resourceType)
+                    if (resourceInShip.resourceType == resourceType)
                     {
                         resourceSlot = i;
                     }
@@ -324,10 +370,11 @@ public class RARC_GameStateController : MonoBehaviour
 
                 if (resourceSlot != 99)
                 {
-                    RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount += resource.resourceCount;
+                    RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount += resourceCount;
                 }
                 else
                 {
+                    RARC_Resource resource = new RARC_Resource(resourceName, resourceCount, resourceType);
                     RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Add(resource);
                 }
                 break;
@@ -336,10 +383,51 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
-    public void LoseResources(RARC_Resource resource)
+    public void LoseResources(RARC_Resource.ResourceType resourceType, int resourceCount)
     {
 
     }
+
+    public void ChangeHull(int amount)
+    {
+        //Refresh
+        RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth = Mathf.Clamp(RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth + amount, 0, 100);
+        //RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources
+    }
+
+    public void GainCrew(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            RARC_CrewBotsController.Instance.AddNewCrew();
+        }
+    }
+
+    public void LoseCrew(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            RARC_CrewBotsController.Instance.RemoveCrewMember();
+        }
+    }
+
+    public void GainBot(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            RARC_CrewBotsController.Instance.AddNewBot();
+        }
+    }
+
+    public void LoseBot(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            RARC_CrewBotsController.Instance.RemoveBotMember();
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////
 
     public void System_Gameover(string reason)
     {

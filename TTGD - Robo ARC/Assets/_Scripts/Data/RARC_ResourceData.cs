@@ -23,70 +23,69 @@ public class RARC_ResourceData : MonoBehaviour
 
     public void BuildDatabase()
     {
+        //Set New Resource Bases
         scrapMetal_Resource = new RARC_Resource
-        {
-            resourceName = "Scrap Metal",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.ScrapMetal,
-        };
+        (
+            "Scrap",
+            30,
+            RARC_Resource.ResourceType.ScrapMetal
+        );
 
         fuel_Resource = new RARC_Resource
-        {
-            resourceName = "Fuel",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Fuel,
-        };
+        (
+            "Fuel",
+            0,
+            RARC_Resource.ResourceType.Fuel
+        );
 
         food_Resource = new RARC_Resource
-        {
-            resourceName = "Food",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Food,
-        };
-
+        (
+            "Food",
+            0,
+            RARC_Resource.ResourceType.Food
+        );
 
         titanium_Resource = new RARC_Resource
-        {
-            resourceName = "Titanium",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Titanium,
-        };
+        (
+            "Titanium",
+            0,
+            RARC_Resource.ResourceType.Titanium
+        );
 
         silicon_Resource = new RARC_Resource
-        {
-            resourceName = "Silicon",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Silicon,
-        };
+        (
+            "Silicon",
+            0,
+            RARC_Resource.ResourceType.Silicon
+        );
 
         carbon_Resource = new RARC_Resource
-        {
-            resourceName = "Carbon",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Carbon,
-        };
+        (
+            "Carbon",
+            0,
+            RARC_Resource.ResourceType.Carbon
+        );
 
         organics_Resource = new RARC_Resource
-        {
-            resourceName = "Organics",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Organics,
-        };
+        (
+            "Organics",
+            0,
+            RARC_Resource.ResourceType.Organics
+        );
 
+        titanium_Resource = new RARC_Resource
+        (
+            "Hydrogen",
+            0,
+            RARC_Resource.ResourceType.Hydrogen
+        );
 
-        hydrogen_Resource = new RARC_Resource
-        {
-            resourceName = "Hydrogen",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Hydrogen,
-        };
-
-        nitrogen_Resource = new RARC_Resource
-        {
-            resourceName = "Nitrogen",
-            resourceCount = 0,
-            resourceType = RARC_Resource.ResourceType.Nitrogen,
-        };
+        titanium_Resource = new RARC_Resource
+        (
+            "Nitrogen",
+            0,
+            RARC_Resource.ResourceType.Nitrogen
+        );
     }
 
     public RARC_Resource GetResource(RARC_Resource.ResourceType type)

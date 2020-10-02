@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Abandoned Ship - Event
   m_EditorClassIdentifier: 
   eventTitle: Abandoned Ship Discovered!
+  eventID: Abandoned Ship - Event
   eventIcon: {fileID: 21300000, guid: 0be88d0fd45fd354eae0b7ce89acc826, type: 3}
   eventDescription: "On the way towards your destination, you come across what seems
     to be an abandoned ship. The ship\u2019s exterior gives the illusion of prolonged
