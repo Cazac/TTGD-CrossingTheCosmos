@@ -78,6 +78,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public RARC_ResourceTab exploringResource3_Tab;
 
 
+
+    private bool hasShowoffEventCleared = false;
+
     public GameObject exploringShowoff_GO;
 
     public GameObject FinishExploringButton_GO;
@@ -156,6 +159,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public readonly string colorValues_Red = "#FF2200";
     public readonly string colorValues_Black = "#000000";
     public readonly string colorValues_White = "#FFFFFF";
+    public readonly string colorValues_Green = "#089800";
 
 
     [HideInInspector]
@@ -576,8 +580,8 @@ public void Button_Game_Build_Storage()
         //Open Event Menu
         EventMenu_Main.SetActive(false);
 
-        //Load Event
-
+        //Clear Exploration Bool
+        hasShowoffEventCleared = true;
     }
 
     public void Button_Event_Option(int optionNo)
@@ -978,7 +982,9 @@ public void Button_Game_Build_Storage()
         exploringShowoffInfoContainer_Go.SetActive(true);
 
         int eventTiming;
+        hasShowoffEventCleared = false;
         bool hasEventOccured = false;
+
 
         eventUsed = new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_AbandonedShip);
 
@@ -996,6 +1002,9 @@ public void Button_Game_Build_Storage()
         //Loop While Waiting
         while (exploringShowoffProgress < 100)
         {
+
+
+
             int progressValue = (int)exploringShowoffProgress;
             exploringShowoffPercent_Text.text = progressValue + "%";
             exploringShowoffPercent_FillImage.fillAmount = (exploringShowoffProgress / 100);
@@ -1005,20 +1014,35 @@ public void Button_Game_Build_Storage()
             {
                 if (progressValue > eventTiming)
                 {
+
                     print("Test Code: Event!");
 
                     //Change Text
                     exploringShowoffInfo_Text.text = "<color=" + colorValues_Red + ">Anomaly detected</color>";
 
-                    //Pause IEnum
-                    yield return new WaitForSeconds(3f);
+                    yield return new WaitForSeconds(0.75f);
+
+             
 
                     //Open Event
+                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(eventUsed);
+                    Button_Event();
 
 
-                    exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">Oiling The Bots</color>";
 
                     hasEventOccured = true;
+
+                    if (hasShowoffEventCleared == false)
+                    {
+                        while (hasShowoffEventCleared == false)
+                        {
+                            yield return new WaitForEndOfFrame();
+                        }
+
+                        exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">Oiling The Bots</color>";
+
+                        yield return new WaitForSeconds(0.75f);
+                    }
                 }
             }
             else
@@ -1036,24 +1060,24 @@ public void Button_Game_Build_Storage()
                     exploringShowoffResource1_Tab.gameObject.SetActive(true);
                     exploringShowoffResource2_Tab.gameObject.SetActive(true);
                     exploringShowoffResource3_Tab.gameObject.SetActive(true);
-                    exploringShowoffResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
-                    exploringShowoffResource2_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal * (exploringShowoffProgress / 100));
-                    exploringShowoffResource3_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[2], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource1_Tab.SetResource_Collecting(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource2_Tab.SetResource_Collecting(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource3_Tab.SetResource_Collecting(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[2], effectiveTotal * (exploringShowoffProgress / 100));
                     break;
 
                 case 2:
                     exploringShowoffResource1_Tab.gameObject.SetActive(true);
                     exploringShowoffResource2_Tab.gameObject.SetActive(true);
                     exploringShowoffResource3_Tab.gameObject.SetActive(false);
-                    exploringShowoffResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
-                    exploringShowoffResource2_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource1_Tab.SetResource_Collecting(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource2_Tab.SetResource_Collecting(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal * (exploringShowoffProgress / 100));
                     break;
 
                 case 1:
                     exploringShowoffResource1_Tab.gameObject.SetActive(true);
                     exploringShowoffResource2_Tab.gameObject.SetActive(false);
                     exploringShowoffResource3_Tab.gameObject.SetActive(false);
-                    exploringShowoffResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource1_Tab.SetResource_Collecting(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
                     break;
 
                 default:
@@ -1077,7 +1101,7 @@ public void Button_Game_Build_Storage()
 
 
         //Set to 100%
-        exploringShowoffPercent_Text.text = "<color=" + colorValues_Yellow + ">100%</color>";
+        exploringShowoffPercent_Text.text = "<color=" + colorValues_Green + ">100%</color>";
         exploringShowoffPercent_FillImage.fillAmount = 1;
 
         //Reset and Show Exit Button
