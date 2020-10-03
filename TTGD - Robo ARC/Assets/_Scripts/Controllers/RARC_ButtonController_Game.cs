@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -55,28 +56,44 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    [Header("Explore")]
+    [Header("Exploring")]
     public RARC_PlanetTabUI explorePlanet_Tab;
     public TextMeshProUGUI explorePlanetName_Text;
     public TextMeshProUGUI explorationRate_Text;
     public TextMeshProUGUI explorationRiskFactor_Text;
-    public Image explorationRiskFactor_FillImage;
-    public Image explorationRate_FillImage;
+
 
     public TextMeshProUGUI exploringHumans_Text;
     public TextMeshProUGUI exploringBots_Text;
     public Slider exploringHumans_Slider;
     public Slider exploringBots_Slider;
+    public Image explorationRiskFactor_FillImage;
+    public Image explorationRate_FillImage;
 
     public Button explorePlanet_Button;
-
+    public Button avoidPlanet_Button;
 
     public RARC_ResourceTab exploringResource1_Tab;
     public RARC_ResourceTab exploringResource2_Tab;
     public RARC_ResourceTab exploringResource3_Tab;
 
 
+    public GameObject exploringShowoff_GO;
 
+    public GameObject FinishExploringButton_GO;
+    public GameObject exploringShowoffInfoContainer_Go;
+
+
+    public float exploringShowoffProgress;
+    public Image exploringShowoffPercent_FillImage;
+    public TextMeshProUGUI exploringShowoffPercent_Text;
+    public TextMeshProUGUI exploringShowoffInfo_Text;
+
+    public RARC_ResourceTab exploringShowoffResource1_Tab;
+    public RARC_ResourceTab exploringShowoffResource2_Tab;
+    public RARC_ResourceTab exploringShowoffResource3_Tab;
+
+    /////////////////////////////////////////////////////////////////
 
 
     public List<RARC_ResourceTab> storageResourceTabs_List;
@@ -130,11 +147,27 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
 
 
+
+    ////////////////////////////////
+
+
+    [HideInInspector]
+    public readonly string colorValues_Yellow = "#FFEA00";
+    public readonly string colorValues_Red = "#FF2200";
+    public readonly string colorValues_Black = "#000000";
+    public readonly string colorValues_White = "#FFFFFF";
+
+
     [HideInInspector]
     public GameObject currentSelectedRoom;
 
-
+    [HideInInspector]
     public RARC_RoomTab currentConstructionRoom;
+
+    ////////////////////////////////
+
+
+
 
     /////////////////////////////////////////////////////////////////
 
@@ -788,7 +821,6 @@ public void Button_Game_Build_Storage()
 
     }
 
-
     /////////////////////////////////////////////////////////////////
 
     public void Button_Explore()
@@ -899,17 +931,7 @@ public void Button_Game_Build_Storage()
         float effectiveTotal = Mathf.Clamp((exploringHumans_Slider.value * humanEffectivness) + (exploringBots_Slider.value * botEffectivness), 0, 1);
         float effectivenessRate = (effectiveTotal - 1);
 
-        //Add Resources
-        foreach (Tuple<int, int, RARC_Resource> tuple in RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List)
-        {
-            //Calculate Bonus 
-            int bonusValue = (int)(tuple.Item2 * effectivenessRate);
-            int value = tuple.Item2 + bonusValue;
 
-            //Set Value
-            tuple.Item3.resourceCount = value;
-            RARC_GameStateController.Instance.GainResources(tuple.Item3.resourceName, tuple.Item3.resourceType, tuple.Item3.resourceCount);
-        }
 
 
 
@@ -927,6 +949,13 @@ public void Button_Game_Build_Storage()
 
         //Close Event Menu
         ExploreMenu_Main.SetActive(false);
+
+
+        exploringShowoff_GO.SetActive(true);
+
+        StartCoroutine(IExplorePlanet(null, effectiveTotal));
+
+
     }
 
     public void Button_Explore_AbandonExploring()
@@ -940,6 +969,150 @@ public void Button_Game_Build_Storage()
 
         //Close Event Menu
         ExploreMenu_Main.SetActive(false);
+    }
+
+    public IEnumerator IExplorePlanet(RARC_Event eventUsed, float effectiveTotal)
+    {
+        //Turn On Menus
+        FinishExploringButton_GO.SetActive(false);
+        exploringShowoffInfoContainer_Go.SetActive(true);
+
+        int eventTiming;
+        bool hasEventOccured = false;
+
+        eventUsed = new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_AbandonedShip);
+
+        if (eventUsed != null)
+        {
+            //Find Random Value In Range
+            eventTiming = UnityEngine.Random.Range(25, 75);
+        }
+        else
+        {
+            //Never Found
+            eventTiming = 999;
+        }
+
+        //Loop While Waiting
+        while (exploringShowoffProgress < 100)
+        {
+            int progressValue = (int)exploringShowoffProgress;
+            exploringShowoffPercent_Text.text = progressValue + "%";
+            exploringShowoffPercent_FillImage.fillAmount = (exploringShowoffProgress / 100);
+
+
+            if (hasEventOccured == false)
+            {
+                if (progressValue > eventTiming)
+                {
+                    print("Test Code: Event!");
+
+                    //Change Text
+                    exploringShowoffInfo_Text.text = "<color=" + colorValues_Red + ">Anomaly detected</color>";
+
+                    //Pause IEnum
+                    yield return new WaitForSeconds(3f);
+
+                    //Open Event
+
+
+                    exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">Oiling The Bots</color>";
+
+                    hasEventOccured = true;
+                }
+            }
+            else
+            {
+
+            }
+
+
+
+
+
+            switch (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List.Count)
+            {
+                case 3:
+                    exploringShowoffResource1_Tab.gameObject.SetActive(true);
+                    exploringShowoffResource2_Tab.gameObject.SetActive(true);
+                    exploringShowoffResource3_Tab.gameObject.SetActive(true);
+                    exploringShowoffResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource2_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource3_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[2], effectiveTotal * (exploringShowoffProgress / 100));
+                    break;
+
+                case 2:
+                    exploringShowoffResource1_Tab.gameObject.SetActive(true);
+                    exploringShowoffResource2_Tab.gameObject.SetActive(true);
+                    exploringShowoffResource3_Tab.gameObject.SetActive(false);
+                    exploringShowoffResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
+                    exploringShowoffResource2_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[1], effectiveTotal * (exploringShowoffProgress / 100));
+                    break;
+
+                case 1:
+                    exploringShowoffResource1_Tab.gameObject.SetActive(true);
+                    exploringShowoffResource2_Tab.gameObject.SetActive(false);
+                    exploringShowoffResource3_Tab.gameObject.SetActive(false);
+                    exploringShowoffResource1_Tab.SetResource_Gathering(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List[0], effectiveTotal * (exploringShowoffProgress / 100));
+                    break;
+
+                default:
+                    exploringShowoffResource1_Tab.gameObject.SetActive(false);
+                    exploringShowoffResource2_Tab.gameObject.SetActive(false);
+                    exploringShowoffResource3_Tab.gameObject.SetActive(false);
+                    break;
+            }
+
+          
+
+
+
+
+
+            yield return new WaitForEndOfFrame();
+            exploringShowoffProgress += Time.deltaTime * 40;
+        }
+
+    
+
+
+        //Set to 100%
+        exploringShowoffPercent_Text.text = "<color=" + colorValues_Yellow + ">100%</color>";
+        exploringShowoffPercent_FillImage.fillAmount = 1;
+
+        //Reset and Show Exit Button
+        FinishExploringButton_GO.SetActive(true);
+        exploringShowoffInfoContainer_Go.SetActive(false);
+        exploringShowoffProgress = 0;
+
+        //Finish
+        yield break;
+    }
+
+    public void Button_Explore_FinishExploring()
+    {
+        //Remove Menu
+        exploringShowoff_GO.SetActive(false);
+
+        //Get Slider Values
+        float humanEffectivness = 0.50f;
+        float botEffectivness = 0.25f;
+
+        //Calculate Rate
+        float effectiveTotal = Mathf.Clamp((exploringHumans_Slider.value * humanEffectivness) + (exploringBots_Slider.value * botEffectivness), 0, 1);
+        float effectivenessRate = (effectiveTotal - 1);
+
+        //Add Resources
+        foreach (Tuple<int, int, RARC_Resource> tuple in RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List)
+        {
+            //Calculate Bonus 
+            int bonusValue = (int)(tuple.Item2 * effectivenessRate);
+            int value = tuple.Item2 + bonusValue;
+
+            //Set Value
+            tuple.Item3.resourceCount = value;
+            RARC_GameStateController.Instance.GainResources(tuple.Item3.resourceName, tuple.Item3.resourceType, tuple.Item3.resourceCount);
+        }
     }
 
     /////////////////////////////////////////////////////////////////
@@ -964,13 +1137,13 @@ public void Button_Game_Build_Storage()
     {
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination == null)
         {
-            navigationDesination_Text.text = "<color=red>No Planet</color>";
-            navigationTravelTime_Text.text = "<color=red>0</color>";
+            navigationDesination_Text.text = "<" + colorValues_Red + ">" + "No Planet</color>";
+            navigationTravelTime_Text.text = "<" + colorValues_Red + ">" + "0</color>";
         }
         else
         {
-            navigationDesination_Text.text = "<color=black>" + RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination.planetName + "</color>";
-            navigationTravelTime_Text.text = "<color=black>" + RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress + "/" + RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination.planetTravelTime + "</color>"; ;
+            navigationDesination_Text.text = "<" + colorValues_Yellow + "> " + RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination.planetName + "</color>";
+            navigationTravelTime_Text.text = "<" + colorValues_Yellow + "> " + RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress + " / " + RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationDestination.planetTravelTime + "</color>"; ;
         }
     }
 
@@ -1118,23 +1291,22 @@ public void Button_Game_Build_Storage()
         int requiredFuel = RARC_GameStateController.Instance.fuelRequired;
         int requiredFood = RARC_GameStateController.Instance.foodRequired;
 
-
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount < requiredFuel)
         {
-            launchFuelNeeded_Text.text = "<#FF8000>x" + requiredFuel + "</color>";
+            launchFuelNeeded_Text.text = "<" + colorValues_Red + ">" + "x" + requiredFuel + "</color>";
         }
         else
         {
-            launchFuelNeeded_Text.text = "<#000000>x" + requiredFuel + "</color>";
+            launchFuelNeeded_Text.text = "<" + colorValues_Black + ">" + "x" + requiredFuel + "</color>";
         }
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount < requiredFood)
         {
-            launchFoodNeeded_Text.text = "<#FF8000>x" + requiredFood + "</color>";
+            launchFoodNeeded_Text.text = "<" + colorValues_Red + ">" + "x" + requiredFood + "</color>";
         }
         else
         {
-            launchFoodNeeded_Text.text = "<#000000>x" + requiredFood + "</color>";
+            launchFoodNeeded_Text.text = "<" + colorValues_Black + ">" + "x" + requiredFood + "</color>";
         }
     }
 

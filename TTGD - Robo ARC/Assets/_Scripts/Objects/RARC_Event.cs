@@ -38,6 +38,12 @@ public class RARC_Event
         switch (eventID)
         {
 
+            case "A New Hope - Event":
+                eventSO = RARC_DatabaseController.Instance.events_DB.event_ANewHope;
+                break;
+
+
+
             case "Abandoned Ship - Event":
                 eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip;
                 break;

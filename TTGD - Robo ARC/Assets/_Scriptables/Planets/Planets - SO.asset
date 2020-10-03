@@ -137,7 +137,7 @@ MonoBehaviour:
   chanceOf_CommonResource_Rocky: 70
   minAmountOf_CommonResource_Rocky: 5
   maxAmountOf_CommonResource_Rocky: 10
-  RareResource_Rocky: 4
+  RareResource_Rocky: 6
   chanceOf_RareResource_Rocky: 30
   minAmountOf_RareResource_Rocky: 5
   maxAmountOf_RareResource_Rocky: 10

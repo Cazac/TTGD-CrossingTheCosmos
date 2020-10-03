@@ -48,6 +48,9 @@ public class RARC_GameStateController : MonoBehaviour
     public readonly int fuelRequired = 5;
     public readonly int foodRequired = 10;
 
+
+
+
     /////////////////////////////////////////////////////////////////
 
     private void Awake()
@@ -230,7 +233,7 @@ public class RARC_GameStateController : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.90f);
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation != null)
         {
@@ -241,8 +244,6 @@ public class RARC_GameStateController : MonoBehaviour
         }
         else
         {
-            print("Test Code: NOPE NOTHING");
-
             //Set Planet BG / Space BG
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
             RARC_ButtonController_Game.Instance.space_Tab.SetSpace_Black();
