@@ -30,7 +30,7 @@ public class RARC_Resource
     {
         NULL,
 
-        ScrapMetal,
+        Scrap,
         Fuel,
         Food,
 

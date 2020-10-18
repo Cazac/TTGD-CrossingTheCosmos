@@ -5,7 +5,7 @@ using UnityEngine;
 public class RARC_ResourceData : MonoBehaviour
 {
     [Header("Basics")]
-    public RARC_Resource scrapMetal_Resource;
+    public RARC_Resource scrap_Resource;
     public RARC_Resource fuel_Resource;
     public RARC_Resource food_Resource;
 
@@ -24,11 +24,11 @@ public class RARC_ResourceData : MonoBehaviour
     public void BuildDatabase()
     {
         //Set New Resource Bases
-        scrapMetal_Resource = new RARC_Resource
+        scrap_Resource = new RARC_Resource
         (
             "Scrap",
             30,
-            RARC_Resource.ResourceType.ScrapMetal
+            RARC_Resource.ResourceType.Scrap
         );
 
         fuel_Resource = new RARC_Resource
@@ -94,8 +94,8 @@ public class RARC_ResourceData : MonoBehaviour
 
         switch (type)
         {
-            case RARC_Resource.ResourceType.ScrapMetal:
-                resource = scrapMetal_Resource;
+            case RARC_Resource.ResourceType.Scrap:
+                resource = scrap_Resource;
                 break;
 
             case RARC_Resource.ResourceType.Fuel:
@@ -132,7 +132,7 @@ public class RARC_ResourceData : MonoBehaviour
                 break;
 
             default:
-                resource = scrapMetal_Resource;
+                resource = scrap_Resource;
                 break;
         }
 

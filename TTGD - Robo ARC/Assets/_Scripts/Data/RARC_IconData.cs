@@ -7,7 +7,7 @@ public class RARC_IconData : MonoBehaviour
     ////////////////////////////////
 
     [Header("Main Resources")]
-    public Sprite ScrapMetalIcon;
+    public Sprite ScrapIcon;
     public Sprite FuelIcon;
     public Sprite FoodIcon;
 

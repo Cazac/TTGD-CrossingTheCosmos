@@ -96,8 +96,8 @@ public class RARC_ResourceTab : MonoBehaviour
 
         switch (resourceType)
         {
-            case RARC_Resource.ResourceType.ScrapMetal:
-                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapMetalIcon;
+            case RARC_Resource.ResourceType.Scrap:
+                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapIcon;
                 break;
 
             case RARC_Resource.ResourceType.Fuel:
@@ -134,7 +134,7 @@ public class RARC_ResourceTab : MonoBehaviour
                 break;
 
             default:
-                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapMetalIcon;
+                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapIcon;
                 break;
         }
 

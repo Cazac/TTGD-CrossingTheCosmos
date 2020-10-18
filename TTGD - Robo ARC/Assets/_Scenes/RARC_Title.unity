@@ -3359,11 +3359,11 @@ MonoBehaviour:
   CrewQuartersRoom_SO: {fileID: 11400000, guid: 786f2a65b2432c04bb09e8a8a94e7873,
     type: 2}
   MedbayRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
-  FactoryRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
-  KitchenRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
+  FactoryRoom_SO: {fileID: 11400000, guid: 312e91332e5f5324ca928c1558e74ed9, type: 2}
+  KitchenRoom_SO: {fileID: 11400000, guid: 9ea8c565465e21f4087b629a0636e09e, type: 2}
   StorageBayRoom_SO: {fileID: 11400000, guid: 6e78727016a3871449c5a0d1ba41aa88, type: 2}
-  CloningLabRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
-  HydroponicsLabRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4,
+  CloningLabRoom_SO: {fileID: 11400000, guid: d0baadddb9604de4abdcd6157cd9a407, type: 2}
+  HydroponicsLabRoom_SO: {fileID: 11400000, guid: 377116f93fcbfac4c8c673676490667d,
     type: 2}
   AstrometricsLabRoom_SO: {fileID: 11400000, guid: 1cced6ce0532ead448ec3a39b278eefb,
     type: 2}

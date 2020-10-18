@@ -34,7 +34,7 @@ public class RARC_EventOutcome_SO : ScriptableObject
         CREW_CHANGE,
         ROBOT_CHANGE,
 
-        SCRAPMETAL_CHANGE,
+        SCRAP_CHANGE,
         FUEL_CHANGE,
         FOOD_CHANGE,
 

@@ -320,8 +320,8 @@ public class RARC_GameStateController : MonoBehaviour
 
         switch (outcomeType)
         {
-            case RARC_EventOutcome_SO.OutcomeType.SCRAPMETAL_CHANGE:
-                resourceType = RARC_Resource.ResourceType.ScrapMetal;
+            case RARC_EventOutcome_SO.OutcomeType.SCRAP_CHANGE:
+                resourceType = RARC_Resource.ResourceType.Scrap;
                 break;
             case RARC_EventOutcome_SO.OutcomeType.FUEL_CHANGE:
                 resourceType = RARC_Resource.ResourceType.Fuel;
@@ -363,7 +363,7 @@ public class RARC_GameStateController : MonoBehaviour
     {
         switch (resourceType)
         {
-            case RARC_Resource.ResourceType.ScrapMetal:
+            case RARC_Resource.ResourceType.Scrap:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount += resourceCount;
                 break;
 

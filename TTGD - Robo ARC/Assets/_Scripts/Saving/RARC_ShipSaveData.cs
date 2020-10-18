@@ -62,9 +62,9 @@ public class RARC_ShipSaveData
         //Set New Resource Bases
         shipResource_Scrap = new RARC_Resource
         (
-            "Scrap Metal",
+            "Scrap",
             30,
-            RARC_Resource.ResourceType.ScrapMetal
+            RARC_Resource.ResourceType.Scrap
         );
 
         shipResource_Fuel = new RARC_Resource

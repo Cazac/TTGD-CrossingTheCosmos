@@ -549,8 +549,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 else { RARC_GameStateController.Instance.LoseBot(value); }
                 break;
 
-            case RARC_EventOutcome_SO.OutcomeType.SCRAPMETAL_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Scrap Metal", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+            case RARC_EventOutcome_SO.OutcomeType.SCRAP_CHANGE:
+                if (value > 0) { RARC_GameStateController.Instance.GainResources("Scrap", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
                 else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
                 break;
 
