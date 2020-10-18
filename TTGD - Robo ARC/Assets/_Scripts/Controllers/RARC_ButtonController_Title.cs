@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 public class RARC_ButtonController_Title : MonoBehaviour
 {
@@ -14,14 +16,22 @@ public class RARC_ButtonController_Title : MonoBehaviour
     [Header("Containers")]
     public GameObject mainMenuPanel_GO;
     public GameObject playMenuPanel_GO;
+    public GameObject settingsMenuPanel_GO;
 
     [Header("Save Slots")]
-    public GameObject saveSlot1_New;
-    public GameObject saveSlot1_Load;
-    public GameObject saveSlot2_New;
-    public GameObject saveSlot2_Load;
-    public GameObject saveSlot3_New;
-    public GameObject saveSlot3_Load;
+    public RARC_PlayMenuUITab saveSlot1;
+    public RARC_PlayMenuUITab saveSlot2;
+    public RARC_PlayMenuUITab saveSlot3;
+
+    [Header("BLANKVAR")]
+    public Slider settingsMusic_Slider;
+    public Slider settingsSFX_Slider;
+
+    public TextMeshProUGUI settingsMusic_Text;
+    public TextMeshProUGUI settingsSFX_Text;
+
+    [Header("Space")]
+    public RARC_SpaceTab titleSpace;
 
     ////////////////////////////////
 
@@ -29,6 +39,11 @@ public class RARC_ButtonController_Title : MonoBehaviour
     {
         //Set Static Singleton Self Refference
         Instance = this;
+    }
+
+    private void Start()
+    {
+        titleSpace.PlayTitleSpace();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -43,12 +58,15 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     public void Button_MainSettings()
     {
+        mainMenuPanel_GO.SetActive(false);
+        settingsMenuPanel_GO.SetActive(true);
 
+        RefreshSettingsUI();
     }
 
     public void Button_MainCredits()
     {
-        //Load Credits Scene
+        //Load Scene
         SceneManager.LoadScene("RARC_Credits");
     }
 
@@ -166,6 +184,37 @@ public class RARC_ButtonController_Title : MonoBehaviour
 
     }
 
+    public void Button_PlayDeleteSlot(int saveSlot)
+    {
+        RARC_DatabaseController.Instance.DeleteShipData(saveSlot);
+        RefreshPlayUI();
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_SettingsCancel()
+    {
+        mainMenuPanel_GO.SetActive(true);
+        settingsMenuPanel_GO.SetActive(false);
+
+        //Save Player Data
+        RARC_DatabaseController.Instance.SavePlayerData();
+    }
+
+    public void Slider_Settings_MusicVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume = settingsMusic_Slider.value / 100;
+        settingsMusic_Text.text = settingsMusic_Slider.value + "%";
+        RARC_MusicController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
+    }
+
+    public void Slider_Settings_SFXVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume = settingsSFX_Slider.value / 100;
+        settingsSFX_Text.text = settingsSFX_Slider.value + "%";
+        RARC_SFXController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isSFXMuted);
+    }
+
     /////////////////////////////////////////////////////////////////
 
     public void RefreshPlayUI()
@@ -175,43 +224,48 @@ public class RARC_ButtonController_Title : MonoBehaviour
         RARC_DatabaseController.Instance.saveDataSet2_List = RARC_DatabaseController.Instance.FindGameData(2);
         RARC_DatabaseController.Instance.saveDataSet3_List = RARC_DatabaseController.Instance.FindGameData(3);
 
-
-
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet1_List.Count != 0)
         {
-            saveSlot1_New.SetActive(false);
-            saveSlot1_Load.SetActive(true);
+            saveSlot1.LoadPanel(RARC_DatabaseController.Instance.saveDataSet1_List[0]);
         }
         else
         {
-            saveSlot1_New.SetActive(true);
-            saveSlot1_Load.SetActive(false);
+            saveSlot1.NewPanel();
         }
 
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet2_List.Count != 0)
         {
-            saveSlot2_New.SetActive(false);
-            saveSlot2_Load.SetActive(true);
+            saveSlot2.LoadPanel(RARC_DatabaseController.Instance.saveDataSet2_List[0]);
         }
         else
         {
-            saveSlot2_New.SetActive(true);
-            saveSlot2_Load.SetActive(false);
+            saveSlot2.NewPanel();
         }
 
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet3_List.Count != 0)
         {
-            saveSlot3_New.SetActive(false);
-            saveSlot3_Load.SetActive(true);
+            saveSlot3.LoadPanel(RARC_DatabaseController.Instance.saveDataSet3_List[0]);
         }
         else
         {
-            saveSlot3_New.SetActive(true);
-            saveSlot3_Load.SetActive(false);
+            saveSlot3.NewPanel();
         }
+    }
+
+    public void RefreshSettingsUI()
+    {
+        //Music
+        settingsMusic_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume * 100;
+        settingsMusic_Text.text = settingsMusic_Slider.value + "%";
+        //muteMusic_Toggle.isOn = RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted;
+
+        //SFX
+        settingsSFX_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume * 100;
+        settingsSFX_Text.text = settingsSFX_Slider.value + "%";
+        //muteSFX_Toggle.isOn = RARC_DatabaseController.Instance.player_SaveData.settings_isSFXMuted;
     }
 
     /////////////////////////////////////////////////////////////////

@@ -2,17 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RARC_Crew : MonoBehaviour
+[System.Serializable]
+public class RARC_Crew
 {
-    // Start is called before the first frame update
-    void Start()
+    ////////////////////////////////
+
+    public string crewName;
+
+
+
+
+
+
+    /////////////////////////////////////////////////////////////////
+
+    public RARC_Crew()
     {
-        
+        crewName = "Crew Member";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /////////////////////////////////////////////////////////////////
 }

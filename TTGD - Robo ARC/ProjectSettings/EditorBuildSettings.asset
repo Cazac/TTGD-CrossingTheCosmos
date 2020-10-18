@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/RARC_Game.unity
     guid: 13dbeb95d8b2d6543acf05edbe9ae9f1
+  - enabled: 1
+    path: Assets/_Scenes/RARC_Credits.unity
+    guid: 19e1bc2eab3f5a445b3bfc2d5e37e422
   m_configObjects: {}

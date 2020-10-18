@@ -52,4 +52,23 @@ public class RARC_Serializer
     }
 
     /////////////////////////////////////////////////////////////////
+
+    public static void DeleteFile(string filename)
+    {
+        string filePath = Application.dataPath + "/../" + filename;
+
+        //Check if file exists
+        if (File.Exists(filePath))
+        {
+            //Delete File
+            File.Delete(filePath);
+        }
+        else
+        {
+            //Debug.Log("Test Code: No File");
+        }
+
+    }
+
+    /////////////////////////////////////////////////////////////////
 }
