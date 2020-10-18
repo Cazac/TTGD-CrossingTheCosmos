@@ -231,7 +231,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void Button_GameNavigate()
+    public void Button_Navigate()
     {
         //Open Navigation Menu
         NavigationMenu_Main.SetActive(true);
@@ -243,7 +243,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2]);
     }
 
-    public void Button_GameNavigate_Close()
+    public void Button_Navigate_Close()
     {
         //Close Navigation Menu
         NavigationMenu_Main.SetActive(false);
@@ -272,7 +272,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
 
         //Close Menu
-        Button_GameNavigate_Close();
+        Button_Navigate_Close();
 
         //Refresh UI
         RefreshUI_NavigationDestination();
@@ -303,7 +303,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void Button_Game_Build(RARC_RoomTab roomToBeBuilt)
+    public void Button_Construction(RARC_RoomTab roomToBeBuilt)
     {
         //Open Build Menu
         ConstructionMenu_Main.SetActive(true);
@@ -339,7 +339,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
     }
 
-    public void Button_Game_Build_Close()
+    public void Button_Construction_Close()
     {
         //Close Build Menu
         ConstructionMenu_Main.SetActive(false);
@@ -349,141 +349,14 @@ public class RARC_ButtonController_Game : MonoBehaviour
         currentConstructionRoom = null;
     }
 
-    public void Button_Game_Build_Research()
-    {
-        //Close Build Menu
-        ConstructionMenu_Main.SetActive(false);
-        RARC_GameStateController.Instance.DisableRaycastBlocker();
-
-        //currentConstructionRoom.SetRoom(RARC_DatabaseController.Instance.room_DB.re);
-    }
-
-    public void Button_Game_Build_Medbay()
+    public void Button_Construction_BuildRoom(RARC_ConstructionRoomUITab constructionRoomTab)
     {
         //Close Build Menu
         ConstructionMenu_Main.SetActive(false);
         RARC_GameStateController.Instance.DisableRaycastBlocker();
 
         //Build Room
-        currentConstructionRoom.BuildRoom(RARC_DatabaseController.Instance.room_DB.MedbayRoom_SO);
-    }
-
-    public void Button_Game_Build_Food()
-    {
-        //Close Build Menu
-        ConstructionMenu_Main.SetActive(false);
-        RARC_GameStateController.Instance.DisableRaycastBlocker();
-
-        if (currentSelectedRoom != null)
-        {
-            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.FOOD;
-        }
-        else
-        {
-            //set cursor state
-            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_FOOD;
-        }
-    }
-
-    public void Button_Game_Build_Recreation()
-    {
-        //Close Build Menu
-        ConstructionMenu_Main.SetActive(false);
-        RARC_GameStateController.Instance.DisableRaycastBlocker();
-
-        if (currentSelectedRoom != null)
-        {
-            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.RECREATION;
-        }
-        else
-        {
-            //set cursor state
-            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_RECREATION;
-        }
-    }
-
-    public void Button_Game_Build_Factory()
-    {
-        //Close Build Menu
-        ConstructionMenu_Main.SetActive(false);
-        RARC_GameStateController.Instance.DisableRaycastBlocker();
-
-        if (currentSelectedRoom != null)
-        {
-            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.FACTORY;
-        }
-        else
-        {
-            //set cursor state
-            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_FACTORY;
-        }
-    }
-
-    public void Button_Game_Build_Storage()
-    {
-        //Close Build Menu
-        ConstructionMenu_Main.SetActive(false);
-        RARC_GameStateController.Instance.DisableRaycastBlocker();
-
-        if (currentSelectedRoom != null)
-        {
-            currentSelectedRoom.GetComponent<RARC_Room>().currentRoomType = RARC_Room.RoomType.STORAGE;
-        }
-        else
-        {
-            //set cursor state
-            RARC_GameStateController.Instance.currentCursorState = RARC_GameStateController.CursorState.BUILD_STORAGE;
-        }
-    }
-
-    /////////////////////////////////////////////////////////////////
-
-    public void Button_Pause()
-    {
-        PauseMenu_Main.SetActive(true);
-        RARC_GameStateController.Instance.EnableRaycastBlocker();
-
-        //Total
-        //volumeTotal_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_TotalVolume;
-
-        //Music
-        volumeMusic_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume * 100;
-        volumeMusic_Text.text = volumeMusic_Slider.value + "%";
-
-        //SFX
-        volumeSFX_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume * 100;
-        volumeSFX_Text.text = volumeSFX_Slider.value + "%";
-    }
-
-    public void Button_Pause_Resume()
-    {
-        PauseMenu_Main.SetActive(false);
-        RARC_GameStateController.Instance.DisableRaycastBlocker();
-    }
-
-    public void Button_Pause_Close()
-    {
-        PauseMenu_Main.SetActive(false);
-        RARC_GameStateController.Instance.DisableRaycastBlocker();
-    }
-
-    public void Button_Pause_Quit()
-    {
-        SceneManager.LoadScene("RARC_Title");  
-    }
-
-    public void Slider_Pause_MusicVolume()
-    {
-        RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume = volumeMusic_Slider.value / 100;
-        volumeMusic_Text.text = volumeMusic_Slider.value + "%";
-        RARC_MusicController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
-    }
-
-    public void Slider_Pause_SFXVolume()
-    {
-        RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume = volumeSFX_Slider.value / 100;
-        volumeSFX_Text.text = volumeSFX_Slider.value + "%";
-        RARC_SFXController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isSFXMuted);
+        currentConstructionRoom.BuildRoom(constructionRoomTab.roomSO);
     }
 
     /////////////////////////////////////////////////////////////////
@@ -784,10 +657,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
         exploringHumans_Slider.value = 0;
         exploringBots_Slider.value = 0;
 
-        Slider_Event_PeopleBotsChange();
+        Slider_Explore_PeopleBotsChange();
     }
 
-    public void Slider_Event_PeopleBotsChange()
+    public void Slider_Explore_PeopleBotsChange()
     {
         //exploringHumans_Slider;
         //exploringBots_Slider;
@@ -906,6 +779,32 @@ public class RARC_ButtonController_Game : MonoBehaviour
         ExploreMenu_Main.SetActive(false);
     }
 
+    public void Button_Explore_FinishExploring()
+    {
+        //Remove Menu
+        exploringShowoff_GO.SetActive(false);
+
+        //Get Slider Values
+        float humanEffectivness = 0.50f;
+        float botEffectivness = 0.25f;
+
+        //Calculate Rate
+        float effectiveTotal = Mathf.Clamp((exploringHumans_Slider.value * humanEffectivness) + (exploringBots_Slider.value * botEffectivness), 0, 1);
+        float effectivenessRate = (effectiveTotal - 1);
+
+        //Add Resources
+        foreach (Tuple<int, int, RARC_Resource> tuple in RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List)
+        {
+            //Calculate Bonus 
+            int bonusValue = (int)(tuple.Item2 * effectivenessRate);
+            int value = tuple.Item2 + bonusValue;
+
+            //Set Value
+            tuple.Item3.resourceCount = value;
+            RARC_GameStateController.Instance.GainResources(tuple.Item3.resourceName, tuple.Item3.resourceType, tuple.Item3.resourceCount);
+        }
+    }
+
     public IEnumerator IExplorePlanet(RARC_Event eventUsed, float effectiveTotal)
     {
         //Turn On Menus
@@ -953,7 +852,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
                     yield return new WaitForSeconds(0.75f);
 
-             
+
 
                     //Open Event
                     RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(eventUsed);
@@ -1018,7 +917,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     break;
             }
 
-          
+
 
 
 
@@ -1028,7 +927,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
             exploringShowoffProgress += Time.deltaTime * 40;
         }
 
-    
+
 
 
         //Set to 100%
@@ -1044,30 +943,54 @@ public class RARC_ButtonController_Game : MonoBehaviour
         yield break;
     }
 
-    public void Button_Explore_FinishExploring()
+    /////////////////////////////////////////////////////////////////
+
+    public void Button_Pause()
     {
-        //Remove Menu
-        exploringShowoff_GO.SetActive(false);
+        PauseMenu_Main.SetActive(true);
+        RARC_GameStateController.Instance.EnableRaycastBlocker();
 
-        //Get Slider Values
-        float humanEffectivness = 0.50f;
-        float botEffectivness = 0.25f;
+        //Total
+        //volumeTotal_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_TotalVolume;
 
-        //Calculate Rate
-        float effectiveTotal = Mathf.Clamp((exploringHumans_Slider.value * humanEffectivness) + (exploringBots_Slider.value * botEffectivness), 0, 1);
-        float effectivenessRate = (effectiveTotal - 1);
+        //Music
+        volumeMusic_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume * 100;
+        volumeMusic_Text.text = volumeMusic_Slider.value + "%";
 
-        //Add Resources
-        foreach (Tuple<int, int, RARC_Resource> tuple in RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List)
-        {
-            //Calculate Bonus 
-            int bonusValue = (int)(tuple.Item2 * effectivenessRate);
-            int value = tuple.Item2 + bonusValue;
+        //SFX
+        volumeSFX_Slider.value = RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume * 100;
+        volumeSFX_Text.text = volumeSFX_Slider.value + "%";
+    }
 
-            //Set Value
-            tuple.Item3.resourceCount = value;
-            RARC_GameStateController.Instance.GainResources(tuple.Item3.resourceName, tuple.Item3.resourceType, tuple.Item3.resourceCount);
-        }
+    public void Button_Pause_Resume()
+    {
+        PauseMenu_Main.SetActive(false);
+        RARC_GameStateController.Instance.DisableRaycastBlocker();
+    }
+
+    public void Button_Pause_Close()
+    {
+        PauseMenu_Main.SetActive(false);
+        RARC_GameStateController.Instance.DisableRaycastBlocker();
+    }
+
+    public void Button_Pause_Quit()
+    {
+        SceneManager.LoadScene("RARC_Title");
+    }
+
+    public void Slider_Pause_MusicVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume = volumeMusic_Slider.value / 100;
+        volumeMusic_Text.text = volumeMusic_Slider.value + "%";
+        RARC_MusicController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
+    }
+
+    public void Slider_Pause_SFXVolume()
+    {
+        RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume = volumeSFX_Slider.value / 100;
+        volumeSFX_Text.text = volumeSFX_Slider.value + "%";
+        RARC_SFXController.Instance.VolumeLevels_UpdateAll(RARC_DatabaseController.Instance.player_SaveData.settings_SFXVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isSFXMuted);
     }
 
     /////////////////////////////////////////////////////////////////
@@ -1189,17 +1112,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void RefreshUI_ButtonInteractablity()
     {
+        //Fabrication
+        FabricationButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
+        FabricationButton_Main.interactable = true;
+
         //Event
         if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
         {
             //Interactable
-            EventButton_Main.gameObject.SetActive(true);
+            EventButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
             EventButton_Main.interactable = true;
         }
         else
         {
             //Not
-            EventButton_Main.gameObject.SetActive(false);
+            EventButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
             EventButton_Main.interactable = false;
         }
 
@@ -1207,13 +1134,13 @@ public class RARC_ButtonController_Game : MonoBehaviour
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress == 0)
         {
             //Interactable
-            NavigationButton_Main.gameObject.SetActive(true);
+            NavigationButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
             NavigationButton_Main.interactable = true;
         }
         else
         {
             //Not
-            NavigationButton_Main.gameObject.SetActive(false);
+            NavigationButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
             NavigationButton_Main.interactable = false;
         }
 
@@ -1221,26 +1148,91 @@ public class RARC_ButtonController_Game : MonoBehaviour
         if (RARC_GameStateController.Instance.isReady_Explore == false)
         {
             //Interactable
-            ExploreButton_Main.gameObject.SetActive(true);
+            ExploreButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
             ExploreButton_Main.interactable = true;
         }
         else
         {
             //Not
-            ExploreButton_Main.gameObject.SetActive(false);
+            ExploreButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
+            ExploreButton_Main.interactable = false;
+        }
+    }
+
+    public void RefreshUI_ButtonAvailability_Off()
+    {
+        FabricationButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
+        NavigationButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
+        EventButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
+        ExploreButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
+    }
+
+    public void RefreshUI_ButtonAvailability_On()
+    {
+        //List of animators In order
+        List<Animator> buttonAnimators_List = new List<Animator>();
+
+        //Fabirtation
+        FabricationButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
+        FabricationButton_Main.interactable = true;
+        FabricationButton_Main.gameObject.GetComponent<Animator>().Play("Animation - Button Wait");
+        buttonAnimators_List.Add(FabricationButton_Main.gameObject.GetComponent<Animator>());
+        
+        //Navigation
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress == 0)
+        {
+            //Interactable
+            NavigationButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
+            NavigationButton_Main.interactable = true;
+            NavigationButton_Main.gameObject.GetComponent<Animator>().Play("Animation - Button Wait");
+            buttonAnimators_List.Add(NavigationButton_Main.gameObject.GetComponent<Animator>());
+        }
+        else
+        {
+            //Not
+            NavigationButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
+            NavigationButton_Main.interactable = false;
+        }
+
+        //Explore
+        if (RARC_GameStateController.Instance.isReady_Explore == false)
+        {
+            //Interactable
+            ExploreButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
+            ExploreButton_Main.interactable = true;
+            ExploreButton_Main.gameObject.GetComponent<Animator>().Play("Animation - Button Wait");
+            buttonAnimators_List.Add(ExploreButton_Main.gameObject.GetComponent<Animator>());
+        }
+        else
+        {
+            //Not
+            ExploreButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
             ExploreButton_Main.interactable = false;
         }
 
-        //if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation == null)
-        //{
+        //Event
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        {
             //Interactable
-            //NavigationButton_Main.interactable = true;
-        //}
+            EventButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
+            EventButton_Main.interactable = true;
+            EventButton_Main.gameObject.GetComponent<Animator>().Play("Animation - Button Wait");
+            buttonAnimators_List.Add(EventButton_Main.gameObject.GetComponent<Animator>());
+        }
+        else
+        {
+            //Not
+            EventButton_Main.gameObject.transform.parent.gameObject.SetActive(false);
+            EventButton_Main.interactable = false;
+        }
 
-
-        //DEBUG
-        //CrewButton_Main.interactable = false;
-        //ResearchButton_Main.interactable = false;
+        float time = 0f;
+        foreach (Animator animator in buttonAnimators_List)
+        {
+            //Play All Animators In Orders
+            StartCoroutine(IAnimateButtons(time, animator));
+            time += 0.1f;
+        }
     }
 
     public void RefreshUI_LaunchResources()
@@ -1265,6 +1257,18 @@ public class RARC_ButtonController_Game : MonoBehaviour
         {
             launchFoodNeeded_Text.text = "<" + colorValues_Black + ">" + "x" + requiredFood + "</color>";
         }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public IEnumerator IAnimateButtons(float TimeToWait, Animator animator)
+    {
+        yield return new WaitForSeconds(TimeToWait);
+
+        animator.Play("Animation - Button Slide");
+
+
+        yield break;
     }
 
     /////////////////////////////////////////////////////////////////

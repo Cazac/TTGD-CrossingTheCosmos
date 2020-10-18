@@ -1218,9 +1218,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: RARC_ButtonController_Game, Assembly-CSharp
-        m_MethodName: Button_Game_Build_Medbay
+      - m_Target: {fileID: 6848569231031507426}
+        m_TargetAssemblyTypeName: RARC_ConstructionRoomUITab, Assembly-CSharp
+        m_MethodName: Button_ContructRoom
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

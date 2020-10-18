@@ -42,5 +42,10 @@ public class RARC_ConstructionRoomUITab : MonoBehaviour
         requirementsTab.SetupTab(newResource_List);
     }
 
+    public void Button_ContructRoom()
+    {
+        RARC_ButtonController_Game.Instance.Button_Construction_BuildRoom(this);
+    }
+
     /////////////////////////////////////////////////////////////////
 }

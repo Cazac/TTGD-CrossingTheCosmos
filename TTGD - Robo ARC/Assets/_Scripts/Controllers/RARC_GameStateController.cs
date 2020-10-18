@@ -212,20 +212,35 @@ public class RARC_GameStateController : MonoBehaviour
     {
         cutScene_Animator.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(18.5f);
+
+        RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
+
+        yield return new WaitForSeconds(17.5f);
 
         if (currentCutscene_IEnum == null)
         {
             yield break;
         }
 
-        print("Test Code: Ending Cutscene");
 
+        StartCoroutine(Player_EndCutscene());
+
+   
+
+        yield break;
+    }
+
+    public IEnumerator Player_EndCutscene()
+    {
         cutScene_Animator.gameObject.SetActive(false);
-
         blacokoutCurtain_Animator.Play("Fade Out");
-
         currentCutscene_IEnum = null;
+
+        yield return new WaitForSeconds(1f);
+
+        RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
+
+        yield break;
     }
 
     public IEnumerator Player_StartWeek()
@@ -257,9 +272,12 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
         RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
-        RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
 
-        yield return new WaitForSeconds(2f);
+        RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
+
+        yield return new WaitForSeconds(1.8f);
+
+        RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
 
         //print("Test Code: Ready");
 

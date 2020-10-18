@@ -39,7 +39,7 @@ public class RARC_RoomTab : MonoBehaviour
         if (currentRoom_SO.roomType == RARC_Room.RoomType.EMPTY)
         {
             //Open Build Room Menu
-            RARC_ButtonController_Game.Instance.Button_Game_Build(this);
+            RARC_ButtonController_Game.Instance.Button_Construction(this);
         }
         else
         {
