@@ -11,11 +11,19 @@ public class RARC_Resource
     public int resourceCount;
     public ResourceType resourceType;
 
+
     public RARC_Resource(string resourceName, int resourceCount, ResourceType resourceType)
     {
         this.resourceName = resourceName;
         this.resourceType = resourceType;
         this.resourceCount = resourceCount;
+    }
+
+    public RARC_Resource(int resourceCount, ResourceType resourceType)
+    {
+        this.resourceType = resourceType;
+        this.resourceCount = resourceCount;
+        resourceName = RARC_DatabaseController.Instance.resources_DB.GetResource(resourceType).resourceName;
     }
 
     public enum ResourceType

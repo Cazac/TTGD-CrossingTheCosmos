@@ -44,12 +44,13 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("Navigation Options")]
     public List<RARC_Planet> navigationPossiblePlanets_List;
 
-    [Header("BLANKVAR")]
+    [Header("Per Turn Consumables")]
     public readonly int fuelRequired = 5;
     public readonly int foodRequired = 10;
 
 
-
+    [Header("Raycast Blocker")]
+    public GameObject raycastBlocker_GO;
 
     /////////////////////////////////////////////////////////////////
 
@@ -426,6 +427,18 @@ public class RARC_GameStateController : MonoBehaviour
         {
             RARC_CrewBotsController.Instance.RemoveBotMember();
         }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void EnableRaycastBlocker()
+    {
+        raycastBlocker_GO.SetActive(true);
+    }
+
+    public void DisableRaycastBlocker()
+    {
+        raycastBlocker_GO.SetActive(false);
     }
 
     /////////////////////////////////////////////////////////////////

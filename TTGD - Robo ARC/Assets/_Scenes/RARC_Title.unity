@@ -3356,13 +3356,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EmptyRoom_SO: {fileID: 11400000, guid: d08e93e775c5e7b4dbbabe48da405503, type: 2}
-  CloningRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
+  CrewQuartersRoom_SO: {fileID: 11400000, guid: 786f2a65b2432c04bb09e8a8a94e7873,
+    type: 2}
   MedbayRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
-  FactoryRoom_SO: {fileID: 0}
-  StoragRoom_SO: {fileID: 0}
-  KitchenRoom_SO: {fileID: 0}
-  HydroponicsRoom_SO: {fileID: 0}
-  AstrometricsRoom_SO: {fileID: 0}
+  FactoryRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
+  KitchenRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
+  StorageBayRoom_SO: {fileID: 11400000, guid: 6e78727016a3871449c5a0d1ba41aa88, type: 2}
+  CloningLabRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4, type: 2}
+  HydroponicsLabRoom_SO: {fileID: 11400000, guid: fdf6a11f67eaddc43bb03971833a7af4,
+    type: 2}
+  AstrometricsLabRoom_SO: {fileID: 11400000, guid: 1cced6ce0532ead448ec3a39b278eefb,
+    type: 2}
 --- !u!4 &628264547
 Transform:
   m_ObjectHideFlags: 0

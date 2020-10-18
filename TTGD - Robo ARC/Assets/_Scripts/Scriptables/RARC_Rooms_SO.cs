@@ -10,12 +10,14 @@ public class RARC_Rooms_SO : ScriptableObject
     [Header("Room Type")]
     public RARC_Room.RoomType roomType;
 
+    [Header("Room Name")]
+    public string roomName;
+
     [Header("Sprites")]
     public Sprite activeRoomSprite;
     public Sprite inactiveRoomSprite;
 
     ////////////////////////////////
-
 
     [Header("Room Requirements 1")]
     public RARC_Resource.ResourceType resourceRequired_1;

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Room - Empty
   m_EditorClassIdentifier: 
   roomType: 0
+  roomName: Empty
   activeRoomSprite: {fileID: 21300000, guid: 66d37ed599628f84b809e9e2f8f862dd, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: 89799447ee586ef4d8564b40c0269071, type: 3}
   resourceRequired_1: 0

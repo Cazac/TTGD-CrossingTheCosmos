@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class RARC_RoomTab : MonoBehaviour, IPointerClickHandler
+public class RARC_RoomTab : MonoBehaviour
 {
     ////////////////////////////////
 
@@ -21,14 +21,6 @@ public class RARC_RoomTab : MonoBehaviour, IPointerClickHandler
 
     /////////////////////////////////////////////////////////////////
 
-    public void OnPointerClick(PointerEventData eventData)
-    {
-
-
-        RARC_ButtonController_Game.Instance.Button_Game_Build(this);
-    }
-
-
     private void OnMouseEnter()
     {
         //Change Color Highlight
@@ -43,10 +35,11 @@ public class RARC_RoomTab : MonoBehaviour, IPointerClickHandler
 
     private void OnMouseUp()
     {
+
         if (currentRoom_SO.roomType == RARC_Room.RoomType.EMPTY)
         {
             //Open Build Room Menu
-            //RARC_ButtonController_Game.Instance.Button_Game_Build(this);
+            RARC_ButtonController_Game.Instance.Button_Game_Build(this);
         }
         else
         {
