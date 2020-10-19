@@ -124,6 +124,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
     [Header("Weeks In Space")]
     public TextMeshProUGUI weeksAtSpace_Text;
 
+    [Header("Crew Counters")]
+    public TextMeshProUGUI humansAlive_Text;
+    public TextMeshProUGUI botsAlive_Text;
+
     [Header("Storage Tabs")]
     public List<RARC_ResourceTab> storageResourceTabs_List;
 
@@ -1084,9 +1088,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void RefreshUI_ResourcesAndStorage()
     {
-        //resourcesFuel_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount;
-        //resourcesFood_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount;
-        //resourcesScrap_Text.text = "x" + RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount;
+        //Info On Humans and Bots
+        humansAlive_Text.text = "<" + colorValues_White + ">" + "x" + RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count + "</color>";
+        botsAlive_Text.text = "<" + colorValues_White + ">" + "x" + RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count + "</color>";
 
         foreach (RARC_ResourceTab tab in storageResourceTabs_List)
         {
@@ -1246,7 +1250,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
         else
         {
-            launchFuelNeeded_Text.text = "<" + colorValues_Black + ">" + "x" + requiredFuel + "</color>";
+            launchFuelNeeded_Text.text = "<" + colorValues_White + ">" + "x" + requiredFuel + "</color>";
         }
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount < requiredFood)
@@ -1255,7 +1259,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
         else
         {
-            launchFoodNeeded_Text.text = "<" + colorValues_Black + ">" + "x" + requiredFood + "</color>";
+            launchFoodNeeded_Text.text = "<" + colorValues_White + ">" + "x" + requiredFood + "</color>";
         }
     }
 

@@ -37,7 +37,9 @@ public class RARC_ConstructionRoomUITab : MonoBehaviour
         newResource_List.Add(newResource3);
 
 
-
+        print("Test Code: " + newResource1.resourceName);
+        print("Test Code: " + newResource2.resourceName);
+        print("Test Code: " + newResource3.resourceName);
 
 
 

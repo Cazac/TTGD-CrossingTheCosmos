@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomType: 2
   roomName: Cloning
-  activeRoomSprite: {fileID: 21300000, guid: ce13a5a0a80fee74ba40b5e0d9118658, type: 3}
-  inactiveRoomSprite: {fileID: 21300000, guid: 5062cc95b7afa0745b22c059e84d49b1, type: 3}
+  activeRoomSprite: {fileID: 21300000, guid: 905741e2d55142440aed092d0b5aa245, type: 3}
+  inactiveRoomSprite: {fileID: 21300000, guid: a7910ed487c0fa6408e0f01e0bef418f, type: 3}
   resourceRequired_1: 0
   resourceRequiredAmount_1: 0
   resourceRequired_2: 0

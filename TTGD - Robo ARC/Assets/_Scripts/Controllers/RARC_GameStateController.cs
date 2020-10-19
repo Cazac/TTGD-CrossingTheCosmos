@@ -11,16 +11,6 @@ public class RARC_GameStateController : MonoBehaviour
 
     ////////////////////////////////
 
-    [Header("Cursor State")]
-    public CursorState currentCursorState;
-    public enum CursorState
-    {
-        NORMAL,
-        BUILD_RESEARCH, BUILD_MEDICAL, BUILD_FOOD, BUILD_RECREATION, BUILD_FACTORY, BUILD_STORAGE
-    }
-
-    ////////////////////////////////
-
     [Header("System Ready States")]
     public bool isReady_Launch;
     public bool isReady_Navigation;
@@ -48,9 +38,11 @@ public class RARC_GameStateController : MonoBehaviour
     public readonly int fuelRequired = 5;
     public readonly int foodRequired = 10;
 
-
     [Header("Raycast Blocker")]
     public GameObject raycastBlocker_GO;
+
+    [Header("BLANKVAR")]
+    public RARC_RoomTab[] allShipRoomTabs_Arr;
 
     /////////////////////////////////////////////////////////////////
 
@@ -79,13 +71,20 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
         RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources();
-        
+
+        //Reload Ship
+        RARC_Room.RoomType[] shipRooms_Arr = RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr;
+        for (int i = 0; i < shipRooms_Arr.Length; i++)
+        {
+            //Load Room By Type
+            allShipRoomTabs_Arr[i].LoadRoom(RARC_DatabaseController.Instance.room_DB.FindRoomType(shipRooms_Arr[i]));
+        }
+
 
 
         //Load System Data
 
-        //set cursor state
-        currentCursorState = CursorState.NORMAL;
+
     }
 
     public void Update()
@@ -100,14 +99,6 @@ public class RARC_GameStateController : MonoBehaviour
             {
                 RARC_ButtonController_Game.Instance.Button_Pause_Close();
             }
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        if (Input.GetMouseButton(1) && currentCursorState != CursorState.NORMAL)
-        {
-            currentCursorState = CursorState.NORMAL;
         }
     }
 

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomType: 7
   roomName: Quarters
-  activeRoomSprite: {fileID: 21300000, guid: ce13a5a0a80fee74ba40b5e0d9118658, type: 3}
-  inactiveRoomSprite: {fileID: 21300000, guid: 5062cc95b7afa0745b22c059e84d49b1, type: 3}
+  activeRoomSprite: {fileID: 21300000, guid: e76a45e07c226524bbd77285e6be538e, type: 3}
+  inactiveRoomSprite: {fileID: 21300000, guid: 691e97857335b38408d4bd3fef58319e, type: 3}
   resourceRequired_1: 0
   resourceRequiredAmount_1: 0
   resourceRequired_2: 0

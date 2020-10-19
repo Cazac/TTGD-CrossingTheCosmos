@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomType: 1
   roomName: Astrometrics
-  activeRoomSprite: {fileID: 21300000, guid: ce13a5a0a80fee74ba40b5e0d9118658, type: 3}
-  inactiveRoomSprite: {fileID: 21300000, guid: 5062cc95b7afa0745b22c059e84d49b1, type: 3}
+  activeRoomSprite: {fileID: 21300000, guid: 9e932ee5c85c4134cae8e9097cd77c8d, type: 3}
+  inactiveRoomSprite: {fileID: 21300000, guid: 62f3394f5dfe74149b69e895042e1e6b, type: 3}
   resourceRequired_1: 0
   resourceRequiredAmount_1: 0
   resourceRequired_2: 0

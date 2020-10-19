@@ -22,7 +22,7 @@ public class RARC_ShipSaveData
 
     ////////////////////////////////
 
-    public string[] shipData_Rooms_Arr;
+    public RARC_Room.RoomType[] shipData_Rooms_Arr;
 
     ////////////////////////////////
 
@@ -115,6 +115,25 @@ public class RARC_ShipSaveData
 
         //shipAvaliblePlanetEvents_List.Add();
 
+
+
+        shipData_Rooms_Arr = new RARC_Room.RoomType[16];
+        shipData_Rooms_Arr[0] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[1] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[2] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[3] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[4] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[5] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[6] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[7] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[8] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[9] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[10] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[11] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[12] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[13] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[14] = RARC_Room.RoomType.EMPTY;
+        shipData_Rooms_Arr[15] = RARC_Room.RoomType.EMPTY;
 
     }
 
