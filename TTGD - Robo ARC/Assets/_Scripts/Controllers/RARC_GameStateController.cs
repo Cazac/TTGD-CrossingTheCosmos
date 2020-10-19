@@ -215,7 +215,7 @@ public class RARC_GameStateController : MonoBehaviour
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
 
-        yield return new WaitForSeconds(17.5f);
+        yield return new WaitForSeconds(30.3f);
 
         if (currentCutscene_IEnum == null)
         {
@@ -226,7 +226,7 @@ public class RARC_GameStateController : MonoBehaviour
         StartCoroutine(Player_EndCutscene());
 
    
-
+        //Break Coroutine
         yield break;
     }
 
@@ -240,6 +240,7 @@ public class RARC_GameStateController : MonoBehaviour
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
 
+        //Break Coroutine
         yield break;
     }
 
@@ -284,6 +285,7 @@ public class RARC_GameStateController : MonoBehaviour
         //Add Interatablity
         blackoutCurtain_Image.raycastTarget = false;
 
+        //Break Coroutine
         yield break;
     }
 
