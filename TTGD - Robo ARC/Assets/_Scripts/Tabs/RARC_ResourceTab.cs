@@ -90,6 +90,61 @@ public class RARC_ResourceTab : MonoBehaviour
         icon_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resourceTup.Item3.resourceType);
     }
 
-  
+    public void SetResource_OutcomeChanges(RARC_Resource resource)
+    {
+        if (resource.resourceCount >= 0)
+        {
+            name_Text.text = resource.resourceName + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + resource.resourceCount + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resource.resourceType);
+        }
+        else if (resource.resourceCount < 0)
+        {
+            name_Text.text = resource.resourceName + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " -" + resource.resourceCount + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resource.resourceType);
+        }     
+    }
+
+    public void SetResource_OutcomeChanges_Hull(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Hull" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.ShipBaseIcon;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Hull" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " -" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.ShipBaseIcon;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_Crew(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Crew" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.CrewIcon;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Crew" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " -" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.CrewIcon;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_Bots(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Bots" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.BotsIcon;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Bots" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " -" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.BotsIcon;
+        }
+    }
+
     /////////////////////////////////////////////////////////////////
 }

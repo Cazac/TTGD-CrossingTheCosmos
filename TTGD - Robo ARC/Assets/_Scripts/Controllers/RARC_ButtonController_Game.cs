@@ -50,8 +50,26 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public RARC_PlanetTabUI navigationPlanet2_Tab;
     public RARC_PlanetTabUI navigationPlanet3_Tab;
 
+    /////////////////////////////////////////////////////////////////
+
+    [Header("Event Confirm Menus")]
+    public GameObject eventOutcomeMenu_GO;
+
+    public GameObject eventOutcomeNothingResource_GO;
+    public RARC_ResourceTab eventOutcomeResource1_Tab;
+    public RARC_ResourceTab eventOutcomeResource2_Tab;
+    public RARC_ResourceTab eventOutcomeResource3_Tab;
+    public RARC_ResourceTab eventOutcomeResource4_Tab;
+    public RARC_ResourceTab eventOutcomeResource5_Tab;
+    public RARC_ResourceTab eventOutcomeResource6_Tab;
+    public RARC_ResourceTab eventOutcomeResource7_Tab;
+    public RARC_ResourceTab eventOutcomeResource8_Tab;
 
 
+    public List<RARC_Resource> eventOutcomeChanges_Resources_List = new List<RARC_Resource>();
+    public int eventOutcomeChanges_Hull;
+    public int eventOutcomeChanges_Crew;
+    public int eventOutcomeChanges_Bots;
 
     /////////////////////////////////////////////////////////////////
 
@@ -165,6 +183,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     [HideInInspector]
     public RARC_RoomTab currentConstructionRoom;
+
+    [HideInInspector]
+    public bool isEventType_Travel;
+    public bool isEventType_Planet;
 
     ////////////////////////////////
 
@@ -365,10 +387,167 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
+    public void Button_EventOutcome()
+    {
+        //Close Other Menu
+        Button_Event_Close();
+
+
+        if (exploringShowoff_GO.activeSelf == true)
+        {
+            return;
+        }
+
+        //Turn On Menu
+        eventOutcomeMenu_GO.SetActive(true);
+        RARC_GameStateController.Instance.EnableRaycastBlocker();
+
+        //Clear Exploration Bool
+        hasShowoffEventCleared = true;
+
+
+        //Show Resources Levels dynmically
+        switch (eventOutcomeChanges_Resources_List.Count)
+        {
+            case 5:
+                eventOutcomeNothingResource_GO.SetActive(false);
+                eventOutcomeResource1_Tab.gameObject.SetActive(true);
+                eventOutcomeResource2_Tab.gameObject.SetActive(true);
+                eventOutcomeResource3_Tab.gameObject.SetActive(true);
+                eventOutcomeResource4_Tab.gameObject.SetActive(true);
+                eventOutcomeResource5_Tab.gameObject.SetActive(true);
+                eventOutcomeResource1_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[0]);
+                eventOutcomeResource2_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[1]);
+                eventOutcomeResource3_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[2]);
+                eventOutcomeResource4_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[3]);
+                eventOutcomeResource5_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[4]);
+                break;
+
+            case 4:
+                eventOutcomeNothingResource_GO.SetActive(false);
+                eventOutcomeResource1_Tab.gameObject.SetActive(true);
+                eventOutcomeResource2_Tab.gameObject.SetActive(true);
+                eventOutcomeResource3_Tab.gameObject.SetActive(true);
+                eventOutcomeResource4_Tab.gameObject.SetActive(true);
+                eventOutcomeResource5_Tab.gameObject.SetActive(false);
+                eventOutcomeResource1_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[0]);
+                eventOutcomeResource2_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[1]);
+                eventOutcomeResource3_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[2]);
+                eventOutcomeResource4_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[3]);
+                break;
+
+            case 3:
+                eventOutcomeNothingResource_GO.SetActive(false);
+                eventOutcomeResource1_Tab.gameObject.SetActive(true);
+                eventOutcomeResource2_Tab.gameObject.SetActive(true);
+                eventOutcomeResource3_Tab.gameObject.SetActive(true);
+                eventOutcomeResource4_Tab.gameObject.SetActive(false);
+                eventOutcomeResource5_Tab.gameObject.SetActive(false);
+                eventOutcomeResource1_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[0]);
+                eventOutcomeResource2_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[1]);
+                eventOutcomeResource3_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[2]);
+                break;
+
+            case 2:
+                eventOutcomeNothingResource_GO.SetActive(false);
+                eventOutcomeResource1_Tab.gameObject.SetActive(true);
+                eventOutcomeResource2_Tab.gameObject.SetActive(true);
+                eventOutcomeResource3_Tab.gameObject.SetActive(false);
+                eventOutcomeResource4_Tab.gameObject.SetActive(false);
+                eventOutcomeResource5_Tab.gameObject.SetActive(false);
+                eventOutcomeResource1_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[0]);
+                eventOutcomeResource2_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[1]);
+                break;
+
+            case 1:
+                eventOutcomeNothingResource_GO.SetActive(false);
+                eventOutcomeResource1_Tab.gameObject.SetActive(true);
+                eventOutcomeResource2_Tab.gameObject.SetActive(false);
+                eventOutcomeResource3_Tab.gameObject.SetActive(false);
+                eventOutcomeResource4_Tab.gameObject.SetActive(false);
+                eventOutcomeResource5_Tab.gameObject.SetActive(false);
+                eventOutcomeResource1_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[0]);
+                break;
+
+            default:
+                eventOutcomeNothingResource_GO.SetActive(true);
+                eventOutcomeResource1_Tab.gameObject.SetActive(false);
+                eventOutcomeResource2_Tab.gameObject.SetActive(false);
+                eventOutcomeResource3_Tab.gameObject.SetActive(false);
+                eventOutcomeResource4_Tab.gameObject.SetActive(false);
+                eventOutcomeResource5_Tab.gameObject.SetActive(false);
+                break;
+        }
+
+        if (eventOutcomeChanges_Hull != 0)
+        {
+            eventOutcomeNothingResource_GO.SetActive(false);
+            eventOutcomeResource6_Tab.gameObject.SetActive(false);
+            eventOutcomeResource6_Tab.SetResource_OutcomeChanges_Hull(eventOutcomeChanges_Hull);
+        }
+        else
+        {
+            eventOutcomeResource6_Tab.gameObject.SetActive(false);
+        }
+
+        if (eventOutcomeChanges_Crew != 0)
+        {
+            eventOutcomeNothingResource_GO.SetActive(false);
+            eventOutcomeResource7_Tab.gameObject.SetActive(false);
+            eventOutcomeResource7_Tab.SetResource_OutcomeChanges_Hull(eventOutcomeChanges_Crew);
+        }
+        else
+        {
+            eventOutcomeResource7_Tab.gameObject.SetActive(false);
+        }
+
+        if (eventOutcomeChanges_Bots != 0)
+        {
+            eventOutcomeNothingResource_GO.SetActive(false);
+            eventOutcomeResource8_Tab.gameObject.SetActive(false);
+            eventOutcomeResource8_Tab.SetResource_OutcomeChanges_Hull(eventOutcomeChanges_Bots);
+        }
+        else
+        {
+            eventOutcomeResource8_Tab.gameObject.SetActive(false);
+        }
+    }
+
+    public void Button_EventOutcome_Close()
+    {
+        //Turn On Menu
+        eventOutcomeMenu_GO.SetActive(false);
+        RARC_GameStateController.Instance.DisableRaycastBlocker();
+
+        //Add Values
+        foreach (RARC_Resource resource in eventOutcomeChanges_Resources_List)
+        {
+            RARC_GameStateController.Instance.ChangeResources(resource.resourceName, resource.resourceType, resource.resourceCount);
+        }
+
+        RARC_GameStateController.Instance.ChangeHull(eventOutcomeChanges_Hull);
+        RARC_GameStateController.Instance.ChangeCrew(eventOutcomeChanges_Crew);
+        RARC_GameStateController.Instance.ChangeBots(eventOutcomeChanges_Bots);
+
+
+        //Clear LIst
+        eventOutcomeChanges_Resources_List.Clear();
+        eventOutcomeChanges_Hull = 0;
+        eventOutcomeChanges_Crew = 0;
+        eventOutcomeChanges_Bots = 0;
+    }
+
+    /////////////////////////////////////////////////////////////////
+
     public void Button_EventTravel()
     {
         if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
         {
+            isEventType_Travel = true;
+            isEventType_Planet = false;
+
+            print("Test Code: Event Bool Travel");
+
             //Open Event Menu
             EventMenu_Main.SetActive(true);
             RARC_GameStateController.Instance.EnableRaycastBlocker();
@@ -382,6 +561,11 @@ public class RARC_ButtonController_Game : MonoBehaviour
     {
         if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Count != 0)
         {
+            isEventType_Travel = false;
+            isEventType_Planet = true;
+
+            print("Test Code: Event Bool Planet");
+
             //Open Event Menu
             EventMenu_Main.SetActive(true);
             RARC_GameStateController.Instance.EnableRaycastBlocker();
@@ -397,20 +581,40 @@ public class RARC_ButtonController_Game : MonoBehaviour
         EventMenu_Main.SetActive(false);
         RARC_GameStateController.Instance.DisableRaycastBlocker();
 
+
         //Clear Exploration Bool
         hasShowoffEventCleared = true;
     }
-
+   
     public void Button_Event_Option(int optionNo)
     {
-        //Close Event Menu
-        //EventMenu_Main.SetActive(false);
-
         //Convert to non savable data
-        RARC_Event eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0];
-        RARC_Event_SO eventSO = eventScript.GetEventSO();
+        RARC_Event eventScript;
+        RARC_Event_SO eventSO = null;
 
-        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.RemoveAt(0);
+        //Check Type
+        if (isEventType_Travel)
+        {
+
+            print("Test Code: THIS IS TRAVEL");
+
+            //Convert to non savable data
+            eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0];
+            eventSO = eventScript.GetEventSO();
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.RemoveAt(0);
+        }
+        else if (isEventType_Planet)
+        {
+
+            print("Test Code: THIS IS PLANET");
+
+            //Convert to non savable data
+            eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List[0];
+            eventSO = eventScript.GetEventSO();
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.RemoveAt(0);
+        }
+
+
 
 
         //Find Option Choice
@@ -423,13 +627,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     //Add Next Event If Avalible
                     if (eventSO.eventOption1_Outcome.outcomeNextEvent != null)
                     {
-                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
+                        //Check Type
+                        if (isEventType_Travel)
+                        {
+                            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
+                        }
+                        else if (isEventType_Planet)
+                        {
+                            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
+                        }
                     }
 
                     //Apply Event Changes
-                    Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType1, eventSO.eventOption1_Outcome.outcomeValue1);
-                    Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType2, eventSO.eventOption1_Outcome.outcomeValue2);
-                    Event_ApplyOutcomeReal(eventSO.eventOption1_Outcome.outcomeType3, eventSO.eventOption1_Outcome.outcomeValue3);
+                    Event_AddOutcomeChanges(eventSO.eventOption1_Outcome.outcomeType1, eventSO.eventOption1_Outcome.outcomeValue1);
+                    Event_AddOutcomeChanges(eventSO.eventOption1_Outcome.outcomeType2, eventSO.eventOption1_Outcome.outcomeValue2);
+                    Event_AddOutcomeChanges(eventSO.eventOption1_Outcome.outcomeType3, eventSO.eventOption1_Outcome.outcomeValue3);
                 }
 
                 break;
@@ -441,13 +653,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     //Add Next Event If Avalible
                     if (eventSO.eventOption2_Outcome.outcomeNextEvent != null)
                     {
-                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
+                        //Check Type
+                        if (isEventType_Travel)
+                        {
+                            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
+                        }
+                        else if (isEventType_Planet)
+                        {
+                            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
+                        }
                     }
 
                     //Apply Event Changes
-                    Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType1, eventSO.eventOption2_Outcome.outcomeValue1);
-                    Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType2, eventSO.eventOption2_Outcome.outcomeValue2);
-                    Event_ApplyOutcomeReal(eventSO.eventOption2_Outcome.outcomeType3, eventSO.eventOption2_Outcome.outcomeValue3);
+                    Event_AddOutcomeChanges(eventSO.eventOption2_Outcome.outcomeType1, eventSO.eventOption2_Outcome.outcomeValue1);
+                    Event_AddOutcomeChanges(eventSO.eventOption2_Outcome.outcomeType2, eventSO.eventOption2_Outcome.outcomeValue2);
+                    Event_AddOutcomeChanges(eventSO.eventOption2_Outcome.outcomeType3, eventSO.eventOption2_Outcome.outcomeValue3);
                 }
 
                 break;
@@ -459,13 +679,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     //Add Next Event If Avalible
                     if (eventSO.eventOption3_Outcome.outcomeNextEvent != null)
                     {
-                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
+                        //Check Type
+                        if (isEventType_Travel)
+                        {
+                            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
+                        }
+                        else if (isEventType_Planet)
+                        {
+                            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
+                        }
                     }
 
                     //Apply Event Changes
-                    Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType1, eventSO.eventOption3_Outcome.outcomeValue1);
-                    Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType2, eventSO.eventOption3_Outcome.outcomeValue2);
-                    Event_ApplyOutcomeReal(eventSO.eventOption3_Outcome.outcomeType3, eventSO.eventOption3_Outcome.outcomeValue3);
+                    Event_AddOutcomeChanges(eventSO.eventOption3_Outcome.outcomeType1, eventSO.eventOption3_Outcome.outcomeValue1);
+                    Event_AddOutcomeChanges(eventSO.eventOption3_Outcome.outcomeType2, eventSO.eventOption3_Outcome.outcomeValue2);
+                    Event_AddOutcomeChanges(eventSO.eventOption3_Outcome.outcomeType3, eventSO.eventOption3_Outcome.outcomeValue3);
                 }
 
                 break;
@@ -476,14 +704,30 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RefreshUI_UrgentIcons();
         RefreshUI_ButtonInteractablity();
 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
+        //Check Type
+        if (isEventType_Travel)
         {
-            //Start again
-            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0]);
+            if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
+            {
+                //Start again
+                Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0]);
+            }
+            else
+            {
+                Button_EventOutcome();
+            }
         }
-        else
+        else if (isEventType_Planet)
         {
-            Button_Event_Close();
+            if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Count != 0)
+            {
+                //Start again
+                Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List[0]);
+            }
+            else
+            {
+                Button_EventOutcome();
+            }
         }
     }
 
@@ -533,18 +777,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
         eventIcon_Image.sprite = eventInfo.GetEventSO().eventIcon;
 
 
-
-
-
-
-
-
-
-
-
     }
 
-    public void Event_ApplyOutcomeReal(RARC_EventOutcome_SO.OutcomeType eventOutcomeType, int value)
+    public void Event_AddOutcomeChanges(RARC_EventOutcome_SO.OutcomeType eventOutcomeType, int value)
     {
         //Find Type
         switch (eventOutcomeType)
@@ -553,67 +788,55 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.HULL_CHANGE:
-                RARC_GameStateController.Instance.ChangeHull(value);
+                eventOutcomeChanges_Hull += value;
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.CREW_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainCrew(value); }
-                else { RARC_GameStateController.Instance.LoseCrew(value); }
+                eventOutcomeChanges_Crew += value;
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.ROBOT_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainBot(value); }
-                else { RARC_GameStateController.Instance.LoseBot(value); }
+                eventOutcomeChanges_Bots += value;
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.SCRAP_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Scrap", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.FUEL_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Fuel", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.FOOD_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Food", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.TITANIUM_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Titanium", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.SILICON_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Silicon", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.CARBON_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Carbon", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.ORGANICS_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Organics", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.HYDROGEN_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Hydrogen", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.NITROGEN_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Nitrogen", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.MEDKITS_CHANGE:
-                if (value > 0) { RARC_GameStateController.Instance.GainResources("Medkit", RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
-                else { RARC_GameStateController.Instance.LoseResources(RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType), value); }
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
 
             case RARC_EventOutcome_SO.OutcomeType.GAMEOVER:
@@ -830,8 +1053,12 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
             //Set Value
             tuple.Item3.resourceCount = value;
-            RARC_GameStateController.Instance.GainResources(tuple.Item3.resourceName, tuple.Item3.resourceType, tuple.Item3.resourceCount);
+            eventOutcomeChanges_Resources_List.Add(tuple.Item3);
         }
+
+
+        Button_Event_Close();
+        Button_EventOutcome();
     }
 
     public IEnumerator IExplorePlanet(RARC_Event eventUsed, float effectiveTotal)
@@ -850,11 +1077,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         {
             //Find Random Value In Range
             percentWhenEventOccurs = UnityEngine.Random.Range(25, 75);
-        }
-        else
-        {
-            //Never Found
-            percentWhenEventOccurs = 999;
         }
 
         //Loop While Waiting For Percent to max

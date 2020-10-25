@@ -201,6 +201,7 @@ public class RARC_GameStateController : MonoBehaviour
     public IEnumerator Player_StartCutscene()
     {
         cutScene_Animator.gameObject.SetActive(true);
+    
 
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
@@ -272,6 +273,7 @@ public class RARC_GameStateController : MonoBehaviour
 
         //Add Interatablity
         blackoutCurtain_Image.raycastTarget = false;
+
 
         //Break Coroutine
         yield break;
@@ -403,7 +405,7 @@ public class RARC_GameStateController : MonoBehaviour
         return resourceType;
     }
 
-    public void GainResources(string resourceName, RARC_Resource.ResourceType resourceType, int resourceCount)
+    public void ChangeResources(string resourceName, RARC_Resource.ResourceType resourceType, int resourceCount)
     {
         switch (resourceType)
         {
@@ -447,11 +449,6 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
-    public void LoseResources(RARC_Resource.ResourceType resourceType, int resourceCount)
-    {
-
-    }
-
     public void ChangeHull(int amount)
     {
         //Refresh
@@ -459,35 +456,47 @@ public class RARC_GameStateController : MonoBehaviour
         //RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources
     }
 
-    public void GainCrew(int amount)
+    public void ChangeCrew(int amount)
     {
-        for (int i = 0; i < amount; i++)
+        if (amount == 0)
         {
-            RARC_CrewBotsController.Instance.AddNewCrew();
+
+        }
+        else if (amount > 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.AddNewCrew();
+            }
+        }
+        else if (amount < 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.RemoveCrewMember();
+            }
         }
     }
 
-    public void LoseCrew(int amount)
+    public void ChangeBots(int amount)
     {
-        for (int i = 0; i < amount; i++)
+        if (amount == 0)
         {
-            RARC_CrewBotsController.Instance.RemoveCrewMember();
-        }
-    }
 
-    public void GainBot(int amount)
-    {
-        for (int i = 0; i < amount; i++)
-        {
-            RARC_CrewBotsController.Instance.AddNewBot();
         }
-    }
-
-    public void LoseBot(int amount)
-    {
-        for (int i = 0; i < amount; i++)
+        else if (amount > 0)
         {
-            RARC_CrewBotsController.Instance.RemoveBotMember();
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.AddNewBot();
+            }
+        }
+        else if (amount < 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.RemoveBotMember();
+            }
         }
     }
 

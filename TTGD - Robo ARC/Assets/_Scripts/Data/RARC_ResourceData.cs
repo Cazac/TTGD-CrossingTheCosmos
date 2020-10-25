@@ -73,14 +73,14 @@ public class RARC_ResourceData : MonoBehaviour
             RARC_Resource.ResourceType.Organics
         );
 
-        titanium_Resource = new RARC_Resource
+        hydrogen_Resource = new RARC_Resource
         (
             "Hydrogen",
             0,
             RARC_Resource.ResourceType.Hydrogen
         );
 
-        titanium_Resource = new RARC_Resource
+        nitrogen_Resource = new RARC_Resource
         (
             "Nitrogen",
             0,

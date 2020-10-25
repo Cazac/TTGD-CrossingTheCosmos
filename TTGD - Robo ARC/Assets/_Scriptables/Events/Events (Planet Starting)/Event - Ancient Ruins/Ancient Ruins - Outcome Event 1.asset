@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
   m_Name: Ancient Ruins - Outcome Event 1
   m_EditorClassIdentifier: 
-  eventTitle: 
+  eventTitle: Ancient Ruins
   eventID: 
-  eventIcon: {fileID: 0}
+  eventIcon: {fileID: 21300000, guid: de248952441863c409b5cd3ac760f4e8, type: 3}
   eventDescription: You tell the crew to leave it alone.  They seems a little disapointed
     at the porpect of adventure, but they return to the ship as they normally would.
     A normal expedition, but a sfae expitidtion.

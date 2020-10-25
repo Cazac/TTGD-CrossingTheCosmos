@@ -102,8 +102,8 @@ public class RARC_ShipSaveData
         shipAvaliblePlanetEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_AncientRuins));
 
         //Event Missfires
-        travelEventsMissed = 0;
-        planetEventsMissed = 1;
+        travelEventsMissed = 3;
+        planetEventsMissed = 3;
 
         //Set New Resource Bases and Storage
         shipHullHealth = 100;

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e964d06202a3ca3439553cf4b92cf6cf, type: 3}
   m_Name: Abandoned Ship - Outcome Requirement 1
   m_EditorClassIdentifier: 
-  requirementType1: 0
-  requirementValue1: 0
+  requirementType1: 1
+  requirementValue1: 2
   requirementType2: 0
   requirementValue2: 0
   requirementType3: 0

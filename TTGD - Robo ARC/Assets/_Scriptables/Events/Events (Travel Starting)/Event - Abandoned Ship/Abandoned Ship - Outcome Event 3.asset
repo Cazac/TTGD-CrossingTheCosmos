@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
   m_Name: Abandoned Ship - Outcome Event 3
   m_EditorClassIdentifier: 
-  eventTitle: Abandoned Ship
+  eventTitle: Abandoned Ship Discovered!
   eventID: Abandoned Ship - Outcome Event 3
-  eventIcon: {fileID: 21300000, guid: 0be88d0fd45fd354eae0b7ce89acc826, type: 3}
+  eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
   eventDescription: You have been in space long enough to know that sometimes it
     is best to leave things alone. You have a feeling that you might have missed
     out on something that could have helped the colony. However, your gut tells you
