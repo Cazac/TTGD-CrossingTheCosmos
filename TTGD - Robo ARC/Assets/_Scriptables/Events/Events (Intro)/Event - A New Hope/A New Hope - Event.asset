@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
+  m_Name: A New Hope - Event
+  m_EditorClassIdentifier: 
+  eventTitle: A New Hope
+  eventID: A New Hope - Event
+  eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
+  eventDescription: Earth is no more... You are the last of the species. You must
+    take the SS Prometheus and make it to New Terra for colonization. The journey
+    will take 52 weeks though harsh new lands. Good luck captain.
+  eventOption1_Choice: No time to waste, boot up the hyper drive bays.
+  eventOption1_Outcome: {fileID: 11400000, guid: 90d57eb05b13bf148bfdb1b5d63bf84e,
+    type: 2}
+  eventOption1_Requirement: {fileID: 11400000, guid: 9f4e1ba281feb9444bb3b680de29796b,
+    type: 2}
+  eventOption2_Choice: 
+  eventOption2_Outcome: {fileID: 0}
+  eventOption2_Requirement: {fileID: 0}
+  eventOption3_Choice: 
+  eventOption3_Outcome: {fileID: 0}
+  eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0

@@ -44,6 +44,9 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("BLANKVAR")]
     public RARC_RoomTab[] allShipRoomTabs_Arr;
 
+    public readonly float eventChance_Travel = 0.7f;
+    public readonly float eventChance_Planet = 0.5f;
+
     /////////////////////////////////////////////////////////////////
 
     private void Awake()
@@ -124,10 +127,7 @@ public class RARC_GameStateController : MonoBehaviour
         {
             //Play Cutscene As Enum
             currentCutscene_IEnum = Player_StartCutscene();
-            StartCoroutine(Player_StartCutscene()); 
- 
-            //Give First Backstory Event
-            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_ANewHope));
+            StartCoroutine(Player_StartCutscene());
 
             //Set Planet BG / Space BG
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
@@ -146,9 +146,8 @@ public class RARC_GameStateController : MonoBehaviour
             RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
             RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress++;
 
-
             //Generate Possible Events
-
+            GetPossibleNewEvent_Travel();
         }
        
 
@@ -267,11 +266,9 @@ public class RARC_GameStateController : MonoBehaviour
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
 
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.4f);
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
-
-        //print("Test Code: Ready");
 
         //Add Interatablity
         blackoutCurtain_Image.raycastTarget = false;
@@ -302,6 +299,60 @@ public class RARC_GameStateController : MonoBehaviour
         }
 
 
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void GetPossibleNewEvent_Travel()
+    {
+        //Break out if not possible events left
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Count == 0)
+        {
+            return;
+        }
+
+        //Use Chance to find an event
+        float currentEventChance = eventChance_Travel * RARC_DatabaseController.Instance.ship_SaveData.travelEventsMissed;
+        float randomChance = Random.Range(0f, 1f);
+        if (randomChance < currentEventChance)
+        {
+            //Chose Num, Add Event, Blacklist, Remove, Reset
+            int chosenEventNO = Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Count);
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipBlacklistTravelEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.RemoveAt(chosenEventNO);
+            RARC_DatabaseController.Instance.ship_SaveData.travelEventsMissed = 0;
+        }
+        else
+        {
+            RARC_DatabaseController.Instance.ship_SaveData.travelEventsMissed += 1;
+        }
+    }
+
+    public void GetPossibleNewEvent_Planet()
+    {
+        //Break out if not possible events left
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count == 0)
+        {
+            return;
+        }
+
+        //Use Chance to find an event
+        float currentEventChance = eventChance_Planet * RARC_DatabaseController.Instance.ship_SaveData.planetEventsMissed;
+        float randomChance = Random.Range(0f, 1f);
+        if (randomChance < currentEventChance)
+        {
+            //Chose Num, Add Event, Blacklist, Remove, Reset
+            int chosenEventNO = Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count);
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipBlacklistPlanetEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.RemoveAt(chosenEventNO);
+            RARC_DatabaseController.Instance.ship_SaveData.planetEventsMissed = 0;
+        }
+        else
+        {
+            RARC_DatabaseController.Instance.ship_SaveData.planetEventsMissed += 1;
+        }
     }
 
     /////////////////////////////////////////////////////////////////

@@ -9207,7 +9207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1483827806}
         m_TargetAssemblyTypeName: RARC_ButtonController_Game, Assembly-CSharp
-        m_MethodName: Button_Event
+        m_MethodName: Button_EventTravel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -42332,7 +42332,7 @@ MonoBehaviour:
     m_Left: 10
     m_Right: 10
     m_Top: 50
-    m_Bottom: 10
+    m_Bottom: 15
   m_ChildAlignment: 6
   m_Spacing: 10
   m_ChildForceExpandWidth: 1

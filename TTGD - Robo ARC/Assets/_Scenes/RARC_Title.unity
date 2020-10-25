@@ -1759,9 +1759,25 @@ MonoBehaviour:
     type: 2}
   event_AbandonedShip: {fileID: 11400000, guid: 6cfec27197bbc444bbc5db6e6885a29a,
     type: 2}
-  event_333333aa3e: {fileID: 0}
-  event_33333ff33e: {fileID: 0}
-  event_33333fa33e: {fileID: 0}
+  event_AliensOne: {fileID: 0}
+  event_Bedtime: {fileID: 0}
+  event_BigRock: {fileID: 0}
+  event_Freedom: {fileID: 0}
+  event_FriendlyGreeting: {fileID: 0}
+  event_PartyTime: {fileID: 0}
+  event_RottenFood: {fileID: 0}
+  event_UnknownSignalOne: {fileID: 0}
+  event_Zoom: {fileID: 0}
+  event_AliensThree: {fileID: 0}
+  event_AliensTwo: {fileID: 0}
+  event_Mutiny: {fileID: 0}
+  event_UnknownSignalThree: {fileID: 0}
+  event_UnknownSignalTwo: {fileID: 0}
+  event_AncientRuins: {fileID: 11400000, guid: 82ab77729664ae74fa952088b8d6311e, type: 2}
+  event_CrackInTheSurface: {fileID: 11400000, guid: aedfdb21388aeb4418bdb04f5f6f6016,
+    type: 2}
+  event_CreaturesOnTheGround: {fileID: 0}
+  allEvents_List: []
 --- !u!4 &343272182
 Transform:
   m_ObjectHideFlags: 0
@@ -2237,7 +2253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &429546795
 Transform:
   m_ObjectHideFlags: 0
@@ -2280,6 +2296,88 @@ MonoBehaviour:
   resources1_Text: {fileID: 0}
   resources2_Text: {fileID: 0}
   resources3_Text: {fileID: 0}
+--- !u!1 &457430087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457430088}
+  - component: {fileID: 457430089}
+  m_Layer: 0
+  m_Name: Planet Sprite Secondary (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &457430088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457430087}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 6, y: 2.7, z: -0.5}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
+  m_Children: []
+  m_Father: {fileID: 1862428140}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!212 &457430089
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457430087}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c9eca8217e2dbb2478fe478a92f7e0f5, type: 3}
+  m_Color: {r: 0.40864503, g: 1, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.76, y: 5.76}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &464427040
 GameObject:
   m_ObjectHideFlags: 0
@@ -3407,7 +3505,7 @@ Transform:
   m_GameObject: {fileID: 631375383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 2.7, z: -0.5}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_Children: []
   m_Father: {fileID: 1862428140}
   m_RootOrder: 1
@@ -3452,8 +3550,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e15b1d711078da488487362898ad0f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c9eca8217e2dbb2478fe478a92f7e0f5, type: 3}
+  m_Color: {r: 0.40864503, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3828,8 +3926,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e15b1d711078da488487362898ad0f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4c6abff2421240845820e3aa15dc7aa9, type: 3}
+  m_Color: {r: 0.1966892, g: 0.31247488, b: 0.49056602, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8517,7 +8615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1478559885
 Transform:
   m_ObjectHideFlags: 0
@@ -9026,7 +9124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1562490611
 Transform:
   m_ObjectHideFlags: 0
@@ -10417,10 +10515,7 @@ MonoBehaviour:
     shipInfo_WeeksSurvived: 0
     shipData_Crew_List: []
     shipData_Bots_List: []
-    shipData_ResearchComplete_List: []
-    shipData_ResearchAvalible_List: []
-    shipData_ResearchUnavalible_List: []
-    shipData_Rooms_Arr: []
+    shipData_Rooms_Arr: 
     shipData_currentLocation:
       planetName: 
       planetSprite_Main: 0
@@ -10458,9 +10553,15 @@ MonoBehaviour:
         eventOption3_Choice: 
       planetType: 0
     shipData_NavigationTripProgress: 0
-    shipHullHealth: 0
-    shipCurrentEvents_List: []
+    shipCurrentTravelEvents_List: []
+    shipAvalibleTravelEvents_List: []
+    shipBlacklistTravelEvents_List: []
+    shipCurrentPlanetEvents_List: []
     shipAvaliblePlanetEvents_List: []
+    shipBlacklistPlanetEvents_List: []
+    travelEventsMissed: 0
+    planetEventsMissed: 0
+    shipHullHealth: 0
     shipResource_Scrap:
       resourceName: 
       resourceCount: 0
@@ -10883,7 +10984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1862428140
 Transform:
   m_ObjectHideFlags: 0
@@ -10892,11 +10993,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862428139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0.62, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 701386271}
   - {fileID: 631375384}
+  - {fileID: 457430088}
   m_Father: {fileID: 429546795}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

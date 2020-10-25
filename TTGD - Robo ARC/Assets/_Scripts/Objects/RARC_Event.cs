@@ -31,15 +31,28 @@ public class RARC_Event
 
     public RARC_Event_SO GetEventSO()
     {
-        //
-        RARC_Event_SO eventSO = null;
+        //Searching for SO
+        for (int i = 0; i < RARC_DatabaseController.Instance.events_DB.allEvents_List.Count; i++)
+        {
+            //Match Names
+            if (RARC_DatabaseController.Instance.events_DB.allEvents_List[i].eventID == eventID)
+            {
+                //Return Event
+                return RARC_DatabaseController.Instance.events_DB.allEvents_List[i];
+            }
+        }
 
+        Debug.Log("Test Code: OOF No Matching Event SO");
 
+        //Found Nothing Return Null
+        return null;
+
+        /*
         switch (eventID)
         {
 
             case "A New Hope - Event":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_ANewHope;
+                
                 break;
 
 
@@ -85,9 +98,7 @@ public class RARC_Event
                 Debug.Log("Test Code: THIS IS AN ERROR, YOU DONE GOOFED");
                 break;
         }
-
-        //Return Event
-        return eventSO;
+        */
     }
 
     /////////////////////////////////////////////////////////////////

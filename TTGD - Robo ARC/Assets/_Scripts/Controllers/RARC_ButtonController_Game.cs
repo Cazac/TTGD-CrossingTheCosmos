@@ -191,32 +191,32 @@ public class RARC_ButtonController_Game : MonoBehaviour
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount <= 0)
         {
             //Create Event
-            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank));
-            Button_Event();
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank));
+            Button_EventTravel();
             return;
         }
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount <= 0)
         {
             //Create Event
-            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation));
-            Button_Event();
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation));
+            Button_EventTravel();
             return;
         }
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count <= 0)
         {
             //Create Event
-            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone));
-            Button_Event();
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone));
+            Button_EventTravel();
             return;
         }
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth <= 0)
         {
             //Create Event
-            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown));
-            Button_Event();
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown));
+            Button_EventTravel();
             return;
         }
 
@@ -365,16 +365,29 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void Button_Event()
+    public void Button_EventTravel()
     {
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
         {
             //Open Event Menu
             EventMenu_Main.SetActive(true);
             RARC_GameStateController.Instance.EnableRaycastBlocker();
 
             //Load Event 0
-            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0]);
+            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0]);
+        }
+    }
+
+    public void Button_EventPlanet()
+    {
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Count != 0)
+        {
+            //Open Event Menu
+            EventMenu_Main.SetActive(true);
+            RARC_GameStateController.Instance.EnableRaycastBlocker();
+
+            //Load Event 0
+            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List[0]);
         }
     }
 
@@ -394,10 +407,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //EventMenu_Main.SetActive(false);
 
         //Convert to non savable data
-        RARC_Event eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0];
+        RARC_Event eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0];
         RARC_Event_SO eventSO = eventScript.GetEventSO();
 
-        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.RemoveAt(0);
+        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.RemoveAt(0);
 
 
         //Find Option Choice
@@ -410,7 +423,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     //Add Next Event If Avalible
                     if (eventSO.eventOption1_Outcome.outcomeNextEvent != null)
                     {
-                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
+                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption1_Outcome.outcomeNextEvent));
                     }
 
                     //Apply Event Changes
@@ -428,7 +441,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     //Add Next Event If Avalible
                     if (eventSO.eventOption2_Outcome.outcomeNextEvent != null)
                     {
-                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
+                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption2_Outcome.outcomeNextEvent));
                     }
 
                     //Apply Event Changes
@@ -446,7 +459,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     //Add Next Event If Avalible
                     if (eventSO.eventOption3_Outcome.outcomeNextEvent != null)
                     {
-                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
+                        RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(eventSO.eventOption3_Outcome.outcomeNextEvent));
                     }
 
                     //Apply Event Changes
@@ -463,10 +476,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RefreshUI_UrgentIcons();
         RefreshUI_ButtonInteractablity();
 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
         {
             //Start again
-            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List[0]);
+            Event_LoadEvent(RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0]);
         }
         else
         {
@@ -765,9 +778,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
         exploringShowoff_GO.SetActive(true);
 
-        StartCoroutine(IExplorePlanet(null, effectiveTotal));
 
 
+
+        //Try For a Planet Event
+        RARC_Event eventOnPlanet = null;
+        RARC_GameStateController.Instance.GetPossibleNewEvent_Planet();
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Count != 0)
+        {
+            eventOnPlanet = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List[0];
+        }
+
+
+
+        //Start Animation Of Exploring
+        StartCoroutine(IExplorePlanet(eventOnPlanet, effectiveTotal));
     }
 
     public void Button_Explore_AbandonExploring()
@@ -815,79 +840,67 @@ public class RARC_ButtonController_Game : MonoBehaviour
         FinishExploringButton_GO.SetActive(false);
         exploringShowoffInfoContainer_Go.SetActive(true);
 
-        int eventTiming;
-        hasShowoffEventCleared = false;
+        //Setup Values
+        int percentWhenEventOccurs = 999;
         bool hasEventOccured = false;
+        hasShowoffEventCleared = false;
 
-
-        eventUsed = new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_AbandonedShip);
-
+        //Check If Event In Present and set Values
         if (eventUsed != null)
         {
             //Find Random Value In Range
-            eventTiming = UnityEngine.Random.Range(25, 75);
+            percentWhenEventOccurs = UnityEngine.Random.Range(25, 75);
         }
         else
         {
             //Never Found
-            eventTiming = 999;
+            percentWhenEventOccurs = 999;
         }
 
-        //Loop While Waiting
+        //Loop While Waiting For Percent to max
         while (exploringShowoffProgress < 100)
         {
-
-
-
+            //Generate Percent
             int progressValue = (int)exploringShowoffProgress;
             exploringShowoffPercent_Text.text = progressValue + "%";
             exploringShowoffPercent_FillImage.fillAmount = (exploringShowoffProgress / 100);
 
-
+            //Check If Event has happened Yet
             if (hasEventOccured == false)
             {
-                if (progressValue > eventTiming)
+                //Event has matched percentage complete of exploration
+                if (progressValue > percentWhenEventOccurs)
                 {
-
-                    print("Test Code: Event!");
-
-                    //Change Text
+                    //Change Textand stop progress
                     exploringShowoffInfo_Text.text = "<color=" + colorValues_Red + ">Anomaly detected</color>";
 
-                    yield return new WaitForSeconds(0.75f);
+                    //Wait for dramitic effect
+                    yield return new WaitForSeconds(0.5f);
 
-
-
-                    //Open Event
-                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(eventUsed);
-                    Button_Event();
-
-
-
+                    //Open Event and Stop Time From counting up the percent
+                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(eventUsed);
+                    Button_EventPlanet();
                     hasEventOccured = true;
 
+                    //If even has yet to be "Confirmed" loop wait for frame
                     if (hasShowoffEventCleared == false)
                     {
                         while (hasShowoffEventCleared == false)
                         {
+                            //Constantly wait for a closed menu
                             yield return new WaitForEndOfFrame();
                         }
 
+                        //Set Desc Text
                         exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">Oiling The Bots</color>";
 
-                        yield return new WaitForSeconds(0.75f);
+                        //Wait for dramitic effect After menu is closed
+                        yield return new WaitForSeconds(0.5f);
                     }
                 }
             }
-            else
-            {
-
-            }
-
-
-
-
-
+      
+            //Show Resources Levels dynmically
             switch (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetResources_List.Count)
             {
                 case 3:
@@ -921,18 +934,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     break;
             }
 
-
-
-
-
-
-
+            //Wait For next frame and bumb up progress
             yield return new WaitForEndOfFrame();
             exploringShowoffProgress += Time.deltaTime * 40;
         }
-
-
-
 
         //Set to 100%
         exploringShowoffPercent_Text.text = "<color=" + colorValues_Green + ">100%</color>";
@@ -1042,7 +1047,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
 
         //Events
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
         {
             RARC_GameStateController.Instance.isReady_Event = false;
         }
@@ -1121,7 +1126,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         FabricationButton_Main.interactable = true;
 
         //Event
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
         {
             //Interactable
             EventButton_Main.gameObject.transform.parent.gameObject.SetActive(true);
@@ -1215,7 +1220,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
 
         //Event
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Count != 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Count != 0)
         {
             //Interactable
             EventButton_Main.gameObject.transform.parent.gameObject.SetActive(true);

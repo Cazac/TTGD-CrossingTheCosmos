@@ -171,6 +171,7 @@ public class RARC_DatabaseController : MonoBehaviour
     {
         //Build Databases
         resources_DB.BuildDatabase();
+        events_DB.BuildDatabase();
     }
 
     /////////////////////////////////////////////////////////////////
