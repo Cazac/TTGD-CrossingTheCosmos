@@ -8159,6 +8159,55 @@ RectTransform:
   m_AnchoredPosition: {x: 225, y: -102.5}
   m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1424116843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1424116844}
+  - component: {fileID: 1424116845}
+  m_Layer: 0
+  m_Name: Crafting Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1424116844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424116843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1800703682}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1424116845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424116843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d41343b3eb77940bc03b6102f7abfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bots_Crafting: {fileID: 11400000, guid: 7f57bd4a9d3abc545a49cbb51a743184, type: 2}
+  crew_Crafting: {fileID: 11400000, guid: 670101862aae98e47a06ad181b261563, type: 2}
+  food_Crafting: {fileID: 11400000, guid: 193f7a348a1c7b245861764d1ebf983f, type: 2}
+  fuel_Crafting: {fileID: 11400000, guid: 6ac6196ff1df74945a9d913eba57ff5d, type: 2}
+  medkits_Crafting: {fileID: 11400000, guid: 07d0e2be7ce05184dadbb05ac227968a, type: 2}
+  organics_Crafting: {fileID: 11400000, guid: 0d7e49e84e858ce4abb509a429e6258f, type: 2}
 --- !u!1 &1434010708
 GameObject:
   m_ObjectHideFlags: 0
@@ -10494,6 +10543,7 @@ Transform:
   - {fileID: 1617815802}
   - {fileID: 853007847}
   - {fileID: 628264547}
+  - {fileID: 1424116844}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10516,6 +10566,8 @@ MonoBehaviour:
   icons_DB: {fileID: 1617815803}
   music_DB: {fileID: 853007848}
   room_DB: {fileID: 628264546}
+  crafting_DB: {fileID: 1424116845}
+  expolringText_List: []
   ship_SaveSlot: 0
   ship_SaveData:
     shipInfo_WeeksSurvived: 0

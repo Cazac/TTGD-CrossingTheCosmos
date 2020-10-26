@@ -35,13 +35,13 @@ public class RARC_RequirementsUITab : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void SetupTab(List<RARC_Resource> resources_List)
+    public void SetupTab(List<RARC_Resource> resources_List, string colorString)
     {
         //Resource Set 1
         if (resources_List[0].resourceType != RARC_Resource.ResourceType.NULL)
         {
             resourceSet1_Container.SetActive(true);
-            resourceSet1_Count.text = "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + "x" + resources_List[0].resourceCount + "</color>";
+            resourceSet1_Count.text = "<" + colorString + ">" + "x" + resources_List[0].resourceCount + "</color>";
             resourceSet1_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[0].resourceType); 
         }
         else
@@ -53,7 +53,7 @@ public class RARC_RequirementsUITab : MonoBehaviour
         if (resources_List[1].resourceType != RARC_Resource.ResourceType.NULL)
         {
             resourceSet2_Container.SetActive(true);
-            resourceSet2_Count.text = "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + "x" + resources_List[1].resourceCount + "</color>";
+            resourceSet2_Count.text = "<" + colorString + ">" + "x" + resources_List[1].resourceCount + "</color>";
             resourceSet2_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[1].resourceType);
         }
         else
@@ -65,7 +65,7 @@ public class RARC_RequirementsUITab : MonoBehaviour
         if (resources_List[2].resourceType != RARC_Resource.ResourceType.NULL)
         {
             resourceSet3_Container.SetActive(true);
-            resourceSet3_Count.text = "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + "x" + resources_List[2].resourceCount + "</color>";
+            resourceSet3_Count.text = "<" + colorString + ">" + "x" + resources_List[2].resourceCount + "</color>";
             resourceSet3_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[2].resourceType);
         }
         else
@@ -78,32 +78,28 @@ public class RARC_RequirementsUITab : MonoBehaviour
         {
             if (resources_List[3].resourceType != RARC_Resource.ResourceType.NULL)
             {
-                resourceSet3_Container.SetActive(true);
-                resourceSet3_Count.text = "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + "x" + resources_List[2].resourceCount + "</color>";
-                resourceSet3_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[2].resourceType);
+                resourceSet4_Container.SetActive(true);
+                resourceSet4_Count.text = "<" + colorString + ">" + "x" + resources_List[3].resourceCount + "</color>";
+                resourceSet4_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[3].resourceType);
             }
             else
             {
-                resourceSet3_Container.SetActive(false);
+                resourceSet4_Container.SetActive(false);
             }
-
-            resourceSet4_Container.SetActive(false);
         }
 
         if (resourceSet5_Container != null)
         {
             if (resources_List[4].resourceType != RARC_Resource.ResourceType.NULL)
             {
-                resourceSet3_Container.SetActive(true);
-                resourceSet3_Count.text = "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + "x" + resources_List[2].resourceCount + "</color>";
-                resourceSet3_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[2].resourceType);
+                resourceSet5_Container.SetActive(true);
+                resourceSet5_Count.text = "<" + colorString + ">" + "x" + resources_List[4].resourceCount + "</color>";
+                resourceSet5_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[4].resourceType);
             }
             else
             {
-                resourceSet3_Container.SetActive(false);
+                resourceSet5_Container.SetActive(false);
             }
-
-            resourceSet5_Container.SetActive(false);
         }
     }
 

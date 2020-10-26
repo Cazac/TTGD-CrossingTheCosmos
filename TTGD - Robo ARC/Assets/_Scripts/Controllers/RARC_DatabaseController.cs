@@ -32,6 +32,9 @@ public class RARC_DatabaseController : MonoBehaviour
     [Header("Access Container of Music")]
     public RARC_RoomData room_DB;
 
+    [Header("Access Container of Crafting")]
+    public RARC_CraftingData crafting_DB;
+
     public List<string> expolringText_List;
 
     ////////////////////////////////

@@ -115,6 +115,13 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
+
+
+    [Header("Fabrication")]
+    public GameObject craftingContainer_GO;
+    public GameObject crafting_Prefab;
+
+
     [Header("Contruction")]
     public GameObject constructionRoomsContainer_GO;
     public GameObject constructionRoom_Prefab;
@@ -838,7 +845,28 @@ public class RARC_ButtonController_Game : MonoBehaviour
         FabricationMenu_Main.SetActive(true);
         RARC_GameStateController.Instance.EnableRaycastBlocker();
 
-        //Load Event
+
+        List<RARC_Crafting_SO> allCrafting_List = new List<RARC_Crafting_SO>();
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.bots_Crafting);
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.crew_Crafting);
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.food_Crafting);
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting);
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.organics_Crafting);
+
+
+
+        foreach (Transform child in craftingContainer_GO.transform)
+        {
+            //Remove Children
+            Destroy(child.gameObject);
+        }
+
+        foreach (RARC_Crafting_SO craftingSO in allCrafting_List)
+        {
+            //Refresh All Rooms
+            GameObject newCrafting_GO = Instantiate(crafting_Prefab, craftingContainer_GO.transform);
+            newCrafting_GO.GetComponent<RARC_CraftingUITab>().SetupTab(craftingSO);
+        }
 
     }
 
@@ -1065,9 +1093,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
             percentWhenEventOccurs = UnityEngine.Random.Range(25, 75);
         }
 
-   
-
-
         //Loop While Waiting For Percent to max
         while (exploringShowoffProgress < 100)
         {
@@ -1081,12 +1106,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">" + RARC_DatabaseController.Instance.expolringText_List[UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.expolringText_List.Count)] + "</color>";
                 currentTextNo++;
             }
-            else if (currentTextNo == 1 && exploringShowoffProgress > 33)
-            {
-                exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">" + RARC_DatabaseController.Instance.expolringText_List[UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.expolringText_List.Count)] + "</color>";
-                currentTextNo++;
-            }
-            else if (currentTextNo == 2 && exploringShowoffProgress > 66)
+            else if (currentTextNo == 1 && exploringShowoffProgress > 50)
             {
                 exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">" + RARC_DatabaseController.Instance.expolringText_List[UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.expolringText_List.Count)] + "</color>";
                 currentTextNo++;
@@ -1117,9 +1137,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
                             //Constantly wait for a closed menu
                             yield return new WaitForEndOfFrame();
                         }
-
-                        //Set Desc Text
-                        exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">Oiling The Bots</color>";
 
                         //Wait for dramitic effect After menu is closed
                         yield return new WaitForSeconds(0.60f);
