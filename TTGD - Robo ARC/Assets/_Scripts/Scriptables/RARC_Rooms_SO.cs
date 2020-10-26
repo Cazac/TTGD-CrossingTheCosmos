@@ -31,5 +31,13 @@ public class RARC_Rooms_SO : ScriptableObject
     public RARC_Resource.ResourceType resourceRequired_3;
     public int resourceRequiredAmount_3;
 
+    [Header("Room Requirements 4")]
+    public RARC_Resource.ResourceType resourceRequired_4;
+    public int resourceRequiredAmount_4;
+
+    [Header("Room Requirements 5")]
+    public RARC_Resource.ResourceType resourceRequired_5;
+    public int resourceRequiredAmount_5;
+
     ////////////////////////////////
 }

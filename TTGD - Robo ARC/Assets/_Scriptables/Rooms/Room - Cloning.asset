@@ -16,9 +16,13 @@ MonoBehaviour:
   roomName: Cloning
   activeRoomSprite: {fileID: 21300000, guid: 905741e2d55142440aed092d0b5aa245, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: a7910ed487c0fa6408e0f01e0bef418f, type: 3}
-  resourceRequired_1: 0
-  resourceRequiredAmount_1: 0
-  resourceRequired_2: 0
-  resourceRequiredAmount_2: 0
-  resourceRequired_3: 0
-  resourceRequiredAmount_3: 0
+  resourceRequired_1: 7
+  resourceRequiredAmount_1: 50
+  resourceRequired_2: 6
+  resourceRequiredAmount_2: 15
+  resourceRequired_3: 9
+  resourceRequiredAmount_3: 30
+  resourceRequired_4: 10
+  resourceRequiredAmount_4: 25
+  resourceRequired_5: 8
+  resourceRequiredAmount_5: 20

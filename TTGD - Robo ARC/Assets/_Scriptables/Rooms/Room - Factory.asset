@@ -16,9 +16,13 @@ MonoBehaviour:
   roomName: Factory
   activeRoomSprite: {fileID: 21300000, guid: 237fa04ca3c139b4dab0d932964492be, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: 51e77fd75322a3f4d8384363bee7305c, type: 3}
-  resourceRequired_1: 0
-  resourceRequiredAmount_1: 0
-  resourceRequired_2: 0
-  resourceRequiredAmount_2: 0
-  resourceRequired_3: 0
-  resourceRequiredAmount_3: 0
+  resourceRequired_1: 1
+  resourceRequiredAmount_1: 10
+  resourceRequired_2: 5
+  resourceRequiredAmount_2: 20
+  resourceRequired_3: 7
+  resourceRequiredAmount_3: 20
+  resourceRequired_4: 9
+  resourceRequiredAmount_4: 20
+  resourceRequired_5: 0
+  resourceRequiredAmount_5: 0

@@ -32,6 +32,8 @@ public class RARC_DatabaseController : MonoBehaviour
     [Header("Access Container of Music")]
     public RARC_RoomData room_DB;
 
+    public List<string> expolringText_List;
+
     ////////////////////////////////
 
     [Header("Current Ship Save Data")]
@@ -172,6 +174,27 @@ public class RARC_DatabaseController : MonoBehaviour
         //Build Databases
         resources_DB.BuildDatabase();
         events_DB.BuildDatabase();
+
+        //Exploring Text List
+        expolringText_List = new List<string>();
+        expolringText_List.Add("Searching under rocks");
+        expolringText_List.Add("Taking breaks");
+        expolringText_List.Add("Removing locals");
+        expolringText_List.Add("Oiling machines");
+        expolringText_List.Add("Looting resources");
+        expolringText_List.Add("Exploring terrain");
+        expolringText_List.Add("Crafting tools");
+        expolringText_List.Add("Disscusing inequality");
+        expolringText_List.Add("Collecting samples");
+        expolringText_List.Add("Eating snacks");
+        expolringText_List.Add("Admiring landscapes");
+        expolringText_List.Add("Avoiding death");
+        expolringText_List.Add("Grabbing stuff");
+        expolringText_List.Add("Navigating area");
+        expolringText_List.Add("Healing boo boos");
+        expolringText_List.Add("Fixing equipment");
+        expolringText_List.Add("Locating resources");
+        //expolringText_List.Add("");
     }
 
     /////////////////////////////////////////////////////////////////

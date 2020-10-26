@@ -23,6 +23,16 @@ public class RARC_RequirementsUITab : MonoBehaviour
     public TextMeshProUGUI resourceSet3_Count;
     public Image resourceSet3_Image;
 
+    [Header("Resource Set 4")]
+    public GameObject resourceSet4_Container;
+    public TextMeshProUGUI resourceSet4_Count;
+    public Image resourceSet4_Image;
+
+    [Header("Resource Set 5")]
+    public GameObject resourceSet5_Container;
+    public TextMeshProUGUI resourceSet5_Count;
+    public Image resourceSet5_Image;
+
     /////////////////////////////////////////////////////////////////
 
     public void SetupTab(List<RARC_Resource> resources_List)
@@ -61,6 +71,39 @@ public class RARC_RequirementsUITab : MonoBehaviour
         else
         {
             resourceSet3_Container.SetActive(false);
+        }
+
+
+        if (resourceSet4_Container != null)
+        {
+            if (resources_List[3].resourceType != RARC_Resource.ResourceType.NULL)
+            {
+                resourceSet3_Container.SetActive(true);
+                resourceSet3_Count.text = "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + "x" + resources_List[2].resourceCount + "</color>";
+                resourceSet3_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[2].resourceType);
+            }
+            else
+            {
+                resourceSet3_Container.SetActive(false);
+            }
+
+            resourceSet4_Container.SetActive(false);
+        }
+
+        if (resourceSet5_Container != null)
+        {
+            if (resources_List[4].resourceType != RARC_Resource.ResourceType.NULL)
+            {
+                resourceSet3_Container.SetActive(true);
+                resourceSet3_Count.text = "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + "x" + resources_List[2].resourceCount + "</color>";
+                resourceSet3_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[2].resourceType);
+            }
+            else
+            {
+                resourceSet3_Container.SetActive(false);
+            }
+
+            resourceSet5_Container.SetActive(false);
         }
     }
 

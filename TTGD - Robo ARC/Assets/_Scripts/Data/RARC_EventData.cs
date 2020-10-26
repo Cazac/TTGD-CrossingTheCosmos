@@ -88,7 +88,7 @@ public class RARC_EventData : MonoBehaviour
         CheckForNulls(event_CrackInTheSurface);
         CheckForNulls(event_CreaturesOnTheGround);
 
-        print("Test Code: Total Size Of Events List " + allEvents_List.Count);
+        //print("Test Code: Total Size Of Events List " + allEvents_List.Count);
     }
 
     /////////////////////////////////////////////////////////////////

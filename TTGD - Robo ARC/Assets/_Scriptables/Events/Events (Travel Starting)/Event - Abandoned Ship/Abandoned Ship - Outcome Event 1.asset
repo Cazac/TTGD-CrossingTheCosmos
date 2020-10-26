@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTitle: Abandoned Ship Discovered!
   eventID: Abandoned Ship - Outcome Event 1
-  eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
+  eventIcon: {fileID: 21300000, guid: 9b6d0be6683e2ed41acaf1b7b1ede5a2, type: 3}
   eventDescription: "You send a couple crew on board, maintaining visual contact
     as they explore. The crew sees no evidence of any survivors but manage to find
     some useful supplies. However, the ship wasn\u2019t as abandoned as you so believed.

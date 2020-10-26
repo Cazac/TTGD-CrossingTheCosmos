@@ -168,7 +168,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject gameoverImage_Food;
     public GameObject gameoverImage_Hull;
 
-
     ////////////////////////////////
 
     [HideInInspector]
@@ -187,10 +186,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
     [HideInInspector]
     public bool isEventType_Travel;
     public bool isEventType_Planet;
-
-    ////////////////////////////////
-
-
 
     /////////////////////////////////////////////////////////////////
 
@@ -341,7 +336,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         List<RARC_Rooms_SO> allRooms_List = new List<RARC_Rooms_SO>();
 
 
-        allRooms_List.Add(RARC_DatabaseController.Instance.room_DB.CloningLabRoom_SO);
         allRooms_List.Add(RARC_DatabaseController.Instance.room_DB.CrewQuartersRoom_SO);
         allRooms_List.Add(RARC_DatabaseController.Instance.room_DB.MedbayRoom_SO);
         allRooms_List.Add(RARC_DatabaseController.Instance.room_DB.FactoryRoom_SO);
@@ -350,6 +344,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         allRooms_List.Add(RARC_DatabaseController.Instance.room_DB.HydroponicsLabRoom_SO);
         allRooms_List.Add(RARC_DatabaseController.Instance.room_DB.AstrometricsLabRoom_SO);
         allRooms_List.Add(RARC_DatabaseController.Instance.room_DB.CloningLabRoom_SO);
+
 
         foreach (Transform child in constructionRoomsContainer_GO.transform)
         {
@@ -546,8 +541,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
             isEventType_Travel = true;
             isEventType_Planet = false;
 
-            print("Test Code: Event Bool Travel");
-
             //Open Event Menu
             EventMenu_Main.SetActive(true);
             RARC_GameStateController.Instance.EnableRaycastBlocker();
@@ -563,8 +556,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         {
             isEventType_Travel = false;
             isEventType_Planet = true;
-
-            print("Test Code: Event Bool Planet");
 
             //Open Event Menu
             EventMenu_Main.SetActive(true);
@@ -595,9 +586,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Check Type
         if (isEventType_Travel)
         {
-
-            print("Test Code: THIS IS TRAVEL");
-
             //Convert to non savable data
             eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List[0];
             eventSO = eventScript.GetEventSO();
@@ -605,9 +593,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         }
         else if (isEventType_Planet)
         {
-
-            print("Test Code: THIS IS PLANET");
-
             //Convert to non savable data
             eventScript = RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List[0];
             eventSO = eventScript.GetEventSO();
@@ -736,7 +721,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         //Basic Info
         eventTitle_Text.text = eventInfo.eventTitle;
         eventDesc_Text.text = eventInfo.eventDescription;
-
+        eventIcon_Image.sprite = eventInfo.GetEventSO().eventIcon;
 
         if (eventInfo.eventOption1_Choice != "")
         {
@@ -774,7 +759,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
 
 
-        eventIcon_Image.sprite = eventInfo.GetEventSO().eventIcon;
+
 
 
     }
@@ -1064,10 +1049,11 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public IEnumerator IExplorePlanet(RARC_Event eventUsed, float effectiveTotal)
     {
         //Turn On Menus
-        FinishExploringButton_GO.SetActive(false);
+        //FinishExploringButton_GO.SetActive(false);
         exploringShowoffInfoContainer_Go.SetActive(true);
 
         //Setup Values
+        int currentTextNo = 0;
         int percentWhenEventOccurs = 999;
         bool hasEventOccured = false;
         hasShowoffEventCleared = false;
@@ -1079,6 +1065,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
             percentWhenEventOccurs = UnityEngine.Random.Range(25, 75);
         }
 
+   
+
+
         //Loop While Waiting For Percent to max
         while (exploringShowoffProgress < 100)
         {
@@ -1086,6 +1075,22 @@ public class RARC_ButtonController_Game : MonoBehaviour
             int progressValue = (int)exploringShowoffProgress;
             exploringShowoffPercent_Text.text = progressValue + "%";
             exploringShowoffPercent_FillImage.fillAmount = (exploringShowoffProgress / 100);
+
+            if (currentTextNo == 0 && exploringShowoffProgress > 0)
+            {
+                exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">" + RARC_DatabaseController.Instance.expolringText_List[UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.expolringText_List.Count)] + "</color>";
+                currentTextNo++;
+            }
+            else if (currentTextNo == 1 && exploringShowoffProgress > 33)
+            {
+                exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">" + RARC_DatabaseController.Instance.expolringText_List[UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.expolringText_List.Count)] + "</color>";
+                currentTextNo++;
+            }
+            else if (currentTextNo == 2 && exploringShowoffProgress > 66)
+            {
+                exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">" + RARC_DatabaseController.Instance.expolringText_List[UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.expolringText_List.Count)] + "</color>";
+                currentTextNo++;
+            }
 
             //Check If Event has happened Yet
             if (hasEventOccured == false)
@@ -1097,10 +1102,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
                     exploringShowoffInfo_Text.text = "<color=" + colorValues_Red + ">Anomaly detected</color>";
 
                     //Wait for dramitic effect
-                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(0.60f);
 
                     //Open Event and Stop Time From counting up the percent
-                    RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(eventUsed);
+                    //RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Add(eventUsed);
                     Button_EventPlanet();
                     hasEventOccured = true;
 
@@ -1117,7 +1122,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
                         exploringShowoffInfo_Text.text = "<color=" + colorValues_White + ">Oiling The Bots</color>";
 
                         //Wait for dramitic effect After menu is closed
-                        yield return new WaitForSeconds(0.5f);
+                        yield return new WaitForSeconds(0.60f);
                     }
                 }
             }
@@ -1165,9 +1170,14 @@ public class RARC_ButtonController_Game : MonoBehaviour
         exploringShowoffPercent_Text.text = "<color=" + colorValues_Green + ">100%</color>";
         exploringShowoffPercent_FillImage.fillAmount = 1;
 
+
+        yield return new WaitForSeconds(0.60f);
+        Button_Explore_FinishExploring();
+
+
         //Reset and Show Exit Button
-        FinishExploringButton_GO.SetActive(true);
-        exploringShowoffInfoContainer_Go.SetActive(false);
+        //FinishExploringButton_GO.SetActive(true);
+        //exploringShowoffInfoContainer_Go.SetActive(false);
         exploringShowoffProgress = 0;
 
         //Finish

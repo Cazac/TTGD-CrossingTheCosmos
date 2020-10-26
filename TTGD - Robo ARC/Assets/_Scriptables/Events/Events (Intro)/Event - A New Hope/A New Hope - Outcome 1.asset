@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc10d9e4425beb4194e654fe142636f, type: 3}
   m_Name: A New Hope - Outcome 1
   m_EditorClassIdentifier: 
-  outcomeNextEvent: {fileID: 0}
+  outcomeNextEvent: {fileID: 11400000, guid: bbc719abe6cfa0c499828839b7e705fd, type: 2}
   outcomeType1: 0
   outcomeValue1: 0
   outcomeType2: 0
