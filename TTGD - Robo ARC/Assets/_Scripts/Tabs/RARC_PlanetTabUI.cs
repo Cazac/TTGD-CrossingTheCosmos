@@ -58,7 +58,7 @@ public class RARC_PlanetTabUI : MonoBehaviour
         //Resources
         if (travelTime_Text != null)
         {
-            travelTime_Text.text = "Travel Time " + planet.planetTravelTime + " Weeks.";
+            travelTime_Text.text = "Distance " + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + "> " + planet.planetTravelTime + " Weeks" + "</color>";
         }
 
         //Button

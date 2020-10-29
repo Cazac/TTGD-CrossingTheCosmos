@@ -214,7 +214,7 @@ public class RARC_Planet_SO : ScriptableObject
         newPlanet.planetRotation = Random.Range(-90, 90);
 
         //Time to reach planet
-        newPlanet.planetTravelTime = Random.Range(1, 4);
+        newPlanet.planetTravelTime = Random.Range(2, 5);
 
         //Events / Resources
         newPlanet.planetEvent = GenerateAvalibleEvent_Rocky();

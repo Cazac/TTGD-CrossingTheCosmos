@@ -4932,6 +4932,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicTitle_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
     type: 2}
+  musicCredits_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
+    type: 2}
+  musicCutscene_LastHope: {fileID: 11400000, guid: d5cc2297d438c1e45a705de04100ad9c,
+    type: 2}
+  musicGameover_LastHope: {fileID: 11400000, guid: d5cc2297d438c1e45a705de04100ad9c,
+    type: 2}
   musicGame_NuclearReactor: {fileID: 11400000, guid: 9da4f981015430e42b19cea49014ac8d,
     type: 2}
   musicGame_SpaceChillin: {fileID: 11400000, guid: ddb7e609786483b40991c9450f44edb3,
@@ -4939,10 +4945,6 @@ MonoBehaviour:
   musicGame_UnravelingCosmos: {fileID: 11400000, guid: 92d95ec036699d84aa19a210971b6e3b,
     type: 2}
   musicGame_WorkinBots: {fileID: 11400000, guid: 58912460cff9159438678f55b45a239d,
-    type: 2}
-  musicCredits_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
-    type: 2}
-  musicGameover_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
     type: 2}
 --- !u!1 &858701270
 GameObject:
@@ -10633,6 +10635,9 @@ MonoBehaviour:
       resourceCount: 0
       resourceType: 0
     shipStorage_List: []
+    navigationRefreshTimes_Left: 0
+    navigationRefreshTimes_Middle: 0
+    navigationRefreshTimes_Right: 0
   player_SaveData:
     settings_TotalVolume: 0
     settings_MusicVolume: 0

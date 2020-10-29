@@ -248,7 +248,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RARC_GameStateController.Instance.Player_FinishWeek();
 
         //Create a New Week
-        RARC_GameStateController.Instance.System_GenerateNewWeek(false, false);
+      
 
         //Start new Week
         StartCoroutine(RARC_GameStateController.Instance.Player_StartWeek());

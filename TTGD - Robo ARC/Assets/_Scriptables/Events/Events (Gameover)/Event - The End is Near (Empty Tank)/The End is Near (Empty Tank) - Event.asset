@@ -21,12 +21,10 @@ MonoBehaviour:
   eventOption1_Outcome: {fileID: 11400000, guid: 27afce908c883b2489f25a3b6a27005f,
     type: 2}
   eventOption1_Requirement: {fileID: 0}
-  eventOption2_Choice: Accept your fate.
-  eventOption2_Outcome: {fileID: 11400000, guid: 27afce908c883b2489f25a3b6a27005f,
-    type: 2}
+  eventOption2_Choice: 
+  eventOption2_Outcome: {fileID: 0}
   eventOption2_Requirement: {fileID: 0}
-  eventOption3_Choice: Accept your fate.
-  eventOption3_Outcome: {fileID: 11400000, guid: 27afce908c883b2489f25a3b6a27005f,
-    type: 2}
+  eventOption3_Choice: 
+  eventOption3_Outcome: {fileID: 0}
   eventOption3_Requirement: {fileID: 0}
   eventCanComeBackLater: 0

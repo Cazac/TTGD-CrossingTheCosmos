@@ -44,6 +44,9 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("BLANKVAR")]
     public RARC_RoomTab[] allShipRoomTabs_Arr;
 
+    [Header("BLANKVAR")]
+    public int currentSongPlayLength;
+
 
     public readonly float eventChance_Travel = 0.7f;
     public readonly float eventChance_Planet = 0.5f;
@@ -122,7 +125,6 @@ public class RARC_GameStateController : MonoBehaviour
         isReady_Launch = false;
 
 
-
         //Check For New Save File
         if (isFirstWeek)
         {
@@ -140,6 +142,9 @@ public class RARC_GameStateController : MonoBehaviour
             print("Test Code: Load Stuff Here");
 
 
+            //Play First Track
+            RARC_MusicController.Instance.PlayMusic_FirstTrack();
+            currentSongPlayLength = 2;
         }
         else
         {
@@ -150,7 +155,22 @@ public class RARC_GameStateController : MonoBehaviour
             //Generate Possible Events
             GetPossibleNewEvent_Travel();
         }
-       
+
+
+        //Loop Song after 3rd track
+        if (currentSongPlayLength >= 3)
+        {
+            RARC_MusicController.Instance.PlayTrackMusic_NoLocation_RandomTrackList(RARC_DatabaseController.Instance.music_DB.musicGame_List);
+            currentSongPlayLength = 0;
+        }
+        else
+        {
+            currentSongPlayLength++;
+        }
+
+
+
+
 
 
 
@@ -202,7 +222,9 @@ public class RARC_GameStateController : MonoBehaviour
     public IEnumerator Player_StartCutscene()
     {
         cutScene_Animator.gameObject.SetActive(true);
-    
+
+
+        RARC_MusicController.Instance.PlayMusic_Cutscene();
 
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
@@ -231,6 +253,8 @@ public class RARC_GameStateController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
+        //RARC_MusicController.Instance.PlayMusic_FirstTrack();
+        currentSongPlayLength = 3;
 
         //Break Coroutine
         yield break;
@@ -242,6 +266,13 @@ public class RARC_GameStateController : MonoBehaviour
 
 
 
+
+        //Generate a New Week
+        System_GenerateNewWeek(false, false);
+
+
+
+        //Wait Till Screen is black
         yield return new WaitForSeconds(1.90f);
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation != null)
@@ -265,7 +296,6 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
         RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
-
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
 
         yield return new WaitForSeconds(1.4f);
@@ -580,6 +610,9 @@ public class RARC_GameStateController : MonoBehaviour
 
     public void System_Gameover(string reason)
     {
+
+
+        RARC_MusicController.Instance.PlayMusic_Gameover();
 
 
         RARC_ButtonController_Game.Instance.gameoverContainer_GO.SetActive(true);

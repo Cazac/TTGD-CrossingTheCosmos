@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: The End is Near (Everyone is Gone) - Outcome 1
   m_EditorClassIdentifier: 
   outcomeNextEvent: {fileID: 0}
-  outcomeType1: 7
+  outcomeType1: 14
   outcomeValue1: 0
   outcomeType2: 0
   outcomeValue2: 0

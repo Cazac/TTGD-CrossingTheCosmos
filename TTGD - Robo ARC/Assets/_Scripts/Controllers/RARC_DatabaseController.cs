@@ -177,6 +177,7 @@ public class RARC_DatabaseController : MonoBehaviour
         //Build Databases
         resources_DB.BuildDatabase();
         events_DB.BuildDatabase();
+        music_DB.BuildDatabase();
 
         //Exploring Text List
         expolringText_List = new List<string>();
