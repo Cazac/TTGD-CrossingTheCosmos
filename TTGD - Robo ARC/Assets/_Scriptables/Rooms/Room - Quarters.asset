@@ -16,9 +16,13 @@ MonoBehaviour:
   roomName: Quarters
   activeRoomSprite: {fileID: 21300000, guid: e76a45e07c226524bbd77285e6be538e, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: 691e97857335b38408d4bd3fef58319e, type: 3}
-  resourceRequired_1: 0
-  resourceRequiredAmount_1: 0
+  resourceRequired_1: 1
+  resourceRequiredAmount_1: 99
   resourceRequired_2: 0
   resourceRequiredAmount_2: 0
   resourceRequired_3: 0
   resourceRequiredAmount_3: 0
+  resourceRequired_4: 0
+  resourceRequiredAmount_4: 0
+  resourceRequired_5: 0
+  resourceRequiredAmount_5: 0

@@ -8,6 +8,9 @@ public class RARC_RequirementsUITab : MonoBehaviour
 {
     ////////////////////////////////
 
+    [Header("Button")]
+    public Button confirm_Button;
+
     [Header("Resource Set 1")]
     public GameObject resourceSet1_Container;
     public TextMeshProUGUI resourceSet1_Count;
@@ -35,14 +38,25 @@ public class RARC_RequirementsUITab : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void SetupTab(List<RARC_Resource> resources_List, string colorString)
+    public void SetupTab(List<RARC_Resource> resources_List, string colorStringWrong, string colorStringAvalible)
     {
+        confirm_Button.interactable = true;
+
         //Resource Set 1
         if (resources_List[0].resourceType != RARC_Resource.ResourceType.NULL)
         {
             resourceSet1_Container.SetActive(true);
-            resourceSet1_Count.text = "<" + colorString + ">" + "x" + resources_List[0].resourceCount + "</color>";
-            resourceSet1_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[0].resourceType); 
+            resourceSet1_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[0].resourceType);
+
+            if (RARC_GameStateController.Instance.CheckForResources(resources_List[0].resourceType, resources_List[0].resourceCount))
+            {
+                resourceSet1_Count.text = "<" + colorStringAvalible + ">" + "x" + resources_List[0].resourceCount + "</color>";
+            }
+            else
+            {
+                resourceSet1_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[0].resourceCount + "</color>";
+                confirm_Button.interactable = false;
+            }
         }
         else
         {
@@ -53,8 +67,17 @@ public class RARC_RequirementsUITab : MonoBehaviour
         if (resources_List[1].resourceType != RARC_Resource.ResourceType.NULL)
         {
             resourceSet2_Container.SetActive(true);
-            resourceSet2_Count.text = "<" + colorString + ">" + "x" + resources_List[1].resourceCount + "</color>";
             resourceSet2_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[1].resourceType);
+
+            if (RARC_GameStateController.Instance.CheckForResources(resources_List[1].resourceType, resources_List[1].resourceCount))
+            {
+                resourceSet2_Count.text = "<" + colorStringAvalible + ">" + "x" + resources_List[1].resourceCount + "</color>";
+            }
+            else
+            {
+                resourceSet2_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[1].resourceCount + "</color>";
+                confirm_Button.interactable = false;
+            }
         }
         else
         {
@@ -65,8 +88,17 @@ public class RARC_RequirementsUITab : MonoBehaviour
         if (resources_List[2].resourceType != RARC_Resource.ResourceType.NULL)
         {
             resourceSet3_Container.SetActive(true);
-            resourceSet3_Count.text = "<" + colorString + ">" + "x" + resources_List[2].resourceCount + "</color>";
             resourceSet3_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[2].resourceType);
+
+            if (RARC_GameStateController.Instance.CheckForResources(resources_List[2].resourceType, resources_List[2].resourceCount))
+            {
+                resourceSet3_Count.text = "<" + colorStringAvalible + ">" + "x" + resources_List[2].resourceCount + "</color>";
+            }
+            else
+            {
+                resourceSet3_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[2].resourceCount + "</color>";
+                confirm_Button.interactable = false;
+            }
         }
         else
         {
@@ -79,8 +111,17 @@ public class RARC_RequirementsUITab : MonoBehaviour
             if (resources_List[3].resourceType != RARC_Resource.ResourceType.NULL)
             {
                 resourceSet4_Container.SetActive(true);
-                resourceSet4_Count.text = "<" + colorString + ">" + "x" + resources_List[3].resourceCount + "</color>";
                 resourceSet4_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[3].resourceType);
+
+                if (RARC_GameStateController.Instance.CheckForResources(resources_List[3].resourceType, resources_List[3].resourceCount))
+                {
+                    resourceSet4_Count.text = "<" + colorStringAvalible + ">" + "x" + resources_List[3].resourceCount + "</color>";
+                }
+                else
+                {
+                    resourceSet4_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[3].resourceCount + "</color>";
+                    confirm_Button.interactable = false;
+                }
             }
             else
             {
@@ -93,8 +134,17 @@ public class RARC_RequirementsUITab : MonoBehaviour
             if (resources_List[4].resourceType != RARC_Resource.ResourceType.NULL)
             {
                 resourceSet5_Container.SetActive(true);
-                resourceSet5_Count.text = "<" + colorString + ">" + "x" + resources_List[4].resourceCount + "</color>";
                 resourceSet5_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resources_List[4].resourceType);
+
+                if (RARC_GameStateController.Instance.CheckForResources(resources_List[4].resourceType, resources_List[4].resourceCount))
+                {
+                    resourceSet5_Count.text = "<" + colorStringAvalible + ">" + "x" + resources_List[4].resourceCount + "</color>";
+                }
+                else
+                {
+                    resourceSet5_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[4].resourceCount + "</color>";
+                    confirm_Button.interactable = false;
+                }
             }
             else
             {

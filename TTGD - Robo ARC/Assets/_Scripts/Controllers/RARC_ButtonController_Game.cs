@@ -266,9 +266,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RARC_GameStateController.Instance.EnableRaycastBlocker();
 
         //Load Planet UI
-        navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0]);
-        navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1]);
-        navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2]);
+        navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Left);
+        navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Middle);
+        navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Right);
     }
 
     public void Button_Navigate_Close()
@@ -313,18 +313,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
         switch (planetNo)
         {
             case 1:
+                RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Left--;
                 RARC_GameStateController.Instance.navigationPossiblePlanets_List[0] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
-                navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0]);
+                navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Left);
                 break;
 
             case 2:
+                RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Middle--;
                 RARC_GameStateController.Instance.navigationPossiblePlanets_List[1] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
-                navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1]);
+                navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Middle);
                 break;
 
              case 3:
+                RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Right--;
                 RARC_GameStateController.Instance.navigationPossiblePlanets_List[2] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
-                navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2]);
+                navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Right);
                 break;
         }
     }
@@ -889,7 +892,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RARC_GameStateController.Instance.EnableRaycastBlocker();
 
         //Load Event
-        explorePlanet_Tab.SetPlanet(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation);
+        explorePlanet_Tab.SetPlanet(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation, 0);
         explorePlanetName_Text.text = RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation.planetName;
 
         //Risk Factor

@@ -55,7 +55,7 @@ public class RARC_CraftingUITab : MonoBehaviour
         resourcesRequired_List.Add(newResource5);
 
         //Setup Tab
-        requirementsTab.SetupTab(resourcesRequired_List, RARC_ButtonController_Game.Instance.colorValues_White);
+        requirementsTab.SetupTab(resourcesRequired_List, RARC_ButtonController_Game.Instance.colorValues_Red, RARC_ButtonController_Game.Instance.colorValues_White);
     }
 
     public void Button_CraftResource()

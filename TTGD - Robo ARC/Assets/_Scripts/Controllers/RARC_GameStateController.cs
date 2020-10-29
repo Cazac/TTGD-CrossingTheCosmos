@@ -44,6 +44,7 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("BLANKVAR")]
     public RARC_RoomTab[] allShipRoomTabs_Arr;
 
+
     public readonly float eventChance_Travel = 0.7f;
     public readonly float eventChance_Planet = 0.5f;
 
@@ -498,6 +499,69 @@ public class RARC_GameStateController : MonoBehaviour
                 RARC_CrewBotsController.Instance.RemoveBotMember();
             }
         }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public bool CheckForResources(RARC_Resource.ResourceType resourceType, int resourceAmount)
+    {
+        bool isResourceOwned = false;
+
+        switch (resourceType)
+        {
+            case RARC_Resource.ResourceType.NULL:
+                isResourceOwned = true;
+                break;
+
+            case RARC_Resource.ResourceType.Scrap:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                {
+                    isResourceOwned = true;
+                }
+                break;
+
+            case RARC_Resource.ResourceType.Fuel:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                {
+                    isResourceOwned = true;
+                }
+                break;
+
+            case RARC_Resource.ResourceType.Food:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                {
+                    isResourceOwned = true;
+                }
+                break;
+
+            default:
+                int resourceSlot = 99;
+                int i = 0;
+
+                //Search For Containing Slot
+                foreach (RARC_Resource resourceInShip in RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List)
+                {
+                    if (resourceInShip.resourceType == resourceType)
+                    {
+                        //Found Slot
+                        resourceSlot = i;
+                        break;
+                    }
+                    i++;
+                }
+
+                //Check if slot is found
+                if (resourceSlot != 99)
+                {
+                    if (RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount >= resourceAmount)
+                    {
+                        isResourceOwned = true;
+                    }
+                }
+                break;
+        }
+
+        return isResourceOwned;
     }
 
     /////////////////////////////////////////////////////////////////

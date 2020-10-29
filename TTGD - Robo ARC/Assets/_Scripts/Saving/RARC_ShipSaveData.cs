@@ -53,6 +53,11 @@ public class RARC_ShipSaveData
     public RARC_Resource shipResource_Food;
     public List<RARC_Resource> shipStorage_List;
 
+    [Header("Navigation Refrsh Times")]
+    public int navigationRefreshTimes_Left;
+    public int navigationRefreshTimes_Middle;
+    public int navigationRefreshTimes_Right;
+
     /////////////////////////////////////////////////////////////////
 
     public void CreateNewSave()
@@ -102,8 +107,13 @@ public class RARC_ShipSaveData
         shipAvaliblePlanetEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_AncientRuins));
 
         //Event Missfires
-        travelEventsMissed = 3;
-        planetEventsMissed = 3;
+        travelEventsMissed = 1;
+        planetEventsMissed = 1;
+
+        //Navigation Refreshs
+        navigationRefreshTimes_Left = 0;
+        navigationRefreshTimes_Middle = 0;
+        navigationRefreshTimes_Right = 0;
 
         //Set New Resource Bases and Storage
         shipHullHealth = 100;
