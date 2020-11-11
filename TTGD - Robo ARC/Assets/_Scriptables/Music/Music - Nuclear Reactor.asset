@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music - Nuclear Reactor
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 4b25f8318b8a158418b88fc45c7b7f2f, type: 3}
-  volume: 1
+  volume: 0.8
   pitch: 1
   pitchRange: 0
   spatialAudioRange: 0

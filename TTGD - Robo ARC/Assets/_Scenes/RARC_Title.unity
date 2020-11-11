@@ -565,6 +565,7 @@ GameObject:
   - component: {fileID: 156855980}
   - component: {fileID: 156855979}
   - component: {fileID: 156855982}
+  - component: {fileID: 156855983}
   m_Layer: 5
   m_Name: Base Panel 1
   m_TagString: Untagged
@@ -706,6 +707,51 @@ MonoBehaviour:
   food_Text: {fileID: 1368978582}
   humans_Text: {fileID: 1511526742}
   bots_Text: {fileID: 1500580245}
+--- !u!114 &156855983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156855977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 156855979}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 156855979}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &157979461
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +846,7 @@ GameObject:
   - component: {fileID: 217869038}
   - component: {fileID: 217869037}
   - component: {fileID: 217869036}
+  - component: {fileID: 217869039}
   m_Layer: 5
   m_Name: Play Button
   m_TagString: Untagged
@@ -920,6 +967,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 217869034}
   m_CullTransparentMesh: 0
+--- !u!114 &217869039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217869034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 217869036}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 217869036}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &218350917
 GameObject:
   m_ObjectHideFlags: 0
@@ -1389,6 +1481,7 @@ GameObject:
   - component: {fileID: 304267370}
   - component: {fileID: 304267369}
   - component: {fileID: 304267368}
+  - component: {fileID: 304267371}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -1509,6 +1602,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304267366}
   m_CullTransparentMesh: 0
+--- !u!114 &304267371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304267366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 304267368}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 304267368}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &316891818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2423,6 +2561,7 @@ GameObject:
   - component: {fileID: 464551722}
   - component: {fileID: 464551721}
   - component: {fileID: 464551720}
+  - component: {fileID: 464551723}
   m_Layer: 5
   m_Name: Delete Button
   m_TagString: Untagged
@@ -2542,6 +2681,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 464551718}
   m_CullTransparentMesh: 0
+--- !u!114 &464551723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464551718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 464551720}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 464551720}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &474788656
 GameObject:
   m_ObjectHideFlags: 0
@@ -3477,7 +3661,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1800703682}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &631375383
 GameObject:
@@ -4515,6 +4699,7 @@ MonoBehaviour:
   audioTrack_Prefab: {fileID: 2485798644395031165, guid: 28c6f04ce66ab784bafc4e3d1510db75,
     type: 3}
   audioTrack_Container: {fileID: 1134079623}
+  currentMusicTrack_SO: {fileID: 0}
 --- !u!1 &814176110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4610,6 +4795,7 @@ GameObject:
   - component: {fileID: 828215777}
   - component: {fileID: 828215776}
   - component: {fileID: 828215775}
+  - component: {fileID: 828215779}
   m_Layer: 5
   m_Name: Base Panel 3
   m_TagString: Untagged
@@ -4751,6 +4937,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 828215773}
   m_CullTransparentMesh: 0
+--- !u!114 &828215779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828215773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 828215776}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 828215776}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &843503073
 GameObject:
   m_ObjectHideFlags: 0
@@ -4946,6 +5177,7 @@ MonoBehaviour:
     type: 2}
   musicGame_WorkinBots: {fileID: 11400000, guid: 58912460cff9159438678f55b45a239d,
     type: 2}
+  musicGame_List: []
 --- !u!1 &858701270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6484,6 +6716,7 @@ GameObject:
   - component: {fileID: 1169714130}
   - component: {fileID: 1169714129}
   - component: {fileID: 1169714128}
+  - component: {fileID: 1169714131}
   m_Layer: 5
   m_Name: Settings Button
   m_TagString: Untagged
@@ -6604,6 +6837,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1169714126}
   m_CullTransparentMesh: 0
+--- !u!114 &1169714131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169714126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1169714128}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1169714128}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1171119311
 GameObject:
   m_ObjectHideFlags: 0
@@ -6820,6 +7098,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1228043190}
   m_CullTransparentMesh: 0
+--- !u!1 &1246682774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1246682775}
+  - component: {fileID: 1246682776}
+  m_Layer: 0
+  m_Name: SFX Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1246682775
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246682774}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1800703682}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246682776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246682774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b66de6d2d7a86439e85197158f5603, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfx_ButtonClick_Back: {fileID: 11400000, guid: 25cdb8dc3411e69449f01414cfbb6eb7,
+    type: 2}
+  sfx_ButtonClick_Confirm: {fileID: 11400000, guid: 27a24dca5a2ad294eb7538283108e320,
+    type: 2}
+  sfx_ButtonClick_Crafting: {fileID: 11400000, guid: b2d7345bb03bf2a408652f70fecadc72,
+    type: 2}
+  sfx_ButtonClick_Hover: {fileID: 11400000, guid: 1e6afbdb19a53bf4ca47f4722c58ff96,
+    type: 2}
+  sfx_ButtonClick_Launch: {fileID: 11400000, guid: f240197f42fe338489ae3f544156d8f0,
+    type: 2}
+  sfx_NotificationPing: {fileID: 11400000, guid: 8ff14309bfd09c64c9a40e0c0ec681ef,
+    type: 2}
+  sfx_CutsceneZoom: {fileID: 11400000, guid: 602227a039da3cc4784abe3fc08e0fad, type: 2}
+  sfx_ShipZoom: {fileID: 11400000, guid: 860d247a96497764e9d863117ea75222, type: 2}
 --- !u!1 &1247283815
 GameObject:
   m_ObjectHideFlags: 0
@@ -7261,6 +7596,7 @@ GameObject:
   - component: {fileID: 1323321863}
   - component: {fileID: 1323321862}
   - component: {fileID: 1323321861}
+  - component: {fileID: 1323321865}
   m_Layer: 5
   m_Name: Base Panel 2
   m_TagString: Untagged
@@ -7402,6 +7738,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1323321859}
   m_CullTransparentMesh: 0
+--- !u!114 &1323321865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1323321859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1323321862}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1323321862}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1327254716
 GameObject:
   m_ObjectHideFlags: 0
@@ -7549,6 +7930,7 @@ GameObject:
   - component: {fileID: 1332006495}
   - component: {fileID: 1332006494}
   - component: {fileID: 1332006493}
+  - component: {fileID: 1332006496}
   m_Layer: 5
   m_Name: Close Button
   m_TagString: Untagged
@@ -7669,6 +8051,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1332006491}
   m_CullTransparentMesh: 0
+--- !u!114 &1332006496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332006491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1332006493}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1332006493}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1337790920
 GameObject:
   m_ObjectHideFlags: 0
@@ -8190,7 +8617,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1800703682}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1424116845
 MonoBehaviour:
@@ -8695,6 +9122,7 @@ GameObject:
   - component: {fileID: 1493531274}
   - component: {fileID: 1493531273}
   - component: {fileID: 1493531272}
+  - component: {fileID: 1493531275}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -8815,6 +9243,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493531270}
   m_CullTransparentMesh: 0
+--- !u!114 &1493531275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493531270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1493531272}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1493531272}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1500580243
 GameObject:
   m_ObjectHideFlags: 0
@@ -10544,6 +11017,7 @@ Transform:
   - {fileID: 568729039}
   - {fileID: 1617815802}
   - {fileID: 853007847}
+  - {fileID: 1246682775}
   - {fileID: 628264547}
   - {fileID: 1424116844}
   m_Father: {fileID: 0}
@@ -10567,6 +11041,7 @@ MonoBehaviour:
   resources_DB: {fileID: 568729038}
   icons_DB: {fileID: 1617815803}
   music_DB: {fileID: 853007848}
+  sfx_DB: {fileID: 1246682776}
   room_DB: {fileID: 628264546}
   crafting_DB: {fileID: 1424116845}
   expolringText_List: []
@@ -10843,6 +11318,7 @@ GameObject:
   - component: {fileID: 1831834639}
   - component: {fileID: 1831834638}
   - component: {fileID: 1831834637}
+  - component: {fileID: 1831834640}
   m_Layer: 5
   m_Name: Delete Button
   m_TagString: Untagged
@@ -10962,6 +11438,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1831834635}
   m_CullTransparentMesh: 0
+--- !u!114 &1831834640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831834635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1831834637}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1831834637}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1838225469
 GameObject:
   m_ObjectHideFlags: 0
@@ -11639,6 +12160,7 @@ GameObject:
   - component: {fileID: 1962468715}
   - component: {fileID: 1962468714}
   - component: {fileID: 1962468713}
+  - component: {fileID: 1962468716}
   m_Layer: 5
   m_Name: Delete Button
   m_TagString: Untagged
@@ -11758,6 +12280,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962468711}
   m_CullTransparentMesh: 0
+--- !u!114 &1962468716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962468711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1962468713}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1962468713}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1982012378
 GameObject:
   m_ObjectHideFlags: 0
@@ -12040,6 +12607,7 @@ GameObject:
   - component: {fileID: 1995229430}
   - component: {fileID: 1995229429}
   - component: {fileID: 1995229428}
+  - component: {fileID: 1995229431}
   m_Layer: 5
   m_Name: Credits Button
   m_TagString: Untagged
@@ -12160,6 +12728,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995229426}
   m_CullTransparentMesh: 0
+--- !u!114 &1995229431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995229426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1995229428}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 729881843}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1995229428}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2018738568
 GameObject:
   m_ObjectHideFlags: 0

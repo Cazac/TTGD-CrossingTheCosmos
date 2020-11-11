@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music - Workin Bots
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 27152d773a41081428f991fea6de4e6a, type: 3}
-  volume: 1
+  volume: 0.8
   pitch: 1
   pitchRange: 0
   spatialAudioRange: 0

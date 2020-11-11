@@ -656,256 +656,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 18647214}
   m_CullTransparentMesh: 0
---- !u!1001 &22304834
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1509165089439276866}
-    m_Modifications:
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 892.49994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -69.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 575
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.49999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210285, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Name
-      value: Building Room New (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aaa9d04203cdfc442ab0c3377c8cabf1, type: 3}
---- !u!224 &22304835 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-    type: 3}
-  m_PrefabInstance: {fileID: 22304834}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &23204740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,7 +2289,6 @@ RectTransform:
   m_Children:
   - {fileID: 1747300267}
   - {fileID: 42667590}
-  - {fileID: 1143424932}
   m_Father: {fileID: 1805120671}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6108,6 +5857,7 @@ GameObject:
   - component: {fileID: 184518733}
   - component: {fileID: 184518732}
   - component: {fileID: 184518731}
+  - component: {fileID: 184518734}
   m_Layer: 5
   m_Name: Resume Button
   m_TagString: Untagged
@@ -6228,6 +5978,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 184518729}
   m_CullTransparentMesh: 0
+--- !u!114 &184518734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184518729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 184518731}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 184518731}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &188831310
 GameObject:
   m_ObjectHideFlags: 0
@@ -6580,8 +6375,9 @@ GameObject:
   - component: {fileID: 208622642}
   - component: {fileID: 208622641}
   - component: {fileID: 208622640}
+  - component: {fileID: 208622643}
   m_Layer: 5
-  m_Name: 'Launch Button '
+  m_Name: Launch Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6704,6 +6500,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 208622638}
   m_CullTransparentMesh: 0
+--- !u!114 &208622643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208622638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 208622640}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Launch
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 208622640}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &209683183
 GameObject:
   m_ObjectHideFlags: 0
@@ -6961,8 +6802,10 @@ GameObject:
   - component: {fileID: 231761958}
   - component: {fileID: 231761962}
   - component: {fileID: 231761961}
-  - component: {fileID: 231761960}
   - component: {fileID: 231761959}
+  - component: {fileID: 231761960}
+  - component: {fileID: 231761964}
+  - component: {fileID: 231761963}
   m_Layer: 5
   m_Name: Fabrication Button
   m_TagString: Untagged
@@ -7102,6 +6945,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 231761957}
   m_CullTransparentMesh: 0
+--- !u!114 &231761963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231761957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1438d4d4660e1d244bae5af73af6dbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &231761964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 231761957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 231761960}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 231761960}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &233709531
 GameObject:
   m_ObjectHideFlags: 0
@@ -7970,108 +7870,6 @@ MonoBehaviour:
     - {x: 0, y: 0, z: 0, w: 0}
     - {x: 0, y: 0, z: 0, w: 0}
   m_Flip: 0
---- !u!1 &268813891
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 268813892}
-  - component: {fileID: 268813895}
-  - component: {fileID: 268813894}
-  - component: {fileID: 268813893}
-  m_Layer: 5
-  m_Name: Build Room Buttons
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &268813892
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268813891}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.999997, y: 0.999997, z: 0.999997}
-  m_Children:
-  - {fileID: 1511715104}
-  - {fileID: 1940254612}
-  m_Father: {fileID: 1806418630}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: 0}
-  m_SizeDelta: {x: 1200, y: 500}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &268813893
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268813891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 15
-    m_Bottom: 0
-  m_ChildAlignment: 1
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 575, y: 110}
-  m_Spacing: {x: 10, y: 10}
-  m_Constraint: 1
-  m_ConstraintCount: 2
---- !u!114 &268813894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268813891}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 28264f003e431764ea2f94b3607c1873, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &268813895
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 268813891}
-  m_CullTransparentMesh: 0
 --- !u!1 &270611191
 GameObject:
   m_ObjectHideFlags: 0
@@ -8343,6 +8141,7 @@ GameObject:
   - component: {fileID: 279155518}
   - component: {fileID: 279155517}
   - component: {fileID: 279155516}
+  - component: {fileID: 279155519}
   m_Layer: 5
   m_Name: Destination Button
   m_TagString: Untagged
@@ -8464,6 +8263,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 279155514}
   m_CullTransparentMesh: 0
+--- !u!114 &279155519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279155514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 279155516}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 279155516}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &279938248
 GameObject:
   m_ObjectHideFlags: 0
@@ -10764,8 +10608,10 @@ GameObject:
   - component: {fileID: 389080004}
   - component: {fileID: 389080007}
   - component: {fileID: 389080006}
-  - component: {fileID: 389080005}
   - component: {fileID: 389080008}
+  - component: {fileID: 389080005}
+  - component: {fileID: 389080010}
+  - component: {fileID: 389080009}
   m_Layer: 5
   m_Name: Event Button
   m_TagString: Untagged
@@ -10906,6 +10752,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &389080009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389080003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1438d4d4660e1d244bae5af73af6dbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &389080010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 389080003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 389080005}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 389080005}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &394387070
 GameObject:
   m_ObjectHideFlags: 0
@@ -12045,6 +11948,7 @@ GameObject:
   - component: {fileID: 425887307}
   - component: {fileID: 425887306}
   - component: {fileID: 425887305}
+  - component: {fileID: 425887308}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -12164,6 +12068,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 425887303}
   m_CullTransparentMesh: 0
+--- !u!114 &425887308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425887303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 425887305}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 425887305}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &426071303
 GameObject:
   m_ObjectHideFlags: 0
@@ -12334,6 +12283,7 @@ GameObject:
   - component: {fileID: 433263715}
   - component: {fileID: 433263714}
   - component: {fileID: 433263713}
+  - component: {fileID: 433263716}
   m_Layer: 5
   m_Name: Destination Button
   m_TagString: Untagged
@@ -12455,6 +12405,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 433263711}
   m_CullTransparentMesh: 0
+--- !u!114 &433263716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433263711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 433263713}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 433263713}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &435377369
 GameObject:
   m_ObjectHideFlags: 0
@@ -14042,140 +14037,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490371120}
   m_CullTransparentMesh: 0
---- !u!1 &491497348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 491497349}
-  - component: {fileID: 491497351}
-  - component: {fileID: 491497350}
-  m_Layer: 5
-  m_Name: Risk Factor Text
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &491497349
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491497348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 902477410}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -75}
-  m_SizeDelta: {x: 500, y: 50}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &491497350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491497348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: 'Planet Risk Factor: 7'
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_enableWordWrapping: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 1
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 1
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &491497351
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 491497348}
-  m_CullTransparentMesh: 0
 --- !u!1 &492954770
 GameObject:
   m_ObjectHideFlags: 0
@@ -14657,81 +14518,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &532031236
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 532031237}
-  - component: {fileID: 532031239}
-  - component: {fileID: 532031238}
-  m_Layer: 5
-  m_Name: Risk Bar (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &532031237
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532031236}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1625274838}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -10, y: -10}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &532031238
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532031236}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e1cb9282717619b43bdc6d7e5a5be129, type: 3}
-  m_Type: 3
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 0
-  m_FillAmount: 0.628
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &532031239
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 532031236}
-  m_CullTransparentMesh: 0
 --- !u!1 &532262425
 GameObject:
   m_ObjectHideFlags: 0
@@ -16179,6 +15965,7 @@ GameObject:
   - component: {fileID: 578919823}
   - component: {fileID: 578919822}
   - component: {fileID: 578919821}
+  - component: {fileID: 578919824}
   m_Layer: 5
   m_Name: Destination Button
   m_TagString: Untagged
@@ -16300,6 +16087,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578919819}
   m_CullTransparentMesh: 0
+--- !u!114 &578919824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578919819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 578919821}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 578919821}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &579266153
 GameObject:
   m_ObjectHideFlags: 0
@@ -16839,8 +16671,10 @@ GameObject:
   - component: {fileID: 583594663}
   - component: {fileID: 583594666}
   - component: {fileID: 583594665}
-  - component: {fileID: 583594664}
   - component: {fileID: 583594667}
+  - component: {fileID: 583594664}
+  - component: {fileID: 583594669}
+  - component: {fileID: 583594668}
   m_Layer: 5
   m_Name: Explore Button
   m_TagString: Untagged
@@ -16981,6 +16815,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &583594668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583594662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1438d4d4660e1d244bae5af73af6dbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &583594669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583594662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 583594664}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 583594664}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &584564909
 GameObject:
   m_ObjectHideFlags: 0
@@ -18208,6 +18099,7 @@ GameObject:
   - component: {fileID: 615224986}
   - component: {fileID: 615224985}
   - component: {fileID: 615224984}
+  - component: {fileID: 615224987}
   m_Layer: 5
   m_Name: Refresh Button
   m_TagString: Untagged
@@ -18329,6 +18221,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615224982}
   m_CullTransparentMesh: 0
+--- !u!114 &615224987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615224982}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 615224984}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 615224984}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &623048631
 GameObject:
   m_ObjectHideFlags: 0
@@ -18786,7 +18723,7 @@ RectTransform:
   m_Children:
   - {fileID: 2096590044}
   m_Father: {fileID: 902477410}
-  m_RootOrder: 9
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -21284,6 +21221,7 @@ GameObject:
   - component: {fileID: 730601591}
   - component: {fileID: 730601590}
   - component: {fileID: 730601589}
+  - component: {fileID: 730601592}
   m_Layer: 5
   m_Name: Avoid Button
   m_TagString: Untagged
@@ -21304,7 +21242,7 @@ RectTransform:
   m_Children:
   - {fileID: 1625187136}
   m_Father: {fileID: 902477410}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -21404,6 +21342,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730601587}
   m_CullTransparentMesh: 0
+--- !u!114 &730601592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 730601587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 730601589}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 730601589}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &734806301
 GameObject:
   m_ObjectHideFlags: 0
@@ -23297,6 +23280,7 @@ GameObject:
   - component: {fileID: 797333305}
   - component: {fileID: 797333304}
   - component: {fileID: 797333303}
+  - component: {fileID: 797333306}
   m_Layer: 5
   m_Name: Confirm Button
   m_TagString: Untagged
@@ -23417,6 +23401,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 797333301}
   m_CullTransparentMesh: 0
+--- !u!114 &797333306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 797333301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 797333303}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 797333303}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &798857623
 GameObject:
   m_ObjectHideFlags: 0
@@ -27096,8 +27125,6 @@ RectTransform:
   - {fileID: 1292705626}
   - {fileID: 1917728274}
   - {fileID: 23204741}
-  - {fileID: 491497349}
-  - {fileID: 1625274838}
   - {fileID: 2126933427}
   - {fileID: 1790583413}
   - {fileID: 1495302981}
@@ -27611,6 +27638,7 @@ GameObject:
   - component: {fileID: 914912796}
   - component: {fileID: 914912795}
   - component: {fileID: 914912794}
+  - component: {fileID: 914912797}
   m_Layer: 5
   m_Name: Refresh Button
   m_TagString: Untagged
@@ -27732,6 +27760,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914912792}
   m_CullTransparentMesh: 0
+--- !u!114 &914912797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914912792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 914912794}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 914912794}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &916352658
 GameObject:
   m_ObjectHideFlags: 0
@@ -34847,68 +34920,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1143200164}
   m_CullTransparentMesh: 0
---- !u!1 &1143424931
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1143424932}
-  - component: {fileID: 1143424933}
-  m_Layer: 5
-  m_Name: Vertical Container (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1143424932
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143424931}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 88630834}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 200, y: -20}
-  m_SizeDelta: {x: 200, y: -60}
-  m_Pivot: {x: 0, y: 0.5}
---- !u!114 &1143424933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1143424931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 10
-    m_Right: 10
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 10
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1 &1144678876
 GameObject:
   m_ObjectHideFlags: 0
@@ -42112,6 +42123,7 @@ GameObject:
   - component: {fileID: 1400519584}
   - component: {fileID: 1400519583}
   - component: {fileID: 1400519582}
+  - component: {fileID: 1400519585}
   m_Layer: 5
   m_Name: Explore Button
   m_TagString: Untagged
@@ -42132,7 +42144,7 @@ RectTransform:
   m_Children:
   - {fileID: 1661330426}
   m_Father: {fileID: 902477410}
-  m_RootOrder: 11
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -42232,6 +42244,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1400519580}
   m_CullTransparentMesh: 0
+--- !u!114 &1400519585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400519580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1400519582}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1400519582}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1405519926
 GameObject:
   m_ObjectHideFlags: 0
@@ -42974,8 +43031,10 @@ GameObject:
   - component: {fileID: 1444660309}
   - component: {fileID: 1444660312}
   - component: {fileID: 1444660311}
-  - component: {fileID: 1444660310}
   - component: {fileID: 1444660313}
+  - component: {fileID: 1444660310}
+  - component: {fileID: 1444660315}
+  - component: {fileID: 1444660314}
   m_Layer: 5
   m_Name: Navigate Button
   m_TagString: Untagged
@@ -43116,6 +43175,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1444660314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444660308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1438d4d4660e1d244bae5af73af6dbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1444660315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444660308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1444660310}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1444660310}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1447232877
 GameObject:
   m_ObjectHideFlags: 0
@@ -44037,6 +44153,7 @@ GameObject:
   - component: {fileID: 1467666300}
   - component: {fileID: 1467666299}
   - component: {fileID: 1467666298}
+  - component: {fileID: 1467666301}
   m_Layer: 5
   m_Name: Refresh Button
   m_TagString: Untagged
@@ -44158,6 +44275,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1467666296}
   m_CullTransparentMesh: 0
+--- !u!114 &1467666301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467666296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1467666298}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1467666298}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1469818698
 GameObject:
   m_ObjectHideFlags: 0
@@ -44951,12 +45113,12 @@ MonoBehaviour:
   explorePlanet_Tab: {fileID: 2126933431}
   explorePlanetName_Text: {fileID: 675683437}
   explorationRate_Text: {fileID: 1701033237}
-  explorationRiskFactor_Text: {fileID: 491497350}
+  explorationRiskFactor_Text: {fileID: 0}
   exploringHumans_Text: {fileID: 989778598}
   exploringBots_Text: {fileID: 1653262262}
   exploringHumans_Slider: {fileID: 1188285151}
   exploringBots_Slider: {fileID: 270611193}
-  explorationRiskFactor_FillImage: {fileID: 532031238}
+  explorationRiskFactor_FillImage: {fileID: 0}
   explorationRate_FillImage: {fileID: 1754396694}
   explorePlanet_Button: {fileID: 1400519582}
   avoidPlanet_Button: {fileID: 730601589}
@@ -45314,6 +45476,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494074269}
   - component: {fileID: 1494074270}
+  - component: {fileID: 1494074271}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Untagged
@@ -45338,7 +45501,7 @@ Transform:
   - {fileID: 2071860923}
   - {fileID: 48614152}
   m_Father: {fileID: 2033844839}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1494074270
 Animator:
@@ -45359,6 +45522,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1494074271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494074268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1438d4d4660e1d244bae5af73af6dbde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1495146831
 GameObject:
   m_ObjectHideFlags: 0
@@ -45475,7 +45650,7 @@ RectTransform:
   - {fileID: 1817723038}
   - {fileID: 1336139003}
   m_Father: {fileID: 902477410}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -45764,256 +45939,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1511715103
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 268813892}
-    m_Modifications:
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 307.49997
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -69.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 575
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.49999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210285, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Name
-      value: Building Room New
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aaa9d04203cdfc442ab0c3377c8cabf1, type: 3}
---- !u!224 &1511715104 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1511715103}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1512197998
 GameObject:
   m_ObjectHideFlags: 0
@@ -49231,82 +49156,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1625187135}
-  m_CullTransparentMesh: 0
---- !u!1 &1625274837
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1625274838}
-  - component: {fileID: 1625274840}
-  - component: {fileID: 1625274839}
-  m_Layer: 5
-  m_Name: Risk Bar
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1625274838
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625274837}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 532031237}
-  m_Father: {fileID: 902477410}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 400, y: -125}
-  m_SizeDelta: {x: 400, y: 25}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &1625274839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625274837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e1cb9282717619b43bdc6d7e5a5be129, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1625274840
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625274837}
   m_CullTransparentMesh: 0
 --- !u!1 &1638218548
 GameObject:
@@ -52966,7 +52815,7 @@ GameObject:
   - component: {fileID: 1757044454}
   - component: {fileID: 1757044453}
   m_Layer: 5
-  m_Name: Launch Button  (1)
+  m_Name: Launch Button (BG)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -53420,6 +53269,7 @@ GameObject:
   - component: {fileID: 1774884448}
   - component: {fileID: 1774884447}
   - component: {fileID: 1774884446}
+  - component: {fileID: 1774884449}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -53539,6 +53389,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1774884444}
   m_CullTransparentMesh: 0
+--- !u!114 &1774884449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1774884444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1774884446}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1774884446}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1776130988
 GameObject:
   m_ObjectHideFlags: 0
@@ -53847,7 +53742,7 @@ RectTransform:
   - {fileID: 1082814316}
   - {fileID: 1188285150}
   m_Father: {fileID: 902477410}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
@@ -54497,7 +54392,6 @@ RectTransform:
   - {fileID: 502873824}
   - {fileID: 425887304}
   - {fileID: 1799080633}
-  - {fileID: 268813892}
   m_Father: {fileID: 1805120671}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54526,6 +54420,7 @@ GameObject:
   - component: {fileID: 1807954736}
   - component: {fileID: 1807954735}
   - component: {fileID: 1807954734}
+  - component: {fileID: 1807954737}
   m_Layer: 5
   m_Name: Return Button
   m_TagString: Untagged
@@ -54628,7 +54523,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f93db1c2f8ce1cb4baed7c8dba8729fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6e769db1dd4770e4f9678f49ecd499b4, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -54646,6 +54541,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807954732}
   m_CullTransparentMesh: 0
+--- !u!114 &1807954737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1807954732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1807954734}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1807954734}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1815010394
 GameObject:
   m_ObjectHideFlags: 0
@@ -57600,6 +57540,7 @@ GameObject:
   - component: {fileID: 1917728277}
   - component: {fileID: 1917728276}
   - component: {fileID: 1917728275}
+  - component: {fileID: 1917728278}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -57719,6 +57660,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1917728273}
   m_CullTransparentMesh: 0
+--- !u!114 &1917728278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1917728273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1917728275}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1917728275}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1921328185
 GameObject:
   m_ObjectHideFlags: 0
@@ -58540,256 +58526,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1940254611
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 268813892}
-    m_Modifications:
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1269444820679820416, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819293335878907, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294291278487, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7484819294516505897, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 892.49994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -69.99998
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 575
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 110
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.49999994
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 8299794204436210285, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-        type: 3}
-      propertyPath: m_Name
-      value: Building Room New (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: aaa9d04203cdfc442ab0c3377c8cabf1, type: 3}
---- !u!224 &1940254612 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
-    type: 3}
-  m_PrefabInstance: {fileID: 1940254611}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1948738227
 GameObject:
   m_ObjectHideFlags: 0
@@ -59833,6 +59569,7 @@ GameObject:
   - component: {fileID: 1989195871}
   - component: {fileID: 1989195870}
   - component: {fileID: 1989195869}
+  - component: {fileID: 1989195872}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -59952,6 +59689,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989195867}
   m_CullTransparentMesh: 0
+--- !u!114 &1989195872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989195867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1989195869}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 1989195869}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1991553916
 GameObject:
   m_ObjectHideFlags: 0
@@ -61487,10 +61269,10 @@ Transform:
   m_Children:
   - {fileID: 785688915}
   - {fileID: 1788664652}
-  - {fileID: 7315657591347309513}
   - {fileID: 2036793346}
   - {fileID: 666943525264591331}
   - {fileID: 1494074269}
+  - {fileID: 7315657591347309513}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61575,7 +61357,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2033844839}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2037577026
 GameObject:
@@ -62664,6 +62446,7 @@ GameObject:
   - component: {fileID: 2079465393}
   - component: {fileID: 2079465392}
   - component: {fileID: 2079465391}
+  - component: {fileID: 2079465394}
   m_Layer: 5
   m_Name: Quit Button
   m_TagString: Untagged
@@ -62784,6 +62567,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079465389}
   m_CullTransparentMesh: 0
+--- !u!114 &2079465394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079465389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2079465391}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2079465391}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2079910570
 GameObject:
   m_ObjectHideFlags: 0
@@ -64281,7 +64109,7 @@ RectTransform:
   - {fileID: 773518554}
   - {fileID: 397654957}
   m_Father: {fileID: 902477410}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -64977,6 +64805,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1783457257161959036, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 761999598}
+    - target: {fileID: 1783457257161959036, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 761999598}
     - target: {fileID: 6612958303695448383, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -65135,7 +64973,7 @@ PrefabInstance:
     - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 307.49997
+      value: 599.99994
       objectReference: {fileID: 0}
     - target: {fileID: 8299794204436210284, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
         type: 3}
@@ -65185,7 +65023,7 @@ PrefabInstance:
     - target: {fileID: 8299794204436210285, guid: aaa9d04203cdfc442ab0c3377c8cabf1,
         type: 3}
       propertyPath: m_Name
-      value: Building Room New
+      value: Building Container Button
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa9d04203cdfc442ab0c3377c8cabf1, type: 3}
@@ -66541,7 +66379,7 @@ Transform:
   - {fileID: 666943525118494565}
   - {fileID: 666943525524124092}
   m_Father: {fileID: 2033844839}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &666943525264591340
 MonoBehaviour:
@@ -68096,7 +67934,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8215467658570297121}
-  - {fileID: 22304835}
   m_Father: {fileID: 1509165090221135746}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -69768,6 +69605,7 @@ GameObject:
   - component: {fileID: 2594592954537177401}
   - component: {fileID: 2594592954537177400}
   - component: {fileID: 2594592954537177403}
+  - component: {fileID: 2594592954537177398}
   m_Layer: 5
   m_Name: Option 3
   m_TagString: Untagged
@@ -69775,6 +69613,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2594592954537177398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594592954537177397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2594592954537177403}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2594592954537177403}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &2594592954537177400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69900,6 +69783,7 @@ GameObject:
   - component: {fileID: 2594592954659570092}
   - component: {fileID: 2594592954659570095}
   - component: {fileID: 2594592954659570094}
+  - component: {fileID: 2594592954659570090}
   m_Layer: 5
   m_Name: Option 2
   m_TagString: Untagged
@@ -69927,6 +69811,51 @@ RectTransform:
   m_AnchoredPosition: {x: 549.99994, y: -159.99998}
   m_SizeDelta: {x: 1070, y: 90}
   m_Pivot: {x: 0.49999994, y: 0.5000002}
+--- !u!114 &2594592954659570090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594592954659570088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2594592954659570094}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2594592954659570094}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &2594592954659570092
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -70410,6 +70339,7 @@ GameObject:
   - component: {fileID: 2594592955881210404}
   - component: {fileID: 2594592955881210407}
   - component: {fileID: 2594592955881210406}
+  - component: {fileID: 2594592955881210402}
   m_Layer: 5
   m_Name: Option 1
   m_TagString: Untagged
@@ -70437,6 +70367,51 @@ RectTransform:
   m_AnchoredPosition: {x: 549.99994, y: -59.999985}
   m_SizeDelta: {x: 1070, y: 90}
   m_Pivot: {x: 0.49999994, y: 0.5000002}
+--- !u!114 &2594592955881210402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2594592955881210400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2594592955881210406}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Confirm
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 2594592955881210406}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!222 &2594592955881210404
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -75244,6 +75219,7 @@ GameObject:
   - component: {fileID: 3322047447000758681}
   - component: {fileID: 3322047447000758680}
   - component: {fileID: 3322047447000758683}
+  - component: {fileID: 3322047447000758758}
   m_Layer: 5
   m_Name: Back Button
   m_TagString: Untagged
@@ -75251,6 +75227,51 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!114 &3322047447000758758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3322047447000758757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Hover
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3322047447000758683}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 761999598}
+          m_TargetAssemblyTypeName: RARC_SFXController, Assembly-CSharp
+          m_MethodName: PlaySFX_Button_Back
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 3322047447000758683}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &3340112888792793914
 Transform:
   m_ObjectHideFlags: 0
@@ -75816,60 +75837,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1799080633}
     m_Modifications:
-    - target: {fileID: 3702015915895517557, guid: 0225140aaf9036544b2a924d1101545f,
+    - target: {fileID: 3566903272640498408, guid: 0225140aaf9036544b2a924d1101545f,
         type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015915895517557, guid: 0225140aaf9036544b2a924d1101545f,
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 761999598}
+    - target: {fileID: 3566903272640498408, guid: 0225140aaf9036544b2a924d1101545f,
         type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015915895517557, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015915895517557, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015915895517557, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015916074295452, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015916074295452, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015916074295452, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015916074295452, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015916074295452, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 761999598}
     - target: {fileID: 3702015916487196938, guid: 0225140aaf9036544b2a924d1101545f,
         type: 3}
       propertyPath: m_Name
-      value: Crafting Container
+      value: Crafting Container Button
       objectReference: {fileID: 0}
     - target: {fileID: 3702015916487196939, guid: 0225140aaf9036544b2a924d1101545f,
         type: 3}
@@ -75975,56 +75956,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917175987389, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917175987389, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917175987389, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917175987389, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917175987389, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917300931928, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917300931928, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917300931928, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917300931928, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3702015917300931928, guid: 0225140aaf9036544b2a924d1101545f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0225140aaf9036544b2a924d1101545f, type: 3}
@@ -78306,7 +78237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5953242364988031222
 Transform:
   m_ObjectHideFlags: 0
@@ -79586,7 +79517,7 @@ Transform:
   - {fileID: 481505956}
   - {fileID: 2079910571}
   m_Father: {fileID: 2033844839}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &7378382073251625225
 Transform:

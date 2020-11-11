@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RARC_SFXController : MonoBehaviour
 {
@@ -189,6 +190,56 @@ public class RARC_SFXController : MonoBehaviour
             }
         }
     }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void PlaySFX_Button_Back(Button thisButton)
+    {
+        if (thisButton.interactable == true)
+        {
+            //Get Clip
+            PlayTrackSFX_NoLocation_SingleTrack(RARC_DatabaseController.Instance.sfx_DB.sfx_ButtonClick_Back);
+        }
+    }
+
+    public void PlaySFX_Button_Confirm(Button thisButton)
+    {
+        if (thisButton.interactable == true)
+        {
+            //Get Clip
+            PlayTrackSFX_NoLocation_SingleTrack(RARC_DatabaseController.Instance.sfx_DB.sfx_ButtonClick_Confirm);
+        }
+    }
+
+    public void PlaySFX_Button_Crafting(Button thisButton)
+    {
+        if (thisButton.interactable == true)
+        {
+            //Get Clip
+            PlayTrackSFX_NoLocation_SingleTrack(RARC_DatabaseController.Instance.sfx_DB.sfx_ButtonClick_Crafting);
+        }
+    }
+
+    public void PlaySFX_Button_Hover(Button thisButton)
+    {
+        if (thisButton.interactable == true)
+        {
+            //Get Clip
+            PlayTrackSFX_NoLocation_SingleTrack(RARC_DatabaseController.Instance.sfx_DB.sfx_ButtonClick_Hover);
+        }
+    }
+
+    public void PlaySFX_Button_Launch(Button thisButton)
+    {
+        if (thisButton.interactable == true)
+        {
+            //Get Clip
+            PlayTrackSFX_NoLocation_SingleTrack(RARC_DatabaseController.Instance.sfx_DB.sfx_ButtonClick_Launch);
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
 
     /////////////////////////////////////////////////////////////////
 }

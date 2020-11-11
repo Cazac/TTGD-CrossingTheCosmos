@@ -29,6 +29,9 @@ public class RARC_DatabaseController : MonoBehaviour
     [Header("Access Container of Music")]
     public RARC_MusicData music_DB;
 
+    [Header("Access Container of SFX")]
+    public RARC_SFXData sfx_DB;
+
     [Header("Access Container of Music")]
     public RARC_RoomData room_DB;
 

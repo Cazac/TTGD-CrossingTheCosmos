@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Music - Unraveling Cosmos
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 91c0f73f698469848ba998bf3b2149ae, type: 3}
-  volume: 1
+  volume: 0.8
   pitch: 1
   pitchRange: 0
   spatialAudioRange: 0
