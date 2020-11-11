@@ -22,16 +22,20 @@ public class RARC_PlanetTabUI : MonoBehaviour
     public Image moonSprite2_Main;
     public Image moonSprite2_Secondary;
 
-    [Header("Resources")]
+    [Header("Info")]
     public TextMeshProUGUI name_Text;
     public TextMeshProUGUI travelTime_Text;
+    public TextMeshProUGUI refreshButton_Text;
+    public Button refresh_Button;
+
+    [Header("Resources")]
     public RARC_ResourceTab resources1_Tab;
     public RARC_ResourceTab resources2_Tab;
     public RARC_ResourceTab resources3_Tab;
 
     /////////////////////////////////////////////////////////////////
 
-    public void SetPlanet(RARC_Planet planet)
+    public void SetPlanet(RARC_Planet planet, int refreshLeft)
     {
         //Planet
         planetSprite_Main.transform.rotation = Quaternion.Euler(0, 0, planet.planetRotation);
@@ -54,7 +58,21 @@ public class RARC_PlanetTabUI : MonoBehaviour
         //Resources
         if (travelTime_Text != null)
         {
-            travelTime_Text.text = "Travel Time " + planet.planetTravelTime + " Weeks.";
+            travelTime_Text.text = "Distance " + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + "> " + planet.planetTravelTime + " Weeks" + "</color>";
+        }
+
+        //Button
+        if (refreshButton_Text != null)
+        {
+            refreshButton_Text.text = "Reroll Planet: (" + refreshLeft + ")";
+            if (refreshLeft <= 0)
+            {
+                refresh_Button.interactable = false;
+            }
+            else
+            {
+                refresh_Button.interactable = true;
+            }
         }
 
         //Resources

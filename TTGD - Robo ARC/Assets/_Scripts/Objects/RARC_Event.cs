@@ -31,63 +31,21 @@ public class RARC_Event
 
     public RARC_Event_SO GetEventSO()
     {
-        //
-        RARC_Event_SO eventSO = null;
-
-
-        switch (eventID)
+        //Searching for SO
+        for (int i = 0; i < RARC_DatabaseController.Instance.events_DB.allEvents_List.Count; i++)
         {
-
-            case "A New Hope - Event":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_ANewHope;
-                break;
-
-
-
-            case "Abandoned Ship - Event":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip;
-                break;
-
-            case "Abandoned Ship - Outcome Event 1":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip.eventOption1_Outcome.outcomeNextEvent;
-                break;
-
-            case "Abandoned Ship - Outcome Event 2":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip.eventOption2_Outcome.outcomeNextEvent;
-                break;
-
-            case "Abandoned Ship - Outcome Event 3":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_AbandonedShip.eventOption3_Outcome.outcomeNextEvent;
-                break;
-
-
-
-
-
-
-            case "The End is Near (Catastrophic Breakdown))":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown;
-                break;
-
-            case "The End is Near (Empty Tank)":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank;
-                break;
-
-            case "The End is Near (Everyone is Gone)":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone;
-                break;
-
-            case "The End is Near (Starvation)":
-                eventSO = RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation;
-                break;
-
-            default:
-                Debug.Log("Test Code: THIS IS AN ERROR, YOU DONE GOOFED");
-                break;
+            //Match Names
+            if (RARC_DatabaseController.Instance.events_DB.allEvents_List[i].eventID == eventID)
+            {
+                //Return Event
+                return RARC_DatabaseController.Instance.events_DB.allEvents_List[i];
+            }
         }
 
-        //Return Event
-        return eventSO;
+        Debug.Log("Test Code: OOF No Matching Event SO");
+
+        //Found Nothing Return Null
+        return null;
     }
 
     /////////////////////////////////////////////////////////////////

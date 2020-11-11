@@ -21,6 +21,6 @@ MonoBehaviour:
   isMusic: 1
   isSFX: 0
   canFadeIn: 1
-  fadeInSpeed: 0.05
+  fadeInSpeed: 0.1
   canFadeOut: 1
-  fadeOutSpeed: 0.05
+  fadeOutSpeed: 0.1

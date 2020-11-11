@@ -11,16 +11,6 @@ public class RARC_GameStateController : MonoBehaviour
 
     ////////////////////////////////
 
-    [Header("Cursor State")]
-    public CursorState currentCursorState;
-    public enum CursorState
-    {
-        NORMAL,
-        BUILD_RESEARCH, BUILD_MEDICAL, BUILD_FOOD, BUILD_RECREATION, BUILD_FACTORY, BUILD_STORAGE
-    }
-
-    ////////////////////////////////
-
     [Header("System Ready States")]
     public bool isReady_Launch;
     public bool isReady_Navigation;
@@ -48,9 +38,18 @@ public class RARC_GameStateController : MonoBehaviour
     public readonly int fuelRequired = 5;
     public readonly int foodRequired = 10;
 
-
     [Header("Raycast Blocker")]
     public GameObject raycastBlocker_GO;
+
+    [Header("BLANKVAR")]
+    public RARC_RoomTab[] allShipRoomTabs_Arr;
+
+    [Header("BLANKVAR")]
+    public int currentSongPlayLength;
+
+
+    public readonly float eventChance_Travel = 0.7f;
+    public readonly float eventChance_Planet = 0.5f;
 
     /////////////////////////////////////////////////////////////////
 
@@ -79,13 +78,20 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
         RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources();
-        
+
+        //Reload Ship
+        RARC_Room.RoomType[] shipRooms_Arr = RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr;
+        for (int i = 0; i < shipRooms_Arr.Length; i++)
+        {
+            //Load Room By Type
+            allShipRoomTabs_Arr[i].LoadRoom(RARC_DatabaseController.Instance.room_DB.FindRoomType(shipRooms_Arr[i]));
+        }
+
 
 
         //Load System Data
 
-        //set cursor state
-        currentCursorState = CursorState.NORMAL;
+
     }
 
     public void Update()
@@ -100,14 +106,6 @@ public class RARC_GameStateController : MonoBehaviour
             {
                 RARC_ButtonController_Game.Instance.Button_Pause_Close();
             }
-        }
-    }
-
-    private void OnMouseDown()
-    {
-        if (Input.GetMouseButton(1) && currentCursorState != CursorState.NORMAL)
-        {
-            currentCursorState = CursorState.NORMAL;
         }
     }
 
@@ -127,16 +125,12 @@ public class RARC_GameStateController : MonoBehaviour
         isReady_Launch = false;
 
 
-
         //Check For New Save File
         if (isFirstWeek)
         {
             //Play Cutscene As Enum
             currentCutscene_IEnum = Player_StartCutscene();
-            StartCoroutine(Player_StartCutscene()); 
- 
-            //Give First Backstory Event
-            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_ANewHope));
+            StartCoroutine(Player_StartCutscene());
 
             //Set Planet BG / Space BG
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
@@ -148,6 +142,9 @@ public class RARC_GameStateController : MonoBehaviour
             print("Test Code: Load Stuff Here");
 
 
+            //Play First Track
+            RARC_MusicController.Instance.PlayMusic_FirstTrack();
+            currentSongPlayLength = 2;
         }
         else
         {
@@ -155,11 +152,25 @@ public class RARC_GameStateController : MonoBehaviour
             RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived++;
             RARC_DatabaseController.Instance.ship_SaveData.shipData_NavigationTripProgress++;
 
-
             //Generate Possible Events
-
+            GetPossibleNewEvent_Travel();
         }
-       
+
+
+        //Loop Song after 3rd track
+        if (currentSongPlayLength >= 3)
+        {
+            RARC_MusicController.Instance.PlayTrackMusic_NoLocation_RandomTrackList(RARC_DatabaseController.Instance.music_DB.musicGame_List);
+            currentSongPlayLength = 0;
+        }
+        else
+        {
+            currentSongPlayLength++;
+        }
+
+
+
+
 
 
 
@@ -213,9 +224,12 @@ public class RARC_GameStateController : MonoBehaviour
         cutScene_Animator.gameObject.SetActive(true);
 
 
+        RARC_MusicController.Instance.PlayMusic_Cutscene();
+
+
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
 
-        yield return new WaitForSeconds(17.5f);
+        yield return new WaitForSeconds(30.3f);
 
         if (currentCutscene_IEnum == null)
         {
@@ -226,7 +240,7 @@ public class RARC_GameStateController : MonoBehaviour
         StartCoroutine(Player_EndCutscene());
 
    
-
+        //Break Coroutine
         yield break;
     }
 
@@ -239,7 +253,10 @@ public class RARC_GameStateController : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
+        //RARC_MusicController.Instance.PlayMusic_FirstTrack();
+        currentSongPlayLength = 3;
 
+        //Break Coroutine
         yield break;
     }
 
@@ -249,6 +266,13 @@ public class RARC_GameStateController : MonoBehaviour
 
 
 
+
+        //Generate a New Week
+        System_GenerateNewWeek(false, false);
+
+
+
+        //Wait Till Screen is black
         yield return new WaitForSeconds(1.90f);
 
         if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation != null)
@@ -272,18 +296,17 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
         RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
-
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_Off();
 
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.4f);
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
-
-        //print("Test Code: Ready");
 
         //Add Interatablity
         blackoutCurtain_Image.raycastTarget = false;
 
+
+        //Break Coroutine
         yield break;
     }
 
@@ -309,6 +332,60 @@ public class RARC_GameStateController : MonoBehaviour
         }
 
 
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void GetPossibleNewEvent_Travel()
+    {
+        //Break out if not possible events left
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Count == 0)
+        {
+            return;
+        }
+
+        //Use Chance to find an event
+        float currentEventChance = eventChance_Travel * RARC_DatabaseController.Instance.ship_SaveData.travelEventsMissed;
+        float randomChance = Random.Range(0f, 1f);
+        if (randomChance < currentEventChance)
+        {
+            //Chose Num, Add Event, Blacklist, Remove, Reset
+            int chosenEventNO = Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Count);
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipBlacklistTravelEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.RemoveAt(chosenEventNO);
+            RARC_DatabaseController.Instance.ship_SaveData.travelEventsMissed = 0;
+        }
+        else
+        {
+            RARC_DatabaseController.Instance.ship_SaveData.travelEventsMissed += 1;
+        }
+    }
+
+    public void GetPossibleNewEvent_Planet()
+    {
+        //Break out if not possible events left
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count == 0)
+        {
+            return;
+        }
+
+        //Use Chance to find an event
+        float currentEventChance = eventChance_Planet * RARC_DatabaseController.Instance.ship_SaveData.planetEventsMissed;
+        float randomChance = Random.Range(0f, 1f);
+        if (randomChance < currentEventChance)
+        {
+            //Chose Num, Add Event, Blacklist, Remove, Reset
+            int chosenEventNO = Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count);
+            RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipBlacklistPlanetEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List[chosenEventNO]);
+            RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.RemoveAt(chosenEventNO);
+            RARC_DatabaseController.Instance.ship_SaveData.planetEventsMissed = 0;
+        }
+        else
+        {
+            RARC_DatabaseController.Instance.ship_SaveData.planetEventsMissed += 1;
+        }
     }
 
     /////////////////////////////////////////////////////////////////
@@ -359,7 +436,7 @@ public class RARC_GameStateController : MonoBehaviour
         return resourceType;
     }
 
-    public void GainResources(string resourceName, RARC_Resource.ResourceType resourceType, int resourceCount)
+    public void ChangeResources(string resourceName, RARC_Resource.ResourceType resourceType, int resourceCount)
     {
         switch (resourceType)
         {
@@ -403,11 +480,6 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
-    public void LoseResources(RARC_Resource.ResourceType resourceType, int resourceCount)
-    {
-
-    }
-
     public void ChangeHull(int amount)
     {
         //Refresh
@@ -415,36 +487,111 @@ public class RARC_GameStateController : MonoBehaviour
         //RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources
     }
 
-    public void GainCrew(int amount)
+    public void ChangeCrew(int amount)
     {
-        for (int i = 0; i < amount; i++)
+        if (amount == 0)
         {
-            RARC_CrewBotsController.Instance.AddNewCrew();
+
+        }
+        else if (amount > 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.AddNewCrew();
+            }
+        }
+        else if (amount < 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.RemoveCrewMember();
+            }
         }
     }
 
-    public void LoseCrew(int amount)
+    public void ChangeBots(int amount)
     {
-        for (int i = 0; i < amount; i++)
+        if (amount == 0)
         {
-            RARC_CrewBotsController.Instance.RemoveCrewMember();
+
+        }
+        else if (amount > 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.AddNewBot();
+            }
+        }
+        else if (amount < 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                RARC_CrewBotsController.Instance.RemoveBotMember();
+            }
         }
     }
 
-    public void GainBot(int amount)
-    {
-        for (int i = 0; i < amount; i++)
-        {
-            RARC_CrewBotsController.Instance.AddNewBot();
-        }
-    }
+    /////////////////////////////////////////////////////////////////
 
-    public void LoseBot(int amount)
+    public bool CheckForResources(RARC_Resource.ResourceType resourceType, int resourceAmount)
     {
-        for (int i = 0; i < amount; i++)
+        bool isResourceOwned = false;
+
+        switch (resourceType)
         {
-            RARC_CrewBotsController.Instance.RemoveBotMember();
+            case RARC_Resource.ResourceType.NULL:
+                isResourceOwned = true;
+                break;
+
+            case RARC_Resource.ResourceType.Scrap:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                {
+                    isResourceOwned = true;
+                }
+                break;
+
+            case RARC_Resource.ResourceType.Fuel:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                {
+                    isResourceOwned = true;
+                }
+                break;
+
+            case RARC_Resource.ResourceType.Food:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                {
+                    isResourceOwned = true;
+                }
+                break;
+
+            default:
+                int resourceSlot = 99;
+                int i = 0;
+
+                //Search For Containing Slot
+                foreach (RARC_Resource resourceInShip in RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List)
+                {
+                    if (resourceInShip.resourceType == resourceType)
+                    {
+                        //Found Slot
+                        resourceSlot = i;
+                        break;
+                    }
+                    i++;
+                }
+
+                //Check if slot is found
+                if (resourceSlot != 99)
+                {
+                    if (RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount >= resourceAmount)
+                    {
+                        isResourceOwned = true;
+                    }
+                }
+                break;
         }
+
+        return isResourceOwned;
     }
 
     /////////////////////////////////////////////////////////////////
@@ -463,6 +610,9 @@ public class RARC_GameStateController : MonoBehaviour
 
     public void System_Gameover(string reason)
     {
+
+
+        RARC_MusicController.Instance.PlayMusic_Gameover();
 
 
         RARC_ButtonController_Game.Instance.gameoverContainer_GO.SetActive(true);

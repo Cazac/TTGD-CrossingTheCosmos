@@ -20,4 +20,18 @@ public class RARC_IconData : MonoBehaviour
     public Sprite HydrogenIcon;
 
     ////////////////////////////////
+
+    [Header("Crew")]
+    public Sprite CrewIcon;
+    public Sprite BotsIcon;
+
+    [Header("Ships")]
+    public Sprite ShipBaseIcon;
+    public Sprite ShipAlt1Icon;
+    public Sprite ShipAlt2Icon;
+
+    public Sprite planetAIcon;
+
+
+    ////////////////////////////////
 }

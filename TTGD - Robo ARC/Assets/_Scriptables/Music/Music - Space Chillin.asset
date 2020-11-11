@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Music - Space Chillin
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 9d00eb603d2c22d4683fe146b4d50af2, type: 3}
-  volume: 1
-  pitch: 1
+  volume: 0.8
+  pitch: 1.1
   pitchRange: 0
   spatialAudioRange: 0
   canLoop: 1
   isMusic: 1
   isSFX: 0
   canFadeIn: 1
-  fadeInSpeed: 0.05
+  fadeInSpeed: 0.1
   canFadeOut: 1
-  fadeOutSpeed: 0.05
+  fadeOutSpeed: 1

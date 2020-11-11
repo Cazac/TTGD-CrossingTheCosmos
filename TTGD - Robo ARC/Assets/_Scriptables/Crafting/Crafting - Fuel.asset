@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba526a7b853e3547b8f1cec2f86388c, type: 3}
+  m_Name: Crafting - Fuel
+  m_EditorClassIdentifier: 
+  craftingSprite: {fileID: 21300000, guid: f4d74c6205b0fe74483ae8146c1fd8f8, type: 3}
+  resourceType: 2
+  resourcePerCraft: 2
+  crewPerCraft: 0
+  botsPerCraft: 0
+  roomRequired: 4
+  resourceCraftsPerRoom: 5
+  resourceRequired_1: 9
+  resourceRequiredAmount_1: 3
+  resourceRequired_2: 10
+  resourceRequiredAmount_2: 2
+  resourceRequired_3: 0
+  resourceRequiredAmount_3: 0
+  resourceRequired_4: 0
+  resourceRequiredAmount_4: 0
+  resourceRequired_5: 0
+  resourceRequiredAmount_5: 0

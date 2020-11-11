@@ -73,14 +73,14 @@ public class RARC_ResourceData : MonoBehaviour
             RARC_Resource.ResourceType.Organics
         );
 
-        titanium_Resource = new RARC_Resource
+        hydrogen_Resource = new RARC_Resource
         (
             "Hydrogen",
             0,
             RARC_Resource.ResourceType.Hydrogen
         );
 
-        titanium_Resource = new RARC_Resource
+        nitrogen_Resource = new RARC_Resource
         (
             "Nitrogen",
             0,
@@ -137,6 +137,57 @@ public class RARC_ResourceData : MonoBehaviour
         }
 
         return resource;
+    }
+
+    public Sprite GetIcon(RARC_Resource.ResourceType resourceType)
+    {
+        Sprite sprite = null;
+
+        switch (resourceType)
+        {
+            case RARC_Resource.ResourceType.Scrap:
+                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapIcon;
+                break;
+
+            case RARC_Resource.ResourceType.Fuel:
+                sprite = RARC_DatabaseController.Instance.icons_DB.FuelIcon;
+                break;
+
+            case RARC_Resource.ResourceType.Food:
+                sprite = RARC_DatabaseController.Instance.icons_DB.FoodIcon;
+                break;
+
+
+            case RARC_Resource.ResourceType.Titanium:
+                sprite = RARC_DatabaseController.Instance.icons_DB.TitaniumIcon;
+                break;
+
+            case RARC_Resource.ResourceType.Silicon:
+                sprite = RARC_DatabaseController.Instance.icons_DB.SiliconIcon;
+                break;
+
+            case RARC_Resource.ResourceType.Carbon:
+                sprite = RARC_DatabaseController.Instance.icons_DB.CarbonIcon;
+                break;
+
+            case RARC_Resource.ResourceType.Organics:
+                sprite = RARC_DatabaseController.Instance.icons_DB.OrganicsIcon;
+                break;
+
+            case RARC_Resource.ResourceType.Hydrogen:
+                sprite = RARC_DatabaseController.Instance.icons_DB.HydrogenIcon;
+                break;
+
+            case RARC_Resource.ResourceType.Nitrogen:
+                sprite = RARC_DatabaseController.Instance.icons_DB.NitrogenIcon;
+                break;
+
+            default:
+                sprite = RARC_DatabaseController.Instance.icons_DB.ScrapIcon;
+                break;
+        }
+
+        return sprite;
     }
 
     /////////////////////////////////////////////////////////////////

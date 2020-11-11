@@ -259,8 +259,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -375,7 +375,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &73324197
 Transform:
   m_ObjectHideFlags: 0
@@ -668,8 +668,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -902,8 +902,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1491,8 +1491,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f96740fca694631488a6161260a01534, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 6e769db1dd4770e4f9678f49ecd499b4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1759,9 +1759,25 @@ MonoBehaviour:
     type: 2}
   event_AbandonedShip: {fileID: 11400000, guid: 6cfec27197bbc444bbc5db6e6885a29a,
     type: 2}
-  event_333333aa3e: {fileID: 0}
-  event_33333ff33e: {fileID: 0}
-  event_33333fa33e: {fileID: 0}
+  event_AliensOne: {fileID: 0}
+  event_Bedtime: {fileID: 0}
+  event_BigRock: {fileID: 0}
+  event_Freedom: {fileID: 0}
+  event_FriendlyGreeting: {fileID: 0}
+  event_PartyTime: {fileID: 0}
+  event_RottenFood: {fileID: 0}
+  event_UnknownSignalOne: {fileID: 0}
+  event_Zoom: {fileID: 0}
+  event_AliensThree: {fileID: 0}
+  event_AliensTwo: {fileID: 0}
+  event_Mutiny: {fileID: 0}
+  event_UnknownSignalThree: {fileID: 0}
+  event_UnknownSignalTwo: {fileID: 0}
+  event_AncientRuins: {fileID: 11400000, guid: 82ab77729664ae74fa952088b8d6311e, type: 2}
+  event_CrackInTheSurface: {fileID: 11400000, guid: aedfdb21388aeb4418bdb04f5f6f6016,
+    type: 2}
+  event_CreaturesOnTheGround: {fileID: 0}
+  allEvents_List: []
 --- !u!4 &343272182
 Transform:
   m_ObjectHideFlags: 0
@@ -2237,7 +2253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &429546795
 Transform:
   m_ObjectHideFlags: 0
@@ -2280,6 +2296,88 @@ MonoBehaviour:
   resources1_Text: {fileID: 0}
   resources2_Text: {fileID: 0}
   resources3_Text: {fileID: 0}
+--- !u!1 &457430087
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 457430088}
+  - component: {fileID: 457430089}
+  m_Layer: 0
+  m_Name: Planet Sprite Secondary (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &457430088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457430087}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 6, y: 2.7, z: -0.5}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
+  m_Children: []
+  m_Father: {fileID: 1862428140}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+--- !u!212 &457430089
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457430087}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c9eca8217e2dbb2478fe478a92f7e0f5, type: 3}
+  m_Color: {r: 0.40864503, g: 1, b: 0, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 5.76, y: 5.76}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &464427040
 GameObject:
   m_ObjectHideFlags: 0
@@ -2885,7 +2983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e2408e787f50674bb43ce609d2189bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrapMetal_Resource:
+  scrap_Resource:
     resourceName: 
     resourceCount: 0
     resourceType: 0
@@ -3407,7 +3505,7 @@ Transform:
   m_GameObject: {fileID: 631375383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6, y: 2.7, z: -0.5}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.42, y: 0.42, z: 0.42}
   m_Children: []
   m_Father: {fileID: 1862428140}
   m_RootOrder: 1
@@ -3452,8 +3550,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e15b1d711078da488487362898ad0f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: c9eca8217e2dbb2478fe478a92f7e0f5, type: 3}
+  m_Color: {r: 0.40864503, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3828,8 +3926,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3e15b1d711078da488487362898ad0f8, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 4c6abff2421240845820e3aa15dc7aa9, type: 3}
+  m_Color: {r: 0.1966892, g: 0.31247488, b: 0.49056602, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4635,8 +4733,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4834,6 +4932,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicTitle_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
     type: 2}
+  musicCredits_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
+    type: 2}
+  musicCutscene_LastHope: {fileID: 11400000, guid: d5cc2297d438c1e45a705de04100ad9c,
+    type: 2}
+  musicGameover_LastHope: {fileID: 11400000, guid: d5cc2297d438c1e45a705de04100ad9c,
+    type: 2}
   musicGame_NuclearReactor: {fileID: 11400000, guid: 9da4f981015430e42b19cea49014ac8d,
     type: 2}
   musicGame_SpaceChillin: {fileID: 11400000, guid: ddb7e609786483b40991c9450f44edb3,
@@ -4841,10 +4945,6 @@ MonoBehaviour:
   musicGame_UnravelingCosmos: {fileID: 11400000, guid: 92d95ec036699d84aa19a210971b6e3b,
     type: 2}
   musicGame_WorkinBots: {fileID: 11400000, guid: 58912460cff9159438678f55b45a239d,
-    type: 2}
-  musicCredits_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
-    type: 2}
-  musicGameover_Hopeless: {fileID: 11400000, guid: d8e568ab0ec3fa54bb11d551b6b798e7,
     type: 2}
 --- !u!1 &858701270
 GameObject:
@@ -5927,8 +6027,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6486,8 +6586,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7284,8 +7384,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7551,8 +7651,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f96740fca694631488a6161260a01534, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 6e769db1dd4770e4f9678f49ecd499b4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -8061,6 +8161,55 @@ RectTransform:
   m_AnchoredPosition: {x: 225, y: -102.5}
   m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1424116843
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1424116844}
+  - component: {fileID: 1424116845}
+  m_Layer: 0
+  m_Name: Crafting Database
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1424116844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424116843}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1800703682}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1424116845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424116843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11d41343b3eb77940bc03b6102f7abfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bots_Crafting: {fileID: 11400000, guid: 7f57bd4a9d3abc545a49cbb51a743184, type: 2}
+  crew_Crafting: {fileID: 11400000, guid: 670101862aae98e47a06ad181b261563, type: 2}
+  food_Crafting: {fileID: 11400000, guid: 193f7a348a1c7b245861764d1ebf983f, type: 2}
+  fuel_Crafting: {fileID: 11400000, guid: 6ac6196ff1df74945a9d913eba57ff5d, type: 2}
+  medkits_Crafting: {fileID: 11400000, guid: 07d0e2be7ce05184dadbb05ac227968a, type: 2}
+  organics_Crafting: {fileID: 11400000, guid: 0d7e49e84e858ce4abb509a429e6258f, type: 2}
 --- !u!1 &1434010708
 GameObject:
   m_ObjectHideFlags: 0
@@ -8517,7 +8666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1478559885
 Transform:
   m_ObjectHideFlags: 0
@@ -8648,8 +8797,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: f96740fca694631488a6161260a01534, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 6e769db1dd4770e4f9678f49ecd499b4, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -9026,7 +9175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1562490611
 Transform:
   m_ObjectHideFlags: 0
@@ -9258,7 +9407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f8a4d42022a7749ab640d7a6b5502a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScrapMetalIcon: {fileID: 21300000, guid: a7dfbf36eddbe574389c41d71deae339, type: 3}
+  ScrapIcon: {fileID: 21300000, guid: a7dfbf36eddbe574389c41d71deae339, type: 3}
   FuelIcon: {fileID: 21300000, guid: f4d74c6205b0fe74483ae8146c1fd8f8, type: 3}
   FoodIcon: {fileID: 21300000, guid: c09b424f91d9974468d9ffbee25974d4, type: 3}
   TitaniumIcon: {fileID: 21300000, guid: c903db51467a06748a215ab313685077, type: 3}
@@ -9267,6 +9416,12 @@ MonoBehaviour:
   OrganicsIcon: {fileID: 21300000, guid: c8125111c4aa1f3409ddd9192b896a09, type: 3}
   NitrogenIcon: {fileID: 21300000, guid: 8bd5b1f9535a6dc41a90e785dd8abb87, type: 3}
   HydrogenIcon: {fileID: 21300000, guid: e2e19f832f48a864cb1eafbedd0ec4a2, type: 3}
+  CrewIcon: {fileID: 0}
+  BotsIcon: {fileID: 0}
+  ShipBaseIcon: {fileID: 0}
+  ShipAlt1Icon: {fileID: 0}
+  ShipAlt2Icon: {fileID: 0}
+  planetAIcon: {fileID: 0}
 --- !u!1 &1622848122
 GameObject:
   m_ObjectHideFlags: 0
@@ -10390,6 +10545,7 @@ Transform:
   - {fileID: 1617815802}
   - {fileID: 853007847}
   - {fileID: 628264547}
+  - {fileID: 1424116844}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10412,15 +10568,14 @@ MonoBehaviour:
   icons_DB: {fileID: 1617815803}
   music_DB: {fileID: 853007848}
   room_DB: {fileID: 628264546}
+  crafting_DB: {fileID: 1424116845}
+  expolringText_List: []
   ship_SaveSlot: 0
   ship_SaveData:
     shipInfo_WeeksSurvived: 0
     shipData_Crew_List: []
     shipData_Bots_List: []
-    shipData_ResearchComplete_List: []
-    shipData_ResearchAvalible_List: []
-    shipData_ResearchUnavalible_List: []
-    shipData_Rooms_Arr: []
+    shipData_Rooms_Arr: 
     shipData_currentLocation:
       planetName: 
       planetSprite_Main: 0
@@ -10458,9 +10613,15 @@ MonoBehaviour:
         eventOption3_Choice: 
       planetType: 0
     shipData_NavigationTripProgress: 0
-    shipHullHealth: 0
-    shipCurrentEvents_List: []
+    shipCurrentTravelEvents_List: []
+    shipAvalibleTravelEvents_List: []
+    shipBlacklistTravelEvents_List: []
+    shipCurrentPlanetEvents_List: []
     shipAvaliblePlanetEvents_List: []
+    shipBlacklistPlanetEvents_List: []
+    travelEventsMissed: 0
+    planetEventsMissed: 0
+    shipHullHealth: 0
     shipResource_Scrap:
       resourceName: 
       resourceCount: 0
@@ -10474,6 +10635,9 @@ MonoBehaviour:
       resourceCount: 0
       resourceType: 0
     shipStorage_List: []
+    navigationRefreshTimes_Left: 0
+    navigationRefreshTimes_Middle: 0
+    navigationRefreshTimes_Right: 0
   player_SaveData:
     settings_TotalVolume: 0
     settings_MusicVolume: 0
@@ -10883,7 +11047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1862428140
 Transform:
   m_ObjectHideFlags: 0
@@ -10892,11 +11056,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862428139}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -5}
+  m_LocalPosition: {x: 0.62, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 701386271}
   - {fileID: 631375384}
+  - {fileID: 457430088}
   m_Father: {fileID: 429546795}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11977,8 +12142,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0833e2d0cbbbcb741b1a115bd79e940e, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: dde22a88dbdd6ec4ba23e1fcca1f2a0b, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

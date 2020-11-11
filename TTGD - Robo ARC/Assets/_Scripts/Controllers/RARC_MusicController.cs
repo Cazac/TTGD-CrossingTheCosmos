@@ -29,6 +29,9 @@ public class RARC_MusicController : MonoBehaviour
     [Header("Containers")]
     public GameObject audioTrack_Container;
 
+    [Header("Current Track")]
+    public RARC_Audio_SO currentMusicTrack_SO;
+
     ////////////////////////////////
 
     [Header("Scenes")]
@@ -107,6 +110,9 @@ public class RARC_MusicController : MonoBehaviour
         //Stop Other Music
         StopTrackMusic_All();
 
+        //Filter the Possible Tracks First
+        audioSO_List = FilterCurrentTrackOutOfList(audioSO_List);
+
         //Random Choice
         int randomChoice = Random.Range(0, audioSO_List.Count);
 
@@ -126,6 +132,9 @@ public class RARC_MusicController : MonoBehaviour
         //Stop Other Music
         StopTrackMusic_All();
 
+        //Filter the Possible Tracks First
+        audioSO_List = FilterCurrentTrackOutOfList(audioSO_List);
+
         //Random Choice
         int randomChoice = Random.Range(0, audioSO_List.Count);
 
@@ -138,6 +147,34 @@ public class RARC_MusicController : MonoBehaviour
 
         //Return Track
         return newTrack;
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public List<RARC_Audio_SO> FilterCurrentTrackOutOfList(List<RARC_Audio_SO> audioSO_List)
+    {
+        //Create a new filtered List
+        List<RARC_Audio_SO> filterdAudioSO_List = new List<RARC_Audio_SO>();
+
+        //Loop all tracks searching for the same name
+        for (int i = 0; i < audioSO_List.Count; i++)
+        {
+            if (currentMusicTrack_SO != null)
+            {
+                if (currentMusicTrack_SO.name == audioSO_List[i].name)
+                {
+                    audioSO_List.RemoveAt(i);
+                    break;
+                }
+            }
+            else
+            {
+                break;
+            }
+        }
+      
+        //Return the filtered List
+        return audioSO_List;
     }
 
     /////////////////////////////////////////////////////////////////
@@ -220,6 +257,24 @@ public class RARC_MusicController : MonoBehaviour
     {
         //Get Clip
         PlayTrackMusic_NoLocation(RARC_DatabaseController.Instance.music_DB.musicCredits_Hopeless);
+    }
+
+    public void PlayMusic_Cutscene()
+    {
+        //Get Clip
+        PlayTrackMusic_NoLocation(RARC_DatabaseController.Instance.music_DB.musicCutscene_LastHope);
+    }
+
+    public void PlayMusic_FirstTrack()
+    {
+        //Get Clip
+        PlayTrackMusic_NoLocation(RARC_DatabaseController.Instance.music_DB.musicGame_SpaceChillin);
+    }
+
+    public void PlayMusic_Gameover()
+    {
+        //Get Clip
+        PlayTrackMusic_NoLocation(RARC_DatabaseController.Instance.music_DB.musicGameover_LastHope);
     }
 
     /////////////////////////////////////////////////////////////////
