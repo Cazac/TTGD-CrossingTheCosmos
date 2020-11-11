@@ -29,4 +29,4 @@ MonoBehaviour:
   eventOption3_Choice: 
   eventOption3_Outcome: {fileID: 0}
   eventOption3_Requirement: {fileID: 0}
-  eventCanComeBackLater: 0
+  eventCanComeBackLater: 1
