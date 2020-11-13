@@ -13,6 +13,10 @@ public class RARC_Planet_SO : ScriptableObject
     ////////////////////////////////
 
     [Header("Rocky Planets - Sprites")]
+    [Header("-----------------------------------------------------------------")]
+
+    ////////////////////////////////
+
     public List<Sprite> planetSpritesMain_Rocky;
     public List<Sprite> planetSpritesSecondary_Rocky;
     public List<Color> colorPaletteMain_Rocky;
@@ -40,6 +44,10 @@ public class RARC_Planet_SO : ScriptableObject
     ////////////////////////////////
 
     [Header("Lava Planets - Sprites")]
+    [Header("-----------------------------------------------------------------")]
+
+    ////////////////////////////////
+
     public List<Sprite> planetSpritesMain_Lava;
     public List<Sprite> planetSpritesSecondary_Lava;
     public List<Color> colorPaletteMain_Lava;
@@ -67,6 +75,10 @@ public class RARC_Planet_SO : ScriptableObject
     ////////////////////////////////
 
     [Header("Icy Planets - Sprites")]
+    [Header("-----------------------------------------------------------------")]
+
+    ////////////////////////////////
+
     public List<Sprite> planetSpritesMain_Icy;
     public List<Sprite> planetSpritesSecondary_Icy;
     public List<Color> colorPaletteMain_Icy;
@@ -94,6 +106,10 @@ public class RARC_Planet_SO : ScriptableObject
     ////////////////////////////////
 
     [Header("Gassy Planets - Sprites")]
+    [Header("-----------------------------------------------------------------")]
+
+    ////////////////////////////////
+
     public List<Sprite> planetSpritesMain_Gassy;
     public List<Sprite> planetSpritesSecondary_Gassy;
     public List<Color> colorPaletteMain_Gassy;
@@ -121,6 +137,10 @@ public class RARC_Planet_SO : ScriptableObject
     ////////////////////////////////
 
     [Header("Living Planets - Sprites")]
+    [Header("-----------------------------------------------------------------")]
+
+    ////////////////////////////////
+
     public List<Sprite> planetSpritesMain_Living;
     public List<Sprite> planetSpritesSecondary_Living;
     public List<Color> colorPaletteMain_Living;
@@ -148,6 +168,10 @@ public class RARC_Planet_SO : ScriptableObject
     ////////////////////////////////
 
     [Header("Moons")]
+    [Header("-----------------------------------------------------------------")]
+
+    ////////////////////////////////
+
     public List<Sprite> planetSpritesMain_Moon;
     public List<Sprite> planetSpritesSecondary_Moon;
     public List<Color> colorPaletteMain_Moon;
