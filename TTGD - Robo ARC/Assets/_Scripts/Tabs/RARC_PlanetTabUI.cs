@@ -187,10 +187,24 @@ public class RARC_PlanetTabUI : MonoBehaviour
                 planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Rocky[spriteNo];
                 break;
 
+            case RARC_Planet.PlanetType.Lava:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Lava[spriteNo];
+                break;
+
+            case RARC_Planet.PlanetType.Icy:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Icy[spriteNo];
+                break;
+
             case RARC_Planet.PlanetType.Gassy:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Gassy[spriteNo];
+                break;
+
+            case RARC_Planet.PlanetType.Living:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Living[spriteNo];
                 break;
 
             default:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Rocky[spriteNo];
                 break;
         }
 
@@ -211,10 +225,24 @@ public class RARC_PlanetTabUI : MonoBehaviour
                 planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Rocky[spriteNo];
                 break;
 
+            case RARC_Planet.PlanetType.Lava:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Lava[spriteNo];
+                break;
+
+            case RARC_Planet.PlanetType.Icy:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Icy[spriteNo];
+                break;
+
             case RARC_Planet.PlanetType.Gassy:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Gassy[spriteNo];
+                break;
+
+            case RARC_Planet.PlanetType.Living:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Living[spriteNo];
                 break;
 
             default:
+                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Rocky[spriteNo];
                 break;
         }
 

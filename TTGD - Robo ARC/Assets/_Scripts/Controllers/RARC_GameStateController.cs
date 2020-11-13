@@ -212,9 +212,9 @@ public class RARC_GameStateController : MonoBehaviour
 
         //Reset Navigation Planets
         navigationPossiblePlanets_List = new List<RARC_Planet>();
-        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
-        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
-        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GeneratePlanet_Rocky());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet());
     }
 
     /////////////////////////////////////////////////////////////////

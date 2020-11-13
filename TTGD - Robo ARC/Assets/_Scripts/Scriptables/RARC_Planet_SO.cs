@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Planet", menuName = "Scriptables/New Planet")]
@@ -43,7 +42,7 @@ public class RARC_Planet_SO : ScriptableObject
 
     ////////////////////////////////
 
-    [Header("Lava Planets - Sprites")]
+    [Header("Icy Planets - Sprites")]
     [Header("-----------------------------------------------------------------")]
 
     ////////////////////////////////
@@ -182,8 +181,7 @@ public class RARC_Planet_SO : ScriptableObject
     public RARC_Planet GenerateAnyPlanet()
     {
         RARC_Planet newPlanet = null;
-        int planetTypeChoice = Random.Range(0,3);
-
+        int planetTypeChoice = Random.Range(0, 5);
 
         switch (planetTypeChoice)
         {
@@ -192,14 +190,22 @@ public class RARC_Planet_SO : ScriptableObject
                 break;
 
             case 1:
-                newPlanet = GeneratePlanet_Rocky();
+                newPlanet = GeneratePlanet_Lava();
                 break;
 
             case 2:
-                newPlanet = GeneratePlanet_Rocky();
+                newPlanet = GeneratePlanet_Icy();
                 break;
 
             case 3:
+                newPlanet = GeneratePlanet_Gassy();
+                break;
+
+            case 4:
+                newPlanet = GeneratePlanet_Living();
+                break;
+                
+            default:
                 newPlanet = GeneratePlanet_Rocky();
                 break;
         }
@@ -215,37 +221,17 @@ public class RARC_Planet_SO : ScriptableObject
         RARC_Planet newPlanet = new RARC_Planet();
         newPlanet.planetType = RARC_Planet.PlanetType.Rocky;
 
-        //Name
-        newPlanet.planetName = allPlanetNames_List[Random.Range(0, allPlanetNames_List.Count)];
-
-        //Sprite
+        //Sprite / Colors
         newPlanet.planetSprite_Main = Random.Range(0, planetSpritesMain_Rocky.Count);
         newPlanet.planetSprite_Secondary = Random.Range(0, planetSpritesSecondary_Rocky.Count);
-
-        //Colors
         newPlanet.primaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteMain_Rocky[Random.Range(0, colorPaletteMain_Rocky.Count)]);
         newPlanet.secondaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteSecondary_Rocky[Random.Range(0, colorPaletteSecondary_Rocky.Count)]);
 
-        //Moon Generation
-        newPlanet.planetMoonPlanet_List = new List<RARC_Planet>();
-        int planetMoonCount = Random.Range(0, 3);
-        for (int i = 0; i < planetMoonCount; i++)
-        {
-            newPlanet.planetMoonPlanet_List.Add(GenerateMoon());
-        }
+        //Resources
+        newPlanet.planetResources_List = GenerateResources(BasicResource_Rocky, minAmountOf_BasicResource_Rocky, maxAmountOf_BasicResource_Rocky, CommonResource_Rocky, chanceOf_CommonResource_Rocky, minAmountOf_CommonResource_Rocky, maxAmountOf_CommonResource_Rocky, RareResource_Rocky, chanceOf_RareResource_Rocky, minAmountOf_RareResource_Rocky, maxAmountOf_RareResource_Rocky);
 
-        //Visual Rotation
-        newPlanet.planetRotation = Random.Range(-90, 90);
-
-        //Time to reach planet
-        newPlanet.planetTravelTime = Random.Range(2, 5);
-
-        //Events / Resources
-        newPlanet.planetEvent = GenerateAvalibleEvent_Rocky();
-        newPlanet.planetResources_List = GenerateResources_Rocky();
-
-        //Risk
-        newPlanet.planetRiskFactor = Random.Range(0, 10);
+        //Generic Info For All Planets
+        newPlanet = GetGenericInfo(newPlanet);
 
         //Return New Planet
         return newPlanet;
@@ -257,6 +243,18 @@ public class RARC_Planet_SO : ScriptableObject
         RARC_Planet newPlanet = new RARC_Planet();
         newPlanet.planetType = RARC_Planet.PlanetType.Lava;
 
+        //Sprite / Colors
+        newPlanet.planetSprite_Main = Random.Range(0, planetSpritesMain_Lava.Count);
+        newPlanet.planetSprite_Secondary = Random.Range(0, planetSpritesSecondary_Lava.Count);
+        newPlanet.primaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteMain_Lava[Random.Range(0, colorPaletteMain_Lava.Count)]);
+        newPlanet.secondaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteSecondary_Lava[Random.Range(0, colorPaletteSecondary_Lava.Count)]);
+
+        //Resources
+        newPlanet.planetResources_List = GenerateResources(BasicResource_Lava, minAmountOf_BasicResource_Lava, maxAmountOf_BasicResource_Lava, CommonResource_Lava, chanceOf_CommonResource_Lava, minAmountOf_CommonResource_Lava, maxAmountOf_CommonResource_Lava, RareResource_Lava, chanceOf_RareResource_Lava, minAmountOf_RareResource_Lava, maxAmountOf_RareResource_Lava);
+
+        //Generic Info For All Planets
+        newPlanet = GetGenericInfo(newPlanet);
+
         //Return New Planet
         return newPlanet;
     }
@@ -266,6 +264,18 @@ public class RARC_Planet_SO : ScriptableObject
         //Create New Planet
         RARC_Planet newPlanet = new RARC_Planet();
         newPlanet.planetType = RARC_Planet.PlanetType.Icy;
+
+        //Sprite / Colors
+        newPlanet.planetSprite_Main = Random.Range(0, planetSpritesMain_Icy.Count);
+        newPlanet.planetSprite_Secondary = Random.Range(0, planetSpritesSecondary_Icy.Count);
+        newPlanet.primaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteMain_Icy[Random.Range(0, colorPaletteMain_Icy.Count)]);
+        newPlanet.secondaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteSecondary_Icy[Random.Range(0, colorPaletteSecondary_Icy.Count)]);
+
+        //Resources
+        newPlanet.planetResources_List = GenerateResources(BasicResource_Icy, minAmountOf_BasicResource_Icy, maxAmountOf_BasicResource_Icy, CommonResource_Icy, chanceOf_CommonResource_Icy, minAmountOf_CommonResource_Icy, maxAmountOf_CommonResource_Icy, RareResource_Icy, chanceOf_RareResource_Icy, minAmountOf_RareResource_Icy, maxAmountOf_RareResource_Icy);
+
+        //Generic Info For All Planets
+        newPlanet = GetGenericInfo(newPlanet);
 
         //Return New Planet
         return newPlanet;
@@ -277,6 +287,18 @@ public class RARC_Planet_SO : ScriptableObject
         RARC_Planet newPlanet = new RARC_Planet();
         newPlanet.planetType = RARC_Planet.PlanetType.Gassy;
 
+        //Sprite / Colors
+        newPlanet.planetSprite_Main = Random.Range(0, planetSpritesMain_Gassy.Count);
+        newPlanet.planetSprite_Secondary = Random.Range(0, planetSpritesSecondary_Gassy.Count);
+        newPlanet.primaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteMain_Gassy[Random.Range(0, colorPaletteMain_Gassy.Count)]);
+        newPlanet.secondaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteSecondary_Gassy[Random.Range(0, colorPaletteSecondary_Gassy.Count)]);
+
+        //Resources
+        newPlanet.planetResources_List = GenerateResources(BasicResource_Gassy, minAmountOf_BasicResource_Gassy, maxAmountOf_BasicResource_Gassy, CommonResource_Gassy, chanceOf_CommonResource_Gassy, minAmountOf_CommonResource_Gassy, maxAmountOf_CommonResource_Gassy, RareResource_Gassy, chanceOf_RareResource_Gassy, minAmountOf_RareResource_Gassy, maxAmountOf_RareResource_Gassy);
+
+        //Generic Info For All Planets
+        newPlanet = GetGenericInfo(newPlanet);
+
         //Return New Planet
         return newPlanet;
     }
@@ -287,11 +309,59 @@ public class RARC_Planet_SO : ScriptableObject
         RARC_Planet newPlanet = new RARC_Planet();
         newPlanet.planetType = RARC_Planet.PlanetType.Living;
 
+        //Sprite / Colors
+        newPlanet.planetSprite_Main = Random.Range(0, planetSpritesMain_Living.Count);
+        newPlanet.planetSprite_Secondary = Random.Range(0, planetSpritesSecondary_Living.Count);
+        newPlanet.primaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteMain_Living[Random.Range(0, colorPaletteMain_Living.Count)]);
+        newPlanet.secondaryColor = ColorUtility.ToHtmlStringRGB(colorPaletteSecondary_Living[Random.Range(0, colorPaletteSecondary_Living.Count)]);
+
+        //Resources
+        newPlanet.planetResources_List = GenerateResources(BasicResource_Living, minAmountOf_BasicResource_Living, maxAmountOf_BasicResource_Living, CommonResource_Living, chanceOf_CommonResource_Living, minAmountOf_CommonResource_Living, maxAmountOf_CommonResource_Living, RareResource_Living, chanceOf_RareResource_Living, minAmountOf_RareResource_Living, maxAmountOf_RareResource_Living);
+
+        //Generic Info For All Planets
+        newPlanet = GetGenericInfo(newPlanet);
+
         //Return New Planet
         return newPlanet;
     }
 
     /////////////////////////////////////////////////////////////////
+
+    public RARC_Planet GetGenericInfo(RARC_Planet newPlanet)
+    {
+        //Name
+        newPlanet.planetName = allPlanetNames_List[Random.Range(0, allPlanetNames_List.Count)];
+      
+        //Visual Rotation
+        newPlanet.planetRotation = Random.Range(-90, 90);
+
+        //Time to reach planet
+        newPlanet.planetTravelTime = Random.Range(2, 5);
+
+        //Risk
+        newPlanet.planetRiskFactor = Random.Range(0, 10);
+
+        //Get Moons
+        newPlanet = GetMoons(newPlanet);
+
+        //Get Events
+        newPlanet.planetEvent = GenerateAvalibleEvent();
+
+        return newPlanet;
+    }
+
+    public RARC_Planet GetMoons(RARC_Planet newPlanet)
+    {
+        //Moon Generation
+        newPlanet.planetMoonPlanet_List = new List<RARC_Planet>();
+        int planetMoonCount = Random.Range(0, 3);
+        for (int i = 0; i < planetMoonCount; i++)
+        {
+            newPlanet.planetMoonPlanet_List.Add(GenerateMoon());
+        }
+
+        return newPlanet;
+    }
 
     public RARC_Planet GenerateMoon()
     {
@@ -368,9 +438,60 @@ public class RARC_Planet_SO : ScriptableObject
         return resources_List;
     }
 
+    public List<System.Tuple<int, int, RARC_Resource>> GenerateResources(RARC_Resource.ResourceType basicResouce, int minAmountOf_BasicResource, int maxAmountOf_BasicResource, RARC_Resource.ResourceType commonResource, int chanceOf_CommonResource, int minAmountOf_CommonResource, int maxAmountOf_CommonResource, RARC_Resource.ResourceType rareResouce, int chanceOf_RareResource, int minAmountOf_RareResource, int maxAmountOf_RareResource)
+    {
+        //List of Resources For the Planet
+        List<System.Tuple<int, int, RARC_Resource>> resources_List = new List<System.Tuple<int, int, RARC_Resource>>();
+
+        //Implement later - ???
+        List<int> Chance_List = new List<int>();
+        Chance_List.Add(30);
+        Chance_List.Add(40);
+        Chance_List.Add(50);
+        Chance_List.Add(60);
+        Chance_List.Add(70);
+        Chance_List.Add(80);
+
+        //Basic
+        int amountOfBasic = Random.Range(minAmountOf_BasicResource, maxAmountOf_BasicResource);
+        System.Tuple<int, int, RARC_Resource> scrap_Resource = new System.Tuple<int, int, RARC_Resource>(100, amountOfBasic, RARC_DatabaseController.Instance.resources_DB.GetResource(basicResouce));
+        resources_List.Add(scrap_Resource);
+
+        //Common Resource 
+        if (commonResource != RARC_Resource.ResourceType.NULL)
+        {
+            int chanceOfCommonResource = Random.Range(0, 100);
+            if (chanceOfCommonResource <= chanceOf_CommonResource)
+            {
+                //Get Resource
+                int possiblityOfCommonResource = Chance_List[Random.Range(0, Chance_List.Count)];
+                int amountOfCommonResource = Random.Range(minAmountOf_CommonResource, maxAmountOf_CommonResource);
+                System.Tuple<int, int, RARC_Resource> Common_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfCommonResource, amountOfCommonResource, RARC_DatabaseController.Instance.resources_DB.GetResource(CommonResource_Rocky));
+                resources_List.Add(Common_Resource);
+            }
+        }
+
+        //Rare Resource 
+        if (rareResouce != RARC_Resource.ResourceType.NULL)
+        {
+            int chanceOfRareResource = Random.Range(0, 100);
+            if (chanceOfRareResource <= chanceOf_RareResource)
+            {
+                //Get Resource
+                int possiblityOfRareResource = Chance_List[Random.Range(0, Chance_List.Count)];
+                int amountOfRareResource = Random.Range(minAmountOf_RareResource, maxAmountOf_RareResource);
+                System.Tuple<int, int, RARC_Resource> Rare_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfRareResource, amountOfRareResource, RARC_DatabaseController.Instance.resources_DB.GetResource(RareResource_Rocky));
+                resources_List.Add(Rare_Resource);
+            }
+        }
+
+        //Return
+        return resources_List;
+    }
+
     /////////////////////////////////////////////////////////////////
 
-    public RARC_Event GenerateAvalibleEvent_Rocky()
+    public RARC_Event GenerateAvalibleEvent()
     {
         //New Event
         RARC_Event newEvent = null;

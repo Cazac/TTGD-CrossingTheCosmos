@@ -25,6 +25,29 @@ public class RARC_ConstructionRoomUITab : MonoBehaviour
         name_Text.text = roomSO.roomName;
         roomIcon.sprite = roomSO.activeRoomSprite;
 
+        //Setup and Refresh UI
+        RefreshRequirementsUI();
+    }
+
+    public void Button_ContructRoom()
+    {
+        //Build Room On Last selected Room
+        RARC_ButtonController_Game.Instance.Button_Construction_BuildRoom(this);
+
+        //Remove All Required Resources
+        List<RARC_Resource> newResource_List = GetResourcesList();
+        requirementsTab.RemoveRequirementsFromPlayer(newResource_List);
+    }
+
+    public void RefreshRequirementsUI()
+    {
+        //Setup Tab and allow this button to be clicked or not based off the critrea given
+        List<RARC_Resource> newResource_List = GetResourcesList();
+        requirementsTab.SetupTab(newResource_List, RARC_ButtonController_Game.Instance.colorValues_Red, RARC_ButtonController_Game.Instance.colorValues_White);
+    }
+
+    private List<RARC_Resource> GetResourcesList()
+    {
         //Setup List
         List<RARC_Resource> newResource_List = new List<RARC_Resource>();
 
@@ -40,16 +63,7 @@ public class RARC_ConstructionRoomUITab : MonoBehaviour
         RARC_Resource newResource5 = new RARC_Resource(roomSO.resourceRequiredAmount_5, roomSO.resourceRequired_5);
         newResource_List.Add(newResource5);
 
-        //Setup Tab
-        requirementsTab.SetupTab(newResource_List, RARC_ButtonController_Game.Instance.colorValues_Red, RARC_ButtonController_Game.Instance.colorValues_White);
-
-        //Check If Resources have been obtained
-        //RARC_GameStateController.Instance.CheckForResources
-    }
-
-    public void Button_ContructRoom()
-    {
-        RARC_ButtonController_Game.Instance.Button_Construction_BuildRoom(this);
+        return newResource_List;
     }
 
     /////////////////////////////////////////////////////////////////

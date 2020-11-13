@@ -153,5 +153,44 @@ public class RARC_RequirementsUITab : MonoBehaviour
         }
     }
 
+    public void RemoveRequirementsFromPlayer(List<RARC_Resource> resources_List)
+    {
+        //Resource Set 1
+        if (resources_List[0].resourceType != RARC_Resource.ResourceType.NULL)
+        {
+            RARC_GameStateController.Instance.ChangeResources(resources_List[0].resourceName, resources_List[0].resourceType, resources_List[0].resourceCount * -1);
+        }
+
+        //Resource Set 2
+        if (resources_List[1].resourceType != RARC_Resource.ResourceType.NULL)
+        {
+            RARC_GameStateController.Instance.ChangeResources(resources_List[1].resourceName, resources_List[1].resourceType, resources_List[1].resourceCount * -1);
+        }
+
+        //Resource Set 3
+        if (resources_List[2].resourceType != RARC_Resource.ResourceType.NULL)
+        {
+            RARC_GameStateController.Instance.ChangeResources(resources_List[2].resourceName, resources_List[2].resourceType, resources_List[2].resourceCount * -1);
+        }
+
+        //Resource Set 4
+        if (resourceSet4_Container != null)
+        {
+            if (resources_List[3].resourceType != RARC_Resource.ResourceType.NULL)
+            {
+                RARC_GameStateController.Instance.ChangeResources(resources_List[3].resourceName, resources_List[3].resourceType, resources_List[3].resourceCount * -1);
+            }
+        }
+
+        //Resource Set 5
+        if (resourceSet5_Container != null)
+        {
+            if (resources_List[4].resourceType != RARC_Resource.ResourceType.NULL)
+            {
+                RARC_GameStateController.Instance.ChangeResources(resources_List[4].resourceName, resources_List[4].resourceType, resources_List[4].resourceCount * -1);
+            }
+        }
+    }
+
     /////////////////////////////////////////////////////////////////
 }
