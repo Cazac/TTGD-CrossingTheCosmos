@@ -106,7 +106,6 @@ public class RARC_ResourceData : MonoBehaviour
                 resource = food_Resource;
                 break;
 
-
             case RARC_Resource.ResourceType.Titanium:
                 resource = titanium_Resource;
                 break;
@@ -156,7 +155,6 @@ public class RARC_ResourceData : MonoBehaviour
             case RARC_Resource.ResourceType.Food:
                 sprite = RARC_DatabaseController.Instance.icons_DB.FoodIcon;
                 break;
-
 
             case RARC_Resource.ResourceType.Titanium:
                 sprite = RARC_DatabaseController.Instance.icons_DB.TitaniumIcon;

@@ -47,6 +47,33 @@ public class RARC_GameStateController : MonoBehaviour
     [Header("BLANKVAR")]
     public int currentSongPlayLength;
 
+    /////////////////////////////////////////////////////////////////
+
+    [Header("Crafting Per Turn")]
+    public int allowedCraftingPerTurn_Fuel;
+    public int currentCraftingPerTurn_Fuel;
+
+    [Header("Crafting Per Turn")]
+    public int allowedCraftingPerTurn_Food;
+    public int currentCraftingPerTurn_Food;
+
+    [Header("Crafting Per Turn")]
+    public int allowedCraftingPerTurn_Organics;
+    public int currentCraftingPerTurn_Organics;
+
+    [Header("Crafting Per Turn")]
+    public int allowedCraftingPerTurn_Crew;
+    public int currentCraftingPerTurn_Crew;
+
+    [Header("Crafting Per Turn")]
+    public int allowedCraftingPerTurn_Bots;
+    public int currentCraftingPerTurn_Bots;
+
+
+
+
+
+    /////////////////////////////////////////////////////////////////
 
     public readonly float eventChance_Travel = 0.7f;
     public readonly float eventChance_Planet = 0.5f;
@@ -207,7 +234,8 @@ public class RARC_GameStateController : MonoBehaviour
 
         }
 
-
+        //Crafting Amounts Reset
+        Reset_CraftingAmounts();
 
 
         //Reset Navigation Planets
@@ -390,6 +418,84 @@ public class RARC_GameStateController : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
+    public void Reset_CraftingAmounts()
+    {
+        //Bots
+        allowedCraftingPerTurn_Bots = CountRoomsOnShip(RARC_DatabaseController.Instance.crafting_DB.bots_Crafting.roomRequired) * RARC_DatabaseController.Instance.crafting_DB.bots_Crafting.resourceCraftsPerRoom;
+        currentCraftingPerTurn_Bots = allowedCraftingPerTurn_Bots;
+
+        //Crew
+        allowedCraftingPerTurn_Crew= CountRoomsOnShip(RARC_DatabaseController.Instance.crafting_DB.crew_Crafting.roomRequired) * RARC_DatabaseController.Instance.crafting_DB.crew_Crafting.resourceCraftsPerRoom;
+        currentCraftingPerTurn_Crew = allowedCraftingPerTurn_Crew;
+
+        //Food 
+        allowedCraftingPerTurn_Food = CountRoomsOnShip(RARC_DatabaseController.Instance.crafting_DB.food_Crafting.roomRequired) * RARC_DatabaseController.Instance.crafting_DB.food_Crafting.resourceCraftsPerRoom;
+        currentCraftingPerTurn_Food = allowedCraftingPerTurn_Food;
+
+        //Fuel
+        allowedCraftingPerTurn_Fuel = CountRoomsOnShip(RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting.roomRequired) * RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting.resourceCraftsPerRoom;
+        currentCraftingPerTurn_Fuel = allowedCraftingPerTurn_Fuel;
+
+        //Organics
+        allowedCraftingPerTurn_Organics = CountRoomsOnShip(RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.roomRequired) * RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.resourceCraftsPerRoom;
+        currentCraftingPerTurn_Organics = allowedCraftingPerTurn_Organics;
+    } 
+
+    public int CountRoomsOnShip(RARC_Room.RoomType findingRoomType)
+    {
+        int roomsFound = 0;
+
+        foreach (RARC_Room.RoomType shipRoomType in RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr)
+        {
+            if (findingRoomType == shipRoomType)
+            {
+                roomsFound++;
+            }
+        }
+
+        return roomsFound;
+    }
+
+    public void RoomCraftingValuesAddedWhenBuilding(RARC_Room.RoomType builtRoomType)
+    {
+        switch (builtRoomType)
+        {
+            case RARC_Room.RoomType.EMPTY:
+                break;
+            case RARC_Room.RoomType.ASTROMETRICS:
+                break;
+            case RARC_Room.RoomType.CLONING:
+                allowedCraftingPerTurn_Crew += RARC_DatabaseController.Instance.crafting_DB.crew_Crafting.resourceCraftsPerRoom;
+                currentCraftingPerTurn_Crew += RARC_DatabaseController.Instance.crafting_DB.crew_Crafting.resourceCraftsPerRoom;
+                break;
+            case RARC_Room.RoomType.FACTORY:
+                allowedCraftingPerTurn_Bots += RARC_DatabaseController.Instance.crafting_DB.bots_Crafting.resourceCraftsPerRoom;
+                currentCraftingPerTurn_Bots += RARC_DatabaseController.Instance.crafting_DB.bots_Crafting.resourceCraftsPerRoom;
+                break;
+            case RARC_Room.RoomType.HYDROPONICS:
+                allowedCraftingPerTurn_Fuel += RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting.resourceCraftsPerRoom;
+                currentCraftingPerTurn_Fuel += RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting.resourceCraftsPerRoom;
+
+                allowedCraftingPerTurn_Organics += RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.resourceCraftsPerRoom;
+                currentCraftingPerTurn_Organics += RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.resourceCraftsPerRoom;
+                break;
+            case RARC_Room.RoomType.KITCHEN:
+                allowedCraftingPerTurn_Food += RARC_DatabaseController.Instance.crafting_DB.food_Crafting.resourceCraftsPerRoom;
+                currentCraftingPerTurn_Food += RARC_DatabaseController.Instance.crafting_DB.food_Crafting.resourceCraftsPerRoom;
+                break;
+            case RARC_Room.RoomType.MEDBAY:
+                break;
+            case RARC_Room.RoomType.QUARTERS:
+                break;
+            case RARC_Room.RoomType.STORAGE:
+                break;
+            default:
+                break;
+        }
+    }
+
+    /////////////////////////////////////////////////////////////////
+
     public RARC_Resource.ResourceType ConvertTypes(RARC_EventOutcome_SO.OutcomeType outcomeType)
     {
         //Resource Types
@@ -551,14 +657,14 @@ public class RARC_GameStateController : MonoBehaviour
                 break;
 
             case RARC_Resource.ResourceType.Fuel:
-                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount >= resourceAmount)
                 {
                     isResourceOwned = true;
                 }
                 break;
 
             case RARC_Resource.ResourceType.Food:
-                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount >= resourceAmount)
                 {
                     isResourceOwned = true;
                 }
@@ -592,6 +698,67 @@ public class RARC_GameStateController : MonoBehaviour
         }
 
         return isResourceOwned;
+    }
+
+    public int GetResoucesCount(RARC_Resource.ResourceType resourceType)
+    {
+        int resourceAmount = 0;
+
+        switch (resourceType)
+        {
+            case RARC_Resource.ResourceType.NULL:
+                resourceAmount = 0;
+                break;
+
+            case RARC_Resource.ResourceType.Scrap:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= resourceAmount)
+                {
+                    resourceAmount = RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount;
+                }
+                break;
+
+            case RARC_Resource.ResourceType.Fuel:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount >= resourceAmount)
+                {
+                    resourceAmount = RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount;
+                }
+                break;
+
+            case RARC_Resource.ResourceType.Food:
+                if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount >= resourceAmount)
+                {
+                    resourceAmount = RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount;
+                }
+                break;
+
+            default:
+                int resourceSlot = 99;
+                int i = 0;
+
+                //Search For Containing Slot
+                foreach (RARC_Resource resourceInShip in RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List)
+                {
+                    if (resourceInShip.resourceType == resourceType)
+                    {
+                        //Found Slot
+                        resourceSlot = i;
+                        break;
+                    }
+                    i++;
+                }
+
+                //Check if slot is found
+                if (resourceSlot != 99)
+                {
+                    if (RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount >= resourceAmount)
+                    {
+                        resourceAmount = RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount;
+                    }
+                }
+                break;
+        }
+
+        return resourceAmount;
     }
 
     /////////////////////////////////////////////////////////////////

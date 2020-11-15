@@ -86,6 +86,9 @@ public class RARC_MusicController : MonoBehaviour
         GameObject newTrack = Instantiate(audioTrack_Prefab, locationalParent.transform);
         newTrack.name = audioSO.name;
 
+        //Record The current Track
+        currentMusicTrack_SO = audioSO;
+
         //Music Setup
         newTrack.GetComponent<RARC_AudioTab>().SetupAudioTrack(audioSO, RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
     }
@@ -98,6 +101,9 @@ public class RARC_MusicController : MonoBehaviour
         //Instantiate New Audio Source User Container
         GameObject newTrack = Instantiate(audioTrack_Prefab, audioTrack_Container.transform);
         newTrack.name = audioSO.name;
+
+        //Record The current Track
+        currentMusicTrack_SO = audioSO;
 
         //Music Setup
         newTrack.GetComponent<RARC_AudioTab>().SetupAudioTrack(audioSO, RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
@@ -123,6 +129,9 @@ public class RARC_MusicController : MonoBehaviour
         //SFX Setup
         newTrack.GetComponent<RARC_AudioTab>().SetupAudioTrack(audioSO_List[randomChoice], RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
 
+        //Record The current Track
+        currentMusicTrack_SO = audioSO_List[randomChoice];
+
         //Return Track
         return newTrack;
     }
@@ -144,6 +153,9 @@ public class RARC_MusicController : MonoBehaviour
 
         //SFX Setup
         newTrack.GetComponent<RARC_AudioTab>().SetupAudioTrack(audioSO_List[randomChoice], RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
+
+        //Record The current Track
+        currentMusicTrack_SO = audioSO_List[randomChoice];
 
         //Return Track
         return newTrack;
@@ -172,7 +184,7 @@ public class RARC_MusicController : MonoBehaviour
                 break;
             }
         }
-      
+
         //Return the filtered List
         return audioSO_List;
     }

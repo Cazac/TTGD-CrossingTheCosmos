@@ -19,13 +19,13 @@ MonoBehaviour:
   botsPerCraft: 0
   roomRequired: 2
   resourceCraftsPerRoom: 1
-  resourceRequired_1: 0
-  resourceRequiredAmount_1: 0
-  resourceRequired_2: 0
-  resourceRequiredAmount_2: 0
-  resourceRequired_3: 0
-  resourceRequiredAmount_3: 0
-  resourceRequired_4: 0
-  resourceRequiredAmount_4: 0
+  resourceRequired_1: 8
+  resourceRequiredAmount_1: 20
+  resourceRequired_2: 7
+  resourceRequiredAmount_2: 5
+  resourceRequired_3: 9
+  resourceRequiredAmount_3: 5
+  resourceRequired_4: 10
+  resourceRequiredAmount_4: 5
   resourceRequired_5: 0
   resourceRequiredAmount_5: 0

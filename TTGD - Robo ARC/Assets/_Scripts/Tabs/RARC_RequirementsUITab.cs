@@ -40,7 +40,7 @@ public class RARC_RequirementsUITab : MonoBehaviour
 
     public void SetupTab(List<RARC_Resource> resources_List, string colorStringWrong, string colorStringAvalible)
     {
-        confirm_Button.interactable = true;
+        bool shouldBeInteractable = true;
 
         //Resource Set 1
         if (resources_List[0].resourceType != RARC_Resource.ResourceType.NULL)
@@ -55,7 +55,7 @@ public class RARC_RequirementsUITab : MonoBehaviour
             else
             {
                 resourceSet1_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[0].resourceCount + "</color>";
-                confirm_Button.interactable = false;
+                shouldBeInteractable = false;
             }
         }
         else
@@ -76,7 +76,7 @@ public class RARC_RequirementsUITab : MonoBehaviour
             else
             {
                 resourceSet2_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[1].resourceCount + "</color>";
-                confirm_Button.interactable = false;
+                shouldBeInteractable = false;
             }
         }
         else
@@ -97,7 +97,7 @@ public class RARC_RequirementsUITab : MonoBehaviour
             else
             {
                 resourceSet3_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[2].resourceCount + "</color>";
-                confirm_Button.interactable = false;
+                shouldBeInteractable = false;
             }
         }
         else
@@ -120,7 +120,7 @@ public class RARC_RequirementsUITab : MonoBehaviour
                 else
                 {
                     resourceSet4_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[3].resourceCount + "</color>";
-                    confirm_Button.interactable = false;
+                    shouldBeInteractable = false;
                 }
             }
             else
@@ -143,13 +143,24 @@ public class RARC_RequirementsUITab : MonoBehaviour
                 else
                 {
                     resourceSet5_Count.text = "<" + colorStringWrong + ">" + "x" + resources_List[4].resourceCount + "</color>";
-                    confirm_Button.interactable = false;
+                    shouldBeInteractable = false;
                 }
             }
             else
             {
                 resourceSet5_Container.SetActive(false);
             }
+        }
+
+
+
+        if (shouldBeInteractable)
+        {
+            confirm_Button.interactable = true;
+        }
+        else
+        {
+            confirm_Button.interactable = false;
         }
     }
 

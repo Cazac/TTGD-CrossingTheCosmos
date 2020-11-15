@@ -19,6 +19,11 @@ public class RARC_RoomTab : MonoBehaviour
     public List<GameObject> roomNodes_List;
     public int currentFloorLevel;
 
+    [Header("Ship Saving Node")]
+    public int currentShipArrayNode;
+
+
+
     /////////////////////////////////////////////////////////////////
 
     private void OnMouseEnter()
@@ -66,9 +71,6 @@ public class RARC_RoomTab : MonoBehaviour
 
         //Update Sprite
         roomSpriteRenderer.sprite = currentRoom_SO.inactiveRoomSprite;
-
-        //Update With Save Data?
-        print("Test Code: Save Data?");
     }
 
     public GameObject GetRandomNode(Vector3 currentMemberPosition)

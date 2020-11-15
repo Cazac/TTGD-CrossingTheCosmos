@@ -189,6 +189,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     [HideInInspector]
     public RARC_RoomTab currentConstructionRoom;
+    public int currentConstructionRoomNodeNo;
 
     [HideInInspector]
     public bool isEventType_Travel;
@@ -212,7 +213,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount -= RARC_GameStateController.Instance.fuelRequired;
         RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount -= RARC_GameStateController.Instance.foodRequired;
 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount <= 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount < 0)
         {
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EmptyTank));
@@ -220,7 +221,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
             return;
         }
 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount <= 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount < 0)
         {
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_Starvation));
@@ -228,7 +229,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
             return;
         }
 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count <= 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count < 0)
         {
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_EveryoneIsGone));
@@ -236,7 +237,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
             return;
         }
 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth <= 0)
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth < 0)
         {
             //Create Event
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_TheEndIsNear_CatastrophicBreakdown));
@@ -386,8 +387,14 @@ public class RARC_ButtonController_Game : MonoBehaviour
         ConstructionMenu_Main.SetActive(false);
         RARC_GameStateController.Instance.DisableRaycastBlocker();
 
-        //Build Room
+        //Build Room On last clicked Room
         currentConstructionRoom.BuildRoom(constructionRoomTab.roomSO);
+
+        //Saving Data to the ship
+        RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr[currentConstructionRoom.currentShipArrayNode] = constructionRoomTab.roomSO.roomType;
+
+        //Add Extra Crating this turn
+        RARC_GameStateController.Instance.RoomCraftingValuesAddedWhenBuilding(constructionRoomTab.roomSO.roomType);
     }
 
     /////////////////////////////////////////////////////////////////
@@ -472,6 +479,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 eventOutcomeResource4_Tab.gameObject.SetActive(false);
                 eventOutcomeResource5_Tab.gameObject.SetActive(false);
                 eventOutcomeResource1_Tab.SetResource_OutcomeChanges(eventOutcomeChanges_Resources_List[0]);
+                break;
+
+            case 0:
+                Button_EventOutcome_Close();
                 break;
 
             default:
@@ -850,12 +861,11 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
 
         List<RARC_Crafting_SO> allCrafting_List = new List<RARC_Crafting_SO>();
-        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.bots_Crafting);
-        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.crew_Crafting);
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.organics_Crafting);
         allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.food_Crafting);
         allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting);
-        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.organics_Crafting);
-
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.bots_Crafting);
+        allCrafting_List.Add(RARC_DatabaseController.Instance.crafting_DB.crew_Crafting);
 
 
         foreach (Transform child in craftingContainer_GO.transform)
@@ -870,7 +880,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
             GameObject newCrafting_GO = Instantiate(crafting_Prefab, craftingContainer_GO.transform);
             newCrafting_GO.GetComponent<RARC_CraftingUITab>().SetupTab(craftingSO);
         }
-
     }
 
     public void Button_Fabrication_Close()

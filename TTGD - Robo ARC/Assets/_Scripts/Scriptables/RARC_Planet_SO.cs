@@ -386,58 +386,6 @@ public class RARC_Planet_SO : ScriptableObject
 
     /////////////////////////////////////////////////////////////////
 
-    public List<System.Tuple<int, int, RARC_Resource>> GenerateResources_Rocky()
-    {
-        //List of Resources For the Planet
-        List<System.Tuple<int, int, RARC_Resource>> resources_List = new List<System.Tuple<int, int, RARC_Resource>>();
-
-        //Implement later - ???
-        List<int> Chance_List = new List<int>();
-        Chance_List.Add(30);
-        Chance_List.Add(40);
-        Chance_List.Add(50);
-        Chance_List.Add(60);
-        Chance_List.Add(70);
-        Chance_List.Add(80);
-
-
-        //Scrap
-        int amountOfScrap = Random.Range(minAmountOf_BasicResource_Rocky, maxAmountOf_BasicResource_Rocky);
-        System.Tuple<int, int, RARC_Resource> scrap_Resource = new System.Tuple<int, int, RARC_Resource>(100, amountOfScrap, RARC_DatabaseController.Instance.resources_DB.GetResource(BasicResource_Rocky));
-        resources_List.Add(scrap_Resource);
-
-        //Common Resource 
-        if (CommonResource_Rocky != RARC_Resource.ResourceType.NULL)
-        {
-            int chanceOfCommonResource = Random.Range(0, 100);
-            if (chanceOfCommonResource <= chanceOf_CommonResource_Rocky)
-            {
-                //Get Carbon
-                int possiblityOfCommonResource = Chance_List[Random.Range(0, Chance_List.Count)];
-                int amountOfCommonResource = Random.Range(minAmountOf_CommonResource_Rocky, maxAmountOf_CommonResource_Rocky);
-                System.Tuple<int, int, RARC_Resource> Common_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfCommonResource, amountOfCommonResource, RARC_DatabaseController.Instance.resources_DB.GetResource(CommonResource_Rocky));
-                resources_List.Add(Common_Resource);
-            }
-        }
-
-        //Rare Resource 
-        if (RareResource_Rocky != RARC_Resource.ResourceType.NULL)
-        {
-            int chanceOfRareResource = Random.Range(0, 100);
-            if (chanceOfRareResource <= chanceOf_RareResource_Rocky)
-            {
-                //Get Titanium
-                int possiblityOfRareResource = Chance_List[Random.Range(0, Chance_List.Count)];
-                int amountOfRareResource = Random.Range(minAmountOf_RareResource_Rocky, maxAmountOf_RareResource_Rocky);
-                System.Tuple<int, int, RARC_Resource> Rare_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfRareResource, amountOfRareResource, RARC_DatabaseController.Instance.resources_DB.GetResource(RareResource_Rocky));
-                resources_List.Add(Rare_Resource);
-            }
-        }
-
-        //Return
-        return resources_List;
-    }
-
     public List<System.Tuple<int, int, RARC_Resource>> GenerateResources(RARC_Resource.ResourceType basicResouce, int minAmountOf_BasicResource, int maxAmountOf_BasicResource, RARC_Resource.ResourceType commonResource, int chanceOf_CommonResource, int minAmountOf_CommonResource, int maxAmountOf_CommonResource, RARC_Resource.ResourceType rareResouce, int chanceOf_RareResource, int minAmountOf_RareResource, int maxAmountOf_RareResource)
     {
         //List of Resources For the Planet
@@ -454,8 +402,8 @@ public class RARC_Planet_SO : ScriptableObject
 
         //Basic
         int amountOfBasic = Random.Range(minAmountOf_BasicResource, maxAmountOf_BasicResource);
-        System.Tuple<int, int, RARC_Resource> scrap_Resource = new System.Tuple<int, int, RARC_Resource>(100, amountOfBasic, RARC_DatabaseController.Instance.resources_DB.GetResource(basicResouce));
-        resources_List.Add(scrap_Resource);
+        System.Tuple<int, int, RARC_Resource> Basic_Resource = new System.Tuple<int, int, RARC_Resource>(100, amountOfBasic, RARC_DatabaseController.Instance.resources_DB.GetResource(basicResouce));
+        resources_List.Add(Basic_Resource);
 
         //Common Resource 
         if (commonResource != RARC_Resource.ResourceType.NULL)
@@ -466,7 +414,7 @@ public class RARC_Planet_SO : ScriptableObject
                 //Get Resource
                 int possiblityOfCommonResource = Chance_List[Random.Range(0, Chance_List.Count)];
                 int amountOfCommonResource = Random.Range(minAmountOf_CommonResource, maxAmountOf_CommonResource);
-                System.Tuple<int, int, RARC_Resource> Common_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfCommonResource, amountOfCommonResource, RARC_DatabaseController.Instance.resources_DB.GetResource(CommonResource_Rocky));
+                System.Tuple<int, int, RARC_Resource> Common_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfCommonResource, amountOfCommonResource, RARC_DatabaseController.Instance.resources_DB.GetResource(commonResource));
                 resources_List.Add(Common_Resource);
             }
         }
@@ -480,10 +428,16 @@ public class RARC_Planet_SO : ScriptableObject
                 //Get Resource
                 int possiblityOfRareResource = Chance_List[Random.Range(0, Chance_List.Count)];
                 int amountOfRareResource = Random.Range(minAmountOf_RareResource, maxAmountOf_RareResource);
-                System.Tuple<int, int, RARC_Resource> Rare_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfRareResource, amountOfRareResource, RARC_DatabaseController.Instance.resources_DB.GetResource(RareResource_Rocky));
+                System.Tuple<int, int, RARC_Resource> Rare_Resource = new System.Tuple<int, int, RARC_Resource>(possiblityOfRareResource, amountOfRareResource, RARC_DatabaseController.Instance.resources_DB.GetResource(rareResouce));
                 resources_List.Add(Rare_Resource);
             }
         }
+
+
+
+
+
+        //resources_List.Reverse();
 
         //Return
         return resources_List;
