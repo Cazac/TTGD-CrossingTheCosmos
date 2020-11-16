@@ -16,12 +16,12 @@ MonoBehaviour:
   roomName: Astrometrics
   activeRoomSprite: {fileID: 21300000, guid: 9e932ee5c85c4134cae8e9097cd77c8d, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: 62f3394f5dfe74149b69e895042e1e6b, type: 3}
-  resourceRequired_1: 5
-  resourceRequiredAmount_1: 15
-  resourceRequired_2: 7
-  resourceRequiredAmount_2: 25
-  resourceRequired_3: 0
-  resourceRequiredAmount_3: 0
+  resourceRequired_1: 1
+  resourceRequiredAmount_1: 20
+  resourceRequired_2: 5
+  resourceRequiredAmount_2: 20
+  resourceRequired_3: 7
+  resourceRequiredAmount_3: 20
   resourceRequired_4: 0
   resourceRequiredAmount_4: 0
   resourceRequired_5: 0

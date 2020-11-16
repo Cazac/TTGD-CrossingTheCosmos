@@ -156,7 +156,7 @@ public class RARC_ShipSaveData
         shipStorage_List.Add(new RARC_Resource("Organics", 20, RARC_Resource.ResourceType.Organics));
         //shipStorage_List.Add(new RARC_Resource("Carbon", 999, RARC_Resource.ResourceType.Carbon));
         //shipStorage_List.Add(new RARC_Resource("Silicon", 999, RARC_Resource.ResourceType.Silicon));
-        shipStorage_List.Add(new RARC_Resource("Hydrogen", 20, RARC_Resource.ResourceType.Hydrogen));
+        shipStorage_List.Add(new RARC_Resource("Nitrogen", 20, RARC_Resource.ResourceType.Nitrogen));
 
         // */
 

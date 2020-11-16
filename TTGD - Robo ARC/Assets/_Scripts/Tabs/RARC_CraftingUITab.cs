@@ -26,33 +26,32 @@ public class RARC_CraftingUITab : MonoBehaviour
         //Setup Info
         craftingSO = newCraftingSO;
 
-        if (true)
+        if (newCraftingSO.resourceType != RARC_Resource.ResourceType.NULL)
         {
-            //RARC_Resource newResource = new RARC_Resource(0, craftingSO.resourceType);
-           // name_Text.text = newResource.resourceName;
-            //craftingIcon.sprite = craftingSO.craftingSprite;
+            name_Text.text = craftingSO.resourceType.ToString(); ;
         }
         else if (craftingSO.crewPerCraft != 0)
         {
-
+            name_Text.text = "Crewmate";
         }
         else if (craftingSO.botsPerCraft != 0)
         {
-
+            name_Text.text = "Robot";
         }
 
-        RARC_Resource newResource = new RARC_Resource(0, craftingSO.resourceType);
-        name_Text.text = newResource.resourceName;
+
+        print("Test Code: " + "Fix Robots and Humans!!!");
+
+
         craftingIcon.sprite = craftingSO.craftingSprite;
+
 
         //Setup Tab
         List<RARC_Resource> resourcesRequired_List = GetResourcesList();
         requirementsTab.SetupTab(resourcesRequired_List, RARC_ButtonController_Game.Instance.colorValues_Red, RARC_ButtonController_Game.Instance.colorValues_White);
 
         //Text
-
-        craftingResourceCurrent_Text.text = "Current: " + RARC_GameStateController.Instance.GetResoucesCount(craftingSO.resourceType) + "\n(" + craftingSO.resourcePerCraft + ")";
-
+        craftingResourceCurrent_Text.text = "Current: " + RARC_GameStateController.Instance.GetResoucesCount(craftingSO.resourceType) + "\n(+" + craftingSO.resourcePerCraft + ")";
 
         if (RARC_GameStateController.Instance.CountRoomsOnShip(craftingSO.roomRequired) <= 0)
         {
@@ -93,12 +92,8 @@ public class RARC_CraftingUITab : MonoBehaviour
         //Update Crafting Nodes
         RARC_ButtonController_Game.Instance.Button_Fabrication();
 
-
-
-        //Update Conter
-
-        // foreach
-
+        //Update the craftable amount
+        print("Test Code: Fix This!");
     }
 
     /////////////////////////////////////////////////////////////////

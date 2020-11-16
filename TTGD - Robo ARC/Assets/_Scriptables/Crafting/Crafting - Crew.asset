@@ -22,10 +22,10 @@ MonoBehaviour:
   resourceRequired_1: 8
   resourceRequiredAmount_1: 20
   resourceRequired_2: 7
-  resourceRequiredAmount_2: 5
+  resourceRequiredAmount_2: 10
   resourceRequired_3: 9
   resourceRequiredAmount_3: 5
-  resourceRequired_4: 10
+  resourceRequired_4: 6
   resourceRequiredAmount_4: 5
   resourceRequired_5: 0
   resourceRequiredAmount_5: 0

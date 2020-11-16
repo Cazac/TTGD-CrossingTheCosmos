@@ -28,6 +28,8 @@ public class RARC_GameStateController : MonoBehaviour
     public Animator ship_Animator;
     public Animator cutScene_Animator;
     public Animator gameover_Animator;
+    public Animator win_Animator;
+    public GameObject gameoverAnimations_GO;
 
     public IEnumerator currentCutscene_IEnum;
 
@@ -46,6 +48,8 @@ public class RARC_GameStateController : MonoBehaviour
 
     [Header("BLANKVAR")]
     public int currentSongPlayLength;
+
+    public GameObject MainCanvas;
 
     /////////////////////////////////////////////////////////////////
 
@@ -183,6 +187,22 @@ public class RARC_GameStateController : MonoBehaviour
             GetPossibleNewEvent_Travel();
         }
 
+        //Check Win Condition
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived >= 50)
+        {
+            if (CountRoomsOnShip(RARC_Room.RoomType.CLONING) >= 1)
+            {
+                System_Win();
+            }
+            else
+            {
+                System_Gameover("Cloning");
+            }
+
+            return;
+        }
+
+
 
         //Loop Song after 3rd track
         if (currentSongPlayLength >= 3)
@@ -290,12 +310,12 @@ public class RARC_GameStateController : MonoBehaviour
 
     public IEnumerator Player_StartWeek()
     {
-        //Do Visuals Here
+        //Do All Visuals Here
 
 
 
 
-        //Generate a New Week
+        //Generate a New Week of Data
         System_GenerateNewWeek(false, false);
 
 
@@ -777,12 +797,14 @@ public class RARC_GameStateController : MonoBehaviour
 
     public void System_Gameover(string reason)
     {
-
-
+        //Setup
         RARC_MusicController.Instance.PlayMusic_Gameover();
-
-
         RARC_ButtonController_Game.Instance.gameoverContainer_GO.SetActive(true);
+        EnableRaycastBlocker();
+
+        //Turn Off Main UI
+        MainCanvas.SetActive(false);
+        gameoverAnimations_GO.SetActive(true);
 
 
         switch (reason)
@@ -792,6 +814,7 @@ public class RARC_GameStateController : MonoBehaviour
                 RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(false);
                 RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(false);
                 RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Cloning.SetActive(false);
 
                 break;
 
@@ -800,6 +823,7 @@ public class RARC_GameStateController : MonoBehaviour
                 RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(true);
                 RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(false);
                 RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Cloning.SetActive(false);
 
                 break;
 
@@ -808,6 +832,7 @@ public class RARC_GameStateController : MonoBehaviour
                 RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(false);
                 RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(true);
                 RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Cloning.SetActive(false);
 
                 break;
 
@@ -816,23 +841,40 @@ public class RARC_GameStateController : MonoBehaviour
                 RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(false);
                 RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(false);
                 RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(true);
+                RARC_ButtonController_Game.Instance.gameoverImage_Cloning.SetActive(false);
+
+                break;
+
+            case "Cloning":
+                RARC_ButtonController_Game.Instance.gameoverImage_Crew.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Hull.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Food.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(false);
+                RARC_ButtonController_Game.Instance.gameoverImage_Cloning.SetActive(true);
 
                 break;
         }
 
-        //Debug
-        RARC_ButtonController_Game.Instance.gameoverImage_Fuel.SetActive(true);
+      
 
 
-
+        //Play Animation
         gameover_Animator.Play("Fade In Gameover");
- 
+    }
 
+    public void System_Win()
+    {
+        //Setup
+        RARC_MusicController.Instance.PlayMusic_Gameover();
+        RARC_ButtonController_Game.Instance.winContainer_GO.SetActive(true);
+        EnableRaycastBlocker();
 
+        //Turn Off Main UI
+        MainCanvas.SetActive(false);
 
-
-
-        print("Test Code: Gameover!");
+        //Winning
+        RARC_ButtonController_Game.Instance.winImage_All.SetActive(true);
+        win_Animator.Play("Fade In Gameover");
     }
 
     /////////////////////////////////////////////////////////////////

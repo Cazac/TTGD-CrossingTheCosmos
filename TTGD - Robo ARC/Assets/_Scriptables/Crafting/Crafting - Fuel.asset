@@ -20,9 +20,9 @@ MonoBehaviour:
   roomRequired: 4
   resourceCraftsPerRoom: 5
   resourceRequired_1: 9
-  resourceRequiredAmount_1: 2
+  resourceRequiredAmount_1: 4
   resourceRequired_2: 10
-  resourceRequiredAmount_2: 1
+  resourceRequiredAmount_2: 2
   resourceRequired_3: 0
   resourceRequiredAmount_3: 0
   resourceRequired_4: 0

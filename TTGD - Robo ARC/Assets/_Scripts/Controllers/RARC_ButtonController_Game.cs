@@ -115,13 +115,10 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-
-
     [Header("Fabrication")]
     public GameObject craftingContainer_GO;
     public GameObject crafting_Prefab;
-
-
+   
     [Header("Contruction")]
     public GameObject constructionRoomsContainer_GO;
     public GameObject constructionRoom_Prefab;
@@ -159,6 +156,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
     [Header("Launch Requirements")]
     public TextMeshProUGUI launchFuelNeeded_Text;
     public TextMeshProUGUI launchFoodNeeded_Text;
+    public GameObject launchButtonCover_GO;
 
     [Header("Pause Menu Settings")]
     public Slider volumeMusic_Slider;
@@ -174,12 +172,17 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject gameoverImage_Fuel;
     public GameObject gameoverImage_Food;
     public GameObject gameoverImage_Hull;
+    public GameObject gameoverImage_Cloning;
+
+    public GameObject winContainer_GO;
+    public GameObject winImage_All;
+
 
     ////////////////////////////////
 
     [HideInInspector]
     public readonly string colorValues_Yellow = "#FFEA00";
-    public readonly string colorValues_Red = "#FF2200";
+    public readonly string colorValues_Red = "#B42828"; //  FF2200
     public readonly string colorValues_Black = "#000000";
     public readonly string colorValues_White = "#FFFFFF";
     public readonly string colorValues_Green = "#089800";
@@ -1278,7 +1281,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
     public void RefreshUI_WeeksInSpace()
     {
-        weeksAtSpace_Text.text = "Week in Space: " + RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived + "/52";
+        weeksAtSpace_Text.text = "Week in Space: " + RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived + "/50";
     }
 
     public void RefreshUI_NavigationDestination()
@@ -1345,10 +1348,12 @@ public class RARC_ButtonController_Game : MonoBehaviour
         if (RARC_GameStateController.Instance.isReady_Launch)
         {
             LaunchButton_Main.interactable = true;
+            launchButtonCover_GO.SetActive(false);
         }
         else
         {
             LaunchButton_Main.interactable = false;
+            launchButtonCover_GO.SetActive(true);
         }
     }
 

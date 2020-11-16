@@ -17,11 +17,11 @@ MonoBehaviour:
   activeRoomSprite: {fileID: 21300000, guid: a6150d648619fee4cb126be58b543370, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: c77beeb72f3d3c44788f265ddefe8b54, type: 3}
   resourceRequired_1: 1
-  resourceRequiredAmount_1: 10
+  resourceRequiredAmount_1: 20
   resourceRequired_2: 7
   resourceRequiredAmount_2: 10
-  resourceRequired_3: 10
-  resourceRequiredAmount_3: 5
+  resourceRequired_3: 8
+  resourceRequiredAmount_3: 10
   resourceRequired_4: 0
   resourceRequiredAmount_4: 0
   resourceRequired_5: 0

@@ -289,5 +289,11 @@ public class RARC_MusicController : MonoBehaviour
         PlayTrackMusic_NoLocation(RARC_DatabaseController.Instance.music_DB.musicGameover_LastHope);
     }
 
+    public void PlayMusic_Win()
+    {
+        //Get Clip
+        PlayTrackMusic_NoLocation(RARC_DatabaseController.Instance.music_DB.musicCredits_Hopeless);
+    }
+
     /////////////////////////////////////////////////////////////////
 }
