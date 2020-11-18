@@ -324,12 +324,12 @@ public class RARC_CrewAgent : MonoBehaviour
                 if (xAxisChange >= 0)
                 {
                     //Bigger Go Right
-                    crewRotation_GO.transform.eulerAngles = new Vector3(0, 0, 0);
+                    crewRotation_GO.transform.localEulerAngles = new Vector3(0, 0, 0);
                 }
                 else
                 {
                     //Smaller Go Left
-                    crewRotation_GO.transform.eulerAngles = new Vector3(0, 180, 0);
+                    crewRotation_GO.transform.localEulerAngles = new Vector3(0, 180, 0);
                 }
             }
         }
@@ -354,15 +354,15 @@ public class RARC_CrewAgent : MonoBehaviour
 
     private void Utility_SetAnimation_Idle()
     {
-        crewForwardContainer_GO.SetActive(true);
         crewBackwardContainer_GO.SetActive(false);
+        crewForwardContainer_GO.SetActive(true);
         crew_Animator.SetBool("isWalking", false);
     }
 
     private void Utility_SetAnimation_Walk()
     {
-        crewForwardContainer_GO.SetActive(true);
         crewBackwardContainer_GO.SetActive(false);
+        crewForwardContainer_GO.SetActive(true);
         crew_Animator.SetBool("isWalking", true);
     }
 

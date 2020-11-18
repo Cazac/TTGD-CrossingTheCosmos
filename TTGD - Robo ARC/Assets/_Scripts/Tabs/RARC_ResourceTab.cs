@@ -11,9 +11,38 @@ public class RARC_ResourceTab : MonoBehaviour
     public Image icon_Image;
     public TextMeshProUGUI name_Text;
 
+    public GameObject floatingTextGreen_Prefab;
+    public GameObject floatingTextRed_Prefab;
+
+
     [HideInInspector]
     public Tuple<int, int, RARC_Resource> currentResource;
 
+    /////////////////////////////////////////////////////////////////
+
+    public void SpawnChangesText(int valueChanged)
+    {
+        if (valueChanged >= 0)
+        {
+            GameObject newText = Instantiate(floatingTextGreen_Prefab, gameObject.transform);
+            newText.GetComponent<TextMeshProUGUI>().text = "+" + valueChanged;
+            StartCoroutine(DeleteText(newText));
+        }
+        else
+        {
+            GameObject newText = Instantiate(floatingTextRed_Prefab, gameObject.transform);
+            newText.GetComponent<TextMeshProUGUI>().text = valueChanged.ToString();
+            StartCoroutine(DeleteText(newText));
+        }
+    }
+
+    public IEnumerator DeleteText(GameObject newText)
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        Destroy(newText);
+
+        yield return null;
+    }
 
     /////////////////////////////////////////////////////////////////
 
@@ -99,7 +128,7 @@ public class RARC_ResourceTab : MonoBehaviour
         }
         else if (resource.resourceCount < 0)
         {
-            name_Text.text = resource.resourceName + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " -" + resource.resourceCount + "</color>";
+            name_Text.text = resource.resourceName + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + resource.resourceCount + "</color>";
             icon_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resource.resourceType);
         }     
     }

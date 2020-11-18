@@ -130,6 +130,10 @@ public class RARC_ResourceData : MonoBehaviour
                 resource = nitrogen_Resource;
                 break;
 
+            case RARC_Resource.ResourceType.NULL:
+                resource = scrap_Resource;
+                break;
+
             default:
                 resource = scrap_Resource;
                 break;

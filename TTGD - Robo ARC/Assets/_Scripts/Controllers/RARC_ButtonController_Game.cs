@@ -178,11 +178,14 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public GameObject winImage_All;
 
 
-    ////////////////////////////////
+    public GameObject Tutorial_GO;
+
+////////////////////////////////
 
     [HideInInspector]
     public readonly string colorValues_Yellow = "#FFEA00";
-    public readonly string colorValues_Red = "#B42828"; //  FF2200
+    public readonly string colorValues_Red = "#B42828"; 
+    public readonly string colorValues_DarkRed = "#FF2200"; 
     public readonly string colorValues_Black = "#000000";
     public readonly string colorValues_White = "#FFFFFF";
     public readonly string colorValues_Green = "#089800";
@@ -270,9 +273,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RARC_GameStateController.Instance.EnableRaycastBlocker();
 
         //Load Planet UI
-        navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Left);
-        navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Middle);
-        navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Right);
+        navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0], RARC_GameStateController.Instance.currentRefreshPerTurn_Planets);
+        navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1], RARC_GameStateController.Instance.currentRefreshPerTurn_Planets);
+        navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2], RARC_GameStateController.Instance.currentRefreshPerTurn_Planets);
     }
 
     public void Button_Navigate_Close()
@@ -317,23 +320,22 @@ public class RARC_ButtonController_Game : MonoBehaviour
         switch (planetNo)
         {
             case 1:
-                RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Left--;
                 RARC_GameStateController.Instance.navigationPossiblePlanets_List[0] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
-                navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Left);
                 break;
 
             case 2:
-                RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Middle--;
                 RARC_GameStateController.Instance.navigationPossiblePlanets_List[1] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
-                navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Middle);
                 break;
 
              case 3:
-                RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Right--;
                 RARC_GameStateController.Instance.navigationPossiblePlanets_List[2] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
-                navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2], RARC_DatabaseController.Instance.ship_SaveData.navigationRefreshTimes_Right);
                 break;
         }
+
+        RARC_GameStateController.Instance.currentRefreshPerTurn_Planets--;
+        navigationPlanet1_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[0], RARC_GameStateController.Instance.currentRefreshPerTurn_Planets);
+        navigationPlanet2_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[1], RARC_GameStateController.Instance.currentRefreshPerTurn_Planets);
+        navigationPlanet3_Tab.SetPlanet(RARC_GameStateController.Instance.navigationPossiblePlanets_List[2], RARC_GameStateController.Instance.currentRefreshPerTurn_Planets);
     }
 
     /////////////////////////////////////////////////////////////////
@@ -398,6 +400,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
         //Add Extra Crating this turn
         RARC_GameStateController.Instance.RoomCraftingValuesAddedWhenBuilding(constructionRoomTab.roomSO.roomType);
+
+        RefreshUI_Tutorial();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -1340,7 +1344,8 @@ public class RARC_ButtonController_Game : MonoBehaviour
             && RARC_GameStateController.Instance.isReady_Crew
             && RARC_GameStateController.Instance.isReady_Research 
             && RARC_GameStateController.Instance.isReady_Contruction
-            && RARC_GameStateController.Instance.isReady_Explore)
+            && RARC_GameStateController.Instance.isReady_Explore 
+            && (RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.QUARTERS) >= 1 || RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived != 0))
         {
             RARC_GameStateController.Instance.isReady_Launch = true;
         }
@@ -1363,11 +1368,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         humansAlive_Text.text = "<" + colorValues_White + ">" + "x" + RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count + "</color>";
         botsAlive_Text.text = "<" + colorValues_White + ">" + "x" + RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count + "</color>";
 
-        foreach (RARC_ResourceTab tab in storageResourceTabs_List)
-        {
-            //Turn Off All Current Tabs
-            tab.gameObject.SetActive(false);
-        }
+       
 
         //Activate 3 Major Tabs always
         storageResourceTabs_List[0].gameObject.SetActive(true);
@@ -1377,11 +1378,20 @@ public class RARC_ButtonController_Game : MonoBehaviour
         storageResourceTabs_List[2].gameObject.SetActive(true);
         storageResourceTabs_List[2].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap);
 
+        int savedI = 0;
+
         //Activate All Other Tabs
         for (int i = 3; i < RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count + 3; i++)
         {
             storageResourceTabs_List[i].gameObject.SetActive(true);
             storageResourceTabs_List[i].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[i - 3]);
+            savedI = i;
+        }
+
+        //Deactivate All Other Tabs
+        for (int i = storageResourceTabs_List.Count - 1; i > 2 + RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count; i--)
+        {
+            storageResourceTabs_List[i].gameObject.SetActive(false);
         }
     }
 
@@ -1532,6 +1542,21 @@ public class RARC_ButtonController_Game : MonoBehaviour
         {
             launchFoodNeeded_Text.text = "<" + colorValues_White + ">" + "x" + requiredFood + "</color>";
         }
+    }
+
+    public void RefreshUI_Tutorial()
+    {
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipInfo_WeeksSurvived == 0 && RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.QUARTERS) < 1)
+        {
+            Tutorial_GO.SetActive(true);
+        }
+        else
+        {
+            Tutorial_GO.SetActive(false);
+        }
+
+
+        RefreshUI_UrgentIcons();
     }
 
     /////////////////////////////////////////////////////////////////

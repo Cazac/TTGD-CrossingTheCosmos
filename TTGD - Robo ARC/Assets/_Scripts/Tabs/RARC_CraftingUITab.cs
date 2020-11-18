@@ -40,7 +40,7 @@ public class RARC_CraftingUITab : MonoBehaviour
         }
 
 
-        print("Test Code: " + "Fix Robots and Humans!!!");
+        //print("Test Code: " + "Fix Robots and Humans!!!");
 
 
         craftingIcon.sprite = craftingSO.craftingSprite;
@@ -77,23 +77,60 @@ public class RARC_CraftingUITab : MonoBehaviour
 
     public void Button_CraftResource()
     {
-        print("Test Code: Craft!");
-
         //Convert Item to get name
         RARC_Resource convertedResouce = RARC_DatabaseController.Instance.resources_DB.GetResource(craftingSO.resourceType);
 
-        //Add item
-        RARC_GameStateController.Instance.ChangeResources(convertedResouce.resourceName, convertedResouce.resourceType, craftingSO.resourcePerCraft);
+        if (craftingSO.resourceType == RARC_Resource.ResourceType.NULL)
+        {
+            if (craftingSO.crewPerCraft != 0)
+            {
+                RARC_GameStateController.Instance.ChangeCrew(1);
+            }
+            else if (craftingSO.botsPerCraft != 0)
+            {
+                print("Test Code: FIX THIS WHEN CREATING BOTS");
+                RARC_GameStateController.Instance.ChangeBots(1);
+            }
+        }
+        else
+        {
+            //Add item
+            RARC_GameStateController.Instance.ChangeResources(convertedResouce.resourceName, convertedResouce.resourceType, craftingSO.resourcePerCraft);
+        }
 
         //Setup Tab / Remove items
         List<RARC_Resource> resourcesRequired_List = GetResourcesList();
         requirementsTab.RemoveRequirementsFromPlayer(resourcesRequired_List);
 
+        //Lower Amount allowed per turn
+        switch (convertedResouce.resourceType)
+        {
+            case RARC_Resource.ResourceType.Food:
+                RARC_GameStateController.Instance.currentCraftingPerTurn_Food--;
+                break;
+
+            case RARC_Resource.ResourceType.Fuel:
+                RARC_GameStateController.Instance.currentCraftingPerTurn_Fuel--;
+                break;
+
+            case RARC_Resource.ResourceType.Organics:
+                RARC_GameStateController.Instance.currentCraftingPerTurn_Organics--;
+                break;
+
+            default:
+                if (craftingSO.crewPerCraft != 0)
+                {
+                    RARC_GameStateController.Instance.currentCraftingPerTurn_Crew--;
+                }
+                else if (craftingSO.botsPerCraft != 0)
+                {
+                    RARC_GameStateController.Instance.currentCraftingPerTurn_Bots--;
+                }
+                break;
+        }
+
         //Update Crafting Nodes
         RARC_ButtonController_Game.Instance.Button_Fabrication();
-
-        //Update the craftable amount
-        print("Test Code: Fix This!");
     }
 
     /////////////////////////////////////////////////////////////////

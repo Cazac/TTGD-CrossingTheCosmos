@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class RARC_EventData : MonoBehaviour
@@ -10,31 +9,10 @@ public class RARC_EventData : MonoBehaviour
     public RARC_Event_SO event_ANewHope;
 
     [Header("Gameover")]
-    public RARC_Event_SO event_TheEndIsNear_EmptyTank;
-    public RARC_Event_SO event_TheEndIsNear_Starvation;
-    public RARC_Event_SO event_TheEndIsNear_EveryoneIsGone;
     public RARC_Event_SO event_TheEndIsNear_CatastrophicBreakdown;
-
-    ////////////////////////////////
-
-    [Header("Travel Starting")]
-    public RARC_Event_SO event_AbandonedShip;
-    public RARC_Event_SO event_AliensOne;
-    public RARC_Event_SO event_Bedtime;
-    public RARC_Event_SO event_BigRock;
-    public RARC_Event_SO event_Freedom;
-    public RARC_Event_SO event_FriendlyGreeting;
-    public RARC_Event_SO event_PartyTime;
-    public RARC_Event_SO event_RottenFood;
-    public RARC_Event_SO event_UnknownSignalOne;
-    public RARC_Event_SO event_Zoom;
-
-    [Header("Travel Aquired")]
-    public RARC_Event_SO event_AliensThree;
-    public RARC_Event_SO event_AliensTwo;
-    public RARC_Event_SO event_Mutiny;
-    public RARC_Event_SO event_UnknownSignalThree;
-    public RARC_Event_SO event_UnknownSignalTwo;
+    public RARC_Event_SO event_TheEndIsNear_EmptyTank;
+    public RARC_Event_SO event_TheEndIsNear_EveryoneIsGone;
+    public RARC_Event_SO event_TheEndIsNear_Starvation;
 
     ////////////////////////////////
 
@@ -42,6 +20,26 @@ public class RARC_EventData : MonoBehaviour
     public RARC_Event_SO event_AncientRuins;
     public RARC_Event_SO event_CrackInTheSurface;
     public RARC_Event_SO event_CreaturesOnTheGround;
+
+    ////////////////////////////////
+
+    [Header("Travel Starting")]
+    public RARC_Event_SO event_AbandonedShip;
+    public RARC_Event_SO event_Aliens;
+    public RARC_Event_SO event_Bedtime;
+    public RARC_Event_SO event_BigRock;
+    public RARC_Event_SO event_Freedom;
+    public RARC_Event_SO event_FriendlyGreeting;
+    public RARC_Event_SO event_PartyTime;
+    public RARC_Event_SO event_RottenFood;
+    public RARC_Event_SO event_UnknownSignalClose;
+    public RARC_Event_SO event_UnknownSignalFar;
+    public RARC_Event_SO event_Zoom;
+
+    [Header("Travel Aquired")]
+    public RARC_Event_SO event_AliensBig;
+    public RARC_Event_SO event_AliensCurious;
+    public RARC_Event_SO event_Mutiny;
 
     ////////////////////////////////
 
@@ -66,22 +64,21 @@ public class RARC_EventData : MonoBehaviour
     
         //Travel Starting
         CheckForNulls(event_AbandonedShip);
-        CheckForNulls(event_AliensOne);
+        CheckForNulls(event_Aliens);
         CheckForNulls(event_Bedtime);
         CheckForNulls(event_BigRock);
         CheckForNulls(event_Freedom);
         CheckForNulls(event_FriendlyGreeting);
         CheckForNulls(event_PartyTime);
         CheckForNulls(event_RottenFood);
-        CheckForNulls(event_UnknownSignalOne);
+        CheckForNulls(event_UnknownSignalClose);
+        CheckForNulls(event_UnknownSignalFar);
         CheckForNulls(event_Zoom);
 
         //Travel Aquired
-        CheckForNulls(event_AliensThree);
-        CheckForNulls(event_AliensTwo);
+        CheckForNulls(event_AliensCurious);
+        CheckForNulls(event_AliensBig);
         CheckForNulls(event_Mutiny);
-        CheckForNulls(event_UnknownSignalThree);
-        CheckForNulls(event_UnknownSignalTwo);
 
         //Planet Starting
         CheckForNulls(event_AncientRuins);

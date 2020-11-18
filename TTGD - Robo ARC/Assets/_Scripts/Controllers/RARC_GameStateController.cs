@@ -73,7 +73,9 @@ public class RARC_GameStateController : MonoBehaviour
     public int allowedCraftingPerTurn_Bots;
     public int currentCraftingPerTurn_Bots;
 
-
+    [Header("Planet Refresh Per Turn")]
+    public int allowedRefreshPerTurn_Planets;
+    public int currentRefreshPerTurn_Planets;
 
 
 
@@ -156,6 +158,8 @@ public class RARC_GameStateController : MonoBehaviour
         isReady_Launch = false;
 
 
+
+
         //Check For New Save File
         if (isFirstWeek)
         {
@@ -166,6 +170,7 @@ public class RARC_GameStateController : MonoBehaviour
             //Set Planet BG / Space BG
             RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
             RARC_ButtonController_Game.Instance.space_Tab.SetSpace_Black();
+            RARC_ButtonController_Game.Instance.RefreshUI_Tutorial();
         }
         else if (isFirstLoad)
         {
@@ -459,6 +464,10 @@ public class RARC_GameStateController : MonoBehaviour
         //Organics
         allowedCraftingPerTurn_Organics = CountRoomsOnShip(RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.roomRequired) * RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.resourceCraftsPerRoom;
         currentCraftingPerTurn_Organics = allowedCraftingPerTurn_Organics;
+
+        //Planet Refresh
+        allowedRefreshPerTurn_Planets = CountRoomsOnShip(RARC_Room.RoomType.ASTROMETRICS);
+        currentRefreshPerTurn_Planets = allowedRefreshPerTurn_Planets;
     } 
 
     public int CountRoomsOnShip(RARC_Room.RoomType findingRoomType)
@@ -483,6 +492,8 @@ public class RARC_GameStateController : MonoBehaviour
             case RARC_Room.RoomType.EMPTY:
                 break;
             case RARC_Room.RoomType.ASTROMETRICS:
+                allowedRefreshPerTurn_Planets += 1;
+                currentRefreshPerTurn_Planets += 1;
                 break;
             case RARC_Room.RoomType.CLONING:
                 allowedCraftingPerTurn_Crew += RARC_DatabaseController.Instance.crafting_DB.crew_Crafting.resourceCraftsPerRoom;
@@ -568,14 +579,20 @@ public class RARC_GameStateController : MonoBehaviour
         {
             case RARC_Resource.ResourceType.Scrap:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount += resourceCount;
+                //Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.storageResourceTabs_List[2].SpawnChangesText(resourceCount);
                 break;
 
             case RARC_Resource.ResourceType.Fuel:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount += resourceCount;
+                //Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.storageResourceTabs_List[0].SpawnChangesText(resourceCount);
                 break;
 
             case RARC_Resource.ResourceType.Food:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount += resourceCount;
+                //Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.storageResourceTabs_List[1].SpawnChangesText(resourceCount);
                 break;
 
             default:
@@ -600,9 +617,13 @@ public class RARC_GameStateController : MonoBehaviour
                     RARC_Resource resource = new RARC_Resource(resourceName, resourceCount, resourceType);
                     RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Add(resource);
                 }
+
+                //Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.storageResourceTabs_List[resourceSlot].SpawnChangesText(resourceCount);
                 break;
         }
 
+        //Refresh UI
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 

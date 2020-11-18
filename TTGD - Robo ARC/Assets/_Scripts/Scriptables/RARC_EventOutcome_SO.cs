@@ -47,9 +47,7 @@ public class RARC_EventOutcome_SO : ScriptableObject
         HYDROGEN_CHANGE,
         NITROGEN_CHANGE,
 
-        BUFF_XXX,
-
-        CURSE_XXX,
+        GAMEOVER,
 
         ROOMCOUNT_ALL_CHANGE,
         ROOMCOUNT_ASTROMETRICS_CHANGE,
@@ -61,7 +59,13 @@ public class RARC_EventOutcome_SO : ScriptableObject
         ROOMCOUNT_QUARTERS_CHANGE,
         ROOMCOUNT_STORAGE_CHANGE,
 
-        GAMEOVER
+        ADDQUEST_MUTINY,
+        ADDQUEST_ALIENSCBIG,
+        ADDQUEST_ALIENSCURIOUS,
+
+    
+
+        
     }
 
     /////////////////////////////////////////////////////////////////

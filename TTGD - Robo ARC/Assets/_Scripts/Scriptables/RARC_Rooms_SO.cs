@@ -13,6 +13,9 @@ public class RARC_Rooms_SO : ScriptableObject
     [Header("Room Name")]
     public string roomName;
 
+    [Header("Room Limits")]
+    public int roomLimit;
+
     [Header("Sprites")]
     public Sprite activeRoomSprite;
     public Sprite inactiveRoomSprite;

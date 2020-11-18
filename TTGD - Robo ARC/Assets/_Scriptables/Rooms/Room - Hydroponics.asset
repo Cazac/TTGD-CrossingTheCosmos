@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomType: 4
   roomName: Hydroponics
+  roomLimit: 1
   activeRoomSprite: {fileID: 21300000, guid: a6150d648619fee4cb126be58b543370, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: c77beeb72f3d3c44788f265ddefe8b54, type: 3}
   resourceRequired_1: 1

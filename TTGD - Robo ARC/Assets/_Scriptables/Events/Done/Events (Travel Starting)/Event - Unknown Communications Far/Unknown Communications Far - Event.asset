@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
+  m_Name: Unknown Communications Far - Event
+  m_EditorClassIdentifier: 
+  eventTitle: Unknown Communications Signal!
+  eventID: Unknown Communications Far - Event
+  eventIcon: {fileID: 21300000, guid: 4e4122150ee149d41915fed2e6de5162, type: 3}
+  eventDescription: The comms pick up on some strange activity. You think you can
+    make out a couple words that almost seem human. The signal is pinpointed quite
+    a bit away from your current nav point.
+  eventOption1_Choice: You set a course for the strange signal.
+  eventOption1_Outcome: {fileID: 11400000, guid: 695eed31022c71448a780b9c5772d402,
+    type: 2}
+  eventOption1_Requirement: {fileID: 11400000, guid: 41c129aa27717f046be03a61e85b2730,
+    type: 2}
+  eventOption2_Choice: You attempt to communicate with the signal first.
+  eventOption2_Outcome: {fileID: 11400000, guid: 91a503a96215c9c438fa3e141122ab98,
+    type: 2}
+  eventOption2_Requirement: {fileID: 0}
+  eventOption3_Choice: "You ignore the signal. You don\u2019t have time for it."
+  eventOption3_Outcome: {fileID: 11400000, guid: 3a30dfff78b0edc4c9714c4c66d1873b,
+    type: 2}
+  eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0

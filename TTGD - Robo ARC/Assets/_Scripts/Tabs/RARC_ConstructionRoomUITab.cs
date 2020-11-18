@@ -14,6 +14,7 @@ public class RARC_ConstructionRoomUITab : MonoBehaviour
     [Header("Tab Info")]
     public Image roomIcon;
     public TextMeshProUGUI name_Text;
+    public TextMeshProUGUI limit_Text;
     public RARC_RequirementsUITab requirementsTab;
 
     /////////////////////////////////////////////////////////////////
@@ -23,10 +24,22 @@ public class RARC_ConstructionRoomUITab : MonoBehaviour
         //Setup Info
         roomSO = newRoomSO;
         name_Text.text = roomSO.roomName;
-        roomIcon.sprite = roomSO.activeRoomSprite;
+        limit_Text.text = "Limit " + RARC_GameStateController.Instance.CountRoomsOnShip(newRoomSO.roomType) + "/" + newRoomSO.roomLimit;
+        //roomIcon.sprite = roomSO.activeRoomSprite;
 
         //Setup and Refresh UI
         RefreshRequirementsUI();
+
+       
+        if (RARC_GameStateController.Instance.CountRoomsOnShip(newRoomSO.roomType) >= newRoomSO.roomLimit)
+        {
+            gameObject.GetComponent<Button>().interactable = false;
+            limit_Text.text = "<color=" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + "Limit " + RARC_GameStateController.Instance.CountRoomsOnShip(newRoomSO.roomType) + "/" + newRoomSO.roomLimit;
+        }
+        else
+        {
+            limit_Text.text = "Limit " + RARC_GameStateController.Instance.CountRoomsOnShip(newRoomSO.roomType) + "/" + newRoomSO.roomLimit;
+        }
     }
 
     public void Button_ContructRoom()

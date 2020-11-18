@@ -53,11 +53,6 @@ public class RARC_ShipSaveData
     public RARC_Resource shipResource_Food;
     public List<RARC_Resource> shipStorage_List;
 
-    [Header("Navigation Refrsh Times")]
-    public int navigationRefreshTimes_Left;
-    public int navigationRefreshTimes_Middle;
-    public int navigationRefreshTimes_Right;
-
     /////////////////////////////////////////////////////////////////
 
     public void CreateNewSave()
@@ -102,25 +97,40 @@ public class RARC_ShipSaveData
 
         //Travel Events
         shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_AbandonedShip));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_Aliens));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_Bedtime));
+
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_BigRock));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_Freedom));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_FriendlyGreeting));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_PartyTime));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_RottenFood));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_UnknownSignalClose));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_UnknownSignalFar));
+        shipAvalibleTravelEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_Zoom));
+
 
         //Planet Events
         shipAvaliblePlanetEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_AncientRuins));
+        shipAvaliblePlanetEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_CrackInTheSurface));
+        shipAvaliblePlanetEvents_List.Add(new RARC_Event(RARC_DatabaseController.Instance.events_DB.event_CreaturesOnTheGround));
+
+
 
         //Event Missfires
         travelEventsMissed = 1;
         planetEventsMissed = 1;
-
-        //Navigation Refreshs
-        navigationRefreshTimes_Left = 0;
-        navigationRefreshTimes_Middle = 0;
-        navigationRefreshTimes_Right = 0;
 
         //Set New Resource Bases and Storage
         shipHullHealth = 100;
         shipResource_Scrap = new RARC_Resource("Scrap", 30, RARC_Resource.ResourceType.Scrap);
         shipResource_Fuel = new RARC_Resource("Fuel", 50, RARC_Resource.ResourceType.Fuel);
         shipResource_Food = new RARC_Resource("Food", 50, RARC_Resource.ResourceType.Food);
+
         shipStorage_List = new List<RARC_Resource>();
+        //shipStorage_List.Add(new RARC_Resource("Organics", 20, RARC_Resource.ResourceType.Organics));
+        //shipStorage_List.Add(new RARC_Resource("Hydrogen", 20, RARC_Resource.ResourceType.Nitrogen));
+        //shipStorage_List.Add(new RARC_Resource("Nitrogen", 20, RARC_Resource.ResourceType.Nitrogen));
 
         //Create new Lists
         shipData_Crew_List = new List<RARC_Crew>();
@@ -149,14 +159,16 @@ public class RARC_ShipSaveData
 
         //Debug Items
 
-        //shipResource_Scrap = new RARC_Resource("Scrap", 999, RARC_Resource.ResourceType.Scrap);
-        //shipResource_Fuel = new RARC_Resource("Fuel", 999, RARC_Resource.ResourceType.Fuel);
-        //shipResource_Food = new RARC_Resource("Food", 999, RARC_Resource.ResourceType.Food);
-        //shipStorage_List.Add(new RARC_Resource("Titanium", 999, RARC_Resource.ResourceType.Titanium));
-        shipStorage_List.Add(new RARC_Resource("Organics", 20, RARC_Resource.ResourceType.Organics));
-        //shipStorage_List.Add(new RARC_Resource("Carbon", 999, RARC_Resource.ResourceType.Carbon));
-        //shipStorage_List.Add(new RARC_Resource("Silicon", 999, RARC_Resource.ResourceType.Silicon));
-        shipStorage_List.Add(new RARC_Resource("Nitrogen", 20, RARC_Resource.ResourceType.Nitrogen));
+        shipResource_Scrap = new RARC_Resource("Scrap", 999, RARC_Resource.ResourceType.Scrap);
+        shipResource_Fuel = new RARC_Resource("Fuel", 999, RARC_Resource.ResourceType.Fuel);
+        shipResource_Food = new RARC_Resource("Food", 999, RARC_Resource.ResourceType.Food);
+        shipStorage_List.Add(new RARC_Resource("Titanium", 999, RARC_Resource.ResourceType.Titanium));
+        shipStorage_List.Add(new RARC_Resource("Carbon", 999, RARC_Resource.ResourceType.Carbon));
+        shipStorage_List.Add(new RARC_Resource("Silicon", 999, RARC_Resource.ResourceType.Silicon));
+        shipStorage_List.Add(new RARC_Resource("Organics", 999, RARC_Resource.ResourceType.Organics));
+        shipStorage_List.Add(new RARC_Resource("Hydrogen", 999, RARC_Resource.ResourceType.Hydrogen));
+        shipStorage_List.Add(new RARC_Resource("Nitrogen", 999, RARC_Resource.ResourceType.Nitrogen));
+
 
         // */
 
