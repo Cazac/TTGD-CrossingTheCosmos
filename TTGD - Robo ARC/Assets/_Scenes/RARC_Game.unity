@@ -35558,9 +35558,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6dc3a9315359543b441ee101d97821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crew_Prefab: {fileID: 8015696504840607808, guid: c51a6d4dbb3198143b1e16d8817845d9,
+  crew_Prefab: {fileID: 5022200254127468479, guid: c51a6d4dbb3198143b1e16d8817845d9,
     type: 3}
-  bot_Prefab: {fileID: 9212335583765143604, guid: da0ffefbed27b944fa1860248aa1ebec,
+  bot_Prefab: {fileID: 5022200254127468479, guid: c51a6d4dbb3198143b1e16d8817845d9,
     type: 3}
   crew_Container: {fileID: 2071860922}
   bot_Container: {fileID: 48614151}
@@ -71654,7 +71654,7 @@ SpriteRenderer:
   m_Size: {x: 5.07, y: 7.82}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2334917408167872297
