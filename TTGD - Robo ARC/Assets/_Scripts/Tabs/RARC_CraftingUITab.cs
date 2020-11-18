@@ -26,6 +26,7 @@ public class RARC_CraftingUITab : MonoBehaviour
         //Setup Info
         craftingSO = newCraftingSO;
 
+        //Set name
         if (newCraftingSO.resourceType != RARC_Resource.ResourceType.NULL)
         {
             name_Text.text = craftingSO.resourceType.ToString(); ;
@@ -39,10 +40,7 @@ public class RARC_CraftingUITab : MonoBehaviour
             name_Text.text = "Robot";
         }
 
-
-        //print("Test Code: " + "Fix Robots and Humans!!!");
-
-
+        //Change Icon
         craftingIcon.sprite = craftingSO.craftingSprite;
 
 
@@ -53,6 +51,7 @@ public class RARC_CraftingUITab : MonoBehaviour
         //Text
         craftingResourceCurrent_Text.text = "Current: " + RARC_GameStateController.Instance.GetResoucesCount(craftingSO.resourceType) + "\n(+" + craftingSO.resourcePerCraft + ")";
 
+        //Room Counting
         if (RARC_GameStateController.Instance.CountRoomsOnShip(craftingSO.roomRequired) <= 0)
         {
             gameObject.GetComponent<Button>().interactable = false;
@@ -63,6 +62,7 @@ public class RARC_CraftingUITab : MonoBehaviour
             craftingRoomsCurrent_Text.text = craftingSO.roomRequired.ToString() + " Rooms: " + "<color=" + RARC_ButtonController_Game.Instance.colorValues_White + ">" + RARC_GameStateController.Instance.CountRoomsOnShip(craftingSO.roomRequired) + "</color>";
         }
 
+        //Allowed Amount For Crafting
         if (GetAmountCraftable(craftingSO) <= 0)
         {
             gameObject.GetComponent<Button>().interactable = false;
@@ -88,7 +88,6 @@ public class RARC_CraftingUITab : MonoBehaviour
             }
             else if (craftingSO.botsPerCraft != 0)
             {
-                print("Test Code: FIX THIS WHEN CREATING BOTS");
                 RARC_GameStateController.Instance.ChangeBots(1);
             }
         }

@@ -57,7 +57,7 @@ public class RARC_CrewBotsController : MonoBehaviour
         //Spawn Bots
         foreach (RARC_Crew child in RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List)
         {
-            //GameObject botMember_GO = Instantiate(bot_Prefab);
+            SpawnBotInRoom(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)], child);
         }
     }
 
@@ -65,7 +65,9 @@ public class RARC_CrewBotsController : MonoBehaviour
 
     public void AddNewBot()
     {
-
+        RARC_Crew newCrewMember = new RARC_Crew();
+        RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Add(newCrewMember);
+        SpawnBotInRoom(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)], newCrewMember);
     }
 
     public void AddNewCrew()
@@ -97,9 +99,15 @@ public class RARC_CrewBotsController : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void SpawnBotInRoom()
+    public void SpawnBotInRoom(RARC_RoomTab roomTab, RARC_Crew newCrewMember)
     {
+        Vector3 spawnPoint = roomTab.GetRandomNode(new Vector3(0, 0, 0)).transform.position;
 
+        GameObject newCrewMember_GO = Instantiate(bot_Prefab, bot_Container.transform);
+        newCrewMember_GO.transform.position = spawnPoint;
+
+        //Set Crew Info For Current Level
+        newCrewMember_GO.GetComponent<RARC_CrewAgent>().crewCurrentShipFloor = roomTab.currentFloorLevel;
     }
 
     public void SpawnCrewInRoom(RARC_RoomTab roomTab, RARC_Crew newCrewMember)

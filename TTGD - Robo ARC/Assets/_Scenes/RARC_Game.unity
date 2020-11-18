@@ -1608,7 +1608,7 @@ MonoBehaviour:
   - {fileID: 233709531}
   - {fileID: 103076624}
   currentFloorLevel: 1
-  currentShipArrayNode: 13
+  currentShipArrayNode: 12
 --- !u!61 &66680921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3504,7 +3504,7 @@ MonoBehaviour:
   - {fileID: 280564705}
   - {fileID: 773878502}
   currentFloorLevel: 4
-  currentShipArrayNode: 1
+  currentShipArrayNode: 0
 --- !u!61 &112747769
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5548,7 +5548,7 @@ MonoBehaviour:
   - {fileID: 266455747}
   - {fileID: 1909900474}
   currentFloorLevel: 4
-  currentShipArrayNode: 4
+  currentShipArrayNode: 3
 --- !u!61 &179569865
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5947,7 +5947,7 @@ MonoBehaviour:
   - {fileID: 78316573}
   - {fileID: 1068247782}
   currentFloorLevel: 1
-  currentShipArrayNode: 15
+  currentShipArrayNode: 14
 --- !u!61 &188831314
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16512,7 +16512,7 @@ MonoBehaviour:
   - {fileID: 1481843841}
   - {fileID: 1504547470}
   currentFloorLevel: 1
-  currentShipArrayNode: 16
+  currentShipArrayNode: 15
 --- !u!61 &552981843
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17683,7 +17683,7 @@ MonoBehaviour:
   - {fileID: 1452586171}
   - {fileID: 777435377}
   currentFloorLevel: 2
-  currentShipArrayNode: 12
+  currentShipArrayNode: 11
 --- !u!61 &583311530
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24798,7 +24798,7 @@ MonoBehaviour:
   - {fileID: 1884505876}
   - {fileID: 1451008902}
   currentFloorLevel: 4
-  currentShipArrayNode: 3
+  currentShipArrayNode: 2
 --- !u!61 &794556489
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29345,7 +29345,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1600895257
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 27d4d7bc093e05748a6008cdba1714ba, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -29647,7 +29647,7 @@ MonoBehaviour:
   - {fileID: 2097304702}
   - {fileID: 1841653175}
   currentFloorLevel: 2
-  currentShipArrayNode: 9
+  currentShipArrayNode: 8
 --- !u!61 &916352662
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30474,7 +30474,7 @@ MonoBehaviour:
   - {fileID: 1457784218}
   - {fileID: 480852971}
   currentFloorLevel: 1
-  currentShipArrayNode: 14
+  currentShipArrayNode: 13
 --- !u!61 &945090599
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32426,7 +32426,7 @@ MonoBehaviour:
   - {fileID: 1938350779}
   - {fileID: 172970585}
   currentFloorLevel: 3
-  currentShipArrayNode: 8
+  currentShipArrayNode: 7
 --- !u!61 &1015917366
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33481,7 +33481,7 @@ MonoBehaviour:
   - {fileID: 827845196}
   - {fileID: 1437994767}
   currentFloorLevel: 2
-  currentShipArrayNode: 11
+  currentShipArrayNode: 10
 --- !u!61 &1052121027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35300,7 +35300,7 @@ MonoBehaviour:
   - {fileID: 230407080}
   - {fileID: 1131630324}
   currentFloorLevel: 3
-  currentShipArrayNode: 7
+  currentShipArrayNode: 6
 --- !u!61 &1089426427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35558,7 +35558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e6dc3a9315359543b441ee101d97821, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crew_Prefab: {fileID: 5022200254127468479, guid: c51a6d4dbb3198143b1e16d8817845d9,
+  crew_Prefab: {fileID: 9212335583765143604, guid: da0ffefbed27b944fa1860248aa1ebec,
     type: 3}
   bot_Prefab: {fileID: 5022200254127468479, guid: c51a6d4dbb3198143b1e16d8817845d9,
     type: 3}
@@ -36407,7 +36407,7 @@ MonoBehaviour:
   - {fileID: 1957873436}
   - {fileID: 1165814607}
   currentFloorLevel: 3
-  currentShipArrayNode: 5
+  currentShipArrayNode: 4
 --- !u!61 &1125927875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42252,7 +42252,7 @@ MonoBehaviour:
   - {fileID: 914317020}
   - {fileID: 271890472}
   currentFloorLevel: 4
-  currentShipArrayNode: 2
+  currentShipArrayNode: 1
 --- !u!61 &1299912361
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43592,7 +43592,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1600895257
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d81485b7958c69d498424bed65223087, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -56668,7 +56668,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1600895257
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0885e1012274c90498a522105300ff73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -63218,7 +63218,7 @@ MonoBehaviour:
   - {fileID: 2061128502}
   - {fileID: 1907256202}
   currentFloorLevel: 3
-  currentShipArrayNode: 6
+  currentShipArrayNode: 5
 --- !u!61 &1997388119
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -128,9 +128,9 @@ public class RARC_ShipSaveData
         shipResource_Food = new RARC_Resource("Food", 50, RARC_Resource.ResourceType.Food);
 
         shipStorage_List = new List<RARC_Resource>();
-        //shipStorage_List.Add(new RARC_Resource("Organics", 20, RARC_Resource.ResourceType.Organics));
-        //shipStorage_List.Add(new RARC_Resource("Hydrogen", 20, RARC_Resource.ResourceType.Nitrogen));
-        //shipStorage_List.Add(new RARC_Resource("Nitrogen", 20, RARC_Resource.ResourceType.Nitrogen));
+        shipStorage_List.Add(new RARC_Resource("Organics", 20, RARC_Resource.ResourceType.Organics));
+        shipStorage_List.Add(new RARC_Resource("Hydrogen", 20, RARC_Resource.ResourceType.Hydrogen));
+        shipStorage_List.Add(new RARC_Resource("Nitrogen", 20, RARC_Resource.ResourceType.Nitrogen));
 
         //Create new Lists
         shipData_Crew_List = new List<RARC_Crew>();
@@ -140,16 +140,16 @@ public class RARC_ShipSaveData
         int startingCrewCount = 12;
         for (int i = 0; i < startingCrewCount; i++)
         {
-            RARC_Crew newCrewMember = new RARC_Crew();
-            shipData_Crew_List.Add(newCrewMember);
+            //Add New Crew to List
+            shipData_Crew_List.Add(new RARC_Crew());
         }
 
         //Loop Spawning New Bots
-        int startingBotCount = 0;
+        int startingBotCount = 2;
         for (int i = 0; i < startingBotCount; i++)
         {
-            //RARC_Crew newCrewMember = new RARC_Crew();
-            //shipData_Bots_List.Add(newCrewMember);
+            //Add New Crew to List
+            shipData_Bots_List.Add(new RARC_Crew());
         }
 
 
@@ -165,9 +165,9 @@ public class RARC_ShipSaveData
         shipStorage_List.Add(new RARC_Resource("Titanium", 999, RARC_Resource.ResourceType.Titanium));
         shipStorage_List.Add(new RARC_Resource("Carbon", 999, RARC_Resource.ResourceType.Carbon));
         shipStorage_List.Add(new RARC_Resource("Silicon", 999, RARC_Resource.ResourceType.Silicon));
-        shipStorage_List.Add(new RARC_Resource("Organics", 999, RARC_Resource.ResourceType.Organics));
-        shipStorage_List.Add(new RARC_Resource("Hydrogen", 999, RARC_Resource.ResourceType.Hydrogen));
-        shipStorage_List.Add(new RARC_Resource("Nitrogen", 999, RARC_Resource.ResourceType.Nitrogen));
+        //shipStorage_List.Add(new RARC_Resource("Organics", 999, RARC_Resource.ResourceType.Organics));
+        //shipStorage_List.Add(new RARC_Resource("Hydrogen", 999, RARC_Resource.ResourceType.Hydrogen));
+        //shipStorage_List.Add(new RARC_Resource("Nitrogen", 999, RARC_Resource.ResourceType.Nitrogen));
 
 
         // */
