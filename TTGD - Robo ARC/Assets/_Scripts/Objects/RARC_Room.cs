@@ -24,5 +24,10 @@ public class RARC_Room
 
     public RoomType currentRoomType = RoomType.EMPTY;
 
+    public RARC_Room(RoomType type)
+    {
+        currentRoomType = type;
+    }
+
     /////////////////////////////////////////////////////////////////
 }

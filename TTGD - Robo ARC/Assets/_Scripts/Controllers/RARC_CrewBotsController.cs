@@ -68,6 +68,7 @@ public class RARC_CrewBotsController : MonoBehaviour
         RARC_Crew newCrewMember = new RARC_Crew();
         RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Add(newCrewMember);
         SpawnBotInRoom(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)], newCrewMember);
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
     public void AddNewCrew()
@@ -75,6 +76,7 @@ public class RARC_CrewBotsController : MonoBehaviour
         RARC_Crew newCrewMember = new RARC_Crew();
         RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Add(newCrewMember);
         SpawnCrewInRoom(RARC_RoomsController.Instance.roomsInShip_List[Random.Range(0, RARC_RoomsController.Instance.roomsInShip_List.Count)], newCrewMember);
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
     /////////////////////////////////////////////////////////////////
@@ -84,8 +86,11 @@ public class RARC_CrewBotsController : MonoBehaviour
         RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.RemoveAt(0);
         if (crew_Container.transform.childCount != 0)
         {
-            Destroy(crew_Container.transform.GetChild(0).gameObject);
+            print("Test Code: " + crew_Container.transform.GetChild(0).gameObject.name);
+            DestroyImmediate(crew_Container.transform.GetChild(0).gameObject);
         }
+
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
     public void RemoveBotMember()
@@ -95,6 +100,8 @@ public class RARC_CrewBotsController : MonoBehaviour
         {
             Destroy(bot_Container.transform.GetChild(0).gameObject);
         }
+
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
     /////////////////////////////////////////////////////////////////

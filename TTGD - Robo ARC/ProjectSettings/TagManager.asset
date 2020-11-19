@@ -47,3 +47,6 @@ TagManager:
   - name: Ship Hull
     uniqueID: 1600895257
     locked: 0
+  - name: Gameover
+    uniqueID: 2248444581
+    locked: 0

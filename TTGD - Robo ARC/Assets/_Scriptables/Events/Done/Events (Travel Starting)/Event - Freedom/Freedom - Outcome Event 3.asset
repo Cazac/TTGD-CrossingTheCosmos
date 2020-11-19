@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTitle: Freedom!
   eventID: Freedom - Outcome Event 3
-  eventIcon: {fileID: 21300000, guid: 1df370f869bfe9a459992be9ab449514, type: 3}
+  eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
   eventDescription: Without hesitation you tackle the member to the ground, they
     flail wildly shouting obscenities at you. Other members rush to help confused
     by the situation of you grappling another crew mate and they pull you off. You

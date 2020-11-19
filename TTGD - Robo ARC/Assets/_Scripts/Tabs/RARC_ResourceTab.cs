@@ -156,7 +156,7 @@ public class RARC_ResourceTab : MonoBehaviour
         }
         else if (value < 0)
         {
-            name_Text.text = "Crew" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " -" + value + "</color>";
+            name_Text.text = "Crew" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
             icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.CrewIcon;
         }
     }
@@ -170,8 +170,120 @@ public class RARC_ResourceTab : MonoBehaviour
         }
         else if (value < 0)
         {
-            name_Text.text = "Bots" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " -" + value + "</color>";
+            name_Text.text = "Bots" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
             icon_Image.sprite = RARC_DatabaseController.Instance.icons_DB.BotsIcon;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_RoomEmpty(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Random Room" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.EmptyRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Random Room" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.EmptyRoom_SO.activeRoomSprite;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_ASTROMETRICS(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Astromtreics" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.AstrometricsLabRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Astromtreics" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.AstrometricsLabRoom_SO.activeRoomSprite;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_CLONING(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Cloning" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.CloningLabRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Cloning" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.CloningLabRoom_SO.activeRoomSprite;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_FACTORY(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Factory" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.FactoryRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Factory" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.FactoryRoom_SO.activeRoomSprite;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_HYDROPONICS(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Hydroponics" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.HydroponicsLabRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Hydroponics" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.HydroponicsLabRoom_SO.activeRoomSprite;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_KITCHEN(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Kitchen" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.KitchenRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Kitchen" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.KitchenRoom_SO.activeRoomSprite;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_MEDBAY(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Medbay" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.MedbayRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Medbay" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.MedbayRoom_SO.activeRoomSprite;
+        }
+    }
+
+    public void SetResource_OutcomeChanges_QUARTERS(int value)
+    {
+        if (value >= 0)
+        {
+            name_Text.text = "Quarters" + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " +" + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.CrewQuartersRoom_SO.activeRoomSprite;
+        }
+        else if (value < 0)
+        {
+            name_Text.text = "Quarters" + "<" + RARC_ButtonController_Game.Instance.colorValues_Red + ">" + " " + value + "</color>";
+            icon_Image.sprite = RARC_DatabaseController.Instance.room_DB.CrewQuartersRoom_SO.activeRoomSprite;
         }
     }
 

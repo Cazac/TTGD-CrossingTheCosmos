@@ -29,7 +29,7 @@ MonoBehaviour:
   eventOption2_Outcome: {fileID: 11400000, guid: 95ad56ade49592e4c99b8ba602427f9a,
     type: 2}
   eventOption2_Requirement: {fileID: 0}
-  eventOption3_Choice: ": Pretend you never saw the moldy food and carry on as normal\r."
+  eventOption3_Choice: Pretend you never saw the moldy food and carry on as normal.
   eventOption3_Outcome: {fileID: 11400000, guid: 4e3f32980524cb8429dab07099bb1b2e,
     type: 2}
   eventOption3_Requirement: {fileID: 0}

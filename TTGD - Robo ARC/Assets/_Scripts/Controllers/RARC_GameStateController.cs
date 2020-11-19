@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -112,15 +113,9 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
         RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources();
 
+
         //Reload Ship
-        RARC_Room.RoomType[] shipRooms_Arr = RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr;
-        for (int i = 0; i < shipRooms_Arr.Length; i++)
-        {
-            //Load Room By Type
-            allShipRoomTabs_Arr[i].LoadRoom(RARC_DatabaseController.Instance.room_DB.FindRoomType(shipRooms_Arr[i]));
-        }
-
-
+        ReloadShipRooms();
 
         //Load System Data
 
@@ -249,15 +244,7 @@ public class RARC_GameStateController : MonoBehaviour
         }
 
 
-        //Stop Space Animations if 
-        if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation == null)
-        {
-
-        }
-        else
-        {
-
-        }
+   
 
         //Crafting Amounts Reset
         Reset_CraftingAmounts();
@@ -399,11 +386,11 @@ public class RARC_GameStateController : MonoBehaviour
 
         //Use Chance to find an event
         float currentEventChance = eventChance_Travel * RARC_DatabaseController.Instance.ship_SaveData.travelEventsMissed;
-        float randomChance = Random.Range(0f, 1f);
+        float randomChance = UnityEngine.Random.Range(0f, 1f);
         if (randomChance < currentEventChance)
         {
             //Chose Num, Add Event, Blacklist, Remove, Reset
-            int chosenEventNO = Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Count);
+            int chosenEventNO = UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Count);
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List[chosenEventNO]);
             RARC_DatabaseController.Instance.ship_SaveData.shipBlacklistTravelEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List[chosenEventNO]);
             RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.RemoveAt(chosenEventNO);
@@ -425,11 +412,11 @@ public class RARC_GameStateController : MonoBehaviour
 
         //Use Chance to find an event
         float currentEventChance = eventChance_Planet * RARC_DatabaseController.Instance.ship_SaveData.planetEventsMissed;
-        float randomChance = Random.Range(0f, 1f);
+        float randomChance = UnityEngine.Random.Range(0f, 1f);
         if (randomChance < currentEventChance)
         {
             //Chose Num, Add Event, Blacklist, Remove, Reset
-            int chosenEventNO = Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count);
+            int chosenEventNO = UnityEngine.Random.Range(0, RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.Count);
             RARC_DatabaseController.Instance.ship_SaveData.shipCurrentPlanetEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List[chosenEventNO]);
             RARC_DatabaseController.Instance.ship_SaveData.shipBlacklistPlanetEvents_List.Add(RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List[chosenEventNO]);
             RARC_DatabaseController.Instance.ship_SaveData.shipAvaliblePlanetEvents_List.RemoveAt(chosenEventNO);
@@ -442,6 +429,17 @@ public class RARC_GameStateController : MonoBehaviour
     }
 
     /////////////////////////////////////////////////////////////////
+
+    public void ReloadShipRooms()
+    {
+        //Reload Ship
+        RARC_Room.RoomType[] shipRooms_Arr = RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr;
+        for (int i = 0; i < shipRooms_Arr.Length; i++)
+        {
+            //Load Room By Type
+            allShipRoomTabs_Arr[i].LoadRoom(RARC_DatabaseController.Instance.room_DB.FindRoomType(shipRooms_Arr[i]));
+        }
+    }
 
     public void Reset_CraftingAmounts()
     {
@@ -525,6 +523,37 @@ public class RARC_GameStateController : MonoBehaviour
         }
     }
 
+    public void AddRoom(RARC_Room.RoomType roomType)
+    {
+        throw new NotImplementedException();
+    }
+
+    public void RemoveRoom(RARC_Room.RoomType roomType)
+    {
+        for (int i = 0; i < RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr.Length; i++)
+        {
+            if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr[i] == roomType)
+            {
+                RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr[i] = RARC_Room.RoomType.EMPTY;
+                ReloadShipRooms();
+                return;
+            }
+        }
+    }
+
+    public void RemoveRoom_Any()
+    {
+        for (int i = 0; i < RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr.Length; i++)
+        {
+            if (RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr[i] != RARC_Room.RoomType.EMPTY)
+            {
+                RARC_DatabaseController.Instance.ship_SaveData.shipData_Rooms_Arr[i] = RARC_Room.RoomType.EMPTY;
+                ReloadShipRooms();
+                return;
+            }
+        }
+    }
+
     /////////////////////////////////////////////////////////////////
 
     public RARC_Resource.ResourceType ConvertTypes(RARC_EventOutcome_SO.OutcomeType outcomeType)
@@ -579,19 +608,25 @@ public class RARC_GameStateController : MonoBehaviour
         {
             case RARC_Resource.ResourceType.Scrap:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount += resourceCount;
-                //Update Resource Tab Visuals
+
+                //Refresh Then Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
                 RARC_ButtonController_Game.Instance.storageResourceTabs_List[2].SpawnChangesText(resourceCount);
                 break;
 
             case RARC_Resource.ResourceType.Fuel:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount += resourceCount;
-                //Update Resource Tab Visuals
+
+                //Refresh Then Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
                 RARC_ButtonController_Game.Instance.storageResourceTabs_List[0].SpawnChangesText(resourceCount);
                 break;
 
             case RARC_Resource.ResourceType.Food:
                 RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount += resourceCount;
-                //Update Resource Tab Visuals
+                
+                //Refresh Then Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
                 RARC_ButtonController_Game.Instance.storageResourceTabs_List[1].SpawnChangesText(resourceCount);
                 break;
 
@@ -618,29 +653,25 @@ public class RARC_GameStateController : MonoBehaviour
                     RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Add(resource);
                 }
 
-                //Update Resource Tab Visuals
+                //Refresh Then Update Resource Tab Visuals
+                RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
                 RARC_ButtonController_Game.Instance.storageResourceTabs_List[resourceSlot].SpawnChangesText(resourceCount);
                 break;
         }
-
-        //Refresh UI
-        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
     public void ChangeHull(int amount)
     {
         //Refresh
         RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth = Mathf.Clamp(RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth + amount, 0, 100);
-        //RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources
+        RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
     }
 
     public void ChangeCrew(int amount)
     {
-        if (amount == 0)
-        {
+        //int normalizedAmount
 
-        }
-        else if (amount > 0)
+        if (amount > 0)
         {
             for (int i = 0; i < amount; i++)
             {
@@ -649,7 +680,7 @@ public class RARC_GameStateController : MonoBehaviour
         }
         else if (amount < 0)
         {
-            for (int i = 0; i < amount; i++)
+            for (int i = 0; i > amount; i--)
             {
                 RARC_CrewBotsController.Instance.RemoveCrewMember();
             }
@@ -671,9 +702,45 @@ public class RARC_GameStateController : MonoBehaviour
         }
         else if (amount < 0)
         {
-            for (int i = 0; i < amount; i++)
+            for (int i = 0; i > amount; i--)
             {
                 RARC_CrewBotsController.Instance.RemoveBotMember();
+            }
+        }
+    }
+
+    public void ChangeAllRooms(int amount)
+    {
+        if (amount > 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                //AddRoom();
+            }
+        }
+        else if (amount < 0)
+        {
+            for (int i = 0; i > amount; i--)
+            {
+                RemoveRoom_Any();
+            }
+        }
+    }
+
+    public void ChangeCertainRooms(RARC_Room.RoomType roomType, int amount)
+    {
+        if (amount > 0)
+        {
+            for (int i = 0; i < amount; i++)
+            {
+                AddRoom(roomType);
+            }
+        }
+        else if (amount < 0)
+        {
+            for (int i = 0; i > amount; i--)
+            {
+                RemoveRoom(roomType);
             }
         }
     }
@@ -825,6 +892,7 @@ public class RARC_GameStateController : MonoBehaviour
 
         //Turn Off Main UI
         MainCanvas.SetActive(false);
+        ship_Animator.gameObject.SetActive(false);
         gameoverAnimations_GO.SetActive(true);
 
 

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outcomeNextEvent: {fileID: 0}
   outcomeType1: 14
-  outcomeValue1: 0
+  outcomeValue1: 3
   outcomeType2: 0
   outcomeValue2: 0
   outcomeType3: 0

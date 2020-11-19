@@ -55,7 +55,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
     [Header("Event Confirm Menus")]
     public GameObject eventOutcomeMenu_GO;
 
-    public GameObject eventOutcomeNothingResource_GO;
     public RARC_ResourceTab eventOutcomeResource1_Tab;
     public RARC_ResourceTab eventOutcomeResource2_Tab;
     public RARC_ResourceTab eventOutcomeResource3_Tab;
@@ -64,12 +63,23 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public RARC_ResourceTab eventOutcomeResource6_Tab;
     public RARC_ResourceTab eventOutcomeResource7_Tab;
     public RARC_ResourceTab eventOutcomeResource8_Tab;
+    public RARC_ResourceTab eventOutcomeResource9_Tab;
+    public RARC_ResourceTab eventOutcomeResource10_Tab;
 
 
     public List<RARC_Resource> eventOutcomeChanges_Resources_List = new List<RARC_Resource>();
     public int eventOutcomeChanges_Hull;
     public int eventOutcomeChanges_Crew;
     public int eventOutcomeChanges_Bots;
+    public int eventOutcomeChanges_AllRooms;
+    public int eventOutcomeChanges_ASTROMETRICS;
+    public int eventOutcomeChanges_CLONING;
+    public int eventOutcomeChanges_FACTORY;
+    public int eventOutcomeChanges_HYDROPONICS;
+    public int eventOutcomeChanges_KITCHEN;
+    public int eventOutcomeChanges_MEDBAY;
+    public int eventOutcomeChanges_QUARTERS;
+    public int eventOutcomeChanges_STORAGE;
 
     /////////////////////////////////////////////////////////////////
 
@@ -429,7 +439,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         switch (eventOutcomeChanges_Resources_List.Count)
         {
             case 5:
-                eventOutcomeNothingResource_GO.SetActive(false);
                 eventOutcomeResource1_Tab.gameObject.SetActive(true);
                 eventOutcomeResource2_Tab.gameObject.SetActive(true);
                 eventOutcomeResource3_Tab.gameObject.SetActive(true);
@@ -443,7 +452,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 break;
 
             case 4:
-                eventOutcomeNothingResource_GO.SetActive(false);
                 eventOutcomeResource1_Tab.gameObject.SetActive(true);
                 eventOutcomeResource2_Tab.gameObject.SetActive(true);
                 eventOutcomeResource3_Tab.gameObject.SetActive(true);
@@ -456,7 +464,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 break;
 
             case 3:
-                eventOutcomeNothingResource_GO.SetActive(false);
                 eventOutcomeResource1_Tab.gameObject.SetActive(true);
                 eventOutcomeResource2_Tab.gameObject.SetActive(true);
                 eventOutcomeResource3_Tab.gameObject.SetActive(true);
@@ -468,7 +475,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 break;
 
             case 2:
-                eventOutcomeNothingResource_GO.SetActive(false);
                 eventOutcomeResource1_Tab.gameObject.SetActive(true);
                 eventOutcomeResource2_Tab.gameObject.SetActive(true);
                 eventOutcomeResource3_Tab.gameObject.SetActive(false);
@@ -479,7 +485,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 break;
 
             case 1:
-                eventOutcomeNothingResource_GO.SetActive(false);
                 eventOutcomeResource1_Tab.gameObject.SetActive(true);
                 eventOutcomeResource2_Tab.gameObject.SetActive(false);
                 eventOutcomeResource3_Tab.gameObject.SetActive(false);
@@ -489,23 +494,38 @@ public class RARC_ButtonController_Game : MonoBehaviour
                 break;
 
             case 0:
-                Button_EventOutcome_Close();
-                break;
-
-            default:
-                eventOutcomeNothingResource_GO.SetActive(true);
                 eventOutcomeResource1_Tab.gameObject.SetActive(false);
                 eventOutcomeResource2_Tab.gameObject.SetActive(false);
                 eventOutcomeResource3_Tab.gameObject.SetActive(false);
                 eventOutcomeResource4_Tab.gameObject.SetActive(false);
                 eventOutcomeResource5_Tab.gameObject.SetActive(false);
+
+                if (eventOutcomeChanges_Hull == 0 && eventOutcomeChanges_Crew == 0 && eventOutcomeChanges_Bots == 0)
+                {
+                    Button_EventOutcome_Close();
+                }
+                break;
+
+            default:
+                eventOutcomeResource1_Tab.gameObject.SetActive(false);
+                eventOutcomeResource2_Tab.gameObject.SetActive(false);
+                eventOutcomeResource3_Tab.gameObject.SetActive(false);
+                eventOutcomeResource4_Tab.gameObject.SetActive(false);
+                eventOutcomeResource5_Tab.gameObject.SetActive(false);
+
+                if (eventOutcomeChanges_Hull == 0 && eventOutcomeChanges_Crew == 0 && eventOutcomeChanges_Bots == 0)
+                {
+                    Button_EventOutcome_Close();
+                }
                 break;
         }
 
+
+
+        //Hull
         if (eventOutcomeChanges_Hull != 0)
         {
-            eventOutcomeNothingResource_GO.SetActive(false);
-            eventOutcomeResource6_Tab.gameObject.SetActive(false);
+            eventOutcomeResource6_Tab.gameObject.SetActive(true);
             eventOutcomeResource6_Tab.SetResource_OutcomeChanges_Hull(eventOutcomeChanges_Hull);
         }
         else
@@ -513,26 +533,138 @@ public class RARC_ButtonController_Game : MonoBehaviour
             eventOutcomeResource6_Tab.gameObject.SetActive(false);
         }
 
+        //Crew
         if (eventOutcomeChanges_Crew != 0)
         {
-            eventOutcomeNothingResource_GO.SetActive(false);
-            eventOutcomeResource7_Tab.gameObject.SetActive(false);
-            eventOutcomeResource7_Tab.SetResource_OutcomeChanges_Hull(eventOutcomeChanges_Crew);
+            eventOutcomeResource7_Tab.gameObject.SetActive(true);
+            eventOutcomeResource7_Tab.SetResource_OutcomeChanges_Crew(eventOutcomeChanges_Crew);
         }
         else
         {
             eventOutcomeResource7_Tab.gameObject.SetActive(false);
         }
 
+        //Bots
         if (eventOutcomeChanges_Bots != 0)
         {
-            eventOutcomeNothingResource_GO.SetActive(false);
-            eventOutcomeResource8_Tab.gameObject.SetActive(false);
-            eventOutcomeResource8_Tab.SetResource_OutcomeChanges_Hull(eventOutcomeChanges_Bots);
+            eventOutcomeResource8_Tab.gameObject.SetActive(true);
+            eventOutcomeResource8_Tab.SetResource_OutcomeChanges_Bots(eventOutcomeChanges_Bots);
         }
         else
         {
             eventOutcomeResource8_Tab.gameObject.SetActive(false);
+        }
+
+
+
+
+
+        //All Rooms
+        if (eventOutcomeChanges_AllRooms != 0)
+        {
+            eventOutcomeResource9_Tab.gameObject.SetActive(true);
+            eventOutcomeResource9_Tab.SetResource_OutcomeChanges_RoomEmpty(eventOutcomeChanges_AllRooms);
+        }
+        else
+        {
+            eventOutcomeResource9_Tab.gameObject.SetActive(false);
+        }
+
+
+
+
+        //Other Rooms
+        if (eventOutcomeChanges_ASTROMETRICS != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_ASTROMETRICS(eventOutcomeChanges_ASTROMETRICS);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
+        }
+
+        //Other Rooms
+        if (eventOutcomeChanges_CLONING != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_CLONING(eventOutcomeChanges_CLONING);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
+        }
+
+
+
+
+
+
+
+        //Other Rooms
+        if (eventOutcomeChanges_FACTORY != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_CLONING(eventOutcomeChanges_FACTORY);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
+        }
+
+        //Other Rooms
+        if (eventOutcomeChanges_HYDROPONICS != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_CLONING(eventOutcomeChanges_HYDROPONICS);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
+        }
+
+        //Other Rooms
+        if (eventOutcomeChanges_KITCHEN != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_CLONING(eventOutcomeChanges_KITCHEN);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
+        }
+
+        //Other Rooms
+        if (eventOutcomeChanges_MEDBAY != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_CLONING(eventOutcomeChanges_MEDBAY);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
+        }
+
+        //Other Rooms
+        if (eventOutcomeChanges_QUARTERS != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_CLONING(eventOutcomeChanges_QUARTERS);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
+        }
+
+        //Other Rooms
+        if (eventOutcomeChanges_STORAGE != 0)
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(true);
+            eventOutcomeResource10_Tab.SetResource_OutcomeChanges_CLONING(eventOutcomeChanges_STORAGE);
+        }
+        else
+        {
+            eventOutcomeResource10_Tab.gameObject.SetActive(false);
         }
     }
 
@@ -552,12 +684,31 @@ public class RARC_ButtonController_Game : MonoBehaviour
         RARC_GameStateController.Instance.ChangeCrew(eventOutcomeChanges_Crew);
         RARC_GameStateController.Instance.ChangeBots(eventOutcomeChanges_Bots);
 
+        RARC_GameStateController.Instance.ChangeAllRooms(eventOutcomeChanges_AllRooms);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.ASTROMETRICS, eventOutcomeChanges_ASTROMETRICS);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.CLONING, eventOutcomeChanges_CLONING);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.FACTORY, eventOutcomeChanges_FACTORY);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.HYDROPONICS, eventOutcomeChanges_HYDROPONICS);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.KITCHEN, eventOutcomeChanges_KITCHEN);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.MEDBAY, eventOutcomeChanges_MEDBAY);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.QUARTERS, eventOutcomeChanges_QUARTERS);
+        RARC_GameStateController.Instance.ChangeCertainRooms(RARC_Room.RoomType.STORAGE, eventOutcomeChanges_STORAGE);
+
 
         //Clear LIst
         eventOutcomeChanges_Resources_List.Clear();
         eventOutcomeChanges_Hull = 0;
         eventOutcomeChanges_Crew = 0;
         eventOutcomeChanges_Bots = 0;
+        eventOutcomeChanges_AllRooms = 0;
+        eventOutcomeChanges_ASTROMETRICS = 0;
+        eventOutcomeChanges_CLONING = 0;
+        eventOutcomeChanges_FACTORY = 0;
+        eventOutcomeChanges_HYDROPONICS = 0;
+        eventOutcomeChanges_KITCHEN = 0;
+        eventOutcomeChanges_MEDBAY = 0;
+        eventOutcomeChanges_QUARTERS = 0;
+        eventOutcomeChanges_STORAGE = 0;
     }
 
     /////////////////////////////////////////////////////////////////
@@ -753,8 +904,19 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
         if (eventInfo.eventOption1_Choice != "")
         {
+            //Show Button
             eventOption1_GO.SetActive(true);
             eventOption1_Text.text = eventInfo.eventOption1_Choice;
+
+            //Set Interablity
+            if (Event_CheckRequirements_All(eventInfo.GetEventSO().eventOption1_Requirement))
+            {
+                eventOption1_GO.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                eventOption1_GO.GetComponent<Button>().interactable = false;
+            }
         }
         else
         {
@@ -766,6 +928,16 @@ public class RARC_ButtonController_Game : MonoBehaviour
         {
             eventOption2_GO.SetActive(true);
             eventOption2_Text.text = eventInfo.eventOption2_Choice;
+
+            //Set Interablity
+            if (Event_CheckRequirements_All(eventInfo.GetEventSO().eventOption2_Requirement))
+            {
+                eventOption2_GO.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                eventOption2_GO.GetComponent<Button>().interactable = false;
+            }
         }
         else
         {
@@ -777,85 +949,369 @@ public class RARC_ButtonController_Game : MonoBehaviour
         {
             eventOption3_GO.SetActive(true);
             eventOption3_Text.text = eventInfo.eventOption3_Choice;
+
+            //Set Interablity
+            if (Event_CheckRequirements_All(eventInfo.GetEventSO().eventOption3_Requirement))
+            {
+                eventOption3_GO.GetComponent<Button>().interactable = true;
+            }
+            else
+            {
+                eventOption3_GO.GetComponent<Button>().interactable = false;
+            }
         }
         else
         {
             eventOption3_GO.SetActive(false);
         }
-
-
-
-
-
-
-
-
     }
 
     public void Event_AddOutcomeChanges(RARC_EventOutcome_SO.OutcomeType eventOutcomeType, int value)
-    {
-        //Find Type
+    { 
+
         switch (eventOutcomeType)
         {
             case RARC_EventOutcome_SO.OutcomeType.NULL:
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.HULL_CHANGE:
                 eventOutcomeChanges_Hull += value;
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.CREW_CHANGE:
                 eventOutcomeChanges_Crew += value;
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.ROBOT_CHANGE:
                 eventOutcomeChanges_Bots += value;
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.SCRAP_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.FUEL_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.FOOD_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.TITANIUM_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.SILICON_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.CARBON_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
             case RARC_EventOutcome_SO.OutcomeType.ORGANICS_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
-            case RARC_EventOutcome_SO.OutcomeType.HYDROGEN_CHANGE:
-                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
-                break;
-
-            case RARC_EventOutcome_SO.OutcomeType.NITROGEN_CHANGE:
-                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
-                break;
-
             case RARC_EventOutcome_SO.OutcomeType.MEDKITS_CHANGE:
                 eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
                 break;
-
+            case RARC_EventOutcome_SO.OutcomeType.HYDROGEN_CHANGE:
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.NITROGEN_CHANGE:
+                eventOutcomeChanges_Resources_List.Add(new RARC_Resource(value, RARC_GameStateController.Instance.ConvertTypes(eventOutcomeType)));
+                break;
             case RARC_EventOutcome_SO.OutcomeType.GAMEOVER:
-                RARC_GameStateController.Instance.System_Gameover("death");
+                switch (value)
+                {
+                    case 1:
+                        RARC_GameStateController.Instance.System_Gameover("Crew");
+                        break;
+                    case 2:
+                        RARC_GameStateController.Instance.System_Gameover("Hull");
+                        break;
+                    case 3:
+                        RARC_GameStateController.Instance.System_Gameover("Food");
+                        break;
+                    case 4:
+                        RARC_GameStateController.Instance.System_Gameover("Fuel");
+                        break;
+                    case 5:
+                        RARC_GameStateController.Instance.System_Gameover("Cloning");
+                        break;
+                    default:
+                        RARC_GameStateController.Instance.System_Gameover("Crew");
+                        break;
+                }
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_ALL_CHANGE:
+                eventOutcomeChanges_AllRooms = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_ASTROMETRICS_CHANGE:
+                eventOutcomeChanges_ASTROMETRICS = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_CLONING_CHANGE:
+                eventOutcomeChanges_CLONING = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_FACTORY_CHANGE:
+                eventOutcomeChanges_FACTORY = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_HYDROPONICS_CHANGE:
+                eventOutcomeChanges_HYDROPONICS = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_KITCHEN_CHANGE:
+                eventOutcomeChanges_KITCHEN = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_MEDBAY_CHANGE:
+                eventOutcomeChanges_MEDBAY = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_QUARTERS_CHANGE:
+                eventOutcomeChanges_QUARTERS = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ROOMCOUNT_STORAGE_CHANGE:
+                eventOutcomeChanges_STORAGE = value;
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ADDQUEST_MUTINY:
+                AttemptToAddQuest(RARC_DatabaseController.Instance.events_DB.event_Mutiny);
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ADDQUEST_ALIENSCBIG:
+                AttemptToAddQuest(RARC_DatabaseController.Instance.events_DB.event_AliensBig);
+                break;
+            case RARC_EventOutcome_SO.OutcomeType.ADDQUEST_ALIENSCURIOUS:
+                AttemptToAddQuest(RARC_DatabaseController.Instance.events_DB.event_AliensCurious);
+                break;
+            default:
                 break;
         }
+    }
+
+    private void AttemptToAddQuest(RARC_Event_SO eventSO)
+    {
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipBlacklistTravelEvents_List.Contains(new RARC_Event (eventSO)))
+        {
+            return;
+        }
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipCurrentTravelEvents_List.Contains(new RARC_Event(eventSO)))
+        {
+            return;
+        }
+
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Contains(new RARC_Event(eventSO)))
+        {
+            return;
+        }
+
+        //Add Event
+        RARC_DatabaseController.Instance.ship_SaveData.shipAvalibleTravelEvents_List.Add(new RARC_Event(eventSO));
+    }
+
+    private bool Event_CheckRequirements_All(RARC_EventRequirement_SO requirement)
+    {
+        bool meetsRequirements = true;
+
+        //No Requirements
+        if (requirement == null)
+        {
+            return true;
+        }
+
+        //Check If Failed
+        if (Event_CheckRequirements_Single(requirement.requirementType1, requirement.requirementValue1) == false)
+        {
+            meetsRequirements = false;
+        }
+
+        //Check If Failed
+        if (Event_CheckRequirements_Single(requirement.requirementType2, requirement.requirementValue2) == false)
+        {
+            meetsRequirements = false;
+        }
+
+        //Check If Failed
+        if (Event_CheckRequirements_Single(requirement.requirementType3, requirement.requirementValue3) == false)
+        {
+            meetsRequirements = false;
+        }
+
+        //Return value
+        return meetsRequirements;
+    }
+
+    private bool Event_CheckRequirements_Single(RARC_EventRequirement_SO.RequirementType requirement, int requiredCount)
+    {
+        bool meetsRequirements = true;
+
+        switch (requirement)
+        {
+            case RARC_EventRequirement_SO.RequirementType.NULL:
+                meetsRequirements = true;
+                break;
+            case RARC_EventRequirement_SO.RequirementType.CREW_HIGHER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.CREW_LOWER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROBOT_HIGHER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROBOT_LOWER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.HULL_HIGHER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.HULL_LOWER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipHullHealth <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.SCRAP_HIGHER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.SCRAP_LOWER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap.resourceCount <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.FUEL_HIGHER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.FUEL_LOWER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.FOOD_HIGHER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.FOOD_LOWER:
+                if ((RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.TITANIUM_HIGHER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Titanium) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.TITANIUM_LOWER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Titanium) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.SILICON_HIGHER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Silicon) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.SILICON_LOWER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Silicon) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.CARBON_HIGHER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Carbon) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.CARBON_LOWER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Carbon) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ORGANICS_HIGHER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Organics) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ORGANIC_LOWER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Organics) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.HYDROGEN_HIGHER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Hydrogen) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.HYDROGEN_LOWER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Hydrogen) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.NITROGEN_HIGHER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Nitrogen) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.NITROGEN_LOWER:
+                if ((RARC_GameStateController.Instance.GetResoucesCount(RARC_Resource.ResourceType.Nitrogen) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_ALL_HIGHER:
+                if (((-RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.EMPTY) + 16) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_ALL_LOWER:
+                if (((-RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.EMPTY) + 16) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_ASTROMETRICS_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.ASTROMETRICS) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_ASTROMETRICS_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.ASTROMETRICS) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_CLONING_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.CLONING) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_CLONING_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.CLONING) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_FACTORY_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.FACTORY) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_FACTORY_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.FACTORY) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_HYDROPONICS_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.HYDROPONICS) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_HYDROPONICS_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.HYDROPONICS) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_KITCHEN_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.KITCHEN) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_KITCHEN_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.KITCHEN) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_MEDBAY_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.MEDBAY) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_MEDBAY_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.MEDBAY) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_QUARTERS_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.QUARTERS) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_QUARTERS_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.QUARTERS) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_STORAGE_HIGHER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.STORAGE) >= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            case RARC_EventRequirement_SO.RequirementType.ROOMCOUNT_STORAGE_LOWER:
+                if ((RARC_GameStateController.Instance.CountRoomsOnShip(RARC_Room.RoomType.STORAGE) <= requiredCount) == false)
+                { meetsRequirements = false; }
+                break;
+            default:
+                break;
+        }
+
+
+        return meetsRequirements;
     }
 
     /////////////////////////////////////////////////////////////////
@@ -1378,14 +1834,12 @@ public class RARC_ButtonController_Game : MonoBehaviour
         storageResourceTabs_List[2].gameObject.SetActive(true);
         storageResourceTabs_List[2].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap);
 
-        int savedI = 0;
 
         //Activate All Other Tabs
         for (int i = 3; i < RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count + 3; i++)
         {
             storageResourceTabs_List[i].gameObject.SetActive(true);
             storageResourceTabs_List[i].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[i - 3]);
-            savedI = i;
         }
 
         //Deactivate All Other Tabs

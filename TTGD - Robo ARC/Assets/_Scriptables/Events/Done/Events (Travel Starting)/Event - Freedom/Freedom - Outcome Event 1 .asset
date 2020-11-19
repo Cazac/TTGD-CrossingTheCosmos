@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventTitle: Freedom!
   eventID: Freedom - Outcome Event 1
-  eventIcon: {fileID: 21300000, guid: 1df370f869bfe9a459992be9ab449514, type: 3}
+  eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
   eventDescription: You are not running a prison around here, people want a  little
     space-walk to relax. You agree and go to slow down the ship for crew to have
     a chance to stop work. As soon as you turn your back the crew member throws themelves
