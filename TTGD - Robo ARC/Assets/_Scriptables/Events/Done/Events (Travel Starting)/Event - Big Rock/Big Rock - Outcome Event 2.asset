@@ -18,10 +18,10 @@ MonoBehaviour:
   eventDescription: "You send some of your finest bots to grab onto the rock to slow
     down its trajectory. Unfortunately, the rock proved a mighty challenge for some
     of your bots. You lost some goods bots today. However, in the end, they managed
-    to stop the rock from hitting the ship and even mine it for resources. Once the
-    bots were finished, you resume charting the ships next course. You can\u2019t
+    to stop the rock from hitting the ship and even mined it for resources. Once
+    the bots were finished, you resume charting the ship's next course. You can\u2019t
     help but wonder if the good from this outcome outweighs the cost to gain it.
-    Then again...they are just lifeless robots. You can always make more."
+    Then again...they are just lifeless robots. You can always make more.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

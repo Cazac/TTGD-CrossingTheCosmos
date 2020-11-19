@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: Abandoned Ship Discovered!
   eventID: Abandoned Ship - Outcome Event 2
   eventIcon: {fileID: 21300000, guid: af5dae310cfd796419cdc9feab918129, type: 3}
-  eventDescription: "The bots you ordered make swift work of the ship, leaving a
-    very empty husk of leftovers. To your astonishment, you observe what appears
-    to be some group of raiders suffocating within space. You feel relieved you didn\u2019t
-    send anyone of your crew to investigate this death trap."
+  eventDescription: "The bots you ordered make swift work of the ship, leaving an
+    empty husk of a once great vehicle. To your astonishment, you observe what appears
+    to be a group of raiders suffocating within space. You feel relieved you didn\u2019t
+    send any of your crew to investigate this death trap.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

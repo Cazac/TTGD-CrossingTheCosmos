@@ -15,9 +15,9 @@ MonoBehaviour:
   eventTitle: Rotten Food!
   eventID: Rotten Food - Outcome Event 2
   eventIcon: {fileID: 21300000, guid: c09b424f91d9974468d9ffbee25974d4, type: 3}
-  eventDescription: Straws are drawn, crew members are lost. You take solice in the
-    fact that the surviving crew will not go hungry. The survivors  mourn the lost
-    but those who survied did not complain about their luck.
+  eventDescription: "Straws are drawn, crew members are lost. You take solace in
+    the fact that the surviving crew will not go hungry. The survivors  mourn the
+    lost, but do not complain about their luck.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

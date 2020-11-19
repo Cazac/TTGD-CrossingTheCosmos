@@ -15,13 +15,13 @@ MonoBehaviour:
   eventTitle: Is it Bedtime?
   eventID: Bedtime - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: bfcef42913173544ca41611e4283418c, type: 3}
-  eventDescription: "You are completely in shock by the behaviour the bot. It is
+  eventDescription: "You are completely shocked by the behaviour of the bot. It is
     not doing what it has been programmed to do. You startle the bot by yelling your
     demands. The bot\u2019s eyes turn from blue to red as it directs its flailing
-    arms towards you. Unfortunately, you must activate its kill switch and the bot
-    instantly shuts down in front of you. What a strange night! You wonder what would
-    have happened if you had just watched it. But perhaps it is better you don\u2019t
-    know."
+    arms towards you. Unfortunately, you must activate its kill switch to protect
+    yourself, and the bot instantly shuts down in front of you. What a strange night!
+    You wonder what would have happened if you had just watched it. But perhaps it
+    is better not to know."
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

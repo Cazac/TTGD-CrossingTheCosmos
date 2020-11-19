@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: Ancient Ruins
   eventID: Ancient Ruins - Outcome Event 2
   eventIcon: {fileID: 21300000, guid: d6aacc463efeb2443a7e78a2b303f96f, type: 3}
-  eventDescription: Your crew enter and use their flashlights to find a shrine with
+  eventDescription: "Your crew enter and use their flashlights to find a shrine with
     a large statue of an insect looking humanoid.  A thick layer of dust and grime
     indicates no one has been here in a very long time.  A thorough search of the
-    cave reveals a small deposit of platinum, which your crew takes.
+    cave reveals a small deposit of platinum, which your crew takes.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

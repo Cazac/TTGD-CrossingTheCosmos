@@ -15,9 +15,11 @@ MonoBehaviour:
   eventTitle: Rotten Food!
   eventID: Rotten Food - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: c09b424f91d9974468d9ffbee25974d4, type: 3}
-  eventDescription: You take a good look at the rations and randomize the food before
+  eventDescription: 'You take a good look at the rations and randomize the food before
     handing them out to the crew. You feel uneasy being so dishonest about it, but
     at least no one will starve tonight.
+
+'
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

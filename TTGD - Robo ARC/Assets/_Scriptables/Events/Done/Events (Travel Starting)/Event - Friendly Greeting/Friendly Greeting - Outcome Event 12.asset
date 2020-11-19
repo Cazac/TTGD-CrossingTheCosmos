@@ -15,9 +15,9 @@ MonoBehaviour:
   eventTitle: A Friendly Greeting!
   eventID: Friendly Greeting - Outcome Event 1-2
   eventIcon: {fileID: 21300000, guid: 9b6d0be6683e2ed41acaf1b7b1ede5a2, type: 3}
-  eventDescription: You let them know that you cannot spare the resouces for such
-    a trade. They seem sad but understanding. You enjoyed their company, hopefully
-    you were not there last hope of rescue.
+  eventDescription: "You let them know that you cannot spare the resouces for such
+    a trade. They are sad but understand. You enjoyed their company, hopefully you
+    were not their last hope of rescue or anything.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

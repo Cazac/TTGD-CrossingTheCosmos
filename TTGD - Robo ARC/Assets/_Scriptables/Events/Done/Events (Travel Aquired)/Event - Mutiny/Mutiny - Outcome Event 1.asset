@@ -19,7 +19,7 @@ MonoBehaviour:
     damage to the ship as they storm the hallways. You tell them that you don\u2019t
     wish to fight and that you will try to be more liberal with supplies. You understand
     that everyone is doing the best that they can and maybe spreading some extra
-    food around amongst the crew might make the journey easier."
+    food around amongst the crew might make the journey easier. \r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

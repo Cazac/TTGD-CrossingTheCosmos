@@ -15,9 +15,9 @@ MonoBehaviour:
   eventTitle: Unknown Communications Signal!
   eventID: Unknown Communications Close - Event
   eventIcon: {fileID: 21300000, guid: 4e4122150ee149d41915fed2e6de5162, type: 3}
-  eventDescription: The comms pick up on some strange activity. You think you can
-    make out a couple words that almost seem human. The signal is pinpointed quite
-    close from your current nav point.
+  eventDescription: "The comms pick up on some strange activity. You think you can
+    make out a couple words that seem like a human language. The signal pinpoints
+    to a location near your current position.\r"
   eventOption1_Choice: You set a course for the strange signal.
   eventOption1_Outcome: {fileID: 11400000, guid: ec87df3eb27a49a43b27eb371ad91ee8,
     type: 2}

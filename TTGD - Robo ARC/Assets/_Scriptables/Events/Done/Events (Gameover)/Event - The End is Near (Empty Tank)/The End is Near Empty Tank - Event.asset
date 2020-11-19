@@ -16,7 +16,7 @@ MonoBehaviour:
   eventID: The End is Near Empty Tank - Event
   eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
   eventDescription: "This may be the end\u2026 \nThere is not enough fuel in the
-    engine to travel onwards any further. Is there any possible way out of this?\n"
+    engine to travel any further. Is there any possible way out of this?"
   eventOption1_Choice: "Accept your fate\u2026\r"
   eventOption1_Outcome: {fileID: 11400000, guid: 27afce908c883b2489f25a3b6a27005f,
     type: 2}

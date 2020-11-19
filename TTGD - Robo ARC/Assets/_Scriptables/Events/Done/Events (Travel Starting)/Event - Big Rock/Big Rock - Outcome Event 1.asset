@@ -15,9 +15,9 @@ MonoBehaviour:
   eventTitle: "That\u2019s a Big Rock!"
   eventID: Big Rock - Outcome Event 1
   eventIcon: {fileID: 21300000, guid: 4693fee3261189c40ae136550242c516, type: 3}
-  eventDescription: With great haste, you set the navigation systems to a location
+  eventDescription: "With great haste, you set the navigation systems to a location
     far away from the rock. Luckily the ship was fast enough to avoid the hit. However,
-    the ship is further away from your destination.
+    the ship is further away from your destination.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

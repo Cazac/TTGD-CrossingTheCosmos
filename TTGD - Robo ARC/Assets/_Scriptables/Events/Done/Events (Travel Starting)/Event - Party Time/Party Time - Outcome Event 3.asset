@@ -16,8 +16,8 @@ MonoBehaviour:
   eventID: Party Time - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: c8125111c4aa1f3409ddd9192b896a09, type: 3}
   eventDescription: "It wasn\u2019t exactly the most fun party in the world, but
-    it was better than nothing. The crew was happy to just get a piece of normalcy
-    for once, even if it wasn\u2019t much."
+    it was better than nothing. The crew were happy to have a brief glimpse of normalcy
+    for once, raising morale.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

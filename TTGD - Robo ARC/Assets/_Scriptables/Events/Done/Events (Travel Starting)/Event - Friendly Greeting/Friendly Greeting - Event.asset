@@ -24,7 +24,7 @@ MonoBehaviour:
     type: 2}
   eventOption1_Requirement: {fileID: 0}
   eventOption2_Choice: "Respond verbally by saying \u201CTHIS IS THE CAPTAIN OF THE
-    PROMETHEUS ENGAGING WITH THE UNKNOWN VESAL, STATE YOUR BUSINESS\u201D."
+    PROMETHEUS, ENGAGING WITH AN UNKNOWN VESSEL, STATE YOUR SHIP ID AND BUSINESS\u201D.\r"
   eventOption2_Outcome: {fileID: 11400000, guid: 983e03a54518dbb4592e6f40e67b44c6,
     type: 2}
   eventOption2_Requirement: {fileID: 0}

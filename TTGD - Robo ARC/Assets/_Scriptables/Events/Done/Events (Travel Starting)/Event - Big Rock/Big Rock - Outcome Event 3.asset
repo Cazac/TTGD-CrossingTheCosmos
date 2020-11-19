@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: "That\u2019s a Big Rock!"
   eventID: Big Rock - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: 4693fee3261189c40ae136550242c516, type: 3}
-  eventDescription: "You are not a military ship. Even if you were? You wouldn\u2019t
-    have Laser beams. This isn\u2019t an episode of Trek Wars. This is real life.
-    The ship gets hit hard by the big rock. It is going to take a lot to repair the
-    damages. What on Earth made you think your ship had a laser beam?"
+  eventDescription: "You are not a military ship. Even if you were - you wouldn\u2019t
+    have laser beams. This isn\u2019t an episode of Trek Wars; this is real life.
+    The ship gets hit hard by the incoming rock. It's going to take a lot to repair
+    the damages. What on Earth made you think your ship had a laser beam? \r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

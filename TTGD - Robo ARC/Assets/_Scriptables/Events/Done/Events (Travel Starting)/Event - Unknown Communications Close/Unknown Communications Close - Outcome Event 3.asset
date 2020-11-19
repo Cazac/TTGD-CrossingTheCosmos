@@ -15,9 +15,9 @@ MonoBehaviour:
   eventTitle: Unknown Communications Signal!
   eventID: Unknown Communications Close - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: 4e4122150ee149d41915fed2e6de5162, type: 3}
-  eventDescription: You decide that the signal is not worth your time. It could be
-    nothing or perhaps a trap. However, there is a small part of you that wonders
-    what it could be.
+  eventDescription: "You decide that the signal is not worth your time. It could
+    be nothing or perhaps a trap. However, there is a small part of you that will
+    always wonder about it.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

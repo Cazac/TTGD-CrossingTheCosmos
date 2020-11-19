@@ -19,7 +19,7 @@ MonoBehaviour:
     They decide to do the experiment in their room to test it out. They are determined
     to prove to you that it would work. Unfortunately, without a proper lab, the
     experiment proved to be too dangerous for your crew member. There was a mild
-    explosion in the bunks. Luckily no one was hurt. Unluckily, your crew member
+    explosion in the bunks. Luckily no one was hurt, except for the crew member that
     died in the explosion.
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}

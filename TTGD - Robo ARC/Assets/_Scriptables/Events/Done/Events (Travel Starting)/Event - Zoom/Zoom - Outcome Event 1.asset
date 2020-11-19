@@ -17,9 +17,10 @@ MonoBehaviour:
   eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
   eventDescription: "Your crew member tosses some strange fluids into the fuel tank.
     There is a strange noise that comes from the engine for a moment and then it
-    passes. When you bring your ship to the next destination, your ship has never
-    moved so fast before! However, whatever your crew member did, completely ate
-    up your fuel stores. It doesn\u2019t seem like this experiment is very cost effective."
+    passes. When you bring your ship to the next destination, you see a noticeable
+    difference in your ship's speed. However, whatever your crew member did, completely
+    ate up your fuel stores. It doesn\u2019t seem like this experiment is very cost
+    effective. \r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

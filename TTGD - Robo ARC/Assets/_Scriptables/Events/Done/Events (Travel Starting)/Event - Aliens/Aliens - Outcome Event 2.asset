@@ -17,11 +17,11 @@ MonoBehaviour:
   eventIcon: {fileID: 1393625796902501847, guid: 5d4614b372249d84aa7aa58799528b34,
     type: 3}
   eventDescription: "This thing is really cute, but you know that cuteness doesn\u2019t
-    always mean safe around people.  You explain to the crew and the bots that this
-    little creature is going to go to a nice farm on another planet, and you\u2019re
+    always mean \"safe around people\".  You explain to the crew and the bots that
+    this little creature is going to go to a nice farm on another planet, and you\u2019re
     going to take it there personally.  The crew are a little sad they won\u2019t
-    be able to keep a weird creature as a pet, but having not known it for very long,
-    they ultimately accept its fate."
+    be able to keep the strange creature as a pet, but having not known it for very
+    long, they ultimately accept its fate.  \r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

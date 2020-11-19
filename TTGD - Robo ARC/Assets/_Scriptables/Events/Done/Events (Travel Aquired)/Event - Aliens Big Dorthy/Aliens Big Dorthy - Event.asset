@@ -22,7 +22,7 @@ MonoBehaviour:
     has grown twice her size in just under a week, and with that amount of growth
     comes a lot of food\u2026.  Dorothy has been eating up your food supplies, enough
     to feed three more crew members in just a week.  Even though she\u2019s very
-    well behaved, this could become a supply problem."
+    well behaved, this could become a supply problem.\r"
   eventOption1_Choice: "Well, Dorothy IS the unofficial mascot of the ship \u2013
     can\u2019t get rid of her now!  Keep Dorothy and continue to feed her like normal."
   eventOption1_Outcome: {fileID: 11400000, guid: 57e078174a5e62e43b48d083156e4904,

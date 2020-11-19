@@ -15,12 +15,12 @@ MonoBehaviour:
   eventTitle: Freedom!
   eventID: Freedom - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
-  eventDescription: Without hesitation you tackle the member to the ground, they
-    flail wildly shouting obscenities at you. Other members rush to help confused
-    by the situation of you grappling another crew mate and they pull you off. You
-    get dirty looks from everyone as the crazed crew member starts spouting off about
-    how you attacked him with no reason. You try to defend yourself but they optics
-    are not good. At least the crew is safe for now though.
+  eventDescription: "Without hesitation you tackle the member to the ground.  They
+    flail wildly, shouting obscenities and calling for help.  Other crew members
+    rush in and see you grappling with the crew mate.  They break up the fight, but
+    you get dirty looks from everyone as the crazed crew member starts spouting off
+    about how you attacked him with no reason. You try to defend yourself but the
+    optics are not good. At least the crew is safe for now.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

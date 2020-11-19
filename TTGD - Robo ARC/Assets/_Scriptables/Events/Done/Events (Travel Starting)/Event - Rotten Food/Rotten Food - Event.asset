@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: Rotten Food!
   eventID: Rotten Food - Event
   eventIcon: {fileID: 21300000, guid: c09b424f91d9974468d9ffbee25974d4, type: 3}
-  eventDescription: As you collect and distribute this week's rations to the crew
+  eventDescription: "As you collect and distribute this week's rations to the crew
     members you notice some of the food has gone rotten and is sprouting mold. It
-    would be unethical to allow members of the crew to eat this food and yet food
-    can be a rarity out here.
+    would be unethical to allow members of the crew to eat this food\u2026 and yet
+    food can be a rarity out here.\r"
   eventOption1_Choice: Toss the moldy food and use extra from the stores.
   eventOption1_Outcome: {fileID: 11400000, guid: b2f8cfd5dccf9904a9f50c57be8db961,
     type: 2}

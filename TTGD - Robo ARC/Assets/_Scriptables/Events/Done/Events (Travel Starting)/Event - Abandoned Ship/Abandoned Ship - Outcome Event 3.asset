@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: Abandoned Ship Discovered!
   eventID: Abandoned Ship - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: af5dae310cfd796419cdc9feab918129, type: 3}
-  eventDescription: You have been in space long enough to know that sometimes it
+  eventDescription: "You have been in space long enough to know that sometimes it
     is best to leave things alone. You have a feeling that you might have missed
-    out on something that could have helped the colony. However, your gut tells you
-    that it might be for the best.
+    out on something that could have helped you, but your gut reminds you how risky
+    the whole situation is.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

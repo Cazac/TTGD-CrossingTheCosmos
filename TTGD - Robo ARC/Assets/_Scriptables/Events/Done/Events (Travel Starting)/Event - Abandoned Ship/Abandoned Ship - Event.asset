@@ -16,12 +16,12 @@ MonoBehaviour:
   eventID: Abandoned Ship - Event
   eventIcon: {fileID: 21300000, guid: af5dae310cfd796419cdc9feab918129, type: 3}
   eventDescription: "On the way towards your destination, you come across what seems
-    to be an abandoned ship. The ship\u2019s exterior gives the illusion of prolonged
+    to be an abandoned ship. The ship\u2019s exterior gives the impression of prolonged
     inactivity. There is a possibility there could be survivors on board or even
     supplies to help your voyage. Or perhaps the ship itself could be salvaged for
-    parts."
-  eventOption1_Choice: Send some of the crew to investigate the ship to search for
-    supplies and possible survivors.
+    parts....\r"
+  eventOption1_Choice: "Send some of the crew to investigate the ship to search for
+    supplies and possible survivors. \r"
   eventOption1_Outcome: {fileID: 11400000, guid: 397e8ed6cc90bfe47972174aed97c036,
     type: 2}
   eventOption1_Requirement: {fileID: 11400000, guid: c2039ed4886adfe4fa7d9a399103c47e,

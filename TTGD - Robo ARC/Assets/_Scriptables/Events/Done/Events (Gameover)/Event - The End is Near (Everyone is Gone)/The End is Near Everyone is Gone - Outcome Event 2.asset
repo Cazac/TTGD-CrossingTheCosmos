@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: The End is Near (Everyone is Gone)
   eventID: The End is Near Everyone is Gone - Outcome Event 2
   eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
-  eventDescription: You don't have quite enough materials to make the cloning bay
-    work but decide as a last resort to frakenstien the machine and force a power
-    surge. It seems to have worked out but the cloning bay was broken, at least you
-    are safe for now.
+  eventDescription: "You don't have quite enough materials to make the cloning bay
+    work\u2026.  In a moment of desperation, you decide to Frankenstein the machine
+    and force a power surge with as much DNA as possible. The cloning bay breaks,
+    but some clones emerge from the ashes.  You are safe for now.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 11400000, guid: 128214645b2b0c443829a0736d73d1ca,
     type: 2}

@@ -18,7 +18,7 @@ MonoBehaviour:
   eventDescription: "The crew has a very good time and will be talking about this
     for a long time. However, everyone ate a little too much and some people got
     a little too rowdy. Everyone is in high spirits, but you wonder if the ship can
-    survive if they throw a party for everyone\u2019s birthday."
+    survive if they throw a party for everyone\u2019s birthday....\r\n"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

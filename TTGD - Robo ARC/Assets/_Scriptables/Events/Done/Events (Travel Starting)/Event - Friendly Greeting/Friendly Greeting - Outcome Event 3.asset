@@ -15,8 +15,10 @@ MonoBehaviour:
   eventTitle: A Friendly Greeting!
   eventID: Friendly Greeting - Outcome Event 3
   eventIcon: {fileID: 21300000, guid: 9b6d0be6683e2ed41acaf1b7b1ede5a2, type: 3}
-  eventDescription: You blast at there ship with what small weapons you have, you
-    manged to ding their ship a little as they boost away from you quickly.
+  eventDescription: 'You blast at their ship with what small weapons you have, managing
+    to ding their ship a little as they boost away from you quickly.
+
+'
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 0}
   eventOption1_Requirement: {fileID: 0}

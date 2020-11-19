@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: "That\u2019s a Big Rock!"
   eventID: Big Rock - Event
   eventIcon: {fileID: 21300000, guid: 4693fee3261189c40ae136550242c516, type: 3}
-  eventDescription: You are in the navigation room, planning the ships next course
+  eventDescription: "You are in the navigation room, planning the ships next course
     of action. Before the scanners can alert you, you see what seems to be a big
     rock heading in the direction of the ship. The scanners go ballistic. It looks
-    as if it is going to hit the ship. It could cause some major damage.
+    as if it is going to hit the ship. It could cause some major damage.\r"
   eventOption1_Choice: Set a course for the ship that would bring it out of range
     of the rock.
   eventOption1_Outcome: {fileID: 11400000, guid: 2cd6a287798d668448788d1574716c83,

@@ -15,10 +15,10 @@ MonoBehaviour:
   eventTitle: Mutiny!
   eventID: Mutiny - Event
   eventIcon: {fileID: 21300000, guid: de9ca7aa9122682439d82924e3b1a101, type: 3}
-  eventDescription: "Some of the crew has banded together to revolt against you.
-    They are tired of the way you ration food and handle the rest of the ship\u2019s
-    affairs. They think they can do far better than you can. There is talk that this
-    little \u201Crebellion\u201D might get violent."
+  eventDescription: "Some of the crew have banded together to revolt against you.
+    They are tired of the way you ration food and handle the ship\u2019s affairs.
+    They think they can do far better than you can. There is talk that this little
+    \u201Crebellion\u201D could get violent if you do not comply.\r"
   eventOption1_Choice: Give into the Mutineers demands
   eventOption1_Outcome: {fileID: 11400000, guid: 339c0788d8e1043448f6b5e4464d4b78,
     type: 2}

@@ -15,21 +15,20 @@ MonoBehaviour:
   eventTitle: Party Time!
   eventID: Party Time - Event
   eventIcon: {fileID: 21300000, guid: c8125111c4aa1f3409ddd9192b896a09, type: 3}
-  eventDescription: Your crew wants to celebrate the birthday of one of its members.
+  eventDescription: "Your crew wants to celebrate the birthday of one of its members.
     You have all been travelling for so long and a celebration might be good for
-    moral. However, partying might lead to the needless overconsumption of supplies.
+    morale. However, partying might lead to the needless overconsumption of supplies.\r"
   eventOption1_Choice: "Let\u2019s Party!"
   eventOption1_Outcome: {fileID: 11400000, guid: e6889bac91dca7a44a73a627c0d5345b,
     type: 2}
   eventOption1_Requirement: {fileID: 0}
-  eventOption2_Choice: Hell no! You understand the need to ration supplies. You need
-    to put your foot down if the crew is ever going to respect you.
+  eventOption2_Choice: "Absolutely not! Are you the only one who understands the
+    need to ration supplies?\r"
   eventOption2_Outcome: {fileID: 11400000, guid: c887aaecc65fefd40873789cccefa81b,
     type: 2}
   eventOption2_Requirement: {fileID: 0}
   eventOption3_Choice: "Tell the crew that the best you can offer is a simple \u201CHappy
-    Birthday\u201D and maybe a make-shift cake. You try to find a balance between
-    making the crew happy but ration supplies."
+    Birthday\u201D and a small cake. That's it.\r"
   eventOption3_Outcome: {fileID: 11400000, guid: 030a9688a68d38245b3a6c5069c361fd,
     type: 2}
   eventOption3_Requirement: {fileID: 0}

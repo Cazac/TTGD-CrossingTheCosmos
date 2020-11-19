@@ -15,9 +15,9 @@ MonoBehaviour:
   eventTitle: A New Hope
   eventID: A New Hope - Event
   eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
-  eventDescription: Earth is no more... You are the last of the species. You must
+  eventDescription: "Earth is no more... You are the last of the species. You must
     take the SS Prometheus and make it to New Terra for colonization. The journey
-    will take you one year.
+    will take you approximately one year.\r"
   eventOption1_Choice: Okay.
   eventOption1_Outcome: {fileID: 11400000, guid: 90d57eb05b13bf148bfdb1b5d63bf84e,
     type: 2}
