@@ -17,7 +17,7 @@ MonoBehaviour:
   eventIcon: {fileID: 21300000, guid: 97cdea103e3e211448a5154781943500, type: 3}
   eventDescription: Some of the crew members have become increasingly anxious over
     the survival of the ship. One of them asks if they can take a "breath of fresh
-    air" . You remind them there is no air in space out there. They do not accept
+    air". You remind them there is no air in space out there. They do not accept
     it and demand angrily to go outside.
   eventOption1_Choice: "Each member on board is relativly intelligence, let them
     be \u201CFree\u201D."

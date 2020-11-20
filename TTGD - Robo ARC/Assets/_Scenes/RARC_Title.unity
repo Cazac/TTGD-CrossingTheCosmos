@@ -9809,7 +9809,7 @@ MonoBehaviour:
   SiliconIcon: {fileID: 21300000, guid: d032b7a174a65044d8e01396522cdefe, type: 3}
   CarbonIcon: {fileID: 21300000, guid: 7d54142c98ba57d45a478543c6c805bd, type: 3}
   OrganicsIcon: {fileID: 21300000, guid: c8125111c4aa1f3409ddd9192b896a09, type: 3}
-  NitrogenIcon: {fileID: 21300000, guid: 8bd5b1f9535a6dc41a90e785dd8abb87, type: 3}
+  NitrogenIcon: {fileID: 21300000, guid: 48db30540b11bd74f86e8fa7ea8ad6cd, type: 3}
   HydrogenIcon: {fileID: 21300000, guid: e2e19f832f48a864cb1eafbedd0ec4a2, type: 3}
   CrewIcon: {fileID: 21300000, guid: de9ca7aa9122682439d82924e3b1a101, type: 3}
   BotsIcon: {fileID: 21300000, guid: bfcef42913173544ca41611e4283418c, type: 3}

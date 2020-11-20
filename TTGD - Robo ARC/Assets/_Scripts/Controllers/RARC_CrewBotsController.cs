@@ -86,7 +86,6 @@ public class RARC_CrewBotsController : MonoBehaviour
         RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.RemoveAt(0);
         if (crew_Container.transform.childCount != 0)
         {
-            print("Test Code: " + crew_Container.transform.GetChild(0).gameObject.name);
             DestroyImmediate(crew_Container.transform.GetChild(0).gameObject);
         }
 
@@ -98,7 +97,7 @@ public class RARC_CrewBotsController : MonoBehaviour
         RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.RemoveAt(0);
         if (bot_Container.transform.childCount != 0)
         {
-            Destroy(bot_Container.transform.GetChild(0).gameObject);
+            DestroyImmediate(bot_Container.transform.GetChild(0).gameObject);
         }
 
         RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
@@ -155,7 +154,6 @@ public class RARC_CrewBotsController : MonoBehaviour
         //Get Closest Elevator Then Return The Elevator Node
         return RARC_RoomsController.Instance.GetNextElevatorFloorLevel(currentFloor, goalFloor).elevatorNode_GO;
     }
-
 
     /////////////////////////////////////////////////////////////////
 }

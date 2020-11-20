@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomType: 5
   roomName: Kitchen
-  roomLimit: 1
+  roomLimit: 3
   activeRoomSprite: {fileID: 21300000, guid: 01f22fbe58a45ff4bbafe0561bb4c5b8, type: 3}
   inactiveRoomSprite: {fileID: 21300000, guid: 96e767ea2896cb841bee89fb64bbc90b, type: 3}
   resourceRequired_1: 1

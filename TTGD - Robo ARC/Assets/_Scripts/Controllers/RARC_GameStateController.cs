@@ -78,12 +78,10 @@ public class RARC_GameStateController : MonoBehaviour
     public int allowedRefreshPerTurn_Planets;
     public int currentRefreshPerTurn_Planets;
 
-
-
     /////////////////////////////////////////////////////////////////
 
-    public readonly float eventChance_Travel = 0.7f;
-    public readonly float eventChance_Planet = 0.5f;
+    public readonly float eventChance_Travel = 0.45f;
+    public readonly float eventChance_Planet = 0.25f;
 
     /////////////////////////////////////////////////////////////////
 
@@ -646,16 +644,22 @@ public class RARC_GameStateController : MonoBehaviour
                 if (resourceSlot != 99)
                 {
                     RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[resourceSlot].resourceCount += resourceCount;
+
+                    //Refresh Then Update Resource Tab Visuals
+                    RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
+                    RARC_ButtonController_Game.Instance.storageResourceTabs_List[resourceSlot + 3].SpawnChangesText(resourceCount);
                 }
                 else
                 {
                     RARC_Resource resource = new RARC_Resource(resourceName, resourceCount, resourceType);
                     RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Add(resource);
+
+                    //Refresh Then Update Resource Tab Visuals
+                    RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
+                    RARC_ButtonController_Game.Instance.storageResourceTabs_List[RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count + 3].SpawnChangesText(resourceCount);
                 }
 
-                //Refresh Then Update Resource Tab Visuals
-                RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
-                RARC_ButtonController_Game.Instance.storageResourceTabs_List[resourceSlot].SpawnChangesText(resourceCount);
+           
                 break;
         }
     }

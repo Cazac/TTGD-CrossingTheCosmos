@@ -147,6 +147,9 @@ public class RARC_ButtonController_Game : MonoBehaviour
     public TextMeshProUGUI eventOption1_Text;
     public TextMeshProUGUI eventOption2_Text;
     public TextMeshProUGUI eventOption3_Text;
+    public TextMeshProUGUI eventOptionRequirement1_Text;
+    public TextMeshProUGUI eventOptionRequirement2_Text;
+    public TextMeshProUGUI eventOptionRequirement3_Text;
 
     ////////////////////////////////
 
@@ -912,10 +915,12 @@ public class RARC_ButtonController_Game : MonoBehaviour
             if (Event_CheckRequirements_All(eventInfo.GetEventSO().eventOption1_Requirement))
             {
                 eventOption1_GO.GetComponent<Button>().interactable = true;
+                eventOptionRequirement1_Text.gameObject.SetActive(false);
             }
             else
             {
                 eventOption1_GO.GetComponent<Button>().interactable = false;
+                eventOptionRequirement1_Text.gameObject.SetActive(true);
             }
         }
         else
@@ -933,10 +938,12 @@ public class RARC_ButtonController_Game : MonoBehaviour
             if (Event_CheckRequirements_All(eventInfo.GetEventSO().eventOption2_Requirement))
             {
                 eventOption2_GO.GetComponent<Button>().interactable = true;
+                eventOptionRequirement2_Text.gameObject.SetActive(false);
             }
             else
             {
                 eventOption2_GO.GetComponent<Button>().interactable = false;
+                eventOptionRequirement2_Text.gameObject.SetActive(true);
             }
         }
         else
@@ -954,10 +961,12 @@ public class RARC_ButtonController_Game : MonoBehaviour
             if (Event_CheckRequirements_All(eventInfo.GetEventSO().eventOption3_Requirement))
             {
                 eventOption3_GO.GetComponent<Button>().interactable = true;
+                eventOptionRequirement3_Text.gameObject.SetActive(false);
             }
             else
             {
                 eventOption3_GO.GetComponent<Button>().interactable = false;
+                eventOptionRequirement3_Text.gameObject.SetActive(true);
             }
         }
         else
@@ -1824,7 +1833,6 @@ public class RARC_ButtonController_Game : MonoBehaviour
         humansAlive_Text.text = "<" + colorValues_White + ">" + "x" + RARC_DatabaseController.Instance.ship_SaveData.shipData_Crew_List.Count + "</color>";
         botsAlive_Text.text = "<" + colorValues_White + ">" + "x" + RARC_DatabaseController.Instance.ship_SaveData.shipData_Bots_List.Count + "</color>";
 
-       
 
         //Activate 3 Major Tabs always
         storageResourceTabs_List[0].gameObject.SetActive(true);
@@ -2023,6 +2031,20 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
 
         yield break;
+    }
+
+    /////////////////////////////////////////////////////////////////
+
+    public void StartTextAnimation(GameObject newText)
+    {
+        StartCoroutine(DeleteText(newText));
+    }
+
+    public IEnumerator DeleteText(GameObject newText)
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        Destroy(newText);
+        yield return null;
     }
 
     /////////////////////////////////////////////////////////////////

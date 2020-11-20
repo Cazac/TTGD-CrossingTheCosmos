@@ -26,30 +26,20 @@ public class RARC_ResourceTab : MonoBehaviour
         {
             GameObject newText = Instantiate(floatingTextGreen_Prefab, gameObject.transform);
             newText.GetComponent<TextMeshProUGUI>().text = "+" + valueChanged;
-            StartCoroutine(DeleteText(newText));
+            RARC_ButtonController_Game.Instance.StartTextAnimation(newText);
         }
         else
         {
             GameObject newText = Instantiate(floatingTextRed_Prefab, gameObject.transform);
             newText.GetComponent<TextMeshProUGUI>().text = valueChanged.ToString();
-            StartCoroutine(DeleteText(newText));
+            RARC_ButtonController_Game.Instance.StartTextAnimation(newText);
         }
-    }
-
-    public IEnumerator DeleteText(GameObject newText)
-    {
-        yield return new WaitForSecondsRealtime(1f);
-        Destroy(newText);
-
-        yield return null;
     }
 
     /////////////////////////////////////////////////////////////////
 
     public void SetResource_Storage(RARC_Resource resource)
     {
-        //currentResource = resource;
-
         name_Text.text = resource.resourceName + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " x" + resource.resourceCount + "</color>"; 
         icon_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resource.resourceType);
     }
