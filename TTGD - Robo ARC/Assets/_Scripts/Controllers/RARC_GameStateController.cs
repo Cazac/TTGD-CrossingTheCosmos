@@ -168,7 +168,31 @@ public class RARC_GameStateController : MonoBehaviour
         else if (isFirstLoad)
         {
 
-            print("Test Code: Load Stuff Here");
+            //print("Test Code: Load Stuff Here");
+
+            //Refresh All UI
+            RARC_ButtonController_Game.Instance.RefreshUI_WeeksInSpace();
+            RARC_ButtonController_Game.Instance.RefreshUI_ButtonInteractablity();
+            RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
+            RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources();
+            RARC_ButtonController_Game.Instance.RefreshUI_NavigationDestination();
+            RARC_ButtonController_Game.Instance.RefreshUI_UrgentIcons();
+            RARC_ButtonController_Game.Instance.RefreshUI_ResourcesAndStorage();
+
+            if (RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation != null)
+            {
+                //Set Planet BG / Space BG
+                RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.SetPlanet(RARC_DatabaseController.Instance.ship_SaveData.shipData_currentLocation);
+                RARC_ButtonController_Game.Instance.space_Tab.PlayPlanetSpace();
+                RARC_ButtonController_Game.Instance.space_Tab.PlanetAnimatorSpeeds();
+            }
+            else
+            {
+                //Set Planet BG / Space BG
+                RARC_ButtonController_Game.Instance.space_Tab.spacePlanet_Tab.ClearPlanet();
+                RARC_ButtonController_Game.Instance.space_Tab.SetSpace_Black();
+                RARC_ButtonController_Game.Instance.space_Tab.EmptySpaceAnimatorSpeeds();
+            }
 
 
             //Play First Track

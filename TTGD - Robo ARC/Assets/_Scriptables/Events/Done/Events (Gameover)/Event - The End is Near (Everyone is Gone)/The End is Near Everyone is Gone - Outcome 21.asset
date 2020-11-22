@@ -15,7 +15,7 @@ MonoBehaviour:
   outcomeNextEvent: {fileID: 0}
   outcomeType1: 17
   outcomeValue1: -1
-  outcomeType2: 4
+  outcomeType2: 10
   outcomeValue2: -5
-  outcomeType3: 10
-  outcomeValue3: -5
+  outcomeType3: 2
+  outcomeValue3: 1

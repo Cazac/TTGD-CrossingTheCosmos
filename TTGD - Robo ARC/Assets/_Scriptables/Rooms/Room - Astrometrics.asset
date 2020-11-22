@@ -20,9 +20,9 @@ MonoBehaviour:
   resourceRequired_1: 1
   resourceRequiredAmount_1: 20
   resourceRequired_2: 5
-  resourceRequiredAmount_2: 20
-  resourceRequired_3: 7
-  resourceRequiredAmount_3: 20
+  resourceRequiredAmount_2: 10
+  resourceRequired_3: 0
+  resourceRequiredAmount_3: 0
   resourceRequired_4: 0
   resourceRequiredAmount_4: 0
   resourceRequired_5: 0

@@ -1411,7 +1411,7 @@ public class RARC_ButtonController_Game : MonoBehaviour
         float effectiveTotal = Mathf.Clamp((exploringHumans_Slider.value * humanEffectivness) + (exploringBots_Slider.value * botEffectivness), 0, 1);
 
 
-        explorationRate_Text.text = "Exploration Rate (" + (effectiveTotal * 100) + " %)";
+        explorationRate_Text.text = "Exploration Rate (" + (effectiveTotal * 100) + " %)"; 
         explorationRate_FillImage.fillAmount = effectiveTotal;
 
         if (effectiveTotal == 0)
@@ -1836,18 +1836,36 @@ public class RARC_ButtonController_Game : MonoBehaviour
 
         //Activate 3 Major Tabs always
         storageResourceTabs_List[0].gameObject.SetActive(true);
-        storageResourceTabs_List[0].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel);
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel.resourceCount < RARC_GameStateController.Instance.fuelRequired)
+        {
+            storageResourceTabs_List[0].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel, colorValues_Red, true);
+            storageResourceTabs_List[1].gameObject.SetActive(true);
+        }
+        else
+        {
+            storageResourceTabs_List[0].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Fuel, colorValues_Yellow, false);
+
+        }
+
         storageResourceTabs_List[1].gameObject.SetActive(true);
-        storageResourceTabs_List[1].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food);
+        if (RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food.resourceCount < RARC_GameStateController.Instance.foodRequired)
+        {
+            storageResourceTabs_List[1].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food, colorValues_Red, true);
+        }
+        else
+        {
+            storageResourceTabs_List[1].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Food, colorValues_Yellow, false);
+        }
+
         storageResourceTabs_List[2].gameObject.SetActive(true);
-        storageResourceTabs_List[2].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap);
+        storageResourceTabs_List[2].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipResource_Scrap, colorValues_Yellow, false);
 
 
         //Activate All Other Tabs
         for (int i = 3; i < RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List.Count + 3; i++)
         {
             storageResourceTabs_List[i].gameObject.SetActive(true);
-            storageResourceTabs_List[i].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[i - 3]);
+            storageResourceTabs_List[i].SetResource_Storage(RARC_DatabaseController.Instance.ship_SaveData.shipStorage_List[i - 3], colorValues_Yellow, false);
         }
 
         //Deactivate All Other Tabs

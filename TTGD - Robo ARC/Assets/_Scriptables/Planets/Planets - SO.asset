@@ -135,16 +135,16 @@ MonoBehaviour:
   - {r: 0.9716981, g: 0.932854, b: 0.3254272, a: 1}
   - {r: 0.7924528, g: 0.43734425, b: 0.43734425, a: 1}
   BasicResource_Rocky: 1
-  minAmountOf_BasicResource_Rocky: 10
-  maxAmountOf_BasicResource_Rocky: 15
+  minAmountOf_BasicResource_Rocky: 15
+  maxAmountOf_BasicResource_Rocky: 20
   CommonResource_Rocky: 7
   chanceOf_CommonResource_Rocky: 70
   minAmountOf_CommonResource_Rocky: 10
   maxAmountOf_CommonResource_Rocky: 20
   RareResource_Rocky: 5
   chanceOf_RareResource_Rocky: 50
-  minAmountOf_RareResource_Rocky: 5
-  maxAmountOf_RareResource_Rocky: 10
+  minAmountOf_RareResource_Rocky: 10
+  maxAmountOf_RareResource_Rocky: 15
   planetSpritesMain_Lava:
   - {fileID: 21300000, guid: 3e15b1d711078da488487362898ad0f8, type: 3}
   - {fileID: 21300000, guid: b5adbf4f72de1c648a38b23e6cc0c346, type: 3}
@@ -198,7 +198,7 @@ MonoBehaviour:
   - {r: 0.06621573, g: 0.31079176, b: 0.4528302, a: 1}
   BasicResource_Icy: 10
   minAmountOf_BasicResource_Icy: 15
-  maxAmountOf_BasicResource_Icy: 20
+  maxAmountOf_BasicResource_Icy: 25
   CommonResource_Icy: 6
   chanceOf_CommonResource_Icy: 75
   minAmountOf_CommonResource_Icy: 10
@@ -228,15 +228,15 @@ MonoBehaviour:
   - {r: 0.7117383, g: 0.9811321, b: 0.5229619, a: 1}
   - {r: 0.41963333, g: 0.7735849, b: 0.42501166, a: 1}
   BasicResource_Gassy: 9
-  minAmountOf_BasicResource_Gassy: 10
-  maxAmountOf_BasicResource_Gassy: 20
+  minAmountOf_BasicResource_Gassy: 15
+  maxAmountOf_BasicResource_Gassy: 25
   CommonResource_Gassy: 10
   chanceOf_CommonResource_Gassy: 70
   minAmountOf_CommonResource_Gassy: 10
   maxAmountOf_CommonResource_Gassy: 15
   RareResource_Gassy: 1
   chanceOf_RareResource_Gassy: 0
-  minAmountOf_RareResource_Gassy: 5
+  minAmountOf_RareResource_Gassy: 10
   maxAmountOf_RareResource_Gassy: 20
   planetSpritesMain_Living:
   - {fileID: 21300000, guid: b5adbf4f72de1c648a38b23e6cc0c346, type: 3}
@@ -259,15 +259,15 @@ MonoBehaviour:
   - {r: 0.252759, g: 0.41281718, b: 0.754717, a: 1}
   - {r: 0.24096651, g: 0.30756587, b: 0.8962264, a: 1}
   BasicResource_Living: 8
-  minAmountOf_BasicResource_Living: 5
+  minAmountOf_BasicResource_Living: 10
   maxAmountOf_BasicResource_Living: 15
   CommonResource_Living: 10
   chanceOf_CommonResource_Living: 70
-  minAmountOf_CommonResource_Living: 5
-  maxAmountOf_CommonResource_Living: 10
+  minAmountOf_CommonResource_Living: 10
+  maxAmountOf_CommonResource_Living: 15
   RareResource_Living: 9
   chanceOf_RareResource_Living: 40
-  minAmountOf_RareResource_Living: 5
+  minAmountOf_RareResource_Living: 10
   maxAmountOf_RareResource_Living: 15
   planetSpritesMain_Moon:
   - {fileID: 21300000, guid: b5adbf4f72de1c648a38b23e6cc0c346, type: 3}

@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   craftingSprite: {fileID: 21300000, guid: f4d74c6205b0fe74483ae8146c1fd8f8, type: 3}
   resourceType: 2
-  resourcePerCraft: 2
+  resourcePerCraft: 3
   crewPerCraft: 0
   botsPerCraft: 0
-  roomRequired: 4
+  roomRequired: 3
   resourceCraftsPerRoom: 5
   resourceRequired_1: 9
   resourceRequiredAmount_1: 4

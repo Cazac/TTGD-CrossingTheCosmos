@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outcomeNextEvent: {fileID: 11400000, guid: e57162fe1054a4440ae4ea33343d1eb0, type: 2}
   outcomeType1: 2
-  outcomeValue1: -1
+  outcomeValue1: -2
   outcomeType2: 0
   outcomeValue2: 0
   outcomeType3: 0

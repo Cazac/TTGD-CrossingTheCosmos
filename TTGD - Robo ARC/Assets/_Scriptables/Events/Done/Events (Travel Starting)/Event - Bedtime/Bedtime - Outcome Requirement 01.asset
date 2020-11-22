@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bedtime - Outcome Requirement 01
   m_EditorClassIdentifier: 
   requirementType1: 11
-  requirementValue1: 2
+  requirementValue1: 5
   requirementType2: 0
   requirementValue2: 0
   requirementType3: 0

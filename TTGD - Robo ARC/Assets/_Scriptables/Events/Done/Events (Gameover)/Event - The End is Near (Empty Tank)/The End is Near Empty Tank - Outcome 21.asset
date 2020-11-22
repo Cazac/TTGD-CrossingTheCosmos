@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outcomeNextEvent: {fileID: 0}
   outcomeType1: 10
-  outcomeValue1: 20
+  outcomeValue1: -20
   outcomeType2: 4
-  outcomeValue2: 20
-  outcomeType3: 0
-  outcomeValue3: 0
+  outcomeValue2: -20
+  outcomeType3: 5
+  outcomeValue3: 10

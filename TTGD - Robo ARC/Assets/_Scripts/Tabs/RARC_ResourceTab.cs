@@ -38,9 +38,16 @@ public class RARC_ResourceTab : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void SetResource_Storage(RARC_Resource resource)
+    public void SetResource_Storage(RARC_Resource resource, string color, bool emergency)
     {
-        name_Text.text = resource.resourceName + "<" + RARC_ButtonController_Game.Instance.colorValues_Yellow + ">" + " x" + resource.resourceCount + "</color>"; 
+        if (emergency)
+        {
+            name_Text.text = resource.resourceName + "<" + color + ">" + " x" + resource.resourceCount + " !!!</color>";
+        }
+        else
+        {
+            name_Text.text = resource.resourceName + "<" + color + ">" + " x" + resource.resourceCount + "</color>";
+        }
         icon_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resource.resourceType);
     }
 
@@ -48,7 +55,7 @@ public class RARC_ResourceTab : MonoBehaviour
     {
         currentResource = resourceTup;
 
-        name_Text.text = currentResource.Item3.resourceName + " (" + resourceTup.Item1 + "%)";
+        name_Text.text = currentResource.Item3.resourceName; //  + " (" + resourceTup.Item1 + "%)"
         icon_Image.sprite = RARC_DatabaseController.Instance.resources_DB.GetIcon(resourceTup.Item3.resourceType);
     }
 

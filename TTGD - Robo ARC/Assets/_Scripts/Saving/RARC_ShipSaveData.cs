@@ -124,17 +124,17 @@ public class RARC_ShipSaveData
         //Set New Resource Bases and Storage
         shipHullHealth = 100;
         shipResource_Scrap = new RARC_Resource("Scrap", 30, RARC_Resource.ResourceType.Scrap);
-        shipResource_Fuel = new RARC_Resource("Fuel", 75, RARC_Resource.ResourceType.Fuel);
+        shipResource_Fuel = new RARC_Resource("Fuel", 100, RARC_Resource.ResourceType.Fuel);
         shipResource_Food = new RARC_Resource("Food", 100, RARC_Resource.ResourceType.Food);
 
         shipStorage_List = new List<RARC_Resource>();
 
-        shipStorage_List.Add(new RARC_Resource("Titanium", 10, RARC_Resource.ResourceType.Titanium));
-        shipStorage_List.Add(new RARC_Resource("Carbon", 15, RARC_Resource.ResourceType.Carbon));
-        shipStorage_List.Add(new RARC_Resource("Silicon", 5, RARC_Resource.ResourceType.Silicon));
-        shipStorage_List.Add(new RARC_Resource("Organics", 20, RARC_Resource.ResourceType.Organics));
-        shipStorage_List.Add(new RARC_Resource("Hydrogen", 20, RARC_Resource.ResourceType.Hydrogen));
-        shipStorage_List.Add(new RARC_Resource("Nitrogen", 40, RARC_Resource.ResourceType.Nitrogen));
+        //shipStorage_List.Add(new RARC_Resource("Titanium", 10, RARC_Resource.ResourceType.Titanium));
+        //shipStorage_List.Add(new RARC_Resource("Carbon", 15, RARC_Resource.ResourceType.Carbon));
+        //shipStorage_List.Add(new RARC_Resource("Silicon", 5, RARC_Resource.ResourceType.Silicon));
+        shipStorage_List.Add(new RARC_Resource("Organics", 30, RARC_Resource.ResourceType.Organics));
+        shipStorage_List.Add(new RARC_Resource("Hydrogen", 30, RARC_Resource.ResourceType.Hydrogen));
+        shipStorage_List.Add(new RARC_Resource("Nitrogen", 30, RARC_Resource.ResourceType.Nitrogen));
 
 
 

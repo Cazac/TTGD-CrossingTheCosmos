@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Mutiny - Outcome Requirement 03
   m_EditorClassIdentifier: 
   requirementType1: 7
-  requirementValue1: 5
+  requirementValue1: 10
   requirementType2: 0
   requirementValue2: 0
   requirementType3: 0

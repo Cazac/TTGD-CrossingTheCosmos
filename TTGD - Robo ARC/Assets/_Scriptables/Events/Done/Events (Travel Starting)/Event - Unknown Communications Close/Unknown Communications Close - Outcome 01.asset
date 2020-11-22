@@ -16,6 +16,6 @@ MonoBehaviour:
   outcomeType1: 5
   outcomeValue1: -5
   outcomeType2: 6
-  outcomeValue2: 10
+  outcomeValue2: 20
   outcomeType3: 4
-  outcomeValue3: 10
+  outcomeValue3: 20

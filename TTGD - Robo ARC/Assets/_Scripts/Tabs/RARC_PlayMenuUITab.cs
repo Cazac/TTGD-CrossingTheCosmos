@@ -29,12 +29,12 @@ public class RARC_PlayMenuUITab : MonoBehaviour
         saveSlot_Load.SetActive(false);
     }
 
-    public void LoadPanel(RARC_ShipSaveData saveData)
+    public void LoadPanel(RARC_ShipSaveData saveData, int debugWeekCount)
     {
         saveSlot_New.SetActive(false);
         saveSlot_Load.SetActive(true);
 
-        weeks_Text.text = "Weeks Survived: " + saveData.shipInfo_WeeksSurvived;
+        weeks_Text.text = "Weeks Survived: " + debugWeekCount;
         fuel_Text.text = "x" + saveData.shipResource_Fuel.resourceCount.ToString();
         scrap_Text.text = "x" + saveData.shipResource_Scrap.resourceCount.ToString();
         food_Text.text = "x" + saveData.shipResource_Food.resourceCount.ToString();

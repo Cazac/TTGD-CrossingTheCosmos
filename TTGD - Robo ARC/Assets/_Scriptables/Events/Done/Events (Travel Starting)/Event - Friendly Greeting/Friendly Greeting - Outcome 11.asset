@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc10d9e4425beb4194e654fe142636f, type: 3}
   m_Name: Friendly Greeting - Outcome 11
   m_EditorClassIdentifier: 
-  outcomeNextEvent: {fileID: 11400000, guid: af200c6d732264342b55f7e74efc758a, type: 2}
+  outcomeNextEvent: {fileID: 0}
   outcomeType1: 4
   outcomeValue1: 30
   outcomeType2: 5

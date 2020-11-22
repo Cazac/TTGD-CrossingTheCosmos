@@ -48384,9 +48384,9 @@ MonoBehaviour:
   eventOption1_Text: {fileID: 2594592954331573931}
   eventOption2_Text: {fileID: 2594592955391555888}
   eventOption3_Text: {fileID: 2594592954071609724}
-  eventOptionRequirement1_Text: {fileID: 0}
-  eventOptionRequirement2_Text: {fileID: 0}
-  eventOptionRequirement3_Text: {fileID: 0}
+  eventOptionRequirement1_Text: {fileID: 2049581500}
+  eventOptionRequirement2_Text: {fileID: 1836828244}
+  eventOptionRequirement3_Text: {fileID: 987297897}
   space_Tab: {fileID: 666943525264591340}
   weeksAtSpace_Text: {fileID: 994123775}
   humansAlive_Text: {fileID: 1992981986}
