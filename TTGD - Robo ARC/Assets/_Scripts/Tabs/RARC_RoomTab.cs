@@ -55,15 +55,6 @@ public class RARC_RoomTab : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
-    public void LoadRoom(RARC_Rooms_SO newRoom)
-    {
-        //Set Room Info
-        //currentRoom = newRoom;
-
-        //Update Sprite
-        roomSpriteRenderer.sprite = currentRoom_SO.inactiveRoomSprite;
-    }
-
     public void BuildRoom(RARC_Rooms_SO newRoom_SO)
     {
         //Set Room Info

@@ -112,12 +112,6 @@ public class RARC_GameStateController : MonoBehaviour
         RARC_ButtonController_Game.Instance.RefreshUI_LaunchResources();
 
 
-        //Reload Ship
-        ReloadShipRooms();
-
-        //Load System Data
-
-
     }
 
     public void Update()
@@ -195,6 +189,10 @@ public class RARC_GameStateController : MonoBehaviour
             }
 
 
+            //Reload Ship
+            ReloadShipRooms();
+
+
             //Play First Track
             RARC_MusicController.Instance.PlayMusic_FirstTrack();
             currentSongPlayLength = 2;
@@ -236,9 +234,6 @@ public class RARC_GameStateController : MonoBehaviour
         {
             currentSongPlayLength++;
         }
-
-
-
 
 
 
@@ -312,11 +307,16 @@ public class RARC_GameStateController : MonoBehaviour
         blacokoutCurtain_Animator.Play("Fade Out");
         currentCutscene_IEnum = null;
 
+
+        ReloadShipRooms();
+
         yield return new WaitForSeconds(1f);
 
         RARC_ButtonController_Game.Instance.RefreshUI_ButtonAvailability_On();
         //RARC_MusicController.Instance.PlayMusic_FirstTrack();
         currentSongPlayLength = 3;
+
+
 
         //Break Coroutine
         yield break;
@@ -459,7 +459,7 @@ public class RARC_GameStateController : MonoBehaviour
         for (int i = 0; i < shipRooms_Arr.Length; i++)
         {
             //Load Room By Type
-            allShipRoomTabs_Arr[i].LoadRoom(RARC_DatabaseController.Instance.room_DB.FindRoomType(shipRooms_Arr[i]));
+            allShipRoomTabs_Arr[i].BuildRoom(RARC_DatabaseController.Instance.room_DB.FindRoomType(shipRooms_Arr[i]));
         }
     }
 

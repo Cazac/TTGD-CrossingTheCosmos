@@ -44,6 +44,7 @@ public class RARC_ShipSaveData
     public int travelEventsMissed;
     public int planetEventsMissed;
 
+    [System.Serializable]
     public enum difficultyType
     {
         NORMAL,

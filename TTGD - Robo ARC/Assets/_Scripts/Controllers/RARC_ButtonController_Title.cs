@@ -252,7 +252,7 @@ public class RARC_ButtonController_Title : MonoBehaviour
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet1_List.Count != 0)
         {
-            saveSlot1.LoadPanel(RARC_DatabaseController.Instance.saveDataSet1_List[0], RARC_DatabaseController.Instance.saveDataSet1_List.Count);
+            saveSlot1.LoadPanel(RARC_DatabaseController.Instance.saveDataSet1_List[RARC_DatabaseController.Instance.saveDataSet1_List.Count - 1]);
         }
         else
         {
@@ -262,7 +262,7 @@ public class RARC_ButtonController_Title : MonoBehaviour
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet2_List.Count != 0)
         {
-            saveSlot2.LoadPanel(RARC_DatabaseController.Instance.saveDataSet2_List[0], RARC_DatabaseController.Instance.saveDataSet2_List.Count);
+            saveSlot2.LoadPanel(RARC_DatabaseController.Instance.saveDataSet2_List[RARC_DatabaseController.Instance.saveDataSet2_List.Count - 1]);
         }
         else
         {
@@ -272,7 +272,7 @@ public class RARC_ButtonController_Title : MonoBehaviour
         //Check with Loaded Data
         if (RARC_DatabaseController.Instance.saveDataSet3_List.Count != 0)
         {
-            saveSlot3.LoadPanel(RARC_DatabaseController.Instance.saveDataSet3_List[0], RARC_DatabaseController.Instance.saveDataSet3_List.Count);
+            saveSlot3.LoadPanel(RARC_DatabaseController.Instance.saveDataSet3_List[RARC_DatabaseController.Instance.saveDataSet3_List.Count - 1]);
         }
         else
         {

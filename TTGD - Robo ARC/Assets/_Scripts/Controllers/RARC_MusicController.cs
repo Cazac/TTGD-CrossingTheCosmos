@@ -117,20 +117,21 @@ public class RARC_MusicController : MonoBehaviour
         StopTrackMusic_All();
 
         //Filter the Possible Tracks First
-        audioSO_List = FilterCurrentTrackOutOfList(audioSO_List);
+        List<RARC_Audio_SO> filterdAudioSO_List = new List<RARC_Audio_SO>(audioSO_List);
+        filterdAudioSO_List = FilterCurrentTrackOutOfList(filterdAudioSO_List);
 
         //Random Choice
-        int randomChoice = Random.Range(0, audioSO_List.Count);
+        int randomChoice = Random.Range(0, filterdAudioSO_List.Count);
 
         //Instantiate New Audio Source At Location
         GameObject newTrack = Instantiate(audioTrack_Prefab, locationalParent.transform);
-        newTrack.name = audioSO_List[randomChoice].name;
+        newTrack.name = filterdAudioSO_List[randomChoice].name;
 
         //SFX Setup
-        newTrack.GetComponent<RARC_AudioTab>().SetupAudioTrack(audioSO_List[randomChoice], RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
+        newTrack.GetComponent<RARC_AudioTab>().SetupAudioTrack(filterdAudioSO_List[randomChoice], RARC_DatabaseController.Instance.player_SaveData.settings_MusicVolume, RARC_DatabaseController.Instance.player_SaveData.settings_isMusicMuted);
 
         //Record The current Track
-        currentMusicTrack_SO = audioSO_List[randomChoice];
+        currentMusicTrack_SO = filterdAudioSO_List[randomChoice];
 
         //Return Track
         return newTrack;
@@ -142,7 +143,8 @@ public class RARC_MusicController : MonoBehaviour
         StopTrackMusic_All();
 
         //Filter the Possible Tracks First
-        audioSO_List = FilterCurrentTrackOutOfList(audioSO_List);
+        List<RARC_Audio_SO> filterdAudioSO_List = new List<RARC_Audio_SO>(audioSO_List);
+        filterdAudioSO_List = FilterCurrentTrackOutOfList(filterdAudioSO_List);
 
         //Random Choice
         int randomChoice = Random.Range(0, audioSO_List.Count);

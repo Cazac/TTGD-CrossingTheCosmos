@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class RARC_Room
 {
     ////////////////////////////////
 
+    [System.Serializable]
     public enum RoomType
     {
         EMPTY,

@@ -32,11 +32,9 @@ public class RARC_PlayMenuUITab : MonoBehaviour
         saveSlot_New.SetActive(true);
         saveSlot_Load.SetActive(false);
         newSlotHardToggle.gameObject.SetActive(true);
-
-        
     }
 
-    public void LoadPanel(RARC_ShipSaveData saveData, int debugWeekCount)
+    public void LoadPanel(RARC_ShipSaveData saveData)
     {
         saveSlot_New.SetActive(false);
         saveSlot_Load.SetActive(true);
@@ -51,7 +49,7 @@ public class RARC_PlayMenuUITab : MonoBehaviour
             hardmode_Text.gameObject.SetActive(true);
         }
 
-        weeks_Text.text = "Weeks Survived: " + debugWeekCount;
+        weeks_Text.text = "Weeks Survived: " + saveData.shipInfo_WeeksSurvived;
         fuel_Text.text = "x" + saveData.shipResource_Fuel.resourceCount.ToString();
         scrap_Text.text = "x" + saveData.shipResource_Scrap.resourceCount.ToString();
         food_Text.text = "x" + saveData.shipResource_Food.resourceCount.ToString();
