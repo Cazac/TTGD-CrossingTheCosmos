@@ -29,37 +29,8 @@ public class RARC_SpaceTab : MonoBehaviour
 
     public void PlayTitleSpace()
     {
+        //Play Default Purple
         SetSpace_Purple();
-
- 
-
-        return;
-
-
-        int randomNo = Random.Range(0,5);
-
-        switch (randomNo)
-        {
-            case 0:
-                SetSpace_Black();
-                break;
-
-            case 1:
-                SetSpace_Red();
-                break;
-
-            case 2:
-                SetSpace_Green();
-                break;
-
-            case 3:
-                SetSpace_Purple();
-                break;
-
-            case 4:
-                SetSpace_Blue();
-                break;
-        }
     }
 
     public void PlayPlanetSpace()

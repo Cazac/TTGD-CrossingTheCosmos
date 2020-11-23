@@ -30,6 +30,7 @@ public class RARC_ButtonController_Title : MonoBehaviour
     public TextMeshProUGUI settingsMusic_Text;
     public TextMeshProUGUI settingsSFX_Text;
 
+
     [Header("Space")]
     public RARC_SpaceTab titleSpace;
 
@@ -101,7 +102,15 @@ public class RARC_ButtonController_Title : MonoBehaviour
                     //Create New Data
                     RARC_ShipSaveData shipData = new RARC_ShipSaveData();
                     shipData.CreateNewSave();
-
+                    if (saveSlot1.newSlotHardToggle.isOn)
+                    {
+                        shipData.difficulty = RARC_ShipSaveData.difficultyType.HARD;
+                    }
+                    else
+                    {
+                        shipData.difficulty = RARC_ShipSaveData.difficultyType.NORMAL;
+                    }
+                  
                     //Set Transmission Data to Database
                     RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
                     RARC_DatabaseController.Instance.ship_SaveData = shipData;
@@ -130,6 +139,14 @@ public class RARC_ButtonController_Title : MonoBehaviour
                     //Create New Data
                     RARC_ShipSaveData shipData = new RARC_ShipSaveData();
                     shipData.CreateNewSave();
+                    if (saveSlot2.newSlotHardToggle.isOn)
+                    {
+                        shipData.difficulty = RARC_ShipSaveData.difficultyType.HARD;
+                    }
+                    else
+                    {
+                        shipData.difficulty = RARC_ShipSaveData.difficultyType.NORMAL;
+                    }
 
                     //Set Transmission Data to Database
                     RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;
@@ -159,6 +176,14 @@ public class RARC_ButtonController_Title : MonoBehaviour
                     //Create New Data
                     RARC_ShipSaveData shipData = new RARC_ShipSaveData();
                     shipData.CreateNewSave();
+                    if (saveSlot3.newSlotHardToggle.isOn)
+                    {
+                        shipData.difficulty = RARC_ShipSaveData.difficultyType.HARD;
+                    }
+                    else
+                    {
+                        shipData.difficulty = RARC_ShipSaveData.difficultyType.NORMAL;
+                    }
 
                     //Set Transmission Data to Database
                     RARC_DatabaseController.Instance.ship_SaveSlot = saveSlot;

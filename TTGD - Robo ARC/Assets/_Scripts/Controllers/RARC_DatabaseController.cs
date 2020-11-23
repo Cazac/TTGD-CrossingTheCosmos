@@ -10,12 +10,10 @@ public class RARC_DatabaseController : MonoBehaviour
     public static RARC_DatabaseController Instance;
 
     ////////////////////////////////
-
+    
     [Header("Access Directly to Scriptable")]
-    public RARC_Crew_SO crew_DB;
-
-    [Header("Access Directly to Scriptable")]
-    public RARC_Planet_SO planet_SO;
+    public RARC_Planet_SO planetNormal_SO;
+    public RARC_Planet_SO planetHard_SO;
 
     [Header("Access Container of Event Scriptables")]
     public RARC_EventData events_DB;
@@ -84,6 +82,19 @@ public class RARC_DatabaseController : MonoBehaviour
 
     /////////////////////////////////////////////////////////////////
 
+    public RARC_Planet_SO GetPlanetDifficulty()
+    {
+        switch (ship_SaveData.difficulty)
+        {
+            case RARC_ShipSaveData.difficultyType.NORMAL:
+                return planetNormal_SO;
+            case RARC_ShipSaveData.difficultyType.HARD:
+                return planetHard_SO;
+            default:
+                return planetNormal_SO;
+        }
+    }
+
     public List<RARC_ShipSaveData> FindGameData(int saveSlot)
     {
         //List Of Saves
@@ -140,8 +151,6 @@ public class RARC_DatabaseController : MonoBehaviour
 
     public void SavePlayerData()
     {
-
-
         string fileName = "Saves/GameSettingsData.ctc";
 
         //Save the Data into a file

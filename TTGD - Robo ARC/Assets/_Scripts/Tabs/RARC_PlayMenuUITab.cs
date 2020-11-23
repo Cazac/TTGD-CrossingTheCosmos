@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class RARC_PlayMenuUITab : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class RARC_PlayMenuUITab : MonoBehaviour
 
     [Header("Text")]
     public TextMeshProUGUI weeks_Text;
+    public TextMeshProUGUI hardmode_Text;
 
     public TextMeshProUGUI fuel_Text;
     public TextMeshProUGUI scrap_Text;
@@ -21,18 +23,33 @@ public class RARC_PlayMenuUITab : MonoBehaviour
     public TextMeshProUGUI humans_Text;
     public TextMeshProUGUI bots_Text;
 
+    public Toggle newSlotHardToggle;
+
     /////////////////////////////////////////////////////////////////
 
     public void NewPanel()
     {
         saveSlot_New.SetActive(true);
         saveSlot_Load.SetActive(false);
+        newSlotHardToggle.gameObject.SetActive(true);
+
+        
     }
 
     public void LoadPanel(RARC_ShipSaveData saveData, int debugWeekCount)
     {
         saveSlot_New.SetActive(false);
         saveSlot_Load.SetActive(true);
+        newSlotHardToggle.gameObject.SetActive(false);
+
+        if (saveData.difficulty == RARC_ShipSaveData.difficultyType.NORMAL)
+        {
+            hardmode_Text.gameObject.SetActive(false);
+        }
+        else if (saveData.difficulty == RARC_ShipSaveData.difficultyType.HARD)
+        {
+            hardmode_Text.gameObject.SetActive(true);
+        }
 
         weeks_Text.text = "Weeks Survived: " + debugWeekCount;
         fuel_Text.text = "x" + saveData.shipResource_Fuel.resourceCount.ToString();

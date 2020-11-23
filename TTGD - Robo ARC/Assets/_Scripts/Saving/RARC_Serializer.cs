@@ -44,6 +44,9 @@ public class RARC_Serializer
 
     public static void Save<T>(string filename, T data) where T : class
     {
+        //Check For Save Folder
+        Directory.CreateDirectory("Saves");
+
         using (Stream stream = File.OpenWrite(filename))
         {
             BinaryFormatter formatter = new BinaryFormatter();

@@ -44,6 +44,14 @@ public class RARC_ShipSaveData
     public int travelEventsMissed;
     public int planetEventsMissed;
 
+    public enum difficultyType
+    {
+        NORMAL,
+        HARD
+    }
+
+    public difficultyType difficulty;
+
     ////////////////////////////////
 
     [Header("Ship Resources")]

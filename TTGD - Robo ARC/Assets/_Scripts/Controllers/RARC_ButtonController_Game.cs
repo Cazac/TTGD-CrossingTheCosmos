@@ -333,15 +333,15 @@ public class RARC_ButtonController_Game : MonoBehaviour
         switch (planetNo)
         {
             case 1:
-                RARC_GameStateController.Instance.navigationPossiblePlanets_List[0] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
+                RARC_GameStateController.Instance.navigationPossiblePlanets_List[0] = RARC_DatabaseController.Instance.GetPlanetDifficulty().GenerateAnyPlanet();
                 break;
 
             case 2:
-                RARC_GameStateController.Instance.navigationPossiblePlanets_List[1] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
+                RARC_GameStateController.Instance.navigationPossiblePlanets_List[1] = RARC_DatabaseController.Instance.GetPlanetDifficulty().GenerateAnyPlanet();
                 break;
 
              case 3:
-                RARC_GameStateController.Instance.navigationPossiblePlanets_List[2] = RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet();
+                RARC_GameStateController.Instance.navigationPossiblePlanets_List[2] = RARC_DatabaseController.Instance.GetPlanetDifficulty().GenerateAnyPlanet();
                 break;
         }
 

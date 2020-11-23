@@ -274,9 +274,9 @@ public class RARC_GameStateController : MonoBehaviour
 
         //Reset Navigation Planets
         navigationPossiblePlanets_List = new List<RARC_Planet>();
-        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet());
-        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet());
-        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.planet_SO.GenerateAnyPlanet());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.GetPlanetDifficulty().GenerateAnyPlanet());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.GetPlanetDifficulty().GenerateAnyPlanet());
+        navigationPossiblePlanets_List.Add(RARC_DatabaseController.Instance.GetPlanetDifficulty().GenerateAnyPlanet());
     }
 
     /////////////////////////////////////////////////////////////////
@@ -522,11 +522,12 @@ public class RARC_GameStateController : MonoBehaviour
             case RARC_Room.RoomType.FACTORY:
                 allowedCraftingPerTurn_Bots += RARC_DatabaseController.Instance.crafting_DB.bots_Crafting.resourceCraftsPerRoom;
                 currentCraftingPerTurn_Bots += RARC_DatabaseController.Instance.crafting_DB.bots_Crafting.resourceCraftsPerRoom;
-                break;
-            case RARC_Room.RoomType.HYDROPONICS:
+
                 allowedCraftingPerTurn_Fuel += RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting.resourceCraftsPerRoom;
                 currentCraftingPerTurn_Fuel += RARC_DatabaseController.Instance.crafting_DB.fuel_Crafting.resourceCraftsPerRoom;
 
+                break;
+            case RARC_Room.RoomType.HYDROPONICS:
                 allowedCraftingPerTurn_Organics += RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.resourceCraftsPerRoom;
                 currentCraftingPerTurn_Organics += RARC_DatabaseController.Instance.crafting_DB.organics_Crafting.resourceCraftsPerRoom;
                 break;

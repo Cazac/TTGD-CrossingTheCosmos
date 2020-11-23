@@ -180,31 +180,31 @@ public class RARC_PlanetTabUI : MonoBehaviour
         switch (type)
         {
             case RARC_Planet.PlanetType.Moon:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Moon[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesMain_Moon[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Rocky:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Rocky[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesMain_Rocky[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Lava:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Lava[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesMain_Lava[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Icy:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Icy[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesMain_Icy[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Gassy:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Gassy[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesMain_Gassy[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Living:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Living[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesMain_Living[spriteNo];
                 break;
 
             default:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesMain_Rocky[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesMain_Rocky[spriteNo];
                 break;
         }
 
@@ -218,31 +218,31 @@ public class RARC_PlanetTabUI : MonoBehaviour
         switch (type)
         {
             case RARC_Planet.PlanetType.Moon:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Moon[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesSecondary_Moon[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Rocky:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Rocky[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesSecondary_Rocky[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Lava:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Lava[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesSecondary_Lava[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Icy:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Icy[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesSecondary_Icy[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Gassy:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Gassy[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesSecondary_Gassy[spriteNo];
                 break;
 
             case RARC_Planet.PlanetType.Living:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Living[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesSecondary_Living[spriteNo];
                 break;
 
             default:
-                planetSprite = RARC_DatabaseController.Instance.planet_SO.planetSpritesSecondary_Rocky[spriteNo];
+                planetSprite = RARC_DatabaseController.Instance.GetPlanetDifficulty().planetSpritesSecondary_Rocky[spriteNo];
                 break;
         }
 
