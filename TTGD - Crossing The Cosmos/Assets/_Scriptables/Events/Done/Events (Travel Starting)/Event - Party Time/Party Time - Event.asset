@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
+  m_Name: Party Time - Event
+  m_EditorClassIdentifier: 
+  eventTitle: Party Time!
+  eventID: Party Time - Event
+  eventIcon: {fileID: 21300000, guid: c8125111c4aa1f3409ddd9192b896a09, type: 3}
+  eventDescription: "Your crew wants to celebrate the birthday of one of its members.
+    You have all been travelling for so long and a celebration might be good for
+    morale. However, partying might lead to the needless overconsumption of supplies.\r"
+  eventOption1_Choice: "Let\u2019s Party!"
+  eventOption1_Outcome: {fileID: 11400000, guid: e6889bac91dca7a44a73a627c0d5345b,
+    type: 2}
+  eventOption1_Requirement: {fileID: 0}
+  eventOption2_Choice: "Absolutely not! Are you the only one who understands the
+    need to ration supplies?\r"
+  eventOption2_Outcome: {fileID: 11400000, guid: c887aaecc65fefd40873789cccefa81b,
+    type: 2}
+  eventOption2_Requirement: {fileID: 0}
+  eventOption3_Choice: "Tell the crew that the best you can offer is a simple \u201CHappy
+    Birthday\u201D and a small cake. That's it.\r"
+  eventOption3_Outcome: {fileID: 11400000, guid: 030a9688a68d38245b3a6c5069c361fd,
+    type: 2}
+  eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0

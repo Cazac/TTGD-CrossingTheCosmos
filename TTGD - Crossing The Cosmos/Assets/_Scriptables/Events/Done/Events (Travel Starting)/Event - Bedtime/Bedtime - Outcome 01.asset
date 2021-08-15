@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edc10d9e4425beb4194e654fe142636f, type: 3}
+  m_Name: Bedtime - Outcome 01
+  m_EditorClassIdentifier: 
+  outcomeNextEvent: {fileID: 11400000, guid: abdd8a39d085ff447a14491557b5672b, type: 2}
+  outcomeType1: 6
+  outcomeValue1: -5
+  outcomeType2: 0
+  outcomeValue2: 0
+  outcomeType3: 0
+  outcomeValue3: 0

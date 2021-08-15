@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
+  m_Name: Aliens Curious Dorthy - Event
+  m_EditorClassIdentifier: 
+  eventTitle: Do Aliens Exist? (Curious  Dorothy)
+  eventID: Aliens Curious Dorthy - Event
+  eventIcon: {fileID: 1393625796902501847, guid: 5d4614b372249d84aa7aa58799528b34,
+    type: 3}
+  eventDescription: "Dorothy is now the size of a cow\u2026.. but that just means
+    she\u2019s more cuddly than ever!  Dorothy has also grown some strange antennae
+    out of her back that glow blue and green periodically.  The creature has also
+    grown an interest in the Hydroponics Lab and keeps trying to enter the lab.\r"
+  eventOption1_Choice: Let Dorothy into the lab.
+  eventOption1_Outcome: {fileID: 11400000, guid: 6d962fc84833aab46b6e44009c7afe46,
+    type: 2}
+  eventOption1_Requirement: {fileID: 11400000, guid: 955261026120de1429e29629d8c8a957,
+    type: 2}
+  eventOption2_Choice: Hydroponics is no place for pets!  Shoo Dorothy away from
+    the door.
+  eventOption2_Outcome: {fileID: 11400000, guid: 5a0926bf44abccb40979dc54639756c7,
+    type: 2}
+  eventOption2_Requirement: {fileID: 0}
+  eventOption3_Choice: 
+  eventOption3_Outcome: {fileID: 0}
+  eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0

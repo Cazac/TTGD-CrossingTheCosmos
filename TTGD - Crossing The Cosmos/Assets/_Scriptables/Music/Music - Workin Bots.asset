@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9550de757da366645bf06f829fcdad89, type: 3}
+  m_Name: Music - Workin Bots
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 27152d773a41081428f991fea6de4e6a, type: 3}
+  volume: 0.8
+  pitch: 1
+  pitchRange: 0
+  spatialAudioRange: 0
+  canLoop: 1
+  isMusic: 1
+  isSFX: 0
+  canFadeIn: 1
+  fadeInSpeed: 0.05
+  canFadeOut: 1
+  fadeOutSpeed: 0.05

@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
+  m_Name: Rotten Food - Event
+  m_EditorClassIdentifier: 
+  eventTitle: Rotten Food!
+  eventID: Rotten Food - Event
+  eventIcon: {fileID: 21300000, guid: c09b424f91d9974468d9ffbee25974d4, type: 3}
+  eventDescription: "As you collect and distribute this week's rations to the crew
+    members you notice some of the food has gone rotten and is sprouting mold. It
+    would be unethical to allow members of the crew to eat this food\u2026 and yet
+    food can be a rarity out here.\r"
+  eventOption1_Choice: Toss the moldy food and use extra from the stores.
+  eventOption1_Outcome: {fileID: 11400000, guid: b2f8cfd5dccf9904a9f50c57be8db961,
+    type: 2}
+  eventOption1_Requirement: {fileID: 11400000, guid: a8d7cbe811708ef438e5f48d8bd91703,
+    type: 2}
+  eventOption2_Choice: Tell the crew to draw straws on who gets to eat and that the
+    short straws go to the 'happy place' on the other side of the airlock.
+  eventOption2_Outcome: {fileID: 11400000, guid: 95ad56ade49592e4c99b8ba602427f9a,
+    type: 2}
+  eventOption2_Requirement: {fileID: 0}
+  eventOption3_Choice: Pretend you never saw the moldy food and carry on as normal.
+  eventOption3_Outcome: {fileID: 11400000, guid: 4e3f32980524cb8429dab07099bb1b2e,
+    type: 2}
+  eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0

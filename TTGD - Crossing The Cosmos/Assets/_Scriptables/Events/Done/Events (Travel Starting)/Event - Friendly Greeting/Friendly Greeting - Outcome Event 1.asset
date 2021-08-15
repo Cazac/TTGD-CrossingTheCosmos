@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0785aef77b8c7b04da903a236d21657e, type: 3}
+  m_Name: Friendly Greeting - Outcome Event 1
+  m_EditorClassIdentifier: 
+  eventTitle: A Friendly Greeting!
+  eventID: Friendly Greeting - Outcome Event 1
+  eventIcon: {fileID: 21300000, guid: 9b6d0be6683e2ed41acaf1b7b1ede5a2, type: 3}
+  eventDescription: As you engage in a friendly conversation you realized that they
+    are not human but extra terrestrials mimicking your langauge. They need fuel
+    to get home and are offering 30 SCRAP for 5 FUEL.
+  eventOption1_Choice: Take them up on their offer.
+  eventOption1_Outcome: {fileID: 11400000, guid: eea13100ef09cf140b9cfaec4cfdc471,
+    type: 2}
+  eventOption1_Requirement: {fileID: 11400000, guid: b5783eff177dd1345b66e9ee8768abae,
+    type: 2}
+  eventOption2_Choice: Decline the offer.
+  eventOption2_Outcome: {fileID: 11400000, guid: 8c9350b243e8a364ba9b4b15bf4c94e2,
+    type: 2}
+  eventOption2_Requirement: {fileID: 0}
+  eventOption3_Choice: 
+  eventOption3_Outcome: {fileID: 0}
+  eventOption3_Requirement: {fileID: 0}
+  eventCanComeBackLater: 0
